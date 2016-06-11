@@ -68,7 +68,7 @@
                                 <p>{{$schule->kontakt->strasse}}</p>
                                 <p>{{$schule->kontakt->plz}} {{$schule->kontakt->ort}}</p>
                                 <br>
-                                <p>Email: <a href="#">{{ $schule->kontakt->mail }}</a></p>
+                                <p>Email: <a href="mailto:{{ $schule->kontakt->mail }}">{{ $schule->kontakt->mail }}</a></p>
                                 <p>Telefon: <a href="#">{{ $schule->kontakt->telefonnr }}</a></p>
                                 <p>Telefax: <a href="#">{{ $schule->kontakt->faxnr }}</a></p>
 
