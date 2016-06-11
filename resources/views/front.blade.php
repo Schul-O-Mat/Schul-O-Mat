@@ -18,10 +18,15 @@
         <div class="nav-wrapper blue">
             <a href="#!" style="margin-left: auto !important;" class="brand-logo">Schul'O'Mat</a>
             <ul class="right hide-on-med-and-down">
-                <li><a href=""><i class="material-icons">search</i></a></li>
+                <!--                <li><a href=""><i class="material-icons">search</i></a></li>-->
                 <li><a href=""><i class="material-icons dropdown-button" data-activates='dropdown'>more_vert</i></a></li>
             </ul>
+            <form action="/schulen/search" class="form header-search-wrapper hide-on-small-only" method="get">
+                <!-- Search Url: /schulen/search/{key} -->
+                <i class="material-icons active">search</i>
+                <input name="searchword" class="header-search-input z-depth-2" placeholder="Suche" type="text" onChange="this.form.submit();">
 
+            </form>
             <ul id='dropdown' class='dropdown-content text-blue'>
                 @if(Auth::guest())
                 <li><a href="/login">Login</a></li>
@@ -51,11 +56,17 @@
                 <p class="flow-text">Möchtest du etwas beitragen?</p>
                 <div class="row center-align">
                     <a href="/login" class="btn large blue">Bewerte eine Schule</a>
-                    <a href="/register" class="btn large blue">Registriere dich beim Schul'O'Maten</a>
+                    <a href="/register" class="btn large blue">Registriere dich beim Schul-O-Maten</a>
                 </div>
             </div>
         </div>
     </main>
+    <footer>
+        <hr>
+        <p class="center-align">
+            Made at Jugendhackt West 2016 by awesome people
+        </p>
+    </footer>
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript " src="https://code.jquery.com/jquery-2.1.1.min.js "></script>
     <script type="text/javascript " src="/js/bin/materialize.js "></script>
