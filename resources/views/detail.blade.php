@@ -18,14 +18,7 @@
     <nav>
         <div class="nav-wrapper blue">
             <a href="#!" class="brand-logo">Schul'O'Mat</a>
-            <!--
-        <div class="searchbar-wrapper">
-    <i class="material-icons searchbar-icon">search</i>
-    <input class="searchbar z-depth-2" type="text" placeholder="Suche nach einer Schule...">
-</div>
--->
             <ul class="right hide-on-med-and-down">
-
                 <li><a href=""><i class="material-icons">search</i></a></li>
                 <li><a href=""><i class="material-icons dropdown-button" data-activates='dropdown'>more_vert</i></a></li>
             </ul>
