@@ -62,14 +62,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card-action">
-                        <div class="col-md-6 col-md-offset-4">
-                            <button type="submit" class="blue btn btn-primary"><i class="material-icons right">vpn_key</i>Login</button>
+                    <div <button type="submit" class="blue btn btn-primary"><i class="material-icons right">vpn_key</i>Login</button>
 
-                            <a class="blue btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
+                        <a class="blue btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
 
-                            <a href="/" class="btn btn-flat">Zurück</a>
-                        </div>
+                        <a href="/" class="right btn-flat">Zurück</a>
+
                     </div>
             </form>
     </main>
