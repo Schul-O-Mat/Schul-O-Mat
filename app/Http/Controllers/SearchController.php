@@ -5,10 +5,10 @@ use App\User;
 use App\Http\Controllers\Controller;
 class SearchController extends Controller {
 
-    public function search() {
+    public function search($key) {
 
         // Sets the parameters from the get request to the variables.
-        $userSearch = Request::get('searchword');
+        $userSearch = $key;
 
         // Perform the query using Query Builder
         $result = DB::table('schulen')
