@@ -36,22 +36,22 @@
     </nav>
     <header class="center-align">
         <h1>Schul'O'Mat</h1>
-        <h2>Finde die Schule die zu <span class="blue-text">dir</span><a href="/schulen"class="white-text">passt</a>!</h2>
+        <h2>Finde die Schule die zu <span class="blue-text">dir</span><a href="/schulen"class="black-text">passt</a>!</h2>
     </header>
     <main>
         <div class="row">
             <div class="col s12">
                 <p class="flow-text">Möchtest du etwas über eine Schule erfahren?</p>
-                <div class="row">
-                    <a href="/master" class="btn">Schau dir alle Schulen an</a>
-                    <a href="" class="btn">Suche gezielt nach einer Schule</a>
+                <div class="row center-align">
+                    <a href="/master" class="btn large blue">Schau dir alle Schulen an</a>
+                    <a href="" class="btn large blue">Suche gezielt nach einer Schule</a>
                 </div>
             </div>
             <div class="col s12">
                 <p class="flow-text">Möchtest du etwas beitragen?</p>
-                <div class="row">
-                    <a href="/login" class="btn">Bewerte eine Schule</a>
-                    <a href="/register" class="btn">Registriere dich beim Schul'O'Maten</a>
+                <div class="row center-align">
+                    <a href="/login" class="btn large blue">Bewerte eine Schule</a>
+                    <a href="/register" class="btn large blue">Registriere dich beim Schul'O'Maten</a>
                 </div>
             </div>
         </div>
