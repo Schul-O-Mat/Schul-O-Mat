@@ -31,8 +31,6 @@
                 <li><a href="#">Willkommen {{Auth::user()->name}}!</a></li>
                 <li><a href="/logout">Logout</a></li>
               @endif
-                <li class="divider"></li>
-                <li><a href="http://le-styx.net/staff.gif">Swag</a></li>
             </ul>
             <ul class="left hide-on-med-and-down">
 
