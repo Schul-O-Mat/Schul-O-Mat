@@ -16,8 +16,8 @@
 <body>
     <nav>
         <div class="nav-wrapper blue">
-            <a href="#!" class="brand-logo">Schul'O'Mat</a>
-            <ul class="right">
+            <a href="#!" style="margin-left: auto !important;" class="brand-logo">Schul'O'Mat</a>
+            <ul class="right hide-on-med-and-down">
                 <li><a href=""><i class="material-icons">search</i></a></li>
                 <li><a href=""><i class="material-icons dropdown-button" data-activates='dropdown'>more_vert</i></a></li>
             </ul>
@@ -43,7 +43,7 @@
             <div class="col s12">
                 <p class="flow-text">Möchtest du etwas über eine Schule erfahren?</p>
                 <div class="row center-align">
-                    <a href="/master" class="btn large blue">Schau dir alle Schulen an</a>
+                    <a href="/schulen" class="btn large blue">Schau dir alle Schulen an</a>
                     <a href="" class="btn large blue">Suche gezielt nach einer Schule</a>
                 </div>
             </div>

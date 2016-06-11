@@ -14,8 +14,8 @@
 </head>
 <body>
 <form name="CalcForm">
-    <input type="text" name="GeoDezRight_TXT" size="20" tabindex="6" style="text-align: center"><br>
-    <input type="text" name="GeoDezHeight_TXT" size="20" tabindex="7" style="text-align: center"><br>
+    <input type="text" id="GeoDezRight" size="20" tabindex="6" style="text-align: center"><br>
+    <input type="text" id="GeoDezHeight" size="20" tabindex="7" style="text-align: center"><br>
 </form>
 </body>
 </html>

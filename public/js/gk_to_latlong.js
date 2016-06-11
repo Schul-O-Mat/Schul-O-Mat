@@ -38,28 +38,28 @@ function CalcStart_onclick() {
 
     fa = (GKRight - Math.floor(GKRight / 1000000) * 1000000 - 500000) / g1;
 
-    document.CalcForm.GeoDezRight_TXT.value = ((bf - fa * fa * t * (1 + g2) / 2 + fa * fa * fa * fa * t * (5 + 3 * t * t + 6 * g2 - 6 * g2 * t * t) / 24) * rho);
+    document.getElementbyId("GeoDezRight").value = ((bf - fa * fa * t * (1 + g2) / 2 + fa * fa * fa * fa * t * (5 + 3 * t * t + 6 * g2 - 6 * g2 * t * t) / 24) * rho);
 
     dl = fa - fa * fa * fa * (1 + 2 * t * t + g2) / 6 + fa * fa * fa * fa * fa * (1 + 28 * t * t + 24 * t * t * t * t) / 120;
 
-    document.CalcForm.GeoDezHeight_TXT.value = dl * rho / co + Math.floor(document.CalcForm.GKRight_TXT.value / 1000000) * 3;
+    document.CalcForm.GeoDezHeight_TXT.value = dl * rho / co + Math.floor(document.getElementbyId("GeoDezRight").value / 1000000) * 3;
 
     if (document.CalcForm.GeoSystemEll.value == "WGS84")
     {
         var CartesianXMeters, CartesianYMeters, CartesianZMeters, n, aBessel = 6377397.155, eeBessel = 0.0066743722296294277832, CartOutputXMeters, CartOutputYMeters, CartOutputZMeters, ScaleFactor = 0.00000982, RotXRad = -7.16069806998785E-06, RotYRad = 3.56822869296619E-07, RotZRad = 7.06858347057704E-06, ShiftXMeters = 591.28, ShiftYMeters = 81.35, ShiftZMeters = 396.39, aWGS84 = 6378137, eeWGS84 = 0.0066943799;
         var Latitude, LatitudeIt;
 
-        document.CalcForm.GeoDezRight_TXT.value = (parseFloat(document.CalcForm.GeoDezRight_TXT.value) / 180) * Math.PI;
+        document.getElementbyId("GeoDezRight").value = (parseFloat(document.getElementbyId("GeoDezRight").value) / 180) * Math.PI;
         document.CalcForm.GeoDezHeight_TXT.value = (parseFloat(document.CalcForm.GeoDezHeight_TXT.value) / 180) * Math.PI;
 
-        n = eeBessel * Math.sin(parseFloat(document.CalcForm.GeoDezRight_TXT.value)) * Math.sin(parseFloat(document.CalcForm.GeoDezRight_TXT.value));
+        n = eeBessel * Math.sin(parseFloat(document.getElementbyId("GeoDezRight").value)) * Math.sin(parseFloat(document.getElementbyId("GeoDezRight").value));
         n = 1 - n;
         n = Math.sqrt(n)
         n = aBessel / n
         //window.alert(n);
-        CartesianXMeters = n * Math.cos(parseFloat(document.CalcForm.GeoDezRight_TXT.value)) * Math.cos(parseFloat(document.CalcForm.GeoDezHeight_TXT.value));
-        CartesianYMeters = n * Math.cos(parseFloat(document.CalcForm.GeoDezRight_TXT.value)) * Math.sin(parseFloat(document.CalcForm.GeoDezHeight_TXT.value));
-        CartesianZMeters = n * (1 - eeBessel) * Math.sin(parseFloat(document.CalcForm.GeoDezRight_TXT.value));
+        CartesianXMeters = n * Math.cos(parseFloat(document.getElementbyId("GeoDezRight").value)) * Math.cos(parseFloat(document.CalcForm.GeoDezHeight_TXT.value));
+        CartesianYMeters = n * Math.cos(parseFloat(document.getElementbyId("GeoDezRight").value)) * Math.sin(parseFloat(document.CalcForm.GeoDezHeight_TXT.value));
+        CartesianZMeters = n * (1 - eeBessel) * Math.sin(parseFloat(document.getElementbyId("GeoDezRight").value));
         //window.alert(CartesianXMeters);
         //window.alert(CartesianYMeters);
         //window.alert(CartesianZMeters);
@@ -98,7 +98,7 @@ function CalcStart_onclick() {
         }
         while (Math.abs(Latitude - LatitudeIt) >= 0.000000000000001);
 
-        document.CalcForm.GeoDezRight_TXT.value = (Latitude / Math.PI) * 180;
+        document.getElementbyId("GeoDezRight").value = (Latitude / Math.PI) * 180;
         document.CalcForm.GeoDezHeight_TXT.value = (parseFloat(document.CalcForm.GeoDezHeight_TXT.value) / Math.PI) * 180;
     }
 
@@ -107,17 +107,17 @@ function CalcStart_onclick() {
         var CartesianXMeters, CartesianYMeters, CartesianZMeters, n, aBessel = 6377397.155, eeBessel = 0.0066743722296294277832, CartOutputXMeters, CartOutputYMeters, CartOutputZMeters, ScaleFactor = 0.00000982, RotXRad = -7.16069806998785E-06, RotYRad = 3.56822869296619E-07, RotZRad = 7.06858347057704E-06, ShiftXMeters = 591.28, ShiftYMeters = 81.35, ShiftZMeters = 396.39, aGRS80 = 6378137, eeGRS80 = 0.00669438002290;
         var Latitude, LatitudeIt;
 
-        document.CalcForm.GeoDezRight_TXT.value = (parseFloat(document.CalcForm.GeoDezRight_TXT.value) / 180) * Math.PI;
+        document.getElementbyId("GeoDezRight").value = (parseFloat(document.getElementbyId("GeoDezRight").value) / 180) * Math.PI;
         document.CalcForm.GeoDezHeight_TXT.value = (parseFloat(document.CalcForm.GeoDezHeight_TXT.value) / 180) * Math.PI;
 
-        n = eeBessel * Math.sin(parseFloat(document.CalcForm.GeoDezRight_TXT.value)) * Math.sin(parseFloat(document.CalcForm.GeoDezRight_TXT.value));
+        n = eeBessel * Math.sin(parseFloat(document.getElementbyId("GeoDezRight").value)) * Math.sin(parseFloat(document.getElementbyId("GeoDezRight").value));
         n = 1 - n;
         n = Math.sqrt(n)
         n = aBessel / n
         //window.alert(n);
-        CartesianXMeters = n * Math.cos(parseFloat(document.CalcForm.GeoDezRight_TXT.value)) * Math.cos(parseFloat(document.CalcForm.GeoDezHeight_TXT.value));
-        CartesianYMeters = n * Math.cos(parseFloat(document.CalcForm.GeoDezRight_TXT.value)) * Math.sin(parseFloat(document.CalcForm.GeoDezHeight_TXT.value));
-        CartesianZMeters = n * (1 - eeBessel) * Math.sin(parseFloat(document.CalcForm.GeoDezRight_TXT.value));
+        CartesianXMeters = n * Math.cos(parseFloat(document.getElementbyId("GeoDezRight").value)) * Math.cos(parseFloat(document.CalcForm.GeoDezHeight_TXT.value));
+        CartesianYMeters = n * Math.cos(parseFloat(document.getElementbyId("GeoDezRight").value)) * Math.sin(parseFloat(document.CalcForm.GeoDezHeight_TXT.value));
+        CartesianZMeters = n * (1 - eeBessel) * Math.sin(parseFloat(document.getElementbyId("GeoDezRight").value));
         //window.alert(CartesianXMeters);
         //window.alert(CartesianYMeters);
         //window.alert(CartesianZMeters);
@@ -156,10 +156,10 @@ function CalcStart_onclick() {
         }
         while (Math.abs(Latitude - LatitudeIt) >= 0.000000000000001);
 
-        document.CalcForm.GeoDezRight_TXT.value = (Latitude / Math.PI) * 180;
+        document.getElementbyId("GeoDezRight").value = (Latitude / Math.PI) * 180;
         document.CalcForm.GeoDezHeight_TXT.value = (parseFloat(document.CalcForm.GeoDezHeight_TXT.value) / Math.PI) * 180;
     }
-    document.CalcForm.GeoDezRightStr_TXT.value = GetGeoStringFromGeoDez(parseFloat(document.CalcForm.GeoDezRight_TXT.value));
+    document.CalcForm.GeoDezRightStr_TXT.value = GetGeoStringFromGeoDez(parseFloat(document.getElementbyId("GeoDezRight").value));
     document.CalcForm.GeoDezHeightStr_TXT.value = GetGeoStringFromGeoDez(parseFloat(document.CalcForm.GeoDezHeight_TXT.value));
 }
 
@@ -176,9 +176,9 @@ function MapQuestShow_onclick() {
     document.CalcForm.GeoSystemEll.value = "WGS84";
     CalcStart_onclick();
     var URLtarget;
-    if ((parseInt(document.CalcForm.GKRight_TXT.value) > 1000000) && (parseInt(document.CalcForm.GKHeight_TXT.value) > 1000000))
+    if ((parseInt(document.getElementbyId("GeoDezRight").value) > 1000000) && (parseInt(document.getElementbyId("GeoDezHight").value) > 1000000))
     {
-        URLtarget = "http://www.mapquest.com/maps/map.adp?latlongtype=decimal&latitude=" + GetFloatFromString(document.CalcForm.GeoDezRight_TXT.value) + "&longitude=" + GetFloatFromString(document.CalcForm.GeoDezHeight_TXT.value) + "&zoom=8&size=big&style=RARE";
+        URLtarget = "http://www.mapquest.com/maps/map.adp?latlongtype=decimal&latitude=" + GetFloatFromString(document.getElementbyId("GeoDezRight").value) + "&longitude=" + GetFloatFromString(document.CalcForm.GeoDezHeight_TXT.value) + "&zoom=8&size=big&style=RARE";
         if (msieversion() >= 3)
         {
             document.CalcForm.MapQuestShow.value = "(Wird geladen ...)";
@@ -216,8 +216,8 @@ function GKall_TXT_onchange() {
 
     if (GKall.length > 6)
     {
-        document.CalcForm.GKRight_TXT.value = GKall.slice(0, 6) + "0";
-        document.CalcForm.GKHeight_TXT.value = GKall.slice(6) + "0";
+        document.getElementbyId("GeoDezRight").value = GKall.slice(0, 6) + "0";
+        document.getElementbyId("GeoDezHight").value = GKall.slice(6) + "0";
         document.CalcForm.GKRef_TXT.value = GKall.slice(0, 1) + ". - " + GKall.slice(0, 1) * 3 + "°"
         if (GKall.length == 12)
         {
@@ -228,15 +228,15 @@ function GKall_TXT_onchange() {
     {
         if (GKall.length > 0)
         {
-            document.CalcForm.GKRight_TXT.value = GKall + "0";
-            document.CalcForm.GKHeight_TXT.value = "0";
+            document.getElementbyId("GeoDezRight").value = GKall + "0";
+            document.getElementbyId("GeoDezHight").value = "0";
             document.CalcForm.GKRef_TXT.value = GKall.slice(0, 1) + ". - " + GKall.slice(0, 1) * 3 + "°"
         }
     }
 }
 
 function GeoSystemEll_onchange() {
-    if (document.CalcForm.GeoDezHeight_TXT.value == "" || document.CalcForm.GeoDezRight_TXT.value == "")
+    if (document.CalcForm.GeoDezHeight_TXT.value == "" || document.getElementbyId("GeoDezRight").value == "")
     {
         return;
     }
@@ -245,7 +245,7 @@ function GeoSystemEll_onchange() {
 
 function GKRight_TXT_onchange() {
     var GKRight;
-    GKRight = document.CalcForm.GKRight_TXT.value;
+    GKRight = document.getElementbyId("GeoDezRight").value;
 
     if (GKRight.length >= 1)
     {
