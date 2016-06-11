@@ -100,26 +100,88 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col s12 m6 "></div>
-                </div>
-                <!--<div id="map"></div>-->
 
+                    <!--<div id="map"></div>-->
+
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col s12">
-                <ul class="tabs">
-                    <li class="tab col s3"><a href="#inbox">Inbox</a></li>
-                    <li class="tab col s3"><a class="active" href="#unread">Unread</a></li>
-                    <li class="tab col s3 disabled"><a href="#outbox">Outbox (Disabled)</a></li>
-                    <li class="tab col s3"><a href="#sent">Sent</a></li>
-                </ul>
-            </div>
-            <div id="inbox" class="col s12">Inbox</div>
-            <div id="unread" class="col s12">Unread</div>
-            <div id="outbox" class="col s12">Outbox (Disabled)</div>
-            <div id="sent" class="col s12">Sent</div>
-        </div>
+            <div class="row">
+                <div class="col s12">
+                    <ul class="tabs">
+                        <li class="tab col s3"><a href="#inbox">Inbox</a></li>
+                        <li class="tab col s3"><a class="active" href="#unread">Unread</a></li>
+
+                        <li class="tab col s3"><a href="#sent">Sent</a></li>
+                    </ul>
+                </div>
+                <div id="inbox" class="col s12">
+                    <div class="row">
+                        <div class="col s12 m6">
+                            <div class="card">
+                                <div class=" card-content">
+                                    <span class="card-title ">Kontakt</span>
+                                    <h6>{{$schule->bezeichnung->schulbez1}}</h6>
+                                    <p>{{$schule->adresse->strasse}}</p>
+                                    <p>{{$schule->adresse->plz}} {{$schule->adresse->ort}}</p>
+                                    <br>
+                                    <p>Email: <a href="mailto:{{ $schule->kontakt->mail }}">{{ $schule->kontakt->mail }}</a></p>
+                                    <p>Telefon: <a href="tel:{{ $schule->kontakt->telefonnr }}">{{ $schule->kontakt->telefonnr }}</a></p>
+                                    <p>Telefax: <a href="tel:{{ $schule->kontakt->faxnr }}">{{ $schule->kontakt->faxnr }}</a></p>
+
+                                </div>
+                                <div class="card-action ">
+                                    <a href="/schule/{{$schule->schulnr}}/karte">Öffne mit Maps</a>
+                                    <a href="# ">Irgendwas</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="unread" class="col s12">
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <div class="card">
+                                    <div class=" card-content">
+                                        <span class="card-title ">Kontakt</span>
+                                        <h6>{{$schule->bezeichnung->schulbez1}}</h6>
+                                        <p>{{$schule->adresse->strasse}}</p>
+                                        <p>{{$schule->adresse->plz}} {{$schule->adresse->ort}}</p>
+                                        <br>
+                                        <p>Email: <a href="mailto:{{ $schule->kontakt->mail }}">{{ $schule->kontakt->mail }}</a></p>
+                                        <p>Telefon: <a href="tel:{{ $schule->kontakt->telefonnr }}">{{ $schule->kontakt->telefonnr }}</a></p>
+                                        <p>Telefax: <a href="tel:{{ $schule->kontakt->faxnr }}">{{ $schule->kontakt->faxnr }}</a></p>
+
+                                    </div>
+                                    <div class="card-action ">
+                                        <a href="/schule/{{$schule->schulnr}}/karte">Öffne mit Maps</a>
+                                        <a href="# ">Irgendwas</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="sent" class="col s12">
+                            <div class="row">
+                                <div class="col s12 m6">
+                                    <div class="card">
+                                        <div class=" card-content">
+                                            <span class="card-title ">Kontakt</span>
+                                            <h6>{{$schule->bezeichnung->schulbez1}}</h6>
+                                            <p>{{$schule->adresse->strasse}}</p>
+                                            <p>{{$schule->adresse->plz}} {{$schule->adresse->ort}}</p>
+                                            <br>
+                                            <p>Email: <a href="mailto:{{ $schule->kontakt->mail }}">{{ $schule->kontakt->mail }}</a></p>
+                                            <p>Telefon: <a href="tel:{{ $schule->kontakt->telefonnr }}">{{ $schule->kontakt->telefonnr }}</a></p>
+                                            <p>Telefax: <a href="tel:{{ $schule->kontakt->faxnr }}">{{ $schule->kontakt->faxnr }}</a></p>
+
+                                        </div>
+                                        <div class="card-action ">
+                                            <a href="/schule/{{$schule->schulnr}}/karte">Öffne mit Maps</a>
+                                            <a href="# ">Irgendwas</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
     </main>
     <!--Import jQuery before materialize.js-->
