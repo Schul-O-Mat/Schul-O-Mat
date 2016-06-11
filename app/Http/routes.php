@@ -21,8 +21,14 @@ Route::get('/schulen', function () {
 });
 
 Route::get('/schulen/{page}', function ($page) {
-    $data = App\schulen::take(25)->skip(25*$page)->get();
-    return view('master', compact("data"));
+    $calc = $page*25;
+    $cnt = App\schulen::count();
+    $weiter = true;
+    $zurueck = ($page==0)? false : true;
+    if($calc+25>$cnt)
+      $weiter = false;
+    $data = App\schulen::take(25)->skip($calc)->get();
+    return view('master', compact("data", "zurueck", "weiter", "page"));
 });
 
 
