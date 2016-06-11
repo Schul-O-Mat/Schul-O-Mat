@@ -20,8 +20,16 @@ Route::get('/schulen', function () {
     return view('master', compact("data"));
 });
 
-Route::get('/schulen/{id}', function (App\schulen $schule) {
-    return view('schule', compact("schule"));
+Route::get('/schulen/{id}', function ($schule) {
+  $schule = App\schulen::find($schule);
+  return view('detail', compact("schule"));
+});
+
+Route::get('/schulen/{id}/karte', function ($schule) {
+  $schule = App\schulen::find($schule);
+  $lat = $schule->adresse->lat;
+  $long = $schule->adresse->long;
+  return view('karten', compact("lat", "long"));
 });
 
 Route::auth();
