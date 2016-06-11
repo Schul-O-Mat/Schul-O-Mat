@@ -91,13 +91,13 @@
     };
     function openMap(lat, lng) {
         var map = L.map('map').setView([lat, lng], 13);
-        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(map); 
+        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(map);
     };
     openMap(convertedValues[0], convertedValues[1]);
     addMarker(convertedValues[0], convertedValues[1], "Die Schule!")
-    
+
     // COPY & PASTE
-        
+
 function gk2geo(rw, hw) {
 /* Copyright (c) 2006, HELMUT H. HEIMEIER
    Permission is hereby granted, free of charge, to any person obtaining a

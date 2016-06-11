@@ -22,13 +22,15 @@ Route::get('/schulen', function () {
 
 Route::get('/schulen/{id}', function ($schule) {
   $schule = App\schulen::find($schule);
-  return view('detail', compact("schule"));
+  $hochwert = $schule->adresse->lat; //hochwert
+  $rechtswert = $schule->adresse->lon; //rechtswert
+  return view('detail', compact("schule", "hochwert", "rechtswert"));
 });
 
 Route::get('/schulen/{id}/karte', function ($schule) {
   $schule = App\schulen::find($schule);
   $hochwert = $schule->adresse->lat; //hochwert
-  $rechtswert = $schule->adresse->long; //rechtswert
+  $rechtswert = $schule->adresse->lon; //rechtswert
   return view('karten', compact("hochwert", "rechtswert"));
 });
 
