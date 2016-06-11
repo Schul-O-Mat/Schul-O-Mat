@@ -64,9 +64,9 @@
                         <div class="card">
                             <div class=" card-content">
                                 <span class="card-title ">Kontakt</span>
-                                <h6>Steinbart Gymnasium</h6>
-                                <p>Realschulstraße 45</p>
-                                <p>47051 Duisburg</p>
+                                <h6>{{$schule->bezeichnung->schulbez1}}</h6>
+                                <p>{{$schule->kontakt->strasse}}</p>
+                                <p>{{$schule->kontakt->plz}} {{$schule->kontakt->ort}}</p>
                                 <br>
                                 <p>Email: <a href="#">{{ $schule->kontakt->mail }}</a></p>
                                 <p>Telefon: <a href="#">{{ $schule->kontakt->telefonnr }}</a></p>
