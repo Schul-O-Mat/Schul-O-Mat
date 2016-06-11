@@ -39,7 +39,7 @@
                        {{$d->bezeichnung->schulbez3}} <br>
                        {{$d->bezeichnung->kurzbez}}
                     </p>
-                    <a href="/schulen/{{ $d->schulnr}}" class="secondary-content"><i class="blue-text material-icons">arrow_forward</i></a>
+                    <a href="/schulen/{{ $d->schulnr }}" class="secondary-content"><i class="blue-text material-icons">arrow_forward</i></a>
                 </li>
               @endforeach
             </ul>

@@ -18,22 +18,22 @@
     <nav>
         <div class="nav-wrapper blue">
             <a href="#!" class="brand-logo">Schul'O'Mat</a>
-            <!--
-        <div class="searchbar-wrapper">
-    <i class="material-icons searchbar-icon">search</i>
-    <input class="searchbar z-depth-2" type="text" placeholder="Suche nach einer Schule...">
-</div>
--->
             <ul class="right hide-on-med-and-down">
 
                 <li><a href=""><i class="material-icons">search</i></a></li>
                 <li><a href=""><i class="material-icons dropdown-button" data-activates='dropdown'>more_vert</i></a></li>
             </ul>
+
             <ul id='dropdown' class='dropdown-content text-blue'>
-                <li><a href="#!">Login</a></li>
-                <li><a href="#!">Register</a></li>
+              @if(Auth::guest())
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+              @else
+                <li><a href="#">Willkommen {{Auth::user()->name}}!</a></li>
+                <li><a href="/logout">Logout</a></li>
+              @endif
                 <li class="divider"></li>
-                <li><a href="#!">Swag</a></li>
+                <li><a href="http://le-styx.net/staff.gif">Swag</a></li>
             </ul>
             <ul class="left hide-on-med-and-down">
 
@@ -46,19 +46,16 @@
         <h2>Finde die Schule die zu dir <a href="/schulen">passt</a>!</h2>
     </header>
     <main>
-        <p id="closetoyoup"></p>
         <!--<div class="collection">
             <a href="#!" class="collection-item">Steinbart</a>
             <a href="#!" class="collection-item">Hildegardis</a>
             <a href="#!" class="collection-item">Landfermann</a>
         </div>-->
-        <div id="map"></div>
     </main>
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript " src="https://code.jquery.com/jquery-2.1.1.min.js "></script>
     <script type="text/javascript " src="/js/bin/materialize.js "></script>
     <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet/v1.0.0-rc.1/leaflet.js"></script>
-    <script type="text/javascript" src="/js/bin/createMap.js"></script>
     <script>
     </script>
 </body>
