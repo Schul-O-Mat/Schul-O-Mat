@@ -28,7 +28,7 @@ Route::get('/schulen/{page}', function ($page) {
     if($calc+25>$cnt)
       $weiter = false;
     $data = App\schulen::take(25)->skip($calc)->get();
-    return array($weiter, $zurueck);
+    //return array($weiter, $zurueck);
     return view('master', compact("data", "zurueck", "weiter", "page"));
 });
 
