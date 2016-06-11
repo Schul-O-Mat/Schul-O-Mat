@@ -60,7 +60,7 @@ Route::get('/schule/{id}', function ($schule) {
         $keywords[$p->bezeichnung] = [$countpos, $countneg];
     }
 
-    $reviews = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->select('freitext')->where('users.schulID', '=', $schulID);
+    $reviews = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->select('freitext')->where('users.schulID', '=', $schulID)->get();
   return view('detail', compact("schule", "hochwert", "rechtswert", "durchschnitt", "keywords", "reviews"));
 });
 
