@@ -63,7 +63,7 @@
 
                     <div class="card-action">
                         <button type="submit" class="green btn btn-primary"><i class="material-icons right">vpn_key</i>Registrieren</button>
-                        <a class="btn green" href="/"></a>
+                        <a class="btn green" href="/">Go back home</a>
                     </div>
             </form>
             </div>
