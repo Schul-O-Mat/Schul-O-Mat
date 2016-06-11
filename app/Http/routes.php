@@ -21,7 +21,7 @@ Route::get('/schulen', function () {
 });
 
 Route::get('/schulen/{page}', function ($page) {
-    $data = App\schulen::all();
+    $data = App\schulen::all()->paginate(25);
     return view('master', compact("data"));
 });
 
