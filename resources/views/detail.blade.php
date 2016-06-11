@@ -84,133 +84,129 @@
             <div id="quests" class="col s12 ">
                 <div class="collection">
                     <div class="collection-item">
-                        <p>Wie findest du deine Schule im Allgemeinen?</p>
+                        <p>Wie findest du deine Schule im Allgemeinen?<span class="right">{{$durchschnitt[0]}}/10</span></p>
                         <div class="progress">
-                            <div class="determinate" style="width: 70%"></div>
-                            <p>7/10</p>
-                        </div>
-                    </div>
-                    <div class="collection-item">
-                        <p>Wie findest du die Schulmensa?</p>
-                        <div class="progress">
-                            <div class="determinate" style="width: 70%"></div>
-                            <p>7/10</p>
-                        </div>
-                    </div>
-                    <div class="collection-item">
-                        <p>Wie findest du die AGs?</p>
-                        <div class="progress">
-                            <div class="determinate" style="width: 70%"></div>
-                            <p>7/10</p>
-                        </div>
-                    </div>
-                    <div class="collection-item">
-                        <p>Wie findest du die Austattung der Schule?</p>
-                        <div class="progress">
-                            <div class="determinate" style="width: 70%"></div>
-                            <p>7/10</p>
-                        </div>
-                    </div>
-                    <div class="collection-item">
-                        <p>Wie findest du die Scheißhäuser?</p>
-                        <div class="progress">
-                            <div class="determinate" style="width: 70%"></div>
-                            <p>7/10</p>
-                        </div>
-                    </div>
-                    <div class="collection-item">
-                        <p>Wie findest du die Länge der Schulstunden?</p>
-                        <div class="progress">
-                            <div class="determinate" style="width: 70%"></div>
-                            <p>7/10</p>
-                        </div>
-                    </div>
-                    <div class="collection-item">
-                        <p>Wie findest du die Zeit des Schulbeginns?</p>
-                        <div class="progress">
-                            <div class="determinate" style="width: 70%"></div>
-                            <p>7/10</p>
-                        </div>
-                    </div>
+                            <div class="determinate" style="width: {{$durchschnitt[0]*10}}%"></div>
 
-                    <div class="row">
-                        <div class="col s12 l6">
-                            <ul class="collection with-header">
-                                <li class="collection-header">
-                                    <h4>First Names</h4></li>
-                                <li class="collection-item">
-                                    <div>Alvin<span class="right">4</span></div>
-                                </li>
-                                <li class="collection-item">
-                                    <div>Alvin<span class="right">4</span></div>
-                                </li>
-                                <li class="collection-item">
-                                    <div>Alvin<span class="right">4</span></div>
-                                </li>
-                                <li class="collection-item">
-                                    <div>Alvin<span class="right">4</span></div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col s12 l6">
-                            <ul class="collection with-header">
-                                <li class="collection-header">
-                                    <h4>First Names</h4></li>
-                                <li class="collection-item">
-                                    <div>Alvin<span class="right">4</span></div>
-                                </li>
-                                <li class="collection-item">
-                                    <div>Alvin<span class="right">4</span></div>
-                                </li>
-                                <li class="collection-item">
-                                    <div>Alvin<span class="right">4</span></div>
-                                </li>
-                                <li class="collection-item">
-                                    <div>Alvin<span class="right">4</span></div>
-                                </li>
-                            </ul>
                         </div>
                     </div>
+                    <div class="collection-item">
+                        <p>Wie findest du die Schulmensa?<span class="right">7/10</span></p>
+                        <div class="progress">
+                            <div class="determinate" style="width: 70%"></div>
 
-                    <div>
-                        
-                        <!--Ende Durchschnittsbewertung "Sternchen"-->
-                        
-                        <!--Start Tag-Tabelle-->
-                        
-                        <div class="row">
-                            <div class="col s12 l6">
-                                <div class="collection">
-                                    <div class="firstrowoftable collection-item">Positiv</div>
-                                    <div class="collection-item">Kacktroll</div>
-                                </div>
-                            </div>    
-                            <div class="col s12 l6">
-                            <div class="collection">
-                                    <div class="firstrowoftable collection-item">Negativ</div>
-                                    <div class="collection-item">Kacktroll</div>
-                                </div>
-                            </div>    
                         </div>
-                        
-                        <!--Ende Tag-Tabelle-->
-                        
-                        <!-- Start Freitext-->
-                        
-                        <p>Einzelberichte:</p>
-                        <ul class="collapsible">
-                            <li>
-                                <div class="collapsible-header">Hier krasser Pfeil nach unten.</div>
-                                <div class="collapsible-body">
-                                    <div class="collection">
-                                        <div class="collection-item">Boah, was ein geiles Ding :3</div>
-                                        <div class="collection-item">Voll die Opfah Lehra</div>
-                                    </div>
-                                </div>
+                    </div>
+                    <div class="collection-item">
+                        <p>Wie findest du die AGs?<span class="right">7/10</span></p>
+                        <div class="progress">
+                            <div class="determinate" style="width: 70%"></div>
+
+                        </div>
+                    </div>
+                    <div class="collection-item">
+                        <p>Wie findest du die Austattung der Schule?<span class="right">7/10</span></p>
+                        <div class="progress">
+                            <div class="determinate" style="width: 70%"></div>
+
+                        </div>
+                    </div>
+                    <div class="collection-item">
+                        <p>Wie findest du die Scheißhäuser?<span class="right">7/10</span></p>
+                        <div class="progress">
+                            <div class="determinate" style="width: 70%"></div>
+
+                        </div>
+                    </div>
+                    <div class="collection-item">
+                        <p>Wie findest du die Länge der Schulstunden?<span class="right">7/10</span></p>
+                        <div class="progress">
+                            <div class="determinate" style="width: 70%"></div>
+
+                        </div>
+                    </div>
+                    <div class="collection-item">
+                        <p>Wie findest du die Zeit des Schulbeginns?<span class="right">7/10</span></p>
+                        <div class="progress">
+                            <div class="determinate" style="width: 70%"></div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <h4 class="center-align">Dies Bewerten die Schüler Besonders:</h4>
+                    <div class="col s12 l6">
+                        <ul class="collection with-header">
+                            <li class="collection-header">
+                                <h4>Positive Aspekte</h4></li>
+                            <li class="collection-item">
+                                <div>Alvin<span class="right">4</span></div>
+                            </li>
+                            <li class="collection-item">
+                                <div>Alvin<span class="right">4</span></div>
+                            </li>
+                            <li class="collection-item">
+                                <div>Alvin<span class="right">4</span></div>
+                            </li>
+                            <li class="collection-item">
+                                <div>Alvin<span class="right">4</span></div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col s12 l6">
+                        <ul class="collection with-header">
+                            <li class="collection-header">
+                                <h4>Negative Aspekte</h4></li>
+                            <li class="collection-item">
+                                <div>Alvin<span class="right">4</span></div>
+                            </li>
+                            <li class="collection-item">
+                                <div>Alvin<span class="right">4</span></div>
+                            </li>
+                            <li class="collection-item">
+                                <div>Alvin<span class="right">4</span></div>
+                            </li>
+                            <li class="collection-item">
+                                <div>Alvin<span class="right">4</span></div>
                             </li>
                         </ul>
                     </div>
                 </div>
+
+                <div>
+                    <h4 class="center-align">Einzelberichte:</h4>
+
+                    <ul class="collapsible" data-collapsible="accordion">
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">filter_drama</i>Ey, so ein cooler Kommentar</div>
+                            <div class="collapsible-body">
+                                <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis inventore perspiciatis architecto dolores sequi vel quam expedita nisi ipsa molestias ad illo, officia tempora ipsam, beatae hic excepturi omnis reiciendis.</span>
+                                    <span>Aut nam ea, dignissimos aperiam animi soluta esse ipsum sit voluptates, fugiat maxime ducimus illum, dolores quo numquam beatae ullam nihil accusantium rerum facere quidem quasi. Laborum, sed tempore ut.</span>
+                                    <span>Officiis excepturi distinctio magnam in, adipisci enim impedit vitae culpa quam neque qui reiciendis eveniet. Voluptate commodi, ducimus cum amet nesciunt dignissimos distinctio a repellat molestias similique unde autem dolores!</span>
+                                    <span>Tenetur deleniti asperiores delectus odit animi quam iure distinctio aliquam dicta facilis, possimus accusamus optio enim nam perspiciatis! Perspiciatis rem, dolorem accusantium quibusdam sit consequuntur illum assumenda error beatae reiciendis.</span></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">place</i>Ey, so ein cooler Kommentar</div>
+                            <div class="collapsible-body">
+                                <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, illo quibusdam itaque harum tempore, officiis culpa quis voluptatem laborum voluptates sit totam expedita error atque distinctio nostrum necessitatibus quidem fugit.</span>
+                                    <span>Libero ea dolore, ratione minima sunt fugit porro et earum, fuga beatae nulla non. Autem mollitia asperiores ullam modi, expedita amet consequatur sunt quam, odit, laudantium nihil! Modi reiciendis, perspiciatis.</span>
+                                    <span>Sint nam voluptates nulla ab perspiciatis quos, incidunt architecto distinctio quasi laudantium ad reprehenderit, dolores reiciendis eligendi. Inventore beatae quae optio sapiente. Cum alias debitis corrupti rem quis, qui magni.</span>
+                                    <span>Illo maxime totam veritatis dolorem, beatae aliquam aperiam ut, sapiente eum explicabo, inventore provident tenetur. Nisi eos cumque consequuntur natus ullam quasi omnis. Eum repellat quidem sed ipsam quae laudantium!</span></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">whatshot</i>Ey, so ein cooler Kommentar</div>
+                            <div class="collapsible-body">
+                                <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae debitis nihil harum, iure, quaerat sunt enim ducimus quis rem ut cumque architecto minima. Quo dolore temporibus itaque quaerat ullam, recusandae.</span>
+                                    <span>Incidunt praesentium rem doloribus distinctio, facilis cum id error quas? Quidem magnam necessitatibus facilis blanditiis enim tempora laborum. Recusandae vel magnam rem. Cum minus sequi ab consectetur pariatur animi, cupiditate.</span>
+                                    <span>Ipsa, molestiae veniam nesciunt excepturi vero temporibus pariatur beatae atque asperiores quos cum ipsum fuga dignissimos sed praesentium aspernatur iusto optio iste quo? Eveniet obcaecati quam voluptatem ad, iste cupiditate.</span>
+                                    <span>Veniam ex porro, illo pariatur unde ea exercitationem possimus quisquam nisi consectetur quod ab nulla magni, animi cumque accusamus itaque quasi architecto fugiat optio impedit iure rem aliquam? Aperiam, atque.</span></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
             
             <!--Ende Freitext-->

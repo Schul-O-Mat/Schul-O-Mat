@@ -37,7 +37,16 @@ Route::get('/schule/{id}', function ($schule) {
   $schule = App\schulen::find($schule);
   $hochwert = $schule->adresse->lat; //hochwert
   $rechtswert = $schule->adresse->lon; //rechtswert
-  return view('detail', compact("schule", "hochwert", "rechtswert"));
+    $schueler = $schule->schueler;
+    $durchschnitt = array();
+    $durchschnitt[0] = DB::table('bewertungen')->select(DB::raw('AVG(bewertung1) as b1'))->first()->b1;
+    $durchschnitt[1] = DB::table('bewertungen')->select(DB::raw('AVG(bewertung2) as b2'))->first()->b2;
+    $durchschnitt[2] = DB::table('bewertungen')->select(DB::raw('AVG(bewertung3) as b3'))->first()->b3;
+    $durchschnitt[3] = DB::table('bewertungen')->select(DB::raw('AVG(bewertung4) as b4'))->first()->b4;
+    $durchschnitt[4] = DB::table('bewertungen')->select(DB::raw('AVG(bewertung5) as b5'))->first()->b5;
+    $durchschnitt[5] = DB::table('bewertungen')->select(DB::raw('AVG(bewertung6) as b6'))->first()->b6;
+    $durchschnitt[6] = DB::table('bewertungen')->select(DB::raw('AVG(bewertung7) as b7'))->first()->b7;
+  return view('detail', compact("schule", "hochwert", "rechtswert", "durchschnitt"));
 });
 
 Route::get('/schule/{id}/karte', function ($schule) {
