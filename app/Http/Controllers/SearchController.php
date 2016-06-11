@@ -21,7 +21,7 @@ class SearchController extends Controller {
         // BTW JOINT DEM SLACKCHANNEL #schulomat
     }
 
-    public function search(Request $request) {
+    public function searchGet(Request $request) {
 
         // Sets the parameters from the get request to the variables.
         $userSearch = $request->get("searchword");
