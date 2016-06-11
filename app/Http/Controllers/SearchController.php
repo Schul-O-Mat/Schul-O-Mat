@@ -31,11 +31,26 @@ class SearchController extends Controller {
         $weiter = false;
         $page = 0;
         // Perform the query using Query Builder
-        $data = DB::table('schulen')
+        $data = App\schulen::with(array("bezeichnung" => function($query){
+
+          $query->like("schulbezeichnung.kurzbez", $userSearch);
+
+        }))->get();
+
+        /*
+        $deliveries = Delivery::with(array('order' => function($query)
+        {
+             $query->where('orders.user_id', $customerID);
+             $query->orderBy('orders.created_at', 'DESC');
+        }))
+            ->orderBy('date')
+            ->get();
+        */
+        /*$data = DB::table('schulen')
             ->select("*")
             ->join('schulbezeichnung', 'schulbezeichnung.id', '=', 'schulen.fkbezeichnungen')
             ->where('kurzbez', 'LIKE', "%$userSearch%")
-            ->get();
+            ->get();*/
         return view('master', compact("data", "zurueck", "weiter", "page"));
         //return $result; //Wenn ihr ein result returned, macht laravel das automatisch zu JSON.
         // BTW JOINT DEM SLACKCHANNEL #schulomat
