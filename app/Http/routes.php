@@ -20,14 +20,20 @@ Route::get('/schulen', function () {
     return view('master', compact("data"));
 });
 
-Route::get('/schulen/{id}', function ($schule) {
+Route::get('/schulen/{page}', function ($page) {
+    $data = App\schulen::all();
+    return view('master', compact("data"));
+});
+
+
+Route::get('/schule/{id}', function ($schule) {
   $schule = App\schulen::find($schule);
   $hochwert = $schule->adresse->lat; //hochwert
   $rechtswert = $schule->adresse->lon; //rechtswert
   return view('detail', compact("schule", "hochwert", "rechtswert"));
 });
 
-Route::get('/schulen/{id}/karte', function ($schule) {
+Route::get('/schule/{id}/karte', function ($schule) {
   $schule = App\schulen::find($schule);
   $hochwert = $schule->adresse->lat; //hochwert
   $rechtswert = $schule->adresse->lon; //rechtswert
