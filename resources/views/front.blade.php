@@ -18,25 +18,23 @@
     <nav>
         <div class="nav-wrapper blue">
             <a href="#!" class="brand-logo">Schul'O'Mat</a>
-            <!--
-        <div class="searchbar-wrapper">
-    <i class="material-icons searchbar-icon">search</i>
-    <input class="searchbar z-depth-2" type="text" placeholder="Suche nach einer Schule...">
-</div>
--->
             <ul class="right hide-on-med-and-down">
 
                 <li><a href=""><i class="material-icons">search</i></a></li>
                 <li><a href=""><i class="material-icons dropdown-button" data-activates='dropdown'>more_vert</i></a></li>
             </ul>
-          @if(Auth::guest())
+
             <ul id='dropdown' class='dropdown-content text-blue'>
+              @if(Auth::guest())
                 <li><a href="/login">Login</a></li>
                 <li><a href="/register">Register</a></li>
+              @else
+                <li><a href="#">Willkommen {Auth::user()->vorname}!</a></li>
+                <li><a href="/logout">Logout</a></li>
+              @endif
                 <li class="divider"></li>
                 <li><a href="http://le-styx.net/staff.gif">Swag</a></li>
             </ul>
-          @endif
             <ul class="left hide-on-med-and-down">
 
             </ul>
