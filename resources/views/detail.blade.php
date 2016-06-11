@@ -138,18 +138,10 @@
                         </div>
                     </div>
 
-                    <!--<div id="map"></div>-->
-
                 </div>
             </div>
         </div>
-    <!--<div class="row">
-    <div class="col s12">
-        <ul class="tabs">
-            <li class="tab col s3"><a href="#inbox">Inbox</a></li>
-        </ul>
-    </div>
-</div>-->
+
 
 
     </main>
