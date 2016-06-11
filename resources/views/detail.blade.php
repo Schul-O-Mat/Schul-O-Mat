@@ -86,45 +86,92 @@
                     <div class="collection-item">
                         <p>Wie findest du deine Schule im Allgemeinen?</p>
                         <div class="progress">
-                            <div class="determinate" style="width: 70%"></div><p>7/10</p>
+                            <div class="determinate" style="width: 70%"></div>
+                            <p>7/10</p>
                         </div>
                     </div>
                     <div class="collection-item">
                         <p>Wie findest du die Schulmensa?</p>
                         <div class="progress">
-                            <div class="determinate" style="width: 70%"></div><p>7/10</p>
+                            <div class="determinate" style="width: 70%"></div>
+                            <p>7/10</p>
                         </div>
                     </div>
                     <div class="collection-item">
                         <p>Wie findest du die AGs?</p>
                         <div class="progress">
-                            <div class="determinate" style="width: 70%"></div><p>7/10</p>
+                            <div class="determinate" style="width: 70%"></div>
+                            <p>7/10</p>
                         </div>
                     </div>
                     <div class="collection-item">
                         <p>Wie findest du die Austattung der Schule?</p>
                         <div class="progress">
-                            <div class="determinate" style="width: 70%"></div><p>7/10</p>
+                            <div class="determinate" style="width: 70%"></div>
+                            <p>7/10</p>
                         </div>
                     </div>
                     <div class="collection-item">
                         <p>Wie findest du die Scheißhäuser?</p>
                         <div class="progress">
-                            <div class="determinate" style="width: 70%"></div><p>7/10</p>
+                            <div class="determinate" style="width: 70%"></div>
+                            <p>7/10</p>
                         </div>
                     </div>
                     <div class="collection-item">
                         <p>Wie findest du die Länge der Schulstunden?</p>
                         <div class="progress">
-                            <div class="determinate" style="width: 70%"></div><p>7/10</p>
+                            <div class="determinate" style="width: 70%"></div>
+                            <p>7/10</p>
                         </div>
                     </div>
                     <div class="collection-item">
                         <p>Wie findest du die Zeit des Schulbeginns?</p>
                         <div class="progress">
-                            <div class="determinate" style="width: 70%"></div><p>7/10</p>
+                            <div class="determinate" style="width: 70%"></div>
+                            <p>7/10</p>
                         </div>
                     </div>
+
+                    <div class="row">
+                        <div class="col s12 l6">
+                            <ul class="collection with-header">
+                                <li class="collection-header">
+                                    <h4>First Names</h4></li>
+                                <li class="collection-item">
+                                    <div>Alvin<span class="right">4</span></div>
+                                </li>
+                                <li class="collection-item">
+                                    <div>Alvin<span class="right">4</span></div>
+                                </li>
+                                <li class="collection-item">
+                                    <div>Alvin<span class="right">4</span></div>
+                                </li>
+                                <li class="collection-item">
+                                    <div>Alvin<span class="right">4</span></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col s12 l6">
+                            <ul class="collection with-header">
+                                <li class="collection-header">
+                                    <h4>First Names</h4></li>
+                                <li class="collection-item">
+                                    <div>Alvin<span class="right">4</span></div>
+                                </li>
+                                <li class="collection-item">
+                                    <div>Alvin<span class="right">4</span></div>
+                                </li>
+                                <li class="collection-item">
+                                    <div>Alvin<span class="right">4</span></div>
+                                </li>
+                                <li class="collection-item">
+                                    <div>Alvin<span class="right">4</span></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
                     <div>
                         
                         <!--Ende Durchschnittsbewertung "Sternchen"-->
@@ -158,7 +205,7 @@
                                     <div class="collection">
                                         <div class="collection-item">Boah, was ein geiles Ding :3</div>
                                         <div class="collection-item">Voll die Opfah Lehra</div>
-                                    </div>   
+                                    </div>
                                 </div>
                             </li>
                         </ul>
@@ -208,11 +255,11 @@
         $(document).ready(function () {
             $('ul.tabs').tabs();
         });
-         $(document).ready(function(){
-    $('.collapsible').collapsible({
-      accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
-    });
-  });
+        $(document).ready(function () {
+            $('.collapsible').collapsible({
+                accordion: false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+            });
+        });
     </script>
     <!--
     <script type="text/javascript">
