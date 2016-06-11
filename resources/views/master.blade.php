@@ -24,14 +24,14 @@
     <nav>
         <div class="nav-wrapper blue">
             <a href="#!" class="brand-logo">Schul'O'Mat</a>
-            <form action="/schulen/search" class="form" method="get">
-                <div class="header-search-wrapper hide-on-med-and-down">
-                    <i class="mdi-action-search active"></i>
-                    <input name="Search" class="header-search-input z-depth-2" placeholder="Explore Materialize" type="text" onChange="this.form.submit();">
-                </div>
+            <form action="/schulen/search" class="form header-search-wrapper hide-on-med-and-down" method="get">
+
+                <i class="mdi-action-search active"></i>
+                <input name="Search" class="header-search-input z-depth-2" placeholder="Explore Materialize" type="text" onChange="this.form.submit();">
+
             </form>
             <ul class="right">
-<!--
+                <!--
               <li>
     <button href="" onclick="$( '.form' ).toggle();"><i class="material-icons">search</i></button> </li>
 -->
