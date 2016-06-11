@@ -8,7 +8,7 @@ class schulen extends Model
 {
     protected $table = "schulen";
     protected $primaryKey = "schulnr";
-    
+
     public function kontakt()
     {
         return $this->hasOne('App\schulkontakt', "id", "fkkontakt");
@@ -40,5 +40,10 @@ class schulen extends Model
     public function schulbetriebsschluessel()
     {
         return $this->hasOne('App\key_schulbetriebsschluessel', "id", "schulbetriebsschluessel");
+    }
+
+    public function schueler()
+    {
+      return $this->hasMany("App\User", "schulID", "schulnr");
     }
 }

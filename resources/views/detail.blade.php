@@ -74,46 +74,59 @@
                     <div class="collection-item">
                         <p>Wie findest du deine Schule im Allgemeinen?</p>
                         <div class="progress">
-                            <div class="determinate" style="width: 70%"></div>
+                            <div class="determinate" style="width: 70%"></div><p>7/10</p>
                         </div>
                     </div>
                     <div class="collection-item">
                         <p>Wie findest du die Schulmensa?</p>
                         <div class="progress">
-                            <div class="determinate" style="width: 70%"></div>
+                            <div class="determinate" style="width: 70%"></div><p>7/10</p>
                         </div>
                     </div>
                     <div class="collection-item">
                         <p>Wie findest du die AGs?</p>
                         <div class="progress">
-                            <div class="determinate" style="width: 70%"></div>
+                            <div class="determinate" style="width: 70%"></div><p>7/10</p>
                         </div>
                     </div>
                     <div class="collection-item">
                         <p>Wie findest du die Austattung der Schule?</p>
                         <div class="progress">
-                            <div class="determinate" style="width: 70%"></div>
+                            <div class="determinate" style="width: 70%"></div><p>7/10</p>
                         </div>
                     </div>
                     <div class="collection-item">
                         <p>Wie findest du die Scheißhäuser?</p>
                         <div class="progress">
-                            <div class="determinate" style="width: 70%"></div>
+                            <div class="determinate" style="width: 70%"></div><p>7/10</p>
                         </div>
                     </div>
                     <div class="collection-item">
                         <p>Wie findest du die Länge der Schulstunden?</p>
                         <div class="progress">
-                            <div class="determinate" style="width: 70%"></div>
+                            <div class="determinate" style="width: 70%"></div><p>7/10</p>
                         </div>
                     </div>
                     <div class="collection-item">
                         <p>Wie findest du die Zeit des Schulbeginns?</p>
                         <div class="progress">
-                            <div class="determinate" style="width: 70%"></div>
+                            <div class="determinate" style="width: 70%"></div><p>7/10</p>
                         </div>
                     </div>
-                    <div></div>
+                    <div>
+                        <p>Einzelberichte:</p>
+                        <ul class="collapsible">
+                            <li>
+                                <div class="collapsible-header">Hier krasser Pfeil nach unten.</div>
+                                <div class="collapsible-body">
+                                    <div class="collection">
+                                        <div class="collection-item">Boah, was ein geiles Ding :3</div>
+                                        <div class="collection-item">Voll die Opfah Lehra</div>
+                                    </div>   
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div id="facts" class="col s12">
@@ -153,6 +166,11 @@
         $(document).ready(function () {
             $('ul.tabs').tabs();
         });
+         $(document).ready(function(){
+    $('.collapsible').collapsible({
+      accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+    });
+  });
     </script>
     <!--
     <script type="text/javascript">
@@ -178,109 +196,6 @@
     };
     openMap(convertedValues[0], convertedValues[1]);
     addMarker(convertedValues[0], convertedValues[1], "Die Schule!")
-
-    // COPY & PASTE
-
-    function gk2geo(rw, hw) {
-        /* Copyright (c) 2006, HELMUT H. HEIMEIER
-           Permission is hereby granted, free of charge, to any person obtaining a
-           copy of this software and associated documentation files (the "Software"),
-           to deal in the Software without restriction, including without limitation
-           the rights to use, copy, modify, merge, publish, distribute, sublicense,
-           and/or sell copies of the Software, and to permit persons to whom the
-           Software is furnished to do so, subject to the following conditions:
-           The above copyright notice and this permission notice shall be included
-           in all copies or substantial portions of the Software.*/
-
-        /* Die Funktion wandelt GK Koordinaten in geographische Koordinaten
-           um. Rechtswert rw und Hochwert hw müssen gegeben sein.
-           Berechnet werden geographische Länge lp und Breite bp
-           im Potsdam Datum.*/
-
-        // Rechtswert rw und Hochwert hw im Potsdam Datum
-        if (rw == "" || hw == "") {
-            lp = "";
-            bp = "";
-            return;
-        }
-        rw = parseFloat(rw);
-        hw = parseFloat(hw);
-
-        //  Potsdam Datum
-        // Große Halbachse a und Abplattung f
-        a = 6377397.155;
-        f = 3.34277321e-3;
-        pi = Math.PI;
-
-        // Polkrümmungshalbmesser c
-        c = a / (1 - f);
-
-        // Quadrat der zweiten numerischen Exzentrizität
-        ex2 = (2 * f - f * f) / ((1 - f) * (1 - f));
-        ex4 = ex2 * ex2;
-        ex6 = ex4 * ex2;
-        ex8 = ex4 * ex4;
-
-        // Koeffizienten zur Berechnung der geographischen Breite aus gegebener
-        // Meridianbogenlänge
-        e0 = c * (pi / 180) * (1 - 3 * ex2 / 4 + 45 * ex4 / 64 - 175 * ex6 / 256 + 11025 * ex8 / 16384);
-        f2 = (180 / pi) * (3 * ex2 / 8 - 3 * ex4 / 16 + 213 * ex6 / 2048 - 255 * ex8 / 4096);
-        f4 = (180 / pi) * (21 * ex4 / 256 - 21 * ex6 / 256 + 533 * ex8 / 8192);
-        f6 = (180 / pi) * (151 * ex6 / 6144 - 453 * ex8 / 12288);
-
-        // Geographische Breite bf zur Meridianbogenlänge gf = hw
-        sigma = hw / e0;
-        sigmr = sigma * pi / 180;
-        bf = sigma + f2 * Math.sin(2 * sigmr) + f4 * Math.sin(4 * sigmr) + f6 * Math.sin(6 * sigmr);
-
-        // Breite bf in Radianten
-        br = bf * pi / 180;
-        tan1 = Math.tan(br);
-        tan2 = tan1 * tan1;
-        tan4 = tan2 * tan2;
-
-        cos1 = Math.cos(br);
-        cos2 = cos1 * cos1;
-
-        etasq = ex2 * cos2;
-
-        // Querkrümmungshalbmesser nd
-        nd = c / Math.sqrt(1 + etasq);
-        nd2 = nd * nd;
-        nd4 = nd2 * nd2;
-        nd6 = nd4 * nd2;
-        nd3 = nd2 * nd;
-        nd5 = nd4 * nd;
-
-        //  Längendifferenz dl zum Bezugsmeridian lh
-        kz = parseInt(rw / 1e6);
-        lh = kz * 3
-        dy = rw - (kz * 1e6 + 500000);
-        dy2 = dy * dy;
-        dy4 = dy2 * dy2;
-        dy3 = dy2 * dy;
-        dy5 = dy4 * dy;
-        dy6 = dy3 * dy3;
-
-        b2 = -tan1 * (1 + etasq) / (2 * nd2);
-        b4 = tan1 * (5 + 3 * tan2 + 6 * etasq * (1 - tan2)) / (24 * nd4);
-        b6 = -tan1 * (61 + 90 * tan2 + 45 * tan4) / (720 * nd6);
-
-        l1 = 1 / (nd * cos1);
-        l3 = -(1 + 2 * tan2 + etasq) / (6 * nd3 * cos1);
-        l5 = (5 + 28 * tan2 + 24 * tan4) / (120 * nd5 * cos1);
-
-        // Geographischer Breite bp und Länge lp als Funktion von Rechts- und Hochwert
-        bp = bf + (180 / pi) * (b2 * dy2 + b4 * dy4 + b6 * dy6);
-        lp = lh + (180 / pi) * (l1 * dy + l3 * dy3 + l5 * dy5);
-
-        if (lp < 5 || lp > 16 || bp < 46 || bp > 56) {
-            alert("RW und/oder HW ungültig für das deutsche Gauss-Krüger-System");
-            lp = "";
-            bp = "";
-        }
-        return [lp, bp];
-    }
 </script>
 -->
 </body>
