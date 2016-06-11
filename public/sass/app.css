@@ -70,3 +70,6 @@ header>h3 {
 .brand-logo {
     margin-left: 80px;
 }
+.chevron_right {
+    float: right;
+}
