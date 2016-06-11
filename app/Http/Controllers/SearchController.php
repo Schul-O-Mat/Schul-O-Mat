@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Http\Controllers\Controller;
 use DB;
+use Request;
 class SearchController extends Controller {
 
     public function search($key) {
