@@ -46,19 +46,16 @@
         <h2>Finde die Schule die zu dir <a href="/schulen">passt</a>!</h2>
     </header>
     <main>
-        <p id="closetoyoup"></p>
         <!--<div class="collection">
             <a href="#!" class="collection-item">Steinbart</a>
             <a href="#!" class="collection-item">Hildegardis</a>
             <a href="#!" class="collection-item">Landfermann</a>
         </div>-->
-        <div id="map"></div>
     </main>
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript " src="https://code.jquery.com/jquery-2.1.1.min.js "></script>
     <script type="text/javascript " src="/js/bin/materialize.js "></script>
     <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet/v1.0.0-rc.1/leaflet.js"></script>
-    <script type="text/javascript" src="/js/bin/createMap.js"></script>
     <script>
     </script>
 </body>
