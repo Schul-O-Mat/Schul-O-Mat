@@ -65,5 +65,5 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 
 Route::get('/schule/{id}/redaktion', function($schule) {
-    return view("redaktion")
-})
+    return view("redaktion");
+});
