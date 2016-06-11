@@ -27,7 +27,7 @@
             <form action="/schulen/search" class="form header-search-wrapper hide-on-med-and-down" method="get">
 
                 <i class="material-icons active">search</i>
-                <input name="Search" class="header-search-input z-depth-2" placeholder="Suche" type="text" onChange="this.form.submit();">
+                <input name="searchword" class="header-search-input z-depth-2" placeholder="Suche" type="text" onChange="this.form.submit();">
 
             </form>
             <ul class="right">
