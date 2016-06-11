@@ -257,7 +257,7 @@
 
     </main>
     <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-        <a href="/schule/{{$schule}}/eintragen" class="btn-floating btn-large blue tooltipped" data-position="left" data-delay="50" data-tooltip="Trag was ein">
+        <a href="/schule/{{$schule->schulnr}}/eintragen" class="btn-floating btn-large blue tooltipped" data-position="left" data-delay="50" data-tooltip="Trag was ein">
             <i class="large material-icons">mode_edit</i>
         </a>
     </div>
