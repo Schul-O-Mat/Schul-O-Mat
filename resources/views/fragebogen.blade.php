@@ -82,52 +82,65 @@
                 <p class="range-field">
                     <input style="width: 50%" type="range" id="length" min="1" max="10" />
                 </p>
-                <div class="row">
-                    <div class="input-field col s12 m6">
-                        <select multiple>
-                            <option value="" disabled selected>Auswählen</option>
-                            <option value="1">AG Angebot</option>
-                            <option value="2">Lehrer</option>
-                            <option value="3">Mensaessen</option>
-                            <option value="3">Mensaessen</option>
-                            <option value="3">Mensaessen</option>
-                            <option value="3">Mensaessen</option>
-                            <option value="3">Mensaessen</option>
-                            <option value="3">Mensaessen</option>
-                            <option value="3">Mensaessen</option>
-                            <option value="3">Mensaessen</option>
-                            <option value="3">Mensaessen</option>
-                            <option value="3">Mensaessen</option>
-                        </select>
-                        <label>Positive Aspekte an deiner Schule</label>
-                    </div>
-                    <div class="input-field col s12 m6">
-                        <select multiple>
-                            <option value="" disabled selected>Auswählen</option>
-                            <option value="1">AG Angebot</option>
-                            <option value="2">Lehrer</option>
-                            <option value="3">Mensaessen</option>
-                            <option value="3">Mensaessen</option>
-                            <option value="3">Mensaessen</option>
-                            <option value="3">Mensaessen</option>
-                            <option value="3">Mensaessen</option>
-                            <option value="3">Mensaessen</option>
-                            <option value="3">Mensaessen</option>
-                            <option value="3">Mensaessen</option>
-                            <option value="3">Mensaessen</option>
-                            <option value="3">Mensaessen</option>
-                        </select>
-                        <label>Negative Aspekte an deiner Schule</label>
-                    </div>
-
-                </div>
-                <div class="row">
-
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Absenden
-                        <i class="material-icons right">send</i>
-                    </button>
-                </div>
             </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12 m6">
+                <select multiple>
+                    <option value="" disabled selected>Auswählen</option>
+                    <option value="1">AG Angebot</option>
+                    <option value="2">Lehrer</option>
+                    <option value="3">Mensaessen</option>
+                    <option value="3">Mensaessen</option>
+                    <option value="3">Mensaessen</option>
+                    <option value="3">Mensaessen</option>
+                    <option value="3">Mensaessen</option>
+                    <option value="3">Mensaessen</option>
+                    <option value="3">Mensaessen</option>
+                    <option value="3">Mensaessen</option>
+                    <option value="3">Mensaessen</option>
+                    <option value="3">Mensaessen</option>
+                </select>
+                <label>Positive Aspekte an deiner Schule</label>
+            </div>
+            <div class="input-field col s12 m6">
+                <select multiple>
+                    <option value="" disabled selected>Auswählen</option>
+                    <option value="1">AG Angebot</option>
+                    <option value="2">Lehrer</option>
+                    <option value="3">Mensaessen</option>
+                    <option value="3">Mensaessen</option>
+                    <option value="3">Mensaessen</option>
+                    <option value="3">Mensaessen</option>
+                    <option value="3">Mensaessen</option>
+                    <option value="3">Mensaessen</option>
+                    <option value="3">Mensaessen</option>
+                    <option value="3">Mensaessen</option>
+                    <option value="3">Mensaessen</option>
+                    <option value="3">Mensaessen</option>
+                </select>
+                <label>Negative Aspekte an deiner Schule</label>
+            </div>
+
+        </div>
+        <div class="row">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">mode_edit</i>
+                        <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+                        <label for="icon_prefix2">First Name</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <button class="btn waves-effect waves-light blue" type="submit" name="action">Absenden
+                <i class="material-icons right">send</i>
+            </button>
+            <a href="/" class="btn blue">Zurück</a>
+        </div>
+
     </form>
     <script>
         $(document).ready(function () {
