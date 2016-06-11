@@ -34,13 +34,13 @@
               @foreach ($data as $d)
                 <li class="collection-item avatar">
                     <i class="material-icons circle blue">school</i>
-                    <span class="title">Rudolf Steiner Schule</span>
+                    <span class="title">{{$d->bezeichnung->schulbez1}}</span>
                     <p>Staatl. genehm.priv. Ersatzschule <br>
                         45134 Essen, FW Schellstraße
                     </p>
-                    <a href="detail.html" class="secondary-content"><i class="blue-text material-icons">arrow_forward</i></a>
+                    <a href="/schulen/{{ $d->schulnr}}" class="secondary-content"><i class="blue-text material-icons">arrow_forward</i></a>
                 </li>
-              @endforeach  
+              @endforeach
             </ul>
         </div>
     </div>

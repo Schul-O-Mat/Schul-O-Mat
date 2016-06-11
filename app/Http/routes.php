@@ -15,9 +15,13 @@ Route::get('/', function () {
     return view('front');
 });
 
-Route::get('/master', function () {
+Route::get('/schulen', function () {
     $data = App\schulen::all();
     return view('master', compact("data"));
+});
+
+Route::get('/schulen/{id}', function (App\schulen $schule) {
+    return view('schule', compact("schule"));
 });
 
 Route::auth();
