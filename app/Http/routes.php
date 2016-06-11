@@ -89,5 +89,5 @@ Route::post("schule/{id}/redaktion/writedata", function(Request $request) {
         'schulID' => {id},
         'text' => $toWrite
     ])
-    return redirect("/schule/{id}/redaktion")
+    return redirect("/schule/{id}")
 })
