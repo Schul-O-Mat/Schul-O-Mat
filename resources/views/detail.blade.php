@@ -37,8 +37,8 @@
     </nav>
     <header class="center-align">
         <h3>{{$schule->bezeichnung->schulbez1}}</h3>
-        <!--   <h3>{{$schule->bezeichnung->schulbez2}}</h3>
-        <h3>{{$schule->bezeichnung->schulbez3}}</h3>-->
+        <h3>{{$schule->bezeichnung->schulbez2}}</h3>
+        <h3>{{$schule->bezeichnung->schulbez3}}</h3>
         <h4>{{$schule->bezeichnung->kurzbez}}</h4>
     </header>
     <main>
