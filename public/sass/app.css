@@ -120,3 +120,7 @@ input.header-search-input {
     outline: none;
     border-radius: 3px;
 }
+
+input.header-search-input:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
