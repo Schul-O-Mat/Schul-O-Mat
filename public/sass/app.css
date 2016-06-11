@@ -62,3 +62,6 @@ header>h3 {
     width: 10%;
     height: 5px;
 }
+#map {
+    height: 100px;
+}
