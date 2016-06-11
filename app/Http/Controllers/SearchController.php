@@ -33,8 +33,7 @@ class SearchController extends Controller {
         $page = 0;
         // Perform the query using Query Builder
         $data = schulen::with(array("bezeichnung" => function($query){
-          $collection->where(DB::raw('bookname like %'.$element.'%'));
-          $query->where("schulbezeichnung.kurzbez like %".$userSearch.%");
+          $query->where("schulbezeichnung.kurzbez like %".$userSearch."%");
 
         }))->get();
 
