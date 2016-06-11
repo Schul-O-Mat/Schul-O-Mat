@@ -12,7 +12,7 @@
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf8">
-    <title>Schul-O-Mat Detail</title>
+    <title>Schul-O-Mat | Login</title>
 </head>
 
 <body>
@@ -21,24 +21,6 @@
         <h3 class="blue-text">#Login</h3>
     </header>
     <main class="row">
-      <!--
-      <div class="col s12 m6 offset-m3">
-          <div class="card">
-              <div class="card-content">
-                  <span class="card-title">E-Mail Adresse</span>
-                  <input type="email" class="validate">
-              </div>
-              <div class="card-content">
-                  <span class="card-title">Password</span>
-                  <input type="password" class="validate">
-              </div>
-              <div class="card-action">
-                  <a href="login.html" class="blue-text">Login</a>
-                  <a href="register.html" class="blue-text">Register</a>
-              </div>
-          </div>
-      </div>
-    -->
         <div class="col s12 m6 offset-m3">
         <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
           {{ csrf_field() }}
@@ -87,13 +69,11 @@
           </div>
         </div>
               <div class="card-action">
-                <div class="form-group">
                 <div class="col-md-6 col-md-offset-4">
                   <button type="submit" class="blue btn btn-primary"><i class="material-icons right">vpn_key</i>Login</button>
 
                   <a class="blue btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
               </div>
-          </div>
          </div>
       </form>
     </main>
