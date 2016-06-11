@@ -83,12 +83,6 @@ header>h3 {
     width: 300px;
 }
 
-.form {
-    display: none;
-    margin: 0 auto;
-    width: 50vw;
-}
-
 .header-search-wrapper {
     width: 100%;
     margin: 10px auto 0px 240px;
