@@ -11,7 +11,7 @@
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf8">
-    <title>Schul-O-Mat Detail</title>
+    <title>Schul-O-Mat | Details</title>
 </head>
 
 <body>
@@ -67,9 +67,9 @@
                                 <p>Realschulstraße 45</p>
                                 <p>47051 Duisburg</p>
                                 <br>
-                                <p>Email: <a href=" ">troll@trololol.troll</a></p>
-                                <p>Telefon: <a href=" ">0203-123456</a></p>
-                                <p>Telefax: <a href=" ">0203-1234567</a></p>
+                                <p>Email: <a href="#">{{ $schule->kontakt->mail }}</a></p>
+                                <p>Telefon: <a href="#">{{ $schule->kontakt->telefonnr }}</a></p>
+                                <p>Telefax: <a href="#">{{ $schule->kontakt->faxnr }}</a></p>
 
                             </div>
                             <div class="card-action ">

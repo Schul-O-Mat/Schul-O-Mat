@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
 
     <!--    <link rel="stylesheet" href="../assets/sass/app.css">-->
-    <link rel="stylesheet" href="../assets/sass/login.css">
+    <link rel="stylesheet" href="sass/login.css">
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf8">
-    <title>Schul-O-Mat Detail</title>
+    <title>Schul-O-Mat | Registrieren</title>
 </head>
 
 <body>
