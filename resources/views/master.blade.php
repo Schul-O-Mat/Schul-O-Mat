@@ -24,8 +24,15 @@
     <nav>
         <div class="nav-wrapper blue">
             <a href="#!" class="brand-logo">Schul'O'Mat</a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href=""><i class="material-icons">search</i></a></li>
+            <form action="alert('You submitted!');" class="form">
+                <div class="input-field">
+                    <i class="material-icons prefix">search</i>
+                    <input id="icon_prefix" type="text" class="validate">
+                    <label for="icon_prefix">First Name</label>
+                </div>
+            </form>
+            <ul class="right">
+                <li><a href=""><i class="material-icons" onclick="$( '.form' ).toggle();">search</i></a></li>
                 <li><a href=""><i class="material-icons dropdown-button" data-activates='dropdown'>more_vert</i></a></li>
             </ul>
             <ul id='dropdown' class='dropdown-content text-blue'>
@@ -35,22 +42,21 @@
                 <li><a href="#!">Swag</a></li>
             </ul>
             <ul class="left hide-on-med-and-down">
-                <li><a href="master.html"><i class="material-icons">arrow_back</i></a></li>
+                <li><a href="/"><i class="material-icons">arrow_back</i></a></li>
             </ul>
 
         </div>
     </nav>
     <ul class="pagination">
-      @if ($zurueck)
+        @if ($zurueck)
         <li class="waves-effect"><a href="/schulen/{{$page-1}}"><i class="material-icons">chevron_left</i></a></li>
-      @else
+        @else
         <li class="waves-effect disabled"><a href="#"><i class="material-icons">chevron_left</i></a></li>
-      @endif
-      @if ($weiter)
+        @endif @if ($weiter)
         <li class="chevron_right waves-effect"><a href="/schulen/{{$page+1}}"><i class="material-icons">chevron_right</i></a></li>
-      @else
+        @else
         <li class="chevron_right waves-effect disabled"><a href="#"><i class="material-icons">chevron_right</i></a></li>
-      @endif
+        @endif
     </ul>
     <div class="row">
         <div class="col s12">
@@ -71,14 +77,13 @@
     </div>
     <ul class="pagination">
         @if ($zurueck)
-          <li class="waves-effect"><a href="/schulen/{{$page-1}}"><i class="material-icons">chevron_left</i></a></li>
+        <li class="waves-effect"><a href="/schulen/{{$page-1}}"><i class="material-icons">chevron_left</i></a></li>
         @else
-          <li class="waves-effect disabled"><a href="#"><i class="material-icons">chevron_left</i></a></li>
-        @endif
-        @if ($weiter)
-          <li class="chevron_right waves-effect"><a href="/schulen/{{$page+1}}"><i class="material-icons">chevron_right</i></a></li>
+        <li class="waves-effect disabled"><a href="#"><i class="material-icons">chevron_left</i></a></li>
+        @endif @if ($weiter)
+        <li class="chevron_right waves-effect"><a href="/schulen/{{$page+1}}"><i class="material-icons">chevron_right</i></a></li>
         @else
-          <li class="chevron_right waves-effect disabled"><a href="#"><i class="material-icons">chevron_right</i></a></li>
+        <li class="chevron_right waves-effect disabled"><a href="#"><i class="material-icons">chevron_right</i></a></li>
         @endif
     </ul>
 </body>
