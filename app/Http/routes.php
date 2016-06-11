@@ -28,6 +28,7 @@ Route::get('/schulen/{page}', function ($page) {
     if($calc+25>$cnt)
       $weiter = false;
     $data = App\schulen::take(25)->skip($calc)->get();
+    //return array($weiter, $zurueck);
     return view('master', compact("data", "zurueck", "weiter", "page"));
 });
 
@@ -44,6 +45,10 @@ Route::get('/schule/{id}/karte', function ($schule) {
   $hochwert = $schule->adresse->lat; //hochwert
   $rechtswert = $schule->adresse->lon; //rechtswert
   return view('karten', compact("hochwert", "rechtswert"));
+});
+
+Route::get("/schule/{id}/eintragen", function() {
+  return view("fragebogen");
 });
 
 Route::auth();
