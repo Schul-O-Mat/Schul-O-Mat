@@ -65,8 +65,8 @@
                             <div class=" card-content">
                                 <span class="card-title ">Kontakt</span>
                                 <h6>{{$schule->bezeichnung->schulbez1}}</h6>
-                                <p>{{$schule->kontakt->strasse}}</p>
-                                <p>{{$schule->kontakt->plz}} {{$schule->kontakt->ort}}</p>
+                                <p>{{$schule->adresse->strasse}}</p>
+                                <p>{{$schule->adresse->plz}} {{$schule->adresse->ort}}</p>
                                 <br>
                                 <p>Email: <a href="mailto:{{ $schule->kontakt->mail }}">{{ $schule->kontakt->mail }}</a></p>
                                 <p>Telefon: <a href="tel:{{ $schule->kontakt->telefonnr }}">{{ $schule->kontakt->telefonnr }}</a></p>
@@ -74,7 +74,7 @@
 
                             </div>
                             <div class="card-action ">
-                                <a href="# ">Öffne mit Maps</a>
+                                <a href="/schulen/{{$schule->schulnr}}/karte">Öffne mit Maps</a>
                                 <a href="# ">Irgendwas</a>
                             </div>
                         </div>

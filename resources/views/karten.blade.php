@@ -104,7 +104,7 @@ function gk2geo(rw, hw) {
 
    l1 =   1/(nd*cos1);
    l3 = - (1+2*tan2+etasq)/(6*nd3*cos1);
-   l5 =   (5+28*tan2+24*tan4)/(120*nd5*cos1);
+   l5 =   (5+28*tan2+24*tan4)/(12git pu0*nd5*cos1);
 
 // Geographischer Breite bp und Länge lp als Funktion von Rechts- und Hochwert
    bp = bf + (180/pi) * (b2*dy2 + b4*dy4 + b6*dy6);
