@@ -36,7 +36,7 @@
     </nav>
     <header class="center-align">
         <h1>Schul'O'Mat</h1>
-        <h2>Finde die Schule die zu <span class="blue-text">dir</span><a href="/schulen"class="black-text">passt</a>!</h2>
+        <h2>Finde die Schule, die zu <span class="blue-text">dir </span><a href="/schulen"class="black-text">passt</a>!</h2>
     </header>
     <main>
         <div class="row">
