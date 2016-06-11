@@ -41,7 +41,7 @@
         </div>
     </nav>
     <header>
-        <h3>Awesome Title</h3>
+        <h3 class="center-align">Awesome Title</h3>
     </header>
     <form action="#">
         <div class="row">
@@ -126,15 +126,15 @@
         <div class="row">
             <form class="col s12">
                 <div class="row">
-                    <div class="input-field col s6">
+                    <div class="input-field col s12">
                         <i class="material-icons prefix">mode_edit</i>
                         <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-                        <label for="icon_prefix2">First Name</label>
+                        <label for="icon_prefix2">Gib deinen Senf dazu!</label>
                     </div>
                 </div>
             </form>
         </div>
-        <div class="row">
+        <div class="row center-align">
             <button class="btn waves-effect waves-light blue" type="submit" name="action">Absenden
                 <i class="material-icons right">send</i>
             </button>
