@@ -31,7 +31,7 @@ function gk2geo(rw, hw) {
    Berechnet werden geographische Länge lp und Breite bp
    im Potsdam Datum.*/
 
-// Rechtswert rw und Hochwert hw im Potsdam Datum
+// Rechtswert rw ugit nd Hochwert hw im Potsdam Datum
    if (rw == "" || hw == "")
    {
    lp = "";
@@ -104,18 +104,18 @@ function gk2geo(rw, hw) {
 
    l1 =   1/(nd*cos1);
    l3 = - (1+2*tan2+etasq)/(6*nd3*cos1);
-   l5 =   (5+28*tan2+24*tan4)/(120*nd5*cos1);
+   l5 =   (5+28*tan2+24*tan4)/(12git pu0*nd5*cos1);
 
 // Geographischer Breite bp und Länge lp als Funktion von Rechts- und Hochwert
    bp = bf + (180/pi) * (b2*dy2 + b4*dy4 + b6*dy6);
    lp = lh + (180/pi) * (l1*dy  + l3*dy3 + l5*dy5);
 
-/*   if (lp < 5 || lp > 16 || bp < 46 || bp > 56)
+    if (lp < 5 || lp > 16 || bp < 46 || bp > 56)
    {
    alert("RW und/oder HW ungültig für das deutsche Gauss-Krüger-System");
    lp = "";
    bp = "";
-   }*/
+   }
    return [lp, bp];
 }
 </script>
