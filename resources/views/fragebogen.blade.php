@@ -77,16 +77,16 @@
                     <input style="width: 50%" type="range" id="toilet" min="1" max="10" />
                 </p>
                 <div class="col s6">
-                    <label class="flow-text" for="toilet">Wie findest du die Länge der Schulstunden an deiner Schule</label>
-                </div>
-                <p class="range-field">
-                    <input style="width: 50%" type="range" id="toilet" min="1" max="10" />
-                </p>
-                <div class="col s6">
-                    <label class="flow-text" for="toilet">Wie findest du die Zeiten des Schulbeginns?</label>
+                    <label class="flow-text" for="length">Wie findest du die Länge der Schulstunden an deiner Schule</label>
                 </div>
                 <p class="range-field">
                     <input style="width: 50%" type="range" id="length" min="1" max="10" />
+                </p>
+                <div class="col s6">
+                    <label class="flow-text" for="time">Wie findest du die Zeiten des Schulbeginns?</label>
+                </div>
+                <p class="range-field">
+                    <input style="width: 50%" type="range" id="time" min="1" max="10" />
                 </p>
             </div>
         </div>
