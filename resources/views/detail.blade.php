@@ -149,43 +149,6 @@
                             <tr><td><div class="chip green">6</div></td><td>{{$p->bezeichnung}}</td><td><div class="chip red">2</div></td></tr>
                         @endforeach
 
-                        <tr>
-                                <td>
-                                    <div class="chip green">6</div>
-                                </td>
-                                <td>Mensaessen</td>
-                                <td>
-                                    <div class="chip red">2</div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="chip green">6</div>
-                                </td>
-                                <td>Lehrer</td>
-                                <td>
-                                    <div class="chip red">2</div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="chip green">6</div>
-                                </td>
-                                <td>Informatikunterricht</td>
-                                <td>
-                                    <div class="chip red">2</div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="chip green">6</div>
-                                </td>
-                                <td>Schuhgröße</td>
-                                <td>
-                                    <div class="chip red">2</div>
-                                </td>
-                            </tr>
-
                         </tbody>
                     </table>
                 </div>
