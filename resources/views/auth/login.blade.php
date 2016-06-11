@@ -22,60 +22,56 @@
     </header>
     <main class="row">
         <div class="col s12 m6 offset-m3">
-        <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
-          {{ csrf_field() }}
-            <div class="card">
-                <div class="card-content">
-                    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                    <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+            <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
+                {{ csrf_field() }}
+                <div class="card">
+                    <div class="card-content">
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
-              <div class="col-md-6">
-                  <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
-
-                  @if ($errors->has('email'))
-                      <span class="help-block">
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}"> @if ($errors->has('email'))
+                                <span class="help-block">
                           <strong>{{ $errors->first('email') }}</strong>
-                      </span>
-                  @endif
-              </div>
-          </div>
-        </div>
-              <div class="card-content">
-                <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                <label for="password" class="col-md-4 control-label">Password</label>
+                      </span> @endif
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                            <label for="password" class="col-md-4 control-label">Password</label>
 
-              <div class="col-md-6">
-                  <input id="password" type="password" class="form-control" name="password">
-
-                  @if ($errors->has('password'))
-                      <span class="help-block">
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control" name="password"> @if ($errors->has('password'))
+                                <span class="help-block">
                           <strong>{{ $errors->first('password') }}</strong>
-                      </span>
-                  @endif
-              </div>
-          </div>
-        </div>
-              <div class="card-content">
-                <div class="form-group">
-              <div class="col-md-6 col-md-offset-4">
-<!--                      <label>-->
-<!--                          <input type="checkbox" name="remember"> Remember Me-->
-<!--                      </label>-->
-                  <p>
-                      <input type="checkbox" id="remember" name="remember"/>
-                      <label for="remember">Erinnere dich an mich</label>
-                  </p>
-              </div>
-          </div>
-        </div>
-              <div class="card-action">
-                <div class="col-md-6 col-md-offset-4">
-                  <button type="submit" class="blue btn btn-primary"><i class="material-icons right">vpn_key</i>Login</button>
+                      </span> @endif
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <!--                      <label>-->
+                                <!--                          <input type="checkbox" name="remember"> Remember Me-->
+                                <!--                      </label>-->
+                                <p>
+                                    <input type="checkbox" id="remember" name="remember" />
+                                    <label for="remember">Erinnere dich an mich</label>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-action">
+                        <div class="col-md-6 col-md-offset-4">
+                            <button type="submit" class="blue btn btn-primary"><i class="material-icons right">vpn_key</i>Login</button>
 
-                  <a class="blue btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
-              </div>
-         </div>
-      </form>
+                            <a class="blue btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
+
+                            <a href="/" class="btn btn-flat">Zurück</a>
+                        </div>
+                    </div>
+            </form>
     </main>
     <footer>
         <p class="center-align">
