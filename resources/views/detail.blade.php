@@ -34,10 +34,11 @@
 
         </div>
     </nav>
-    {{$schule->schulnr}}
     <header class="center-align">
-        <h1>Steinbart Gymnasium</h1>
-        <h2>Duisburg</h2>
+        <h1>{{$schule->bezeichnung->schulbez1}}</h1>
+        <h1>{{$schule->bezeichnung->schulbez2}}</h1>
+        <h1>{{$schule->bezeichnung->schulbez3}}</h1>
+        <h2>{{$schule->bezeichnung->kurzbez}}</h2>
     </header>
     <main>
         <div class="row">
