@@ -80,7 +80,8 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 
 Route::get('/schule/{id}/redaktion', function($schule) {
-    return view("redaktion");
+    $id = $schule;
+    return view("redaktion", compact("id"));
 });
 
 Route::post("schule/{id}/redaktion/writedata", function($id, Request $request) {
