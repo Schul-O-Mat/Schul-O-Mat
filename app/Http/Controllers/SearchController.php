@@ -16,7 +16,6 @@ class SearchController extends Controller {
             ->join('schulbezeichnung', 'schulbezeichnung.id', '=', 'schulen.fkbezeichnungen')
             ->where('kurzbez', 'LIKE', "%$userSearch%")
             ->get();
-        echo "Ich existierte!"
         return $result;
     }
 
