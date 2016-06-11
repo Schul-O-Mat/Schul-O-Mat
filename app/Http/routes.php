@@ -71,3 +71,4 @@ Route::get('/home', 'HomeController@index');
 Route::get('/schule/{id}/redaktion', function($schule) {
     return view("redaktion");
 });
+Route::get('/schulen/search', 'srchCtrl@search');

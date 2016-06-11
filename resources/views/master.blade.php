@@ -24,11 +24,11 @@
     <nav>
         <div class="nav-wrapper blue">
             <a href="#!" class="brand-logo">Schul'O'Mat</a>
-            <form action="alert('You submitted!');" class="form">
+            <form action="/schulen/search" class="form" method="get">
                 <div class="input-field">
                     <i class="material-icons prefix">search</i>
-                    <input id="icon_prefix" type="text" class="validate">
-                    <label for="icon_prefix">First Name</label>
+                    <input id="icon_prefix" type="text" name="searchword" class="validate" onChange="this.form.submit();">
+                    <label for="icon_prefix">Gib ein Suchwort ein:</label>
                 </div>
             </form>
             <ul class="right">
