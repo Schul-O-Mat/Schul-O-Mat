@@ -50,43 +50,43 @@
                 <label class="flow-text" for="schoolgeneral">Wie findest du deine Schule?</label>
             </div>
             <p class="range-field col s6">
-                <input  type="range" id="schoolgeneral" min="1" max="10" />
+                <input type="range" id="schoolgeneral" min="1" max="10" />
             </p>
             <div class="col s6">
                 <label class="flow-text" for="mensa">Wie findet du die Mensa</label>
             </div>
             <p class="range-field col s6">
-                <input  type="range" id="mensa" min="1" max="10" />
+                <input type="range" id="mensa" min="1" max="10" />
             </p>
             <div class="col s6">
                 <label class="flow-text" for="ag">Wie findet du das AG-Angebot an deiner Schule</label>
             </div>
             <p class="range-field col s6">
-                <input  type="range" id="ag" min="1" max="10" />
+                <input type="range" id="ag" min="1" max="10" />
             </p>
             <div class="col s6">
                 <label class="flow-text" for="austattung">Wie findest du die Ausstattung an deiner Schule</label>
             </div>
             <p class="range-field col s6">
-                <input  type="range" id="austattung" min="1" max="10" />
+                <input type="range" id="austattung" min="1" max="10" />
             </p>
             <div class="col s6">
                 <label class="flow-text" for="toilet">Wie findest du die Hygiene an deiner Schule</label>
             </div>
             <p class="range-field col s6">
-                <input  type="range" id="toilet" min="1" max="10" />
+                <input type="range" id="toilet" min="1" max="10" />
             </p>
             <div class="col s6">
                 <label class="flow-text" for="length">Wie findest du die Länge der Schulstunden an deiner Schule</label>
             </div>
             <p class="range-field col s6">
-                <input  type="range" id="length" min="1" max="10" />
+                <input type="range" id="length" min="1" max="10" />
             </p>
             <div class="col s6">
                 <label class="flow-text" for="time">Wie findest du die Zeiten des Schulbeginns?</label>
             </div>
             <p class="range-field col s6">
-                <input  type="range" id="time" min="1" max="10" />
+                <input type="range" id="time" min="1" max="10" />
             </p>
 
         </div>
@@ -142,9 +142,14 @@
         </div>
         <div class="row center-align">
             <a href="/" class="btn-flat">Zurück</a>
+            <!--
             <button class="btn waves-effect waves-light blue" type="submit" name="action">Absenden
                 <i class="material-icons right">send</i>
             </button>
+-->
+            <a class="btn waves-effect waves-light blue" href="/schulen" onclick="Materialize.toast('Data successfully saved!', 4000)">Absenden
+                <i class="material-icons right">send</i>
+            </a>
         </div>
 
     </form>
