@@ -41,8 +41,16 @@
         </div>
     </nav>
     <ul class="pagination">
-        <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-        <li class="chevron_right waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+        @if (weiter)
+          <li class="waves-effect"><a href="/schulen/{{$page-1}}"><i class="material-icons">chevron_left</i></a></li>
+        @else
+          <li class="waves-effect disabled"><a href="#"><i class="material-icons">chevron_left</i></a></li>
+        @endif
+        @if (zurueck)
+          <li class="chevron_right waves-effect"><a href="/schulen/{{$page+1}}"><i class="material-icons">chevron_right</i></a></li>
+        @else
+          <li class="chevron_right waves-effect disabled"><a href="#"><i class="material-icons">chevron_right</i></a></li>
+        @endif
     </ul>
     <div class="row">
         <div class="col s12">
@@ -62,8 +70,16 @@
         </div>
     </div>
     <ul class="pagination">
-        <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-        <li class="chevron_right waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+        @if (weiter)
+          <li class="waves-effect"><a href="/schulen/{{$page-1}}"><i class="material-icons">chevron_left</i></a></li>
+        @else
+          <li class="waves-effect disabled"><a href="#"><i class="material-icons">chevron_left</i></a></li>
+        @endif
+        @if (zurueck)
+          <li class="chevron_right waves-effect"><a href="/schulen/{{$page+1}}"><i class="material-icons">chevron_right</i></a></li>
+        @else
+          <li class="chevron_right waves-effect disabled"><a href="#"><i class="material-icons">chevron_right</i></a></li>
+        @endif
     </ul>
 </body>
 
