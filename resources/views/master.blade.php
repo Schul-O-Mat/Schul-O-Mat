@@ -70,12 +70,12 @@
         </div>
     </div>
     <ul class="pagination">
-        @if ($weiter)
+        @if ($weiter == true)
           <li class="waves-effect"><a href="/schulen/{{$page-1}}"><i class="material-icons">chevron_left</i></a></li>
         @else
           <li class="waves-effect disabled"><a href="#"><i class="material-icons">chevron_left</i></a></li>
         @endif
-        @if ($zurueck)
+        @if ($zurueck == true)
           <li class="chevron_right waves-effect"><a href="/schulen/{{$page+1}}"><i class="material-icons">chevron_right</i></a></li>
         @else
           <li class="chevron_right waves-effect disabled"><a href="#"><i class="material-icons">chevron_right</i></a></li>

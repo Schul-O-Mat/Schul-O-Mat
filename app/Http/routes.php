@@ -48,7 +48,7 @@ Route::get('/schule/{id}/karte', function ($schule) {
 });
 
 Route::get("/schule/{id}/eintragen", function() {
-
+  return view("fragebogen");
 });
 
 Route::auth();
