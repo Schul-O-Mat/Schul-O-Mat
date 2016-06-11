@@ -36,7 +36,7 @@
                 <li><a href="#!">Swag</a></li>
             </ul>
             <ul class="left hide-on-med-and-down">
-                <li><a href="master.html"><i class="material-icons">arrow_back</i></a></li>
+
             </ul>
 
         </div>
