@@ -39,13 +39,13 @@ Route::get('/schule/{id}', function ($schule) {
   $rechtswert = $schule->adresse->lon; //rechtswert
     $schueler = $schule->schueler;
     $durchschnitt = array();
-    $durchschnitt[0] = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->select(DB::raw('AVG(bewertung1) as b1'))->where('users.schulID', '=', $schule)->first()->b1;
-    $durchschnitt[1] = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->select(DB::raw('AVG(bewertung2) as b2'))->where('users.schulID', '=', $schule)->first()->b2;
-    $durchschnitt[2] = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->select(DB::raw('AVG(bewertung3) as b3'))->where('users.schulID', '=', $schule)->first()->b3;
-    $durchschnitt[3] = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->select(DB::raw('AVG(bewertung4) as b4'))->where('users.schulID', '=', $schule)->first()->b4;
-    $durchschnitt[4] = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->select(DB::raw('AVG(bewertung5) as b5'))->where('users.schulID', '=', $schule)->first()->b5;
-    $durchschnitt[5] = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->select(DB::raw('AVG(bewertung6) as b6'))->where('users.schulID', '=', $schule)->first()->b6;
-    $durchschnitt[6] = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->select(DB::raw('AVG(bewertung7) as b7'))->where('users.schulID', '=', $schule)->first()->b7;
+    $durchschnitt[0] = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->select(DB::raw('AVG(bewertung1) as b1'))->where('users.schulID', '=', 100018)->first()->b1;
+    $durchschnitt[1] = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->select(DB::raw('AVG(bewertung2) as b2'))->where('users.schulID', '=', 100018)->first()->b2;
+    $durchschnitt[2] = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->select(DB::raw('AVG(bewertung3) as b3'))->where('users.schulID', '=', 100018)->first()->b3;
+    $durchschnitt[3] = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->select(DB::raw('AVG(bewertung4) as b4'))->where('users.schulID', '=', 100018)->first()->b4;
+    $durchschnitt[4] = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->select(DB::raw('AVG(bewertung5) as b5'))->where('users.schulID', '=', 100018)->first()->b5;
+    $durchschnitt[5] = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->select(DB::raw('AVG(bewertung6) as b6'))->where('users.schulID', '=', 100018)->first()->b6;
+    $durchschnitt[6] = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->select(DB::raw('AVG(bewertung7) as b7'))->where('users.schulID', '=', 100018)->first()->b7;
   return view('detail', compact("schule", "hochwert", "rechtswert", "durchschnitt"));
 });
 
