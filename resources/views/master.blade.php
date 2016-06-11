@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Schul-O-Mat | Master</title>
@@ -14,8 +15,9 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
+
 <body>
     <nav>
         <div class="blue nav-wrapper">
@@ -26,26 +28,35 @@
                     <i class="material-icons">close</i>
                 </div>
             </form>
+            <ul class="right hide-on-med-and-down">
+                <li><a href=""><i class="material-icons dropdown-button" data-activates='dropdown'>more_vert</i></a></li>
+            </ul>
+            <ul id='dropdown' class='dropdown-content text-blue'>
+                <li><a href="#!">Login</a></li>
+                <li><a href="#!">Register</a></li>
+                <li class="divider"></li>
+                <li><a href="#!">Swag</a></li>
+            </ul>
         </div>
     </nav>
     <ul class="pagination">
         <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
         <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
     </ul>
-        <div class="row">
+    <div class="row">
         <div class="col s12">
             <ul class="collection">
-              @foreach ($data as $d)
+                @foreach ($data as $d)
                 <li class="collection-item avatar">
                     <i class="material-icons circle blue">school</i>
                     <span class="title">{{$d->bezeichnung->schulbez1}}</span>
-                    <p>{{$d->bezeichnung->schulbez2}} <br>
-                       {{$d->bezeichnung->schulbez3}} <br>
-                       {{$d->bezeichnung->kurzbez}}
+                    <p>{{$d->bezeichnung->schulbez2}}
+                        <br> {{$d->bezeichnung->schulbez3}}
+                        <br> {{$d->bezeichnung->kurzbez}}
                     </p>
                     <a href="/schulen/{{ $d->schulnr }}" class="secondary-content"><i class="blue-text material-icons">arrow_forward</i></a>
                 </li>
-              @endforeach
+                @endforeach
             </ul>
         </div>
     </div>
@@ -54,4 +65,5 @@
         <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
     </ul>
 </body>
+
 </html>
