@@ -21,31 +21,22 @@
 <body>
 
     <nav>
-        <div class="blue nav-wrapper">
-            <div class="row">
-                <div class="col s2">
-                    <a href="#" class="brand-logo">Schul'O'Mat</a>
-                </div>
-                <div class="col s8">
-                    <form>
-                        <div class="input-field">
-                            <input id="search" type="search" />
-                            <label for="search"><i class="material-icons">search</i></label>
-                        </div>
-                    </form>
-                </div>
-                <div class="col s2">
-                    <ul class="right hide-on-med-and-down">
-                        <li><a href=""><i class="material-icons dropdown-button" data-activates='dropdown'>more_vert</i></a></li>
-                    </ul>
-                    <ul id='dropdown' class='dropdown-content text-blue'>
-                        <li><a href="#!">Login</a></li>
-                        <li><a href="#!">Register</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#!">Swag</a></li>
-                    </ul>
-                </div>
-            </div>
+        <div class="nav-wrapper blue">
+            <a href="#!" class="brand-logo">Schul'O'Mat</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href=""><i class="material-icons">search</i></a></li>
+                <li><a href=""><i class="material-icons dropdown-button" data-activates='dropdown'>more_vert</i></a></li>
+            </ul>
+            <ul id='dropdown' class='dropdown-content text-blue'>
+                <li><a href="#!">Login</a></li>
+                <li><a href="#!">Register</a></li>
+                <li class="divider"></li>
+                <li><a href="#!">Swag</a></li>
+            </ul>
+            <ul class="left hide-on-med-and-down">
+                <li><a href="master.html"><i class="material-icons">arrow_back</i></a></li>
+            </ul>
+
         </div>
     </nav>
     <ul class="pagination">
