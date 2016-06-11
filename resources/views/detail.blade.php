@@ -57,7 +57,11 @@
 
                 </ul>
             </div>
-
+            
+            
+            <!--Anfang REDAKTIONELL-->
+            
+            
             <div id="redaktionel" class="col s12">
                 <div class="card">
                     <div class="card-content">
@@ -69,6 +73,14 @@
                     </div>
                 </div>
             </div>
+            
+            <!--Ende REDAKTIONELL-->
+            
+            
+            <!-- Anfang FRAGEBOGEN-->
+            
+            <!--Ende Durchschnittsbewertung "Sternchen"-->
+            
             <div id="quests" class="col s12 ">
                 <div class="collection">
                     <div class="collection-item">
@@ -209,6 +221,12 @@
                 </div>
 
             </div>
+            
+            <!--Ende Freitext-->
+            
+            <!-- Anfang FRAGEBOGEN-->
+            
+            
             <div id="facts" class="col s12">
                 <div class="row">
                     <div class="col s12 m6">
