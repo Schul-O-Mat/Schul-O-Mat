@@ -38,6 +38,6 @@ class schulen extends Model
 
     public function schulbetriebsschluessel()
     {
-        return $this->hasOne('App')
+        return $this->hasOne('App\key_schulbetriebsschluessel', "id", "schulbetriebsschluessel");
     }
 }
