@@ -21,7 +21,7 @@ Route::get('/schulen', function () {
 });
 
 Route::get('/schulen/{id}', function (App\schulen $schule) {
-    return view('schule', compact("schule"));
+    return view('detail', compact("schule"));
 });
 
 Route::auth();
