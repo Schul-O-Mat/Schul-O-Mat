@@ -20,6 +20,7 @@ Route::get('/schulen', function () {
     return redirect("/schulen/0");
 });
 
+Route::get('/schulen/search', 'SearchController@searchGet'); //die reihenfolge ist wichtig #schulomat in slack
 Route::get('/schulen/search/{key}', 'SearchController@search'); //die reihenfolge ist wichtig #schulomat in slack
 
 Route::get('/schulen/{page}', function ($page) {
