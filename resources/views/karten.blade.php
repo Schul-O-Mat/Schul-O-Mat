@@ -1,10 +1,6 @@
 <div id="map"></div>
 <script type="text/javascript">
-    var hochwert = convertGeoData({{$hochwert}});
-    var rechtswert = convertGeoData({{$rechtswert}});
-    function convertGeoData(wert) {
-        return wert;    
-    };
+    var convertedValues = gk2geo({{$hochwert}}, {{$rechtswert}});
     function addMarker(lat, lng, description) {
         L.marker([lat, lng]).addTo(map)
         .bindPopup(description)
@@ -14,14 +10,12 @@
         var map = L.map('map').setView([lat, lng], 13);
         L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(map); 
     };
-    openMap(hochwert, rechtswert);
-    addMarker(hochwert, rechtswert, "Die Schule!")
+    openMap(convertedValues[0], convertedValues[1]);
+    addMarker(convertedValues[0], convertedValues[1], "Die Schule!")
     
     // COPY & PASTE
-    
-    
-function gk2geo(rw, hw)
-{
+        
+function gk2geo(rw, hw) {
 /* Copyright (c) 2006, HELMUT H. HEIMEIER
    Permission is hereby granted, free of charge, to any person obtaining a
    copy of this software and associated documentation files (the "Software"),
@@ -122,6 +116,6 @@ function gk2geo(rw, hw)
    lp = "";
    bp = "";
    }
-   return;
+   return [lp, bp];
 }
 </script>
