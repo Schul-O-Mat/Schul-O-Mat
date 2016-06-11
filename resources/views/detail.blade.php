@@ -145,7 +145,11 @@
                         </thead>
 
                         <tbody>
-                            <tr>
+                        @foreach($positiv as $p)
+                            <tr><td><div class="chip green">6</div></td><td>{{$p->bezeichnung}}</td><td><div class="chip red">2</div></td></tr>
+                        @endforeach
+
+                        <tr>
                                 <td>
                                     <div class="chip green">6</div>
                                 </td>
