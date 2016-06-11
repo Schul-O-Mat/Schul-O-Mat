@@ -63,5 +63,7 @@ header>h3 {
     height: 5px;
 }
 #map {
-    height: 100px;
+    margin: 0 auto;
+    width: 50%;
+    height: 20%;
 }
