@@ -41,7 +41,7 @@
         </div>
     </nav>
     <header>
-        <h3 class="center-align">Awesome Title</h3>
+        <h3 class="center-align">Bewerte deine Schule</h3>
     </header>
     <form action="#">
         <div class="row">
