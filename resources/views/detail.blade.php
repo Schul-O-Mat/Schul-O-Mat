@@ -72,11 +72,48 @@
             <div id="quests" class="col s12 ">
                 <div class="collection">
                     <div class="collection-item">
-                        <p>Wie findest du deine Schule?</p>
+                        <p>Wie findest du deine Schule im Allgemeinen?</p>
                         <div class="progress">
                             <div class="determinate" style="width: 70%"></div>
                         </div>
                     </div>
+                    <div class="collection-item">
+                        <p>Wie findest du die Schulmensa?</p>
+                        <div class="progress">
+                            <div class="determinate" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="collection-item">
+                        <p>Wie findest du die AGs?</p>
+                        <div class="progress">
+                            <div class="determinate" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="collection-item">
+                        <p>Wie findest du die Austattung der Schule?</p>
+                        <div class="progress">
+                            <div class="determinate" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="collection-item">
+                        <p>Wie findest du die Scheißhäuser?</p>
+                        <div class="progress">
+                            <div class="determinate" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="collection-item">
+                        <p>Wie findest du die Länge der Schulstunden?</p>
+                        <div class="progress">
+                            <div class="determinate" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="collection-item">
+                        <p>Wie findest du die Zeit des Schulbeginns?</p>
+                        <div class="progress">
+                            <div class="determinate" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div></div>
                 </div>
             </div>
             <div id="facts" class="col s12">
