@@ -83,10 +83,10 @@ Route::get('/schule/{id}/redaktion', function($schule) {
     return view("redaktion");
 });
 
-Route::post("schule/{id}/redaktion/writedata", function(Request $request) {
+Route::post("schule/{id}/redaktion/writedata", function($id, Request $request) {
     $toWrite = Request::get("redaktionstext");
     DB::table("redaktion")->insert([
-        'schulID' => id,
+        'schulID' => $id,
         'text' => $toWrite
     ]);
     return redirect("/schule/{id}");
