@@ -27,8 +27,8 @@ Route::get('/schulen/{id}', function ($schule) {
 
 Route::get('/schulen/{id}/karte', function ($schule) {
   $schule = App\schulen::find($schule);
-  $lat = $schule->lat;
-  $long = $schule->long;
+  $lat = $schule->adresse->lat;
+  $long = $schule->adresse->long;
   return view('karten', compact("lat", "long"));
 });
 
