@@ -20,4 +20,24 @@ class schulen extends Model
     {
         return $this->hasOne('App\schulbezeichnung', "id", "fkbezeichnungen");
     }
+
+    public function rechtsform()
+    {
+        return $this->hasOne('App\key_rechtsform', "id", "rechtsform");
+    }
+
+    public function traeger()
+    {
+        return $this->hasOne('App\key_traeger', "Traegernummer", "traegernr");
+    }
+
+    public function schulform()
+    {
+        return $this->hasOne('App\key_schulformschluessel', "id", "schulform");
+    }
+
+    public function schulbetriebsschluessel()
+    {
+        return $this->hasOne('App\key_schulbetriebsschluessel', "id", "schulbetriebsschluessel");
+    }
 }
