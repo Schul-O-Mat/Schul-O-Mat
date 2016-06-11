@@ -28,4 +28,9 @@ class User extends Authenticatable
     {
         return $this->hasOne("App\schulen", "schulnr", "schulID");
     }
+
+    public function bewertung()
+    {
+        return $this->hasOne("App\bewertungen", "userID", "id");
+    }
 }
