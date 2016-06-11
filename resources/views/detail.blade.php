@@ -145,9 +145,17 @@
                         </thead>
 
                         <tbody>
-                        @foreach($keywords as $k=>list($pos, $neg))
-                            <tr><td><div class="chip green">{{$pos}}</div></td><td>{{$k}}</td><td><div class="chip red">{{$neg}}</div></td></tr>
-                        @endforeach
+                            @foreach($keywords as $k=>list($pos, $neg))
+                            <tr>
+                                <td>
+                                    <div class="chip green">{{$pos}}</div>
+                                </td>
+                                <td>{{$k}}</td>
+                                <td>
+                                    <div class="chip red">{{$neg}}</div>
+                                </td>
+                            </tr>
+                            @endforeach
 
                         </tbody>
                     </table>
@@ -159,7 +167,7 @@
                     <ul class="collapsible" data-collapsible="expandable">
                         @foreach($reviews as $r)
                         <li>
-                            <div class="collapsible-header"><i class="material-icons">announcement</i>Schülermeinung</div>
+                            <div class="collapsible-header" class="truncate"><i class="material-icons">announcement</i>{{$r->freitext}}</div>
                             <div class="collapsible-body">
                                 <p><span>{{$r->freitext}}</span></p>
                             </div>
