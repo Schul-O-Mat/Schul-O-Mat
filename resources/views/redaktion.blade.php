@@ -37,9 +37,9 @@
         <header>
             
         <h3 class="center-align">Hier sollte ein unabhängiges Feedback stehen!</h3>
-            <form action="trageRedaktionsTextEin.php">
+            <form action="/schule/{id}/redaktion/writedata" method="post">
             <div class="input-field col s12">
-        <textarea id="fundiertesfeedback"class="materialize-textarea"></textarea>
+            <textarea id="fundiertesfeedback" class="materialize-textarea" name="redaktionstext"></textarea>
                 <label for="fundiertesfeedback">Text</label>
             </div>
                 <br>
