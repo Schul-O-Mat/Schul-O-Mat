@@ -33,6 +33,9 @@ class SearchController extends Controller {
             ->select("*")
             ->join('schulbezeichnung', 'schulbezeichnung.id', '=', 'schulen.fkbezeichnungen')
             ->where('kurzbez', 'LIKE', "%$userSearch%")
+            ->orWhere('schulbez1', 'LIKE', "%$userSearch%")
+            ->orWhere('schulbez2', 'LIKE', "%$userSearch%")
+            ->orWhere('schulbez3', 'LIKE', "%$userSearch%")
             ->get();
         return view('master_search', compact("data"));
         //return $result; //Wenn ihr ein result returned, macht laravel das automatisch zu JSON.
