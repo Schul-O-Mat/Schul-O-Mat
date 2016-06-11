@@ -19,9 +19,8 @@ class SearchController extends Controller {
 
         return $result;
     }
-    
+
     public function index () {
-        $data = App\schulen::all();
         return redirect("/schulen/0");
     }
 }
