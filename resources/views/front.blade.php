@@ -16,7 +16,7 @@
 <body>
     <nav>
         <div class="nav-wrapper blue">
-            <a href="#!" class="brand-logo">Schul'O'Mat</a>
+            <a href="#!" style="margin-left: auto !important;" class="brand-logo">Schul'O'Mat</a>
             <ul class="right hide-on-med-and-down">
 
                 <li><a href=""><i class="material-icons">search</i></a></li>
