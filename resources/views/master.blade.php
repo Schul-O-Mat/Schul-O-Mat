@@ -24,6 +24,16 @@
     <nav>
         <div class="nav-wrapper blue">
             <a href="#!" class="brand-logo">Schul'O'Mat</a>
+            <div class="input-field col s6">
+                <form method="get" action="/schulen/search">
+                    <input id="searq" type="text" class="validate" name="searchword" onChange="this.form.submit();">
+                    <label for="searq">Gib ein Suchwort ein:</label>
+                </form>
+            </div>
+            
+            
+            
+            
             <ul class="right hide-on-med-and-down">
                 <li><a href=""><i class="material-icons">search</i></a></li>
                 <li><a href=""><i class="material-icons dropdown-button" data-activates='dropdown'>more_vert</i></a></li>
