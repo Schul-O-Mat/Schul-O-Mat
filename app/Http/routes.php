@@ -88,6 +88,6 @@ Route::post("schule/{id}/redaktion/writedata", function(Request $request) {
     DB::table("redaktion")->insert([
         'schulID' => id,
         'text' => $toWrite
-    ])
-    return redirect("/schule/{id}")
-})
+    ]);
+    return redirect("/schule/{id}");
+});
