@@ -145,42 +145,9 @@
                         </thead>
 
                         <tbody>
-                            <tr>
-                                <td>
-                                    <div class="chip green">6</div>
-                                </td>
-                                <td>Mensaessen</td>
-                                <td>
-                                    <div class="chip red">2</div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="chip green">6</div>
-                                </td>
-                                <td>Lehrer</td>
-                                <td>
-                                    <div class="chip red">2</div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="chip green">6</div>
-                                </td>
-                                <td>Informatikunterricht</td>
-                                <td>
-                                    <div class="chip red">2</div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="chip green">6</div>
-                                </td>
-                                <td>Schuhgröße</td>
-                                <td>
-                                    <div class="chip red">2</div>
-                                </td>
-                            </tr>
+                        @foreach($positiv as $p)
+                            <tr><td><div class="chip green">6</div></td><td>{{$p->bezeichnung}}</td><td><div class="chip red">2</div></td></tr>
+                        @endforeach
 
                         </tbody>
                     </table>
@@ -256,6 +223,11 @@
 
 
     </main>
+    <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+        <a href="/schule/{{$schule->schulnr}}/eintragen" class="btn-floating btn-large blue tooltipped" data-position="left" data-delay="50" data-tooltip="Trag was ein">
+            <i class="large material-icons">mode_edit</i>
+        </a>
+    </div>
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript " src="https://code.jquery.com/jquery-2.1.1.min.js "></script>
     <script type="text/javascript " src="/js/bin/materialize.js "></script>
@@ -263,8 +235,9 @@
     <script>
         $(document).ready(function () {
             $('ul.tabs').tabs();
-        });
-        $(document).ready(function () {
+            $('.tooltipped').tooltip({
+                delay: 50
+            });
             $('.collapsible').collapsible({
                 accordion: false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
             });
