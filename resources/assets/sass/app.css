@@ -54,3 +54,11 @@ header>h3 {
     -webkit-transition: color 200ms ease;
     transition: color 200ms ease;
 }
+
+.ratingbar {
+    position: relative;
+    background-color: red;
+    text-align: center;
+    width: 10%;
+    height: 5px;
+}
