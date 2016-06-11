@@ -35,22 +35,21 @@
                 <li><a href="#!">Swag</a></li>
             </ul>
             <ul class="left hide-on-med-and-down">
-                <li><a href="master.html"><i class="material-icons">arrow_back</i></a></li>
+                <li><a href="/"><i class="material-icons">arrow_back</i></a></li>
             </ul>
 
         </div>
     </nav>
     <ul class="pagination">
-      @if ($zurueck)
+        @if ($zurueck)
         <li class="waves-effect"><a href="/schulen/{{$page-1}}"><i class="material-icons">chevron_left</i></a></li>
-      @else
+        @else
         <li class="waves-effect disabled"><a href="#"><i class="material-icons">chevron_left</i></a></li>
-      @endif
-      @if ($weiter)
+        @endif @if ($weiter)
         <li class="chevron_right waves-effect"><a href="/schulen/{{$page+1}}"><i class="material-icons">chevron_right</i></a></li>
-      @else
+        @else
         <li class="chevron_right waves-effect disabled"><a href="#"><i class="material-icons">chevron_right</i></a></li>
-      @endif
+        @endif
     </ul>
     <div class="row">
         <div class="col s12">
@@ -71,14 +70,13 @@
     </div>
     <ul class="pagination">
         @if ($zurueck)
-          <li class="waves-effect"><a href="/schulen/{{$page-1}}"><i class="material-icons">chevron_left</i></a></li>
+        <li class="waves-effect"><a href="/schulen/{{$page-1}}"><i class="material-icons">chevron_left</i></a></li>
         @else
-          <li class="waves-effect disabled"><a href="#"><i class="material-icons">chevron_left</i></a></li>
-        @endif
-        @if ($weiter)
-          <li class="chevron_right waves-effect"><a href="/schulen/{{$page+1}}"><i class="material-icons">chevron_right</i></a></li>
+        <li class="waves-effect disabled"><a href="#"><i class="material-icons">chevron_left</i></a></li>
+        @endif @if ($weiter)
+        <li class="chevron_right waves-effect"><a href="/schulen/{{$page+1}}"><i class="material-icons">chevron_right</i></a></li>
         @else
-          <li class="chevron_right waves-effect disabled"><a href="#"><i class="material-icons">chevron_right</i></a></li>
+        <li class="chevron_right waves-effect disabled"><a href="#"><i class="material-icons">chevron_right</i></a></li>
         @endif
     </ul>
 </body>
