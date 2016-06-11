@@ -21,6 +21,24 @@
         <h3 class="blue-text">#Login</h3>
     </header>
     <main class="row">
+      <!--
+      <div class="col s12 m6 offset-m3">
+          <div class="card">
+              <div class="card-content">
+                  <span class="card-title">E-Mail Adresse</span>
+                  <input type="email" class="validate">
+              </div>
+              <div class="card-content">
+                  <span class="card-title">Password</span>
+                  <input type="password" class="validate">
+              </div>
+              <div class="card-action">
+                  <a href="login.html" class="blue-text">Login</a>
+                  <a href="register.html" class="blue-text">Register</a>
+              </div>
+          </div>
+      </div>
+    -->
       <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
           {{ csrf_field() }}
 
