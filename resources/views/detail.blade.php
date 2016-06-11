@@ -123,42 +123,55 @@
                 </div>
                 <div class="row">
                     <h4 class="center-align">Dies Bewerten die Schüler Besonders:</h4>
-                    <div class="col s12 l6">
-                        <ul class="collection with-header">
-                            <li class="collection-header">
-                                <h4>Positive Aspekte</h4></li>
-                            <li class="collection-item">
-                                <div>Alvin<span class="right">4</span></div>
-                            </li>
-                            <li class="collection-item">
-                                <div>Alvin<span class="right">4</span></div>
-                            </li>
-                            <li class="collection-item">
-                                <div>Alvin<span class="right">4</span></div>
-                            </li>
-                            <li class="collection-item">
-                                <div>Alvin<span class="right">4</span></div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col s12 l6">
-                        <ul class="collection with-header">
-                            <li class="collection-header">
-                                <h4>Negative Aspekte</h4></li>
-                            <li class="collection-item">
-                                <div>Alvin<span class="right">4</span></div>
-                            </li>
-                            <li class="collection-item">
-                                <div>Alvin<span class="right">4</span></div>
-                            </li>
-                            <li class="collection-item">
-                                <div>Alvin<span class="right">4</span></div>
-                            </li>
-                            <li class="collection-item">
-                                <div>Alvin<span class="right">4</span></div>
-                            </li>
-                        </ul>
-                    </div>
+                    <table class="highlight">
+                        <thead>
+                            <tr>
+                                <th data-field="id">Pro</th>
+                                <th data-field="name">Fact</th>
+                                <th data-field="price">Con</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="chip green">6</div>
+                                </td>
+                                <td>Mensaessen</td>
+                                <td>
+                                    <div class="chip red">2</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="chip green">6</div>
+                                </td>
+                                <td>Lehrer</td>
+                                <td>
+                                    <div class="chip red">2</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="chip green">6</div>
+                                </td>
+                                <td>Informatikunterricht</td>
+                                <td>
+                                    <div class="chip red">2</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="chip green">6</div>
+                                </td>
+                                <td>Schuhgröße</td>
+                                <td>
+                                    <div class="chip red">2</div>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
                 </div>
 
                 <div>
