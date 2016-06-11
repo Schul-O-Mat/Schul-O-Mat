@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/master', function () {
-    return view('front');
+    return view('master');
 });
 
 Route::auth();
