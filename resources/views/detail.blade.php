@@ -81,7 +81,7 @@
                     </div>
                     <div class="col s12 m6 "></div>
                 </div>
-             <!--   <div id="map"></div>
+             <div id="map"></div>
 <script type="text/javascript">
     var convertedValues = gk2geo({{$hochwert}}, {{$rechtswert}});
     function addMarker(lat, lng, description) {
@@ -201,7 +201,7 @@ function gk2geo(rw, hw) {
    }
    return [lp, bp];
 }
-</script>-->
+</script>
             </div>
             <div id="questions " class="col s12 ">
                 <div class="collection">
