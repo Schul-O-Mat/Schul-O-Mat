@@ -72,9 +72,9 @@
             <div id="quests" class="col s12 ">
                 <div class="collection">
                     <div class="collection-item">
-                        <p>Wie findest du deine Schule im Allgemeinen?<span class="right">7/10</span></p>
+                        <p>Wie findest du deine Schule im Allgemeinen?<span class="right">{{$durchschnitt[0]}}/10</span></p>
                         <div class="progress">
-                            <div class="determinate" style="width: 70%"></div>
+                            <div class="determinate" style="width: {{$durchschnitt[0]*10}}%"></div>
 
                         </div>
                     </div>
