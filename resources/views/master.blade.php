@@ -10,6 +10,7 @@
 
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <link rel="stylesheet" href="/sass/app.css">
 
     <!-- Compiled and minified JavaScript -->
     <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
