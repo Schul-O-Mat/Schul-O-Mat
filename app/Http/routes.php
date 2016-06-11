@@ -12,7 +12,24 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('front');
+});
+
+Route::get('/schulen', function () {
+    $data = App\schulen::all();
+    return view('master', compact("data"));
+});
+
+Route::get('/schulen/{id}', function ($schule) {
+  $schule = App\schulen::find($schule);
+  return view('detail', compact("schule"));
+});
+
+Route::get('/schulen/{id}/karte', function ($schule) {
+  $schule = App\schulen::find($schule);
+  $hochwert = $schule->adresse->lat; //hochwert
+  $rechtswert = $schule->adresse->long; //rechtswert
+  return view('karten', compact("hochwert", "rechtswert"));
 });
 
 Route::auth();
