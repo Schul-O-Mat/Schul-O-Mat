@@ -13,7 +13,18 @@ class Schule extends Migration
     public function up()
     {
         Schema::create('schulen', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('schulnr');
+            $table->integer("schulform");
+            $table->integer("fkkontakt");
+            $table->integer("fkadresse");
+            $table->integer("fkbezeichnungen");
+            $table->integer("rechtsform");
+            $table->text("traegernr");
+            $table->text("gemeindeschluessel");
+            $table->text("schulbetriebsschluessel");
+            $table->date("datum"); //Gruendungsdatum
+            $table->smallInteger("schuelerzahl");
+            $table->smallInteger("lehrerZahl");
             $table->timestamps();
         });
     }
