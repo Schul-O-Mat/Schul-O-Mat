@@ -1,4 +1,4 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../assets/sass/app.css">
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <meta charset="utf8">
     <title>Schul-O-Mat Detail</title>
 </head>
 
@@ -27,7 +27,13 @@
             <ul class="right hide-on-med-and-down">
 
                 <li><a href=""><i class="material-icons">search</i></a></li>
-                <li><a href=""><i class="material-icons">more_vert</i></a></li>
+                <li><a href=""><i class="material-icons dropdown-button" data-activates='dropdown'>more_vert</i></a></li>
+            </ul>
+            <ul id='dropdown' class='dropdown-content text-blue'>
+                <li><a href="#!">Login</a></li>
+                <li><a href="#!">Register</a></li>
+                <li class="divider"></li>
+                <li><a href="#!">Swag</a></li>
             </ul>
             <ul class="left hide-on-med-and-down">
                 <li><a href="master.html"><i class="material-icons">arrow_back</i></a></li>
