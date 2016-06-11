@@ -82,3 +82,7 @@ header>h3 {
     left: auto !important;
     width: 300px;
 }
+
+.form {
+    display: none;
+}
