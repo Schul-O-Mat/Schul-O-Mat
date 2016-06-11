@@ -16,7 +16,7 @@ class schulen extends Model
     {
         return $this->hasOne('App\schuladresse', "id", "fkadresse");
     }
-    public function bezeichnungen()
+    public function bezeichnung()
     {
         return $this->hasOne('App\schulbezeichnung', "id", "fkbezeichnungen");
     }
