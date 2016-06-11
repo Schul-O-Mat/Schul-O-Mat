@@ -49,17 +49,27 @@
                         <a href="#facts">Facts</a>
                     </li>
                     <li class="tab col s3">
-                        <a href="#questions">Fragebogen</a>
+                        <a href="#quests">Fragebogen</a>
                     </li>
                     <li class="tab col s3">
-                        <a href="#redaction">Redaktionell</a>
+                        <a href="#redaktionel">Redaktionell</a>
                     </li>
 
                 </ul>
             </div>
 
-            <div id="redaction " class="col s12 ">Redaktionelle Inhalte...</div>
-            <div id="questions " class="col s12 ">
+            <div id="redaktionel " class="col s12 ">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title">Redaktionelle Inhalte</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore earum at laudantium quae, laboriosam, quaerat consequuntur doloremque atque unde eaque deleniti fuga beatae delectus eligendi nobis nisi veritatis similique facere?</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="" class="btn">Unbelivable</a>
+                    </div>
+                </div>
+            </div>
+            <div id="quests " class="col s12 ">
                 <div class="collection">
                     <div class="collection-item">
                         <p>Wie findest du deine Schule?</p>
