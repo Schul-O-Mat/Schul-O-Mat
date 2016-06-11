@@ -57,7 +57,11 @@
 
                 </ul>
             </div>
-
+            
+            
+            <!--Anfang REDAKTIONELL-->
+            
+            
             <div id="redaktionel" class="col s12">
                 <div class="card">
                     <div class="card-content">
@@ -69,6 +73,14 @@
                     </div>
                 </div>
             </div>
+            
+            <!--Ende REDAKTIONELL-->
+            
+            
+            <!-- Anfang FRAGEBOGEN-->
+            
+            <!--Ende Durchschnittsbewertung "Sternchen"-->
+            
             <div id="quests" class="col s12 ">
                 <div class="collection">
                     <div class="collection-item">
@@ -114,6 +126,30 @@
                         </div>
                     </div>
                     <div>
+                        
+                        <!--Ende Durchschnittsbewertung "Sternchen"-->
+                        
+                        <!--Start Tag-Tabelle-->
+                        
+                        <div class="row">
+                            <div class="col s12 l6">
+                                <div class="collection">
+                                    <div class="firstrowoftable collection-item">Positiv</div>
+                                    <div class="collection-item">Kacktroll</div>
+                                </div>
+                            </div>    
+                            <div class="col s12 l6">
+                            <div class="collection">
+                                    <div class="firstrowoftable collection-item">Negativ</div>
+                                    <div class="collection-item">Kacktroll</div>
+                                </div>
+                            </div>    
+                        </div>
+                        
+                        <!--Ende Tag-Tabelle-->
+                        
+                        <!-- Start Freitext-->
+                        
                         <p>Einzelberichte:</p>
                         <ul class="collapsible">
                             <li>
@@ -129,6 +165,12 @@
                     </div>
                 </div>
             </div>
+            
+            <!--Ende Freitext-->
+            
+            <!-- Anfang FRAGEBOGEN-->
+            
+            
             <div id="facts" class="col s12">
                 <div class="row">
                     <div class="col s12 m6">
