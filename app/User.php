@@ -31,6 +31,6 @@ class User extends Authenticatable
 
     public function bewertung()
     {
-        return $this->hasOne("App\bewertungen", "id", "userID");
+        return $this->hasOne("App\bewertungen", "userID", "id");
     }
 }

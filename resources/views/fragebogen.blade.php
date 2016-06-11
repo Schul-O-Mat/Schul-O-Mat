@@ -29,8 +29,8 @@
                 <li><a href=""><i class="material-icons dropdown-button" data-activates='dropdown'>more_vert</i></a></li>
             </ul>
             <ul id='dropdown' class='dropdown-content text-blue'>
-                <li><a href="#!">Login</a></li>
-                <li><a href="#!">Register</a></li>
+                <li><a href="login">Login</a></li>
+                <li><a href="register">Register</a></li>
                 <li class="divider"></li>
                 <li><a href="#!">Swag</a></li>
             </ul>
@@ -45,44 +45,50 @@
     </header>
     <form action="#">
         <div class="row">
-            <div class="col s12">
-                <div class="col s6">
-                    <label class="flow-text" for="schoolgeneral">Wie findest du deine Schule?</label>
-                </div>
-                <p class="range-field">
-                    <input style="width: 50%" type="range" id="schoolgeneral" min="1" max="10" />
-                </p>
-                <div class="col s6">
-                    <label class="flow-text" for="mensa">Wie findet du die Mensa</label>
-                </div>
-                <p class="range-field">
-                    <input style="width: 50%" type="range" id="mensa" min="1" max="10" />
-                </p>
-                <div class="col s6">
-                    <label class="flow-text" for="ag">Wie findet du das AG-Angebot an deiner Schule</label>
-                </div>
-                <p class="range-field">
-                    <input style="width: 50%" type="range" id="ag" min="1" max="10" />
-                </p>
-                <div class="col s6">
-                    <label class="flow-text" for="austattung">Wie findest du die Ausstattung an deiner Schule</label>
-                </div>
-                <p class="range-field">
-                    <input style="width: 50%" type="range" id="austattung" min="1" max="10" />
-                </p>
-                <div class="col s6">
-                    <label class="flow-text" for="toilet">Wie findest du die Hygiene an deiner Schule</label>
-                </div>
-                <p class="range-field">
-                    <input style="width: 50%" type="range" id="toilet" min="1" max="10" />
-                </p>
-                <div class="col s6">
-                    <label class="flow-text" for="toilet">Wie findest du die Länge der Schulstunden an deiner Schule</label>
-                </div>
-                <p class="range-field">
-                    <input style="width: 50%" type="range" id="length" min="1" max="10" />
-                </p>
+
+            <div class="col s6">
+                <label class="flow-text" for="schoolgeneral">Wie findest du deine Schule?</label>
             </div>
+            <p class="range-field col s6">
+                <input style="width: 50%" type="range" id="schoolgeneral" min="1" max="10" />
+            </p>
+            <div class="col s6">
+                <label class="flow-text" for="mensa">Wie findet du die Mensa</label>
+            </div>
+            <p class="range-field col s6">
+                <input style="width: 50%" type="range" id="mensa" min="1" max="10" />
+            </p>
+            <div class="col s6">
+                <label class="flow-text" for="ag">Wie findet du das AG-Angebot an deiner Schule</label>
+            </div>
+            <p class="range-field col s6">
+                <input style="width: 50%" type="range" id="ag" min="1" max="10" />
+            </p>
+            <div class="col s6">
+                <label class="flow-text" for="austattung">Wie findest du die Ausstattung an deiner Schule</label>
+            </div>
+            <p class="range-field col s6">
+                <input style="width: 50%" type="range" id="austattung" min="1" max="10" />
+            </p>
+            <div class="col s6">
+                <label class="flow-text" for="toilet">Wie findest du die Hygiene an deiner Schule</label>
+            </div>
+            <p class="range-field col s6">
+                <input style="width: 50%" type="range" id="toilet" min="1" max="10" />
+            </p>
+            <div class="col s6">
+                <label class="flow-text" for="length">Wie findest du die Länge der Schulstunden an deiner Schule</label>
+            </div>
+            <p class="range-field col s6">
+                <input style="width: 50%" type="range" id="length" min="1" max="10" />
+            </p>
+            <div class="col s6">
+                <label class="flow-text" for="time">Wie findest du die Zeiten des Schulbeginns?</label>
+            </div>
+            <p class="range-field col s6">
+                <input style="width: 50%" type="range" id="time" min="1" max="10" />
+            </p>
+
         </div>
         <div class="row">
             <div class="input-field col s12 m6">
