@@ -165,15 +165,6 @@
                             </div>
                         </li>
                         @endforeach
-                        <li>
-                            <div class="collapsible-header"><i class="material-icons">whatshot</i>Ey, so ein cooler Kommentar</div>
-                            <div class="collapsible-body">
-                                <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae debitis nihil harum, iure, quaerat sunt enim ducimus quis rem ut cumque architecto minima. Quo dolore temporibus itaque quaerat ullam, recusandae.</span>
-                                    <span>Incidunt praesentium rem doloribus distinctio, facilis cum id error quas? Quidem magnam necessitatibus facilis blanditiis enim tempora laborum. Recusandae vel magnam rem. Cum minus sequi ab consectetur pariatur animi, cupiditate.</span>
-                                    <span>Ipsa, molestiae veniam nesciunt excepturi vero temporibus pariatur beatae atque asperiores quos cum ipsum fuga dignissimos sed praesentium aspernatur iusto optio iste quo? Eveniet obcaecati quam voluptatem ad, iste cupiditate.</span>
-                                    <span>Veniam ex porro, illo pariatur unde ea exercitationem possimus quisquam nisi consectetur quod ab nulla magni, animi cumque accusamus itaque quasi architecto fugiat optio impedit iure rem aliquam? Aperiam, atque.</span></p>
-                            </div>
-                        </li>
                     </ul>
                 </div>
 
