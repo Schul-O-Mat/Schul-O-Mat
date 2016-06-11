@@ -17,11 +17,11 @@ Route::get('/', function () {
 
 Route::get('/schulen', function () {
     $data = App\schulen::all();
-    return view('master', compact("data"));
+    return redirect("/schulen/0");
 });
 
 Route::get('/schulen/{page}', function ($page) {
-    $data = App\schulen::all()::paginate(25);
+    $data = App\schulen::take(25)->skip(25*$page)->get();
     return view('master', compact("data"));
 });
 
