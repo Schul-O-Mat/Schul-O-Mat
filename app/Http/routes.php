@@ -25,6 +25,13 @@ Route::get('/schulen/{id}', function ($schule) {
   return view('detail', compact("schule"));
 });
 
+Route::get('/schulen/{id}/karte', function ($schule) {
+  $schule = App\schulen::find($schule);
+  $lat = $schule->lat;
+  $long = $schule->long;
+  return view('karten', compact("schule"));
+});
+
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
