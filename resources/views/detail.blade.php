@@ -18,9 +18,9 @@
 <body>
     <nav>
         <div class="nav-wrapper blue">
-            <a href="#!" class="brand-logo">Schul'O'Mat</a>
+            <a href="/" class="brand-logo">Schul'O'Mat</a>
             <ul class="right hide-on-med-and-down">
-                <li><a href=""><i class="material-icons">search</i></a></li>
+                <li><a href="/schulen/"><i class="material-icons">search</i></a></li>
                 <li><a href=""><i class="material-icons dropdown-button" data-activates='dropdown'>more_vert</i></a></li>
             </ul>
             <ul id='dropdown' class='dropdown-content text-blue'>
