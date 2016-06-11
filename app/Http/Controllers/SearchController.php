@@ -28,16 +28,13 @@ class SearchController extends Controller {
 
         // Sets the parameters from the get request to the variables.
         $userSearch = $request::get("searchword");
-        $zurueck = false;
-        $weiter = false;
-        $page = 0;
         // Perform the query using Query Builder
         $data = DB::table('schulen')
             ->select("*")
             ->join('schulbezeichnung', 'schulbezeichnung.id', '=', 'schulen.fkbezeichnungen')
             ->where('kurzbez', 'LIKE', "%$userSearch%")
             ->get();
-        return view('master', compact("data", "zurueck", "weiter", "page"));
+        return view('master_search', compact("data"));
         //return $result; //Wenn ihr ein result returned, macht laravel das automatisch zu JSON.
         // BTW JOINT DEM SLACKCHANNEL #schulomat
     }
