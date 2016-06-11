@@ -29,7 +29,7 @@
                 <li><a href="/login">Login</a></li>
                 <li><a href="/register">Register</a></li>
               @else
-                <li><a href="#">Willkommen {{Auth::user()->vorname}}!</a></li>
+                <li><a href="#">Willkommen {{Auth::user()->name}}!</a></li>
                 <li><a href="/logout">Logout</a></li>
               @endif
                 <li class="divider"></li>
