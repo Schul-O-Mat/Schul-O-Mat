@@ -50,7 +50,7 @@ class Schule extends Migration
             $table->text("ort");
             $table->text("strasse");
             $table->integer("lat");
-            $table->integer("long");
+            $table->integer("lon");
             $table->timestamps();
         });
         Schema::create('bewertungen', function (Blueprint $table) {
