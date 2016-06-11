@@ -10,7 +10,14 @@ class schulen extends Model
     protected $primaryKey = "schulnr";
     public function kontakt()
     {
-        
-        return $this->hasOne('App\schulkontakt', "id", "fkadresse");
+        return $this->hasOne('App\schulkontakt', "id", "fkkontakt");
+    }
+    public function adresse()
+    {
+        return $this->hasOne('App\schuladresse', "id", "fkadresse");
+    }
+    public function bezeichnungen()
+    {
+        return $this->hasOne('App\schulbezeichnung', "id", "fkbezeichnungen");
     }
 }
