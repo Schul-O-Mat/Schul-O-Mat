@@ -57,11 +57,11 @@
 
                 </ul>
             </div>
-            
-            
+
+
             <!--Anfang REDAKTIONELL-->
-            
-            
+
+
             <div id="redaktionel" class="col s12">
                 <div class="card">
                     <div class="card-content">
@@ -73,110 +73,123 @@
                     </div>
                 </div>
             </div>
-            
+
             <!--Ende REDAKTIONELL-->
-            
-            
+
+
             <!-- Anfang FRAGEBOGEN-->
-            
+
             <!--Ende Durchschnittsbewertung "Sternchen"-->
-            
+
             <div id="quests" class="col s12 ">
                 <div class="collection">
                     <div class="collection-item">
-                        <p>Wie findest du deine Schule im Allgemeinen?<span class="right">{{$durchschnitt[0]}}/10</span></p>
+                        <p>Wie findest du deine Schule im Allgemeinen?<span class="right">{{round($durchschnitt[0], 1)}}/10</span></p>
                         <div class="progress">
                             <div class="determinate" style="width: {{$durchschnitt[0]*10}}%"></div>
 
                         </div>
                     </div>
                     <div class="collection-item">
-                        <p>Wie findest du die Schulmensa?<span class="right">7/10</span></p>
+                        <p>Wie findest du die Schulmensa?<span class="right">{{round($durchschnitt[1], 1)}}/10</span></p>
                         <div class="progress">
-                            <div class="determinate" style="width: 70%"></div>
+                            <div class="determinate" style="width: {{$durchschnitt[1]*10}}%"></div>
 
                         </div>
                     </div>
                     <div class="collection-item">
-                        <p>Wie findest du die AGs?<span class="right">7/10</span></p>
+                        <p>Wie findest du die AGs?<span class="right">{{round($durchschnitt[2], 1)}}/10</span></p>
                         <div class="progress">
-                            <div class="determinate" style="width: 70%"></div>
+                            <div class="determinate" style="width: {{$durchschnitt[2]*10}}%"></div>
 
                         </div>
                     </div>
                     <div class="collection-item">
-                        <p>Wie findest du die Austattung der Schule?<span class="right">7/10</span></p>
+                        <p>Wie findest du die Austattung der Schule?<span class="right">{{round($durchschnitt[3], 1)}}/10</span></p>
                         <div class="progress">
-                            <div class="determinate" style="width: 70%"></div>
+                            <div class="determinate" style="width: {{$durchschnitt[3]*10}}%"></div>
 
                         </div>
                     </div>
                     <div class="collection-item">
-                        <p>Wie findest du die Scheißhäuser?<span class="right">7/10</span></p>
+                        <p>Wie findest du die Scheißhäuser?<span class="right">{{round($durchschnitt[4], 1)}}/10</span></p>
                         <div class="progress">
-                            <div class="determinate" style="width: 70%"></div>
+                            <div class="determinate" style="width: {{$durchschnitt[4]*10}}%"></div>
 
                         </div>
                     </div>
                     <div class="collection-item">
-                        <p>Wie findest du die Länge der Schulstunden?<span class="right">7/10</span></p>
+                        <p>Wie findest du die Länge der Schulstunden?<span class="right">{{round($durchschnitt[5], 1)}}/10</span></p>
                         <div class="progress">
-                            <div class="determinate" style="width: 70%"></div>
+                            <div class="determinate" style="width: {{$durchschnitt[5]*10}}%"></div>
 
                         </div>
                     </div>
                     <div class="collection-item">
-                        <p>Wie findest du die Zeit des Schulbeginns?<span class="right">7/10</span></p>
+                        <p>Wie findest du die Zeit des Schulbeginns?<span class="right">{{round($durchschnitt[6], 1)}}/10</span></p>
                         <div class="progress">
-                            <div class="determinate" style="width: 70%"></div>
+                            <div class="determinate" style="width: {{$durchschnitt[6]*10}}%"></div>
 
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <h4 class="center-align">Dies Bewerten die Schüler Besonders:</h4>
-                    <div class="col s12 l6">
-                        <ul class="collection with-header">
-                            <li class="collection-header">
-                                <h4>Positive Aspekte</h4></li>
-                            <li class="collection-item">
-                                <div>Alvin<span class="right">4</span></div>
-                            </li>
-                            <li class="collection-item">
-                                <div>Alvin<span class="right">4</span></div>
-                            </li>
-                            <li class="collection-item">
-                                <div>Alvin<span class="right">4</span></div>
-                            </li>
-                            <li class="collection-item">
-                                <div>Alvin<span class="right">4</span></div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col s12 l6">
-                        <ul class="collection with-header">
-                            <li class="collection-header">
-                                <h4>Negative Aspekte</h4></li>
-                            <li class="collection-item">
-                                <div>Alvin<span class="right">4</span></div>
-                            </li>
-                            <li class="collection-item">
-                                <div>Alvin<span class="right">4</span></div>
-                            </li>
-                            <li class="collection-item">
-                                <div>Alvin<span class="right">4</span></div>
-                            </li>
-                            <li class="collection-item">
-                                <div>Alvin<span class="right">4</span></div>
-                            </li>
-                        </ul>
-                    </div>
+                    <table class="highlight centered">
+                        <thead>
+                            <tr>
+                                <th data-field="id">Pro</th>
+                                <th data-field="name">Fact</th>
+                                <th data-field="price">Con</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="chip green">6</div>
+                                </td>
+                                <td>Mensaessen</td>
+                                <td>
+                                    <div class="chip red">2</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="chip green">6</div>
+                                </td>
+                                <td>Lehrer</td>
+                                <td>
+                                    <div class="chip red">2</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="chip green">6</div>
+                                </td>
+                                <td>Informatikunterricht</td>
+                                <td>
+                                    <div class="chip red">2</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="chip green">6</div>
+                                </td>
+                                <td>Schuhgröße</td>
+                                <td>
+                                    <div class="chip red">2</div>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
                 </div>
 
                 <div>
                     <h4 class="center-align">Einzelberichte:</h4>
 
-                    <ul class="collapsible" data-collapsible="accordion">
+                    <ul class="collapsible" data-collapsible="expandable">
                         <li>
                             <div class="collapsible-header"><i class="material-icons">filter_drama</i>Ey, so ein cooler Kommentar</div>
                             <div class="collapsible-body">
@@ -208,12 +221,12 @@
                 </div>
 
             </div>
-            
+
             <!--Ende Freitext-->
-            
+
             <!-- Anfang FRAGEBOGEN-->
-            
-            
+
+
             <div id="facts" class="col s12">
                 <div class="row">
                     <div class="col s12 m6">
