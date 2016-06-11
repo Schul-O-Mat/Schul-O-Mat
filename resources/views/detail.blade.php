@@ -57,11 +57,11 @@
 
                 </ul>
             </div>
-            
-            
+
+
             <!--Anfang REDAKTIONELL-->
-            
-            
+
+
             <div id="redaktionel" class="col s12">
                 <div class="card">
                     <div class="card-content">
@@ -73,14 +73,14 @@
                     </div>
                 </div>
             </div>
-            
+
             <!--Ende REDAKTIONELL-->
-            
-            
+
+
             <!-- Anfang FRAGEBOGEN-->
-            
+
             <!--Ende Durchschnittsbewertung "Sternchen"-->
-            
+
             <div id="quests" class="col s12 ">
                 <div class="collection">
                     <div class="collection-item">
@@ -135,7 +135,7 @@
                 </div>
                 <div class="row">
                     <h4 class="center-align">Dies Bewerten die Schüler Besonders:</h4>
-                    <table class="highlight">
+                    <table class="highlight centered">
                         <thead>
                             <tr>
                                 <th data-field="id">Pro</th>
@@ -189,7 +189,7 @@
                 <div>
                     <h4 class="center-align">Einzelberichte:</h4>
 
-                    <ul class="collapsible" data-collapsible="accordion">
+                    <ul class="collapsible" data-collapsible="expandable">
                         <li>
                             <div class="collapsible-header"><i class="material-icons">filter_drama</i>Ey, so ein cooler Kommentar</div>
                             <div class="collapsible-body">
@@ -221,12 +221,12 @@
                 </div>
 
             </div>
-            
+
             <!--Ende Freitext-->
-            
+
             <!-- Anfang FRAGEBOGEN-->
-            
-            
+
+
             <div id="facts" class="col s12">
                 <div class="row">
                     <div class="col s12 m6">
