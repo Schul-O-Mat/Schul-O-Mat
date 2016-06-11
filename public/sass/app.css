@@ -85,4 +85,6 @@ header>h3 {
 
 .form {
     display: none;
+    margin: 0 auto;
+    width: 50vw;
 }
