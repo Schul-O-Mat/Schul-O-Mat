@@ -43,7 +43,7 @@
     </nav>
     <header class="center-align">
         <h1>Schul'O'Mat</h1>
-        <h2>Finde die Schule die zu dir passt!</h2>
+        <h2>Finde die Schule die zu dir <a href="/master">passt</a>!</h2>
     </header>
     <main>
         <p id="closetoyoup"></p>
