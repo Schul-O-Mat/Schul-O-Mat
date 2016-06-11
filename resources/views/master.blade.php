@@ -42,7 +42,7 @@
     </nav>
     <ul class="pagination">
         <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-        <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+        <li class="chevron_right waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
     </ul>
     <div class="row">
         <div class="col s12">
@@ -63,7 +63,7 @@
     </div>
     <ul class="pagination">
         <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-        <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+        <li class="chevron_right waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
     </ul>
 </body>
 
