@@ -34,7 +34,7 @@ class SearchController extends Controller {
         // Perform the query using Query Builder
         $data = schulen::with(array("bezeichnung" => function($query){
 
-          $query->like("schulbezeichnung.kurzbez", $userSearch);
+          $query->like("schulbezeichnung.kurzbez", "Düsseldorf");
 
         }))->get();
 
