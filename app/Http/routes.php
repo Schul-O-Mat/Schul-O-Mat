@@ -16,7 +16,8 @@ Route::get('/', function () {
 });
 
 Route::get('/master', function () {
-    return view('master');
+    $data = App\schulen::all();
+    return view('master', compact("data"));
 });
 
 Route::auth();
