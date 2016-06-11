@@ -72,52 +72,52 @@
             <div id="quests" class="col s12 ">
                 <div class="collection">
                     <div class="collection-item">
-                        <p>Wie findest du deine Schule im Allgemeinen?</p>
+                        <p>Wie findest du deine Schule im Allgemeinen?<span class="right">7/10</span></p>
                         <div class="progress">
                             <div class="determinate" style="width: 70%"></div>
-                            <p>7/10</p>
+
                         </div>
                     </div>
                     <div class="collection-item">
-                        <p>Wie findest du die Schulmensa?</p>
+                        <p>Wie findest du die Schulmensa?<span class="right">7/10</span></p>
                         <div class="progress">
                             <div class="determinate" style="width: 70%"></div>
-                            <p>7/10</p>
+
                         </div>
                     </div>
                     <div class="collection-item">
-                        <p>Wie findest du die AGs?</p>
+                        <p>Wie findest du die AGs?<span class="right">7/10</span></p>
                         <div class="progress">
                             <div class="determinate" style="width: 70%"></div>
-                            <p>7/10</p>
+
                         </div>
                     </div>
                     <div class="collection-item">
-                        <p>Wie findest du die Austattung der Schule?</p>
+                        <p>Wie findest du die Austattung der Schule?<span class="right">7/10</span></p>
                         <div class="progress">
                             <div class="determinate" style="width: 70%"></div>
-                            <p>7/10</p>
+
                         </div>
                     </div>
                     <div class="collection-item">
-                        <p>Wie findest du die Scheißhäuser?</p>
+                        <p>Wie findest du die Scheißhäuser?<span class="right">7/10</span></p>
                         <div class="progress">
                             <div class="determinate" style="width: 70%"></div>
-                            <p>7/10</p>
+
                         </div>
                     </div>
                     <div class="collection-item">
-                        <p>Wie findest du die Länge der Schulstunden?</p>
+                        <p>Wie findest du die Länge der Schulstunden?<span class="right">7/10</span></p>
                         <div class="progress">
                             <div class="determinate" style="width: 70%"></div>
-                            <p>7/10</p>
+
                         </div>
                     </div>
                     <div class="collection-item">
-                        <p>Wie findest du die Zeit des Schulbeginns?</p>
+                        <p>Wie findest du die Zeit des Schulbeginns?<span class="right">7/10</span></p>
                         <div class="progress">
                             <div class="determinate" style="width: 70%"></div>
-                            <p>7/10</p>
+
                         </div>
                     </div>
 
@@ -125,7 +125,7 @@
                         <div class="col s12 l6">
                             <ul class="collection with-header">
                                 <li class="collection-header">
-                                    <h4>First Names</h4></li>
+                                    <h4>Positive Aspekte</h4></li>
                                 <li class="collection-item">
                                     <div>Alvin<span class="right">4</span></div>
                                 </li>
@@ -143,7 +143,7 @@
                         <div class="col s12 l6">
                             <ul class="collection with-header">
                                 <li class="collection-header">
-                                    <h4>First Names</h4></li>
+                                    <h4>Negative Aspekte</h4></li>
                                 <li class="collection-item">
                                     <div>Alvin<span class="right">4</span></div>
                                 </li>
