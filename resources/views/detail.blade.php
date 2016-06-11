@@ -46,7 +46,7 @@
             <div class="col s12">
                 <ul class="tabs">
                     <li class="tab col s3">
-                        <a class="active" href="#facts">Facts</a>
+                        <a href="#facts">Facts</a>
                     </li>
                     <li class="tab col s3">
                         <a href="#questions">Fragebogen</a>
@@ -58,6 +58,17 @@
                 </ul>
             </div>
 
+            <div id="redaction " class="col s12 ">Redaktionelle Inhalte...</div>
+            <div id="questions " class="col s12 ">
+                <div class="collection">
+                    <div class="collection-item">
+                        <p>Wie findest du deine Schule?</p>
+                        <div class="progress">
+                            <div class="determinate" style="width: 70%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div id="facts" class="col s12">
                 <div class="row">
                     <div class="col s12 m6">
@@ -81,20 +92,9 @@
                     </div>
                     <div class="col s12 m6 "></div>
                 </div>
-                <div id="map"></div>
+                <!--<div id="map"></div>-->
 
             </div>
-            <div id="questions " class="col s12 ">
-                <div class="collection">
-                    <div class="collection-item">
-                        <p>Wie findest du deine Schule?</p>
-                        <div class="progress">
-                            <div class="determinate" style="width: 70%"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="redaction " class="col s12 ">Redaktionelle Inhalte...</div>
 
         </div>
     </main>
