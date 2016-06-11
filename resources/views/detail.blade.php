@@ -121,6 +121,7 @@
                                 <div class="collapsible-body">
                                     <div class="collection">
                                         <div class="collection-item">Boah, was ein geiles Ding :3</div>
+                                        <div class="collection-item">Voll die Opfah Lehra</div>
                                     </div>   
                                 </div>
                             </li>
