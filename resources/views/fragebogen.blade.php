@@ -40,6 +40,9 @@
 
         </div>
     </nav>
+    <header>
+        <h3>Awesome Title</h3>
+    </header>
     <form action="#">
         <div class="row">
             <div class="col s12">
@@ -126,6 +129,11 @@
                 </div>
             </div>
     </form>
+    <script>
+        $(document).ready(function () {
+            $('select').material_select();
+        });
+    </script>
 </body>
 
 </html>
