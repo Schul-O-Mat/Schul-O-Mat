@@ -32,7 +32,9 @@
                 </div>
             </form>
             <ul class="right">
-                <li><a href="" onclick="$( '.form' ).toggle();"><i class="material-icons" >search</i></a></li>
+                <li>
+                    <button href="" onclick="$( '.form' ).toggle();"><i class="material-icons">search</i></button>
+                </li>
                 <li><a href=""><i class="material-icons dropdown-button" data-activates='dropdown'>more_vert</i></a></li>
             </ul>
             <ul id='dropdown' class='dropdown-content text-blue'>
