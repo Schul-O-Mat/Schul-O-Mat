@@ -17,7 +17,8 @@ class SearchController extends Controller {
             ->join('schulbezeichnung', 'schulbezeichnung.id', '=', 'schulen.fkbezeichnungen')
             ->where('kurzbez', 'LIKE', "%$userSearch%")
             ->get();
-        return $result;
+        return $result; //Wenn ihr ein result returned, macht laravel das automatisch zu JSON.
+        // BTW JOINT DEM SLACKCHANNEL #schulomat
     }
 
     public function index () {
