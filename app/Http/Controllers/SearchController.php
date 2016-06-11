@@ -27,7 +27,9 @@ class SearchController extends Controller {
 
         // Sets the parameters from the get request to the variables.
         $userSearch = $request::get("searchword");
-
+        $zurueck = false;
+        $weiter = false;
+        $page = 0;
         // Perform the query using Query Builder
         $data = DB::table('schulen')
             ->select("*")
