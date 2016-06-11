@@ -23,4 +23,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function schule()
+    {
+        return $this->hasOne("App\schulen", "schulnr", "schulID");
+    }
 }
