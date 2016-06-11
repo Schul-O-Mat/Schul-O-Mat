@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Http\Controllers\Controller;
+use DB;
 class SearchController extends Controller {
 
     public function search($key) {
