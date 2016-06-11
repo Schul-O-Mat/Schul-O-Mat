@@ -145,7 +145,7 @@
                         </thead>
 
                         <tbody>
-                        @foreach($keyword as $k=>list($pos, $neg))
+                        @foreach($keywords as $k=>list($pos, $neg))
                             <tr><td><div class="chip green">{{$pos}}</div></td><td>{{$k}}</td><td><div class="chip red">{{$neg}}</div></td></tr>
                         @endforeach
 
