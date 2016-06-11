@@ -12,9 +12,6 @@ function GetFloatFromString(SingleValue) {
 }
 
 function CalcStart_onclick() {
-    var GKRight, GKHeight;
-    GKRight = parseInt({{$rechtswert}});
-    GKHeight = parseInt({{$hochwert}});
 
 //Falls nicht alle GK-Werte eingegeben wurden -> Meldung, Verlassen
     if (!((GKRight > 1000000) && (GKHeight > 1000000)))

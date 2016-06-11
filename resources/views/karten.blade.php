@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <script>
+        var GKRight = parseInt({{$rechtswert}});
+        var GKHeight = parseInt({{$hochwert}});
+    </script>
     <script src="/js/gk_to_latlong.js"></script>
     <script>
         CalcStart_onclick()
