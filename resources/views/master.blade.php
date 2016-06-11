@@ -25,7 +25,7 @@
         <div class="nav-wrapper blue">
             <a href="#!" class="brand-logo">Schul'O'Mat</a>
             <form action="/schulen/search" class="form header-search-wrapper hide-on-med-and-down" method="get">
-
+                <!-- Search Url: /schulen/search/{key} -->
                 <i class="material-icons active">search</i>
                 <input name="searchword" class="header-search-input z-depth-2" placeholder="Suche" type="text" onChange="this.form.submit();">
 
