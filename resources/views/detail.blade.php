@@ -7,7 +7,7 @@
     <!--Import materialize.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
 
-    <link rel="stylesheet" href="../assets/sass/app.css">
+    <link rel="stylesheet" href="/sass/app.css">
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf8">
@@ -34,10 +34,11 @@
 
         </div>
     </nav>
-    {{$schule->schulnr}}
     <header class="center-align">
-        <h1>Steinbart Gymnasium</h1>
-        <h2>Duisburg</h2>
+        <h3>{{$schule->bezeichnung->schulbez1}}</h3>
+        <h3>{{$schule->bezeichnung->schulbez2}}</h3>
+        <h3>{{$schule->bezeichnung->schulbez3}}</h3>
+        <h4>{{$schule->bezeichnung->kurzbez}}</h4>
     </header>
     <main>
         <div class="row">
@@ -96,7 +97,7 @@
     </main>
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript " src="https://code.jquery.com/jquery-2.1.1.min.js "></script>
-    <script type="text/javascript " src="../assets/js/bin/materialize.js "></script>
+    <script type="text/javascript " src="/js/bin/materialize.js "></script>
     <script>
         $(document).ready(function () {
             $('ul.tabs').tabs();
