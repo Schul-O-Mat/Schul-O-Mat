@@ -59,7 +59,9 @@ Route::get('/schule/{id}', function ($schule) {
         $countneg = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->join('key_bew', 'bewertungen.id', '=', 'key_bew.bewertungID')->join('keywords', 'key_bew.keywordID', '=', 'keywords.id')->select(DB::raw('COUNT(key_bew.keywordID) as neg'))->where('users.schulID', '=', $schulID)->where('keywords.bezeichnung', '=', $p->bezeichnung)->where('key_bew.positiv', '=', '0')->first()->neg;
         $keywords[$p->bezeichnung] = [$countpos, $countneg];
     }
-  return view('detail', compact("schule", "hochwert", "rechtswert", "durchschnitt", "keywords"));
+
+    $reviews = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->select('freitext')->where('users.schulID', '=', $schulID);
+  return view('detail', compact("schule", "hochwert", "rechtswert", "durchschnitt", "keywords", "reviews"));
 });
 
 Route::get('/schule/{id}/karte', function ($schule) {

@@ -112,7 +112,7 @@
                         </div>
                     </div>
                     <div class="collection-item">
-                        <p>Wie findest du die Scheißhäuser?<span class="right">{{round($durchschnitt[4], 1)}}/10</span></p>
+                        <p>Wie findest du die Toiletten an deiner Schule?<span class="right">{{round($durchschnitt[4], 1)}}/10</span></p>
                         <div class="progress">
                             <div class="determinate" style="width: {{$durchschnitt[4]*10}}%"></div>
 
@@ -157,24 +157,14 @@
                     <h4 class="center-align">Einzelberichte:</h4>
 
                     <ul class="collapsible" data-collapsible="expandable">
+                        @foreach($reviews as $r)
                         <li>
-                            <div class="collapsible-header"><i class="material-icons">filter_drama</i>Ey, so ein cooler Kommentar</div>
+                            <div class="collapsible-header"><i class="material-icons">announcement</i>Schülermeinung</div>
                             <div class="collapsible-body">
-                                <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis inventore perspiciatis architecto dolores sequi vel quam expedita nisi ipsa molestias ad illo, officia tempora ipsam, beatae hic excepturi omnis reiciendis.</span>
-                                    <span>Aut nam ea, dignissimos aperiam animi soluta esse ipsum sit voluptates, fugiat maxime ducimus illum, dolores quo numquam beatae ullam nihil accusantium rerum facere quidem quasi. Laborum, sed tempore ut.</span>
-                                    <span>Officiis excepturi distinctio magnam in, adipisci enim impedit vitae culpa quam neque qui reiciendis eveniet. Voluptate commodi, ducimus cum amet nesciunt dignissimos distinctio a repellat molestias similique unde autem dolores!</span>
-                                    <span>Tenetur deleniti asperiores delectus odit animi quam iure distinctio aliquam dicta facilis, possimus accusamus optio enim nam perspiciatis! Perspiciatis rem, dolorem accusantium quibusdam sit consequuntur illum assumenda error beatae reiciendis.</span></p>
+                                <p><span>{{$r->freitext}}</span></p>
                             </div>
                         </li>
-                        <li>
-                            <div class="collapsible-header"><i class="material-icons">place</i>Ey, so ein cooler Kommentar</div>
-                            <div class="collapsible-body">
-                                <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, illo quibusdam itaque harum tempore, officiis culpa quis voluptatem laborum voluptates sit totam expedita error atque distinctio nostrum necessitatibus quidem fugit.</span>
-                                    <span>Libero ea dolore, ratione minima sunt fugit porro et earum, fuga beatae nulla non. Autem mollitia asperiores ullam modi, expedita amet consequatur sunt quam, odit, laudantium nihil! Modi reiciendis, perspiciatis.</span>
-                                    <span>Sint nam voluptates nulla ab perspiciatis quos, incidunt architecto distinctio quasi laudantium ad reprehenderit, dolores reiciendis eligendi. Inventore beatae quae optio sapiente. Cum alias debitis corrupti rem quis, qui magni.</span>
-                                    <span>Illo maxime totam veritatis dolorem, beatae aliquam aperiam ut, sapiente eum explicabo, inventore provident tenetur. Nisi eos cumque consequuntur natus ullam quasi omnis. Eum repellat quidem sed ipsam quae laudantium!</span></p>
-                            </div>
-                        </li>
+                        @endforeach
                         <li>
                             <div class="collapsible-header"><i class="material-icons">whatshot</i>Ey, so ein cooler Kommentar</div>
                             <div class="collapsible-body">
