@@ -58,7 +58,7 @@
                 </ul>
             </div>
 
-            <div id="redaktionel " class="col s12 ">
+            <div id="redaktionel" class="col s12">
                 <div class="card">
                     <div class="card-content">
                         <span class="card-title">Redaktionelle Inhalte</span>
@@ -69,7 +69,7 @@
                     </div>
                 </div>
             </div>
-            <div id="quests " class="col s12 ">
+            <div id="quests" class="col s12 ">
                 <div class="collection">
                     <div class="collection-item">
                         <p>Wie findest du deine Schule?</p>
@@ -105,8 +105,22 @@
                 <!--<div id="map"></div>-->
 
             </div>
-
         </div>
+        <div class="row">
+            <div class="col s12">
+                <ul class="tabs">
+                    <li class="tab col s3"><a href="#inbox">Inbox</a></li>
+                    <li class="tab col s3"><a class="active" href="#unread">Unread</a></li>
+                    <li class="tab col s3 disabled"><a href="#outbox">Outbox (Disabled)</a></li>
+                    <li class="tab col s3"><a href="#sent">Sent</a></li>
+                </ul>
+            </div>
+            <div id="inbox" class="col s12">Inbox</div>
+            <div id="unread" class="col s12">Unread</div>
+            <div id="outbox" class="col s12">Outbox (Disabled)</div>
+            <div id="sent" class="col s12">Sent</div>
+        </div>
+
     </main>
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript " src="https://code.jquery.com/jquery-2.1.1.min.js "></script>
