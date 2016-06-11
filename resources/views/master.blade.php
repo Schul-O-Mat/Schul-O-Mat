@@ -28,7 +28,11 @@
             </form>
         </div>
     </nav>
-    <div class="row">
+    <ul class="pagination">
+        <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+        <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+    </ul>
+        <div class="row">
         <div class="col s12">
             <ul class="collection">
               @foreach ($data as $d)
@@ -45,5 +49,9 @@
             </ul>
         </div>
     </div>
+    <ul class="pagination">
+        <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+        <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+    </ul>
 </body>
 </html>
