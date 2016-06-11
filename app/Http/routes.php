@@ -21,7 +21,7 @@ Route::get('/schulen', function () {
 });
 
 Route::get('/schulen/search', 'SearchController@searchGet'); //die reihenfolge ist wichtig #schulomat in slack
-Route::get('/schulen/search/{key}', 'SearchController@search'); //die reihenfolge ist wichtig #schulomat in slack
+//Route::get('/schulen/search/{key}', 'SearchController@search'); //die reihenfolge ist wichtig #schulomat in slack
 
 Route::get('/schulen/{page}', function ($page) {
     $calc = $page*25;
