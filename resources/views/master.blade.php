@@ -25,16 +25,16 @@
         <div class="nav-wrapper blue">
             <a href="#!" class="brand-logo">Schul'O'Mat</a>
             <form action="/schulen/search" class="form" method="get">
-                <div class="input-field">
-                    <i class="material-icons prefix">search</i>
-                    <input id="icon_prefix" type="text" name="searchword" class="validate" onChange="this.form.submit();">
-                    <label for="icon_prefix">Gib ein Suchwort ein:</label>
+                <div class="header-search-wrapper hide-on-med-and-down">
+                    <i class="mdi-action-search active"></i>
+                    <input name="Search" class="header-search-input z-depth-2" placeholder="Explore Materialize" type="text" onChange="this.form.submit();">
                 </div>
             </form>
             <ul class="right">
-                <li>
-                    <button href="" onclick="$( '.form' ).toggle();"><i class="material-icons">search</i></button>
-                </li>
+<!--
+              <li>
+    <button href="" onclick="$( '.form' ).toggle();"><i class="material-icons">search</i></button> </li>
+-->
                 <li><a href=""><i class="material-icons dropdown-button" data-activates='dropdown'>more_vert</i></a></li>
             </ul>
             <ul id='dropdown' class='dropdown-content text-blue'>
