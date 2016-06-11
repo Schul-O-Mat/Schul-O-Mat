@@ -70,7 +70,7 @@ header>h3 {
 }
 
 .brand-logo {
-    margin-left: 80px;
+    margin-left: 50px;
 }
 
 .chevron_right {
@@ -123,4 +123,9 @@ input.header-search-input {
 
 input.header-search-input:hover {
     background: rgba(255, 255, 255, 0.5);
+}
+
+input.header-search-input:focus {
+    background: rgba(255, 255, 255, 1);
+    color: black;
 }

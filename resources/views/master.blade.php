@@ -26,8 +26,8 @@
             <a href="#!" class="brand-logo">Schul'O'Mat</a>
             <form action="/schulen/search" class="form header-search-wrapper hide-on-med-and-down" method="get">
 
-                <i class="mdi-action-search active"></i>
-                <input name="Search" class="header-search-input z-depth-2" placeholder="Explore Materialize" type="text" onChange="this.form.submit();">
+                <i class="material-icons active">search</i>
+                <input name="Search" class="header-search-input z-depth-2" placeholder="Suche" type="text" onChange="this.form.submit();">
 
             </form>
             <ul class="right">
