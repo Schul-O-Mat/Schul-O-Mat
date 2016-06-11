@@ -80,3 +80,12 @@ Route::get('/home', 'HomeController@index');
 Route::get('/schule/{id}/redaktion', function($schule) {
     return view("redaktion");
 });
+
+Route::post("schule/{id}/redaktion/writedata", function(Request $request) {
+    $toWrite = Request::get("redaktionstext");
+    DB::table("redaktion")->insert([
+        'schulID' => {id},
+        'text' => $toWrite
+    ])
+    return redirect("/schule/{id}/redaktion")
+})
