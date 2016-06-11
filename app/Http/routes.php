@@ -48,9 +48,15 @@ Route::get('/schule/{id}', function ($schule) {
     $durchschnitt[5] = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->select(DB::raw('AVG(bewertung6) as b6'))->where('users.schulID', '=', $schulID)->first()->b6;
     $durchschnitt[6] = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->select(DB::raw('AVG(bewertung7) as b7'))->where('users.schulID', '=', $schulID)->first()->b7;
 
-    $positiv = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->join('key_bew', 'bewertungen.id', '=', 'key_bew.bewertungID')->join('keywords', 'key_bew.keywordID', '=', 'keywords.id')->select('keywords.bezeichnung')->where('users.schulID', '=', 100018)->where('key_bew.positiv', '=', '1')->get();
-    $negativ = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->join('key_bew', 'bewertungen.id', '=', 'key_bew.bewertungID')->join('keywords', 'key_bew.keywordID', '=', 'keywords.id')->select('keywords.bezeichnung')->where('users.schulID', '=', 100018)->where('key_bew.positiv', '=', '0')->get();
-  return view('detail', compact("schule", "hochwert", "rechtswert", "durchschnitt", "positiv", "negativ"));
+    $posi = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->join('key_bew', 'bewertungen.id', '=', 'key_bew.bewertungID')->join('keywords', 'key_bew.keywordID', '=', 'keywords.id')->select('keywords.bezeichnung')->where('users.schulID', '=', $schulID)->get();
+    $keywords = array();
+    foreach ($posi as $p)
+    {
+        $countpos = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->join('key_bew', 'bewertungen.id', '=', 'key_bew.bewertungID')->join('keywords', 'key_bew.keywordID', '=', 'keywords.id')->select(DB::raw('COUNT(key_bew.keywordID)'))->where('users.schulID', '=', $schulID)->where('keywords.bezeichnung', '=', '$p->bezeichnung')->where('key_bew.positiv', '=', '1')->get();
+        $countneg = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->join('key_bew', 'bewertungen.id', '=', 'key_bew.bewertungID')->join('keywords', 'key_bew.keywordID', '=', 'keywords.id')->select(DB::raw('COUNT(key_bew.keywordID)'))->where('users.schulID', '=', $schulID)->where('keywords.bezeichnung', '=', '$p->bezeichnung')->where('key_bew.positiv', '=', '0')->get();
+        $keywords[$p->bezeichnung] = [$countpos, $countneg];
+    }
+  return view('detail', compact("schule", "hochwert", "rechtswert", "durchschnitt", "keywords"));
 });
 
 Route::get('/schule/{id}/karte', function ($schule) {
