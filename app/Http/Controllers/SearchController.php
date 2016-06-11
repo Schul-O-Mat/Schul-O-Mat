@@ -29,12 +29,13 @@ class SearchController extends Controller {
         $userSearch = $request::get("searchword");
 
         // Perform the query using Query Builder
-        $result = DB::table('schulen')
+        $data = DB::table('schulen')
             ->select("*")
             ->join('schulbezeichnung', 'schulbezeichnung.id', '=', 'schulen.fkbezeichnungen')
             ->where('kurzbez', 'LIKE', "%$userSearch%")
             ->get();
-        return $result; //Wenn ihr ein result returned, macht laravel das automatisch zu JSON.
+        return view('master', compact("data", "zurueck", "weiter", "page"));
+        //return $result; //Wenn ihr ein result returned, macht laravel das automatisch zu JSON.
         // BTW JOINT DEM SLACKCHANNEL #schulomat
     }
 
