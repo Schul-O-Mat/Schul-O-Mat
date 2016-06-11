@@ -84,51 +84,51 @@
             <div id="quests" class="col s12 ">
                 <div class="collection">
                     <div class="collection-item">
-                        <p>Wie findest du deine Schule im Allgemeinen?<span class="right">{{$durchschnitt[0]}}/10</span></p>
+                        <p>Wie findest du deine Schule im Allgemeinen?<span class="right">{{round($durchschnitt[0], 1)}}/10</span></p>
                         <div class="progress">
                             <div class="determinate" style="width: {{$durchschnitt[0]*10}}%"></div>
 
                         </div>
                     </div>
                     <div class="collection-item">
-                        <p>Wie findest du die Schulmensa?<span class="right">7/10</span></p>
+                        <p>Wie findest du die Schulmensa?<span class="right">{{round($durchschnitt[1], 1)}}/10</span></p>
                         <div class="progress">
-                            <div class="determinate" style="width: 70%"></div>
+                            <div class="determinate" style="width: {{$durchschnitt[1]*10}}%"></div>
 
                         </div>
                     </div>
                     <div class="collection-item">
-                        <p>Wie findest du die AGs?<span class="right">7/10</span></p>
+                        <p>Wie findest du die AGs?<span class="right">{{round($durchschnitt[2], 1)}}/10</span></p>
                         <div class="progress">
-                            <div class="determinate" style="width: 70%"></div>
+                            <div class="determinate" style="width: {{$durchschnitt[2]*10}}%"></div>
 
                         </div>
                     </div>
                     <div class="collection-item">
-                        <p>Wie findest du die Austattung der Schule?<span class="right">7/10</span></p>
+                        <p>Wie findest du die Austattung der Schule?<span class="right">{{round($durchschnitt[3], 1)}}/10</span></p>
                         <div class="progress">
-                            <div class="determinate" style="width: 70%"></div>
+                            <div class="determinate" style="width: {{$durchschnitt[3]*10}}%"></div>
 
                         </div>
                     </div>
                     <div class="collection-item">
-                        <p>Wie findest du die Scheißhäuser?<span class="right">7/10</span></p>
+                        <p>Wie findest du die Scheißhäuser?<span class="right">{{round($durchschnitt[4], 1)}}/10</span></p>
                         <div class="progress">
-                            <div class="determinate" style="width: 70%"></div>
+                            <div class="determinate" style="width: {{$durchschnitt[4]*10}}%"></div>
 
                         </div>
                     </div>
                     <div class="collection-item">
-                        <p>Wie findest du die Länge der Schulstunden?<span class="right">7/10</span></p>
+                        <p>Wie findest du die Länge der Schulstunden?<span class="right">{{round($durchschnitt[5], 1)}}/10</span></p>
                         <div class="progress">
-                            <div class="determinate" style="width: 70%"></div>
+                            <div class="determinate" style="width: {{$durchschnitt[5]*10}}%"></div>
 
                         </div>
                     </div>
                     <div class="collection-item">
-                        <p>Wie findest du die Zeit des Schulbeginns?<span class="right">7/10</span></p>
+                        <p>Wie findest du die Zeit des Schulbeginns?<span class="right">{{round($durchschnitt[6], 1)}}/10</span></p>
                         <div class="progress">
-                            <div class="determinate" style="width: 70%"></div>
+                            <div class="determinate" style="width: {{$durchschnitt[6]*10}}%"></div>
 
                         </div>
                     </div>
