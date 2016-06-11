@@ -29,7 +29,7 @@ Route::get('/schulen/{id}/karte', function ($schule) {
   $schule = App\schulen::find($schule);
   $lat = $schule->lat;
   $long = $schule->long;
-  return view('karten', compact("schule"));
+  return view('karten', compact("lat", "long"));
 });
 
 Route::auth();
