@@ -20,8 +20,9 @@ Route::get('/schulen', function () {
     return view('master', compact("data"));
 });
 
-Route::get('/schulen/{id}', function (App\schulen $schule) {
-    return view('detail', compact("schule"));
+Route::get('/schulen/{id}', function ($schule) {
+  $schule = App\schulen::find($schule);
+  return view('detail', compact("schule"));
 });
 
 Route::auth();
