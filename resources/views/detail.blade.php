@@ -34,7 +34,7 @@
 
         </div>
     </nav>
-    {{$schule}}
+    {{$schule->schulnr}}
     <header class="center-align">
         <h1>Steinbart Gymnasium</h1>
         <h2>Duisburg</h2>
