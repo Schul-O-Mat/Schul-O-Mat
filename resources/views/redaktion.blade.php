@@ -37,11 +37,13 @@
         <header>
             
         <h3 class="center-align">Hier sollte ein unabhängiges Feedback stehen!</h3>
-            <form>
+            <form action="trageRedaktionsTextEin.php">
             <div class="input-field col s12">
         <textarea id="fundiertesfeedback"class="materialize-textarea"></textarea>
                 <label for="fundiertesfeedback">Text</label>
             </div>
+                <br>
+                <button class="waves-effect waves-light btn" type="submit">Submit</button>
             </form>
     </header>
     </body>
