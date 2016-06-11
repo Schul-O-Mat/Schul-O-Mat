@@ -35,10 +35,10 @@
         </div>
     </nav>
     <header class="center-align">
-        <h1>{{$schule->bezeichnung->schulbez1}}</h1>
-        <h1>{{$schule->bezeichnung->schulbez2}}</h1>
-        <h1>{{$schule->bezeichnung->schulbez3}}</h1>
-        <h2>{{$schule->bezeichnung->kurzbez}}</h2>
+        <h3>{{$schule->bezeichnung->schulbez1}}</h3>
+        <h3>{{$schule->bezeichnung->schulbez2}}</h3>
+        <h3>{{$schule->bezeichnung->schulbez3}}</h3>
+        <h4>{{$schule->bezeichnung->kurzbez}}</h4>
     </header>
     <main>
         <div class="row">
