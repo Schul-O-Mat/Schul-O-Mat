@@ -74,7 +74,7 @@
 
                             </div>
                             <div class="card-action ">
-                                <a href="/schulen/{{$schule->schulnr}}/karte">Öffne mit Maps</a>
+                                <a href="/schule/{{$schule->schulnr}}/karte">Öffne mit Maps</a>
                                 <a href="# ">Irgendwas</a>
                             </div>
                         </div>
