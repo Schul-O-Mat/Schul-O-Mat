@@ -189,7 +189,7 @@
                 <div>
                     <h4 class="center-align">Einzelberichte:</h4>
 
-                    <ul class="collapsible" data-collapsible="accordion">
+                    <ul class="collapsible" data-collapsible="expandable">
                         <li>
                             <div class="collapsible-header"><i class="material-icons">filter_drama</i>Ey, so ein cooler Kommentar</div>
                             <div class="collapsible-body">
