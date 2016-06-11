@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\schulen;
 use App\Http\Controllers\Controller;
 use DB;
 use Request;
@@ -31,7 +32,7 @@ class SearchController extends Controller {
         $weiter = false;
         $page = 0;
         // Perform the query using Query Builder
-        $data = App\schulen::with(array("bezeichnung" => function($query){
+        $data = schulen::with(array("bezeichnung" => function($query){
 
           $query->like("schulbezeichnung.kurzbez", $userSearch);
 
