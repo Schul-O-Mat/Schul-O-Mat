@@ -30,15 +30,15 @@
                 <li><a href="#!">Swag</a></li>
             </ul>
             <ul class="left hide-on-med-and-down">
-                <li><a href="master.html"><i class="material-icons">arrow_back</i></a></li>
+                <li><a href="/schulen"><i class="material-icons">arrow_back</i></a></li>
             </ul>
 
         </div>
     </nav>
     <header class="center-align">
         <h3>{{$schule->bezeichnung->schulbez1}}</h3>
-        <!--   <h3>{{$schule->bezeichnung->schulbez2}}</h3>
-        <h3>{{$schule->bezeichnung->schulbez3}}</h3>-->
+        <h3>{{$schule->bezeichnung->schulbez2}}</h3>
+        <h3>{{$schule->bezeichnung->schulbez3}}</h3>
         <h4>{{$schule->bezeichnung->kurzbez}}</h4>
     </header>
     <main>
