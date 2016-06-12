@@ -21,10 +21,10 @@
 <body>
     <nav>
         <div class="nav-wrapper blue">
-            <a href="#!" class="brand-logo">Schul-O-Mat</a>
+            <a href="/" class="brand-logo">Schul-O-Mat</a>
             <ul class="right hide-on-med-and-down">
 
-                <li><a href=""><i class="material-icons">search</i></a></li>
+                <li><a href="/schulen/"><i class="material-icons">search</i></a></li>
                 <li><a href=""><i class="material-icons dropdown-button" data-activates='dropdown'>more_vert</i></a></li>
             </ul>
             <ul id='dropdown' class='dropdown-content text-blue'>
@@ -32,7 +32,7 @@
                 <li><a href="#!">Swag</a></li>
             </ul>
             <ul class="left hide-on-med-and-down">
-                <li><a href="schulen"><i class="material-icons">arrow_back</i></a></li>
+                <li><a href="./"><i class="material-icons">arrow_back</i></a></li>
             </ul>
         </div>
     </nav>
@@ -54,7 +54,7 @@
                 </div>
 
 
-                <div class="row center-align">
+                <div class="row center-align" style="padding-top:50px;">
                     <a href="/" class="btn-flat">Zurück</a>
                     <button id="submitbutton" type="submit" class="btn waves-effect waves-light blue" href="/schulen" onclick="Materialize.toast('Data successfully saved!', 4000)">
                         Absenden<i class="material-icons right">send</i>
