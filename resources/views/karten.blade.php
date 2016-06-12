@@ -33,7 +33,7 @@ function gk2geo(rw, hw)
    {
    lp = "";
    bp = "";
-   return;
+   return "Err";
    }
    rw = parseFloat(rw);
    hw = parseFloat(hw);
