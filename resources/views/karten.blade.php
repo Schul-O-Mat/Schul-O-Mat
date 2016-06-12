@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
     <script>
         //var GKRight = parseInt({{$rechtswert}});
         //var GKHeight = parseInt({{$hochwert}});
@@ -110,7 +112,7 @@ function gk2geo(rw, hw)
    console.log(lp);
    console.log(hw);
    console.log(rw);
-   if (lp < 5 || lp > 16 || bp < 46 || bp > 56)
+    if (lp < 5 || lp > 16 || bp < 46 || bp > 56)
    {
    alert("RW und/oder HW ungültig für das deutsche Gauss-Krüger-System");
    lp = "";
@@ -119,14 +121,17 @@ function gk2geo(rw, hw)
    return [bp, lp];;
 }
     </script>
-    <script>
-        CalcStart_onclick()
-    </script>
 </head>
 <body>
-<form name="CalcForm">
-    <input type="text" id="GeoDezRight" size="20" tabindex="6" style="text-align: center"><br>
-    <input type="text" id="GeoDezHeight" size="20" tabindex="7" style="text-align: center"><br>
-</form>
+<div class="map"></div>
+<script>
+    var map = L.map('map').setView([bp, lp], 13);
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    L.marker([bp, lp]).addTo(map)
+            .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+            .openPopup();
+</script>
 </body>
 </html>
