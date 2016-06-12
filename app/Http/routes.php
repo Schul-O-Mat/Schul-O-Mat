@@ -40,6 +40,7 @@ Route::get("/schule", function() {
 });
 
 Route::get('/schule/{id}', function ($schule) {
+  // cooler kommi
     $bewertungda = false;
     if(!Auth::guest())
       if(isset(Auth::user()->bewertung))
