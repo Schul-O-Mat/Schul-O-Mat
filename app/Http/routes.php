@@ -35,6 +35,9 @@ Route::get('/schulen/{page}', function ($page) {
     return view('master', compact("data", "zurueck", "weiter", "page"));
 });
 
+Route::get("/schule", function() {
+  return redirect("/schulen");
+})
 
 Route::get('/schule/{id}', function ($schule) {
     $schulID = $schule;
@@ -96,7 +99,7 @@ Route::get('/schule/{id}/redaktion', function($id) {
     return view("redaktion", compact("id"));
 });
 
-Route::post("schule/{id}/redaktion", function(Request $request, $id) {
+Route::post("/schule/{id}/redaktion", function(Request $request, $id) {
     $toWrite = Request::get("redaktionstext");
     DB::table("redaktion")->insert([
         'schulID' => $id,
