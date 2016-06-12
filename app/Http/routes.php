@@ -90,6 +90,6 @@ Route::post("schule/{id}/redaktion/writedata", function(Request $request, $id) {
     DB::table("redaktion")->insert([
         'schulID' => $id,
         'text' => $toWrite
-    ]);
+    ]); 
     return view("redaktion", compact("id"));
 });
