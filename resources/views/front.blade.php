@@ -17,8 +17,8 @@
 <body>
     <nav>
         <div class="nav-wrapper blue">
-             <img src="img/logo.png" class="schulomaticon">
-            <a href="/" style="margin-left: auto !important;" class="brand-logo">Schul'O'Mat</a>
+
+            <a href="/" style="margin-left: auto !important;" class="brand-logo"> <img src="img/logo.png" class="schulomaticon">Schul'O'Mat</a>
             <ul class="right hide-on-med-and-down">
                 <!--                <li><a href=""><i class="material-icons">search</i></a></li>-->
                 <li><a href="" class="dropdown-button" data-activates='dropdown'><i class="material-icons" >more_vert</i></a></li>
@@ -29,7 +29,7 @@
                 <input name="searchword" class="header-search-input z-depth-2" placeholder="Suche" type="text" onChange="this.form.submit();">
 
             </form>
-            <ul id='dropdown' class='dropdown-content text-blue'>
+            <ul id='dropdown' class='dropdown-content text-blue' style=" right: 0 !important;left: auto !important;width: 300px;">
                 @if(Auth::guest())
                 <li><a href="/login">Login</a></li>
                 <li><a href="/register">Register</a></li>
@@ -62,11 +62,7 @@
                     <a href="/register" class="btn large blue">Registriere dich beim Schul-O-Maten</a> @else
                     <a class="btn large blue">Du bist eingeloggt als {{Auth::user()->name}}!</a> @endif
                 </div>
-                <p class="z-depth-1 flow-text">Was ist der Schul-O-Mat?
-
-                    Ihr kennt das Problem: Man ist auf einem Tag der offenen Tür, um sich eine Meinung über eine Schule zu bilden. Aber da die Schule sich nur von der besten Seite präsentiert, ist man am Ende nicht wirklich schlauer geworden, da man nur ein einseitiges Bild hat. Das ändert der Schul-O-Mat!
-
-                    Hier können sich Schüler anmelden, ihre Schule bewerten und andere Bewertungen anschauen. Zusätzlich kann sich die Schule selber präsentieren. So kannst du dir verschiedene Meinungen anhören.
+                <p class="z-depth-1 flow-text">Was ist der Schul-O-Mat? Ihr kennt das Problem: Man ist auf einem Tag der offenen Tür, um sich eine Meinung über eine Schule zu bilden. Aber da die Schule sich nur von der besten Seite präsentiert, ist man am Ende nicht wirklich schlauer geworden, da man nur ein einseitiges Bild hat. Das ändert der Schul-O-Mat! Hier können sich Schüler anmelden, ihre Schule bewerten und andere Bewertungen anschauen. Zusätzlich kann sich die Schule selber präsentieren. So kannst du dir verschiedene Meinungen anhören.
                 </p>
             </div>
         </div>
