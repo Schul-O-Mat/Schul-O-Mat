@@ -38,7 +38,6 @@
 
         <h3 class="center-align">Hier sollte ein unabhängiges Feedback stehen!</h3>
             <form action="/schule/{{$id}}/redaktion" method="post">
-                <?php echo $id; ?>
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
             <div class="input-field col s12">
             <textarea id="fundiertesfeedback" class="materialize-textarea" name="redaktionstext"></textarea>
