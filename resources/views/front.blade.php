@@ -18,7 +18,7 @@
     <nav>
         <div class="nav-wrapper blue">
 
-            <a href="/" style="margin-left: auto !important;" class="brand-logo"> <img src="img/logo.png" class="schulomaticon"></a>
+            <a href="/" style="margin-left: auto !important;" class="brand-logo"> <img src="/img/logo.png" class="schulomaticon"></a>
             <ul class="right hide-on-med-and-down">
                 <!--                <li><a href=""><i class="material-icons">search</i></a></li>-->
                 <li><a href="" class="dropdown-button" data-activates='dropdown'><i class="material-icons" >more_vert</i></a></li>

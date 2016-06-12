@@ -24,7 +24,7 @@
 
     <nav>
         <div class="nav-wrapper blue">
-            <a href="/" style="" class="brand-logo"> <img src="img/logo.png" class="schulomaticon"></a>
+            <a href="/" style="" class="brand-logo"> <img src="/img/logo.png" class="schulomaticon"></a>
             <form action="/schulen/search" class="form header-search-wrapper hide-on-med-and-down" method="get">
                 <!-- Search Url: /schulen/search/{key} -->
                 <i class="material-icons active">search</i>
@@ -64,7 +64,7 @@
             <ul class="collection">
                 @foreach ($data as $d)
                 <li class="collection-item avatar">
-                    
+
                     <i class="material-icons circle 
                               @if ($d->schulform == 2) light-green
                     @elseif ($d->schulform == 20) blue
