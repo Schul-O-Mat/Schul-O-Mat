@@ -147,6 +147,12 @@ footer {
 .schulomaticon {
     height: 64px;
 }
+
+@media (max-width: 600px) {
+ .schulomaticon {
+    height: 56px;
+}
+}
 #whatissomat {
     padding: 10px;
 }
