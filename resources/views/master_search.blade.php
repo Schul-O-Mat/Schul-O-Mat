@@ -51,7 +51,7 @@
             <ul class="collection">
                 @foreach ($data as $d)
                 <li class="collection-item avatar">
-                    <i class="material-icons circle 
+                    <i class="material-icons circle
                               @if ($d->schulform == 2) light-green
                     @elseif ($d->schulform == 20) blue
                     @elseif ($d->schulform == 4) #aa00ff
@@ -60,11 +60,11 @@
                     @else #9e9e9e
                               @endif
                               ">school</i>
-                    <span class="title">{{$d->schulbez1}}</span>
-                    <p>{{$d->schulbez2}}
-                        <br> {{$d->schulbez3}}
-                        <br> {{$d->kurzbez}}
-                    </p>
+                      <span class="title">{{$d->bezeichnung->schulbez1}}</span>
+                            <p>@if($d->bezeichnung->schulbez2!=""){{$d->bezeichnung->schulbez2}}@endif
+                          <br> @if($d->bezeichnung->schulbez3!=""){{$d->bezeichnung->schulbez3}}@endif
+                          <br> @if($d->bezeichnung->kurzbez!=""){{$d->bezeichnung->kurzbez}}@endif
+                      </p>
                     <a href="/schule/{{ $d->schulnr }}" class="secondary-content"><i class="blue-text material-icons">arrow_forward</i></a>
                 </li>
                 @endforeach
