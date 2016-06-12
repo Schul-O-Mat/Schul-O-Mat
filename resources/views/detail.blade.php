@@ -174,7 +174,9 @@
 
                             @foreach($reviews as $r)
                             <li>
-                                <div class="collapsible-header" class="truncate"><i class="material-icons">announcement</i><h5>{{$r->freitext}}</h5></div>
+                                <div class="collapsible-header" class="">
+                                    <i class="material-icons">announcement</i><p class="truncate">{{$r->freitext}}</p>
+                                </div>
                                 <div class="collapsible-body">
                                     <p><span>{{$r->freitext}}</span></p>
                                 </div>
