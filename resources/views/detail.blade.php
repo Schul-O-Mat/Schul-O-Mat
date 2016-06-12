@@ -149,15 +149,11 @@
                                 @foreach($keywords as $k=>list($pos, $neg))
                                 <tr>
                                     <td>
-                                      @if ($pos>0)
                                         <div class="chip green">{{$pos}}</div>
-                                      @endif
                                     </td>
                                     <td>{{$k}}</td>
                                     <td>
-                                      @if ($neg>0)
                                         <div class="chip red">{{$neg}}</div>
-                                      @endif
                                     </td>
                                 </tr>
                                 @endforeach
