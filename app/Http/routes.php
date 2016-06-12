@@ -97,7 +97,7 @@ Route::post("/schule/{id}/eintragen", function(Request $request, $id) {
     $positiv = Request::get("positive");
     $negativ = Request::get("negative");
     $freitext = Request::get("freitext");
-    $bewertungID = DB::table('bewertungen')->insertGetID(['userID' => $userID, 'bewertung1' => $question1, 'bewertung2' => $question2, 'bewertung3' => $question3, 'bewertung4' => $question4, 'bewertung5' => $question5, 'bewertung6' => $question6, 'bewertung7' => $question7,'freitext' => 'aiiuadi']);
+    $bewertungID = DB::table('bewertungen')->insertGetID(['userID' => $userID, 'bewertung1' => $question1, 'bewertung2' => $question2, 'bewertung3' => $question3, 'bewertung4' => $question4, 'bewertung5' => $question5, 'bewertung6' => $question6, 'bewertung7' => $question7,'freitext' => $freitext]);
     foreach ($positiv as $keyword)
     {
         DB::table('key_bew')->insert(['bewertungID' => $bewertungID, 'keywordID' => $keyword, 'positiv' => '1']);
