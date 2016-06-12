@@ -133,8 +133,8 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">mode_edit</i>
-                        <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-                        <label for="icon_prefix2">Gib deinen Senf dazu!</label>
+                        <textarea name="freitext" id="freitext" class="materialize-textarea"></textarea>
+                        <label for="freitext">Gib deinen Senf dazu!</label>
                     </div>
                 </div>
             </div>
