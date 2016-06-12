@@ -45,8 +45,8 @@ Route::get('/schule/{id}', function ($schule) {
     $hochwert = $schule->adresse->lat; //hochwert
     $rechtswert = $schule->adresse->lon; //rechtswert
     $schueler = $schule->schueler;
-    if($schueler::count() != 0)
-      if($schueler[0]->bewertung()::count() != 0):
+    if($schueler->count() != 0)
+      if($schueler[0]->bewertung()->count() != 0):
 
     $durchschnitt = array();
     $durchschnitt[0] = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->select(DB::raw('AVG(bewertung1) as b1'))->where('users.schulID', '=', $schulID)->first()->b1;
