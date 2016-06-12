@@ -13,6 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf8">
     <title>Schul-O-Mat | Details</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
 </head>
 
 <body>
@@ -21,7 +22,7 @@
             <a href="/" class="brand-logo">Schul'O'Mat</a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="/schulen/"><i class="material-icons">search</i></a></li>
-                <li><a href=""><i class="material-icons dropdown-button" data-activates='dropdown'>more_vert</i></a></li>
+                <li><a href="" class="dropdown-button" data-activates='dropdown'><i class="material-icons" >more_vert</i></a></li>
             </ul>
             <ul id='dropdown' class='dropdown-content text-blue'>
                 @if(Auth::guest())
@@ -65,6 +66,7 @@
             <!--Anfang REDAKTIONELL-->
 
             <div class="container">
+              @if(isset($redaktionell))
                 <div class="row">
 
                     <div id="redaktionel" class="col s12">
@@ -74,6 +76,7 @@
 
                     </div>
                 </div>
+              @endif
 
                 <!--Ende REDAKTIONELL-->
 
@@ -81,7 +84,7 @@
                 <!-- Anfang FRAGEBOGEN-->
 
                 <!--Ende Durchschnittsbewertung "Sternchen"-->
-
+                @if(isset($durchschnitt))
                 <div id="quests" class="col s12 ">
                     <div class="collection">
                         <div class="collection-item">
@@ -134,6 +137,7 @@
                             </div>
                         </div>
                     </div>
+                  @endif
                     <div class="row">
                         <h4 class="center-align">Dies Bewerten die Schüler Besonders:</h4>
                         <table class="highlight centered">
@@ -146,8 +150,7 @@
                             </thead>
 
                             <tbody>
-                              @if(isset($keywords))
-                                @foreach($keywords as $k=>list($pos, $neg))
+                                @if(isset($keywords)) @foreach($keywords as $k=>list($pos, $neg))
                                 <tr>
                                     <td>
                                         <div class="chip green">{{$pos}}</div>
@@ -157,8 +160,7 @@
                                         <div class="chip red">{{$neg}}</div>
                                     </td>
                                 </tr>
-                                @endforeach
-                              @endif
+                                @endforeach @endif
                             </tbody>
                         </table>
                     </div>
@@ -214,11 +216,13 @@
 
 
     </main>
-    <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-        <a href="/schule/{{$schule->schulnr}}/eintragen" class="btn-floating btn-large blue tooltipped" data-position="left" data-delay="50" data-tooltip="Trag was ein">
-            <i class="large material-icons">mode_edit</i>
-        </a>
-    </div>
+    @if(!Auth::guest())
+      <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+          <a href="/schule/{{$schule->schulnr}}/eintragen" class="btn-floating btn-large blue tooltipped" data-position="left" data-delay="50" data-tooltip="Trag was ein">
+              <i class="large material-icons">mode_edit</i>
+          </a>
+      </div>
+    @endif
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript " src="https://code.jquery.com/jquery-2.1.1.min.js "></script>
     <script type="text/javascript " src="/js/bin/materialize.js "></script>

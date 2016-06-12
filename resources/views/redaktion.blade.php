@@ -14,6 +14,7 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     </head>
     <body>
     <nav>
@@ -40,8 +41,9 @@
             <form action="/schule/{{$id}}/redaktion" method="post">
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
             <div class="input-field col s12">
+                <i class="material-icons prefix">mode_edit</i>
             <textarea id="fundiertesfeedback" class="materialize-textarea" name="redaktionstext"></textarea>
-                <label for="fundiertesfeedback">Text</label>
+                <label for="fundiertesfeedback">Hier das Feedback</label>
             </div>
                 <br>
                 <button class="waves-effect waves-light btn" type="submit">Submit</button>
