@@ -90,7 +90,7 @@ Route::post("/schule/{id}/eintragen", function(Request $request, $id) {
     $question1 = Request::get("schoolgeneral");
     $question2 = Request::get("mensa");
     $question3 = Request::get("ag");
-    $question4 = Request::get("ausstattung");
+    $question4 = Request::get("austattung");
     $question5 = Request::get("toilet");
     $question6 = Request::get("length");
     $question7 = Request::get("time");
