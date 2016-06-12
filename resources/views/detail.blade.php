@@ -19,7 +19,7 @@
 <body>
     <nav>
         <div class="nav-wrapper blue">
-            <a href="/" style="" class="brand-logo"> <img src="img/logo.png" class="schulomaticon"></a>
+            <a href="/" style="" class="brand-logo"> <img src="/img/logo.png" class="schulomaticon"></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="/schulen/"><i class="material-icons">search</i></a></li>
                 <li><a href="" class="dropdown-button" data-activates='dropdown'><i class="material-icons" >more_vert</i></a></li>
@@ -202,9 +202,9 @@
                                     <p>{{$schule->adresse->plz}} {{$schule->adresse->ort}}</p>
                                     <br>
                                     <p>Homepage: <a href="{{$schule->kontakt->homepage}}">{{$schule->kontakt->homepage}}</a>
-                                    <p>Email: <a href="mailto:{{ $schule->kontakt->mail }}">{{ $schule->kontakt->mail }}</a></p>
-                                    <p>Telefon: <a href="tel:{{ $schule->kontakt->telefonnr }}">{{ $schule->kontakt->telefonnr }}</a></p>
-                                    <p>Telefax: <a href="tel:{{ $schule->kontakt->faxnr }}">{{ $schule->kontakt->faxnr }}</a></p>
+                                        <p>Email: <a href="mailto:{{ $schule->kontakt->mail }}">{{ $schule->kontakt->mail }}</a></p>
+                                        <p>Telefon: <a href="tel:{{ $schule->kontakt->telefonnr }}">{{ $schule->kontakt->telefonnr }}</a></p>
+                                        <p>Telefax: <a href="tel:{{ $schule->kontakt->faxnr }}">{{ $schule->kontakt->faxnr }}</a></p>
 
                                 </div>
                                 <div class="card-action ">
