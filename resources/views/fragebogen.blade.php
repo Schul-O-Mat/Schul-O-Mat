@@ -47,7 +47,7 @@
     <header>
         <h3 class="center-align">Bewerte deine Schule</h3>
     </header>
-    <form action="#">
+    <form action="/schule/{{$id}}/eintragen" method="post">
         <div class="row">
 
             <div class="col s6">
