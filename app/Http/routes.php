@@ -65,8 +65,7 @@ Route::get('/schule/{id}', function (App\schulen $schule) {
   return view('detail', compact("schule", "hochwert", "rechtswert", "durchschnitt", "keywords", "reviews", "redaktionell"));
 });
 
-Route::get('/schule/{id}/karte', function ($schule) {
-  $schule = App\schulen::find($schule);
+Route::get('/schule/{id}/karte', function (App\schulen $schule) {
   $hochwert = $schule->adresse->lat; //hochwert
   $rechtswert = $schule->adresse->lon; //rechtswert
   return view('karten', compact("hochwert", "rechtswert"));
