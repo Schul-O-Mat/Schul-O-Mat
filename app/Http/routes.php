@@ -37,7 +37,7 @@ Route::get('/schulen/{page}', function ($page) {
 
 Route::get("/schule", function() {
   return redirect("/schulen");
-})
+});
 
 Route::get('/schule/{id}', function ($schule) {
     $schulID = $schule;
