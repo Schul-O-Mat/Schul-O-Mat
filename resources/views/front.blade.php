@@ -50,7 +50,7 @@
                 <p class="flow-text">Möchtest du etwas über eine Schule erfahren?</p>
                 <div class="row center-align">
                     <a href="/schulen" class="btn large blue">Schau dir alle Schulen an</a>
-                    <a href="" class="btn large blue">Suche gezielt nach einer Schule</a>
+                    <a href="/schulen" class="btn large blue">Suche gezielt nach einer Schule</a>
                 </div>
             </div>
             <div class="col s12">
