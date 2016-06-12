@@ -48,7 +48,7 @@
         <h3 class="center-align">Bewerte deine Schule</h3>
     </header>
     <form action="/schule/{{$id}}/eintragen" method="post">
-      <input type="hidden" name="_token" value="{{csrf_token()}}">
+        <input type="hidden" name="_token" value="{{csrf_token()}}">
         <div class="row">
 
             <div class="col s6">
@@ -109,7 +109,7 @@
 
         <div class="row">
             <div class="input-field col s12 m6">
-                <select multiple name="positive" required>
+                <select multiple name="positive[]" required>
                     <option value="" disabled selected>Auswählen</option>
                     @foreach ($keywords as $k)
                       <option value="{{$k->id}}">{{$k->bezeichnung}}</option>
@@ -118,7 +118,7 @@
                 <label>Positive Aspekte an deiner Schule</label>
             </div>
             <div class="input-field col s12 m6">
-                <select name="negative" multiple required>
+                <select name="negative[]" multiple required>
                     <option value="" disabled selected>Auswählen</option>
                     @foreach ($keywords as $k)
                       <option value="{{$k->id}}">{{$k->bezeichnung}}</option>
@@ -148,7 +148,7 @@
 -->
             <button type="submit" class="btn waves-effect waves-light blue" href="/schulen" onclick="Materialize.toast('Data successfully saved!', 4000)">Absenden
                 <i class="material-icons right">send</i>
-                </a>
+            </button>
         </div>
     </form>
     <script>
