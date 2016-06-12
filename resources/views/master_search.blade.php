@@ -56,7 +56,7 @@
                     @elseif ($d->schulform == 20) blue
                     @elseif ($d->schulform == 4) #aa00ff
                     @elseif ($d->schulform == 10) #d50000
-                    @elseif ($d->schulform == 15) #ffff00 
+                    @elseif ($d->schulform == 15) #ffff00
                     @else #9e9e9e
                               @endif
                               ">school</i>
