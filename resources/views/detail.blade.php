@@ -24,10 +24,13 @@
                 <li><a href=""><i class="material-icons dropdown-button" data-activates='dropdown'>more_vert</i></a></li>
             </ul>
             <ul id='dropdown' class='dropdown-content text-blue'>
-                <li><a href="#!">Login</a></li>
-                <li><a href="#!">Register</a></li>
-                <li class="divider"></li>
-                <li><a href="#!">Swag</a></li>
+                @if(Auth::guest())
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+                @else
+                <li><a href="#">Willkommen {{Auth::user()->name}}!</a></li>
+                <li><a href="/logout">Logout</a></li>
+                @endif
             </ul>
             <ul class="left hide-on-med-and-down">
                 <li><a href="/schulen"><i class="material-icons">arrow_back</i></a></li>
