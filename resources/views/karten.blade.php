@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <script>
         var GKRight = parseInt({{$rechtswert}});
         var GKHeight = parseInt({{$hochwert}});

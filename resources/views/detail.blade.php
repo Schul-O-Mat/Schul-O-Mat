@@ -13,6 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf8">
     <title>Schul-O-Mat | Details</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
 </head>
 
 <body>
@@ -163,21 +164,23 @@
                             </tbody>
                         </table>
                     </div>
+                    @if(isset($reviews))
+                      <div>
+                          <h4 class="center-align">Einzelberichte:</h4>
 
-                    <div>
-                        <h4 class="center-align">Einzelberichte:</h4>
+                          <ul class="collapsible" data-collapsible="expandable">
 
-                        <ul class="collapsible" data-collapsible="expandable">
-                            @foreach($reviews as $r)
-                            <li>
-                                <div class="collapsible-header" class="truncate"><i class="material-icons">announcement</i>{{$r->freitext}}</div>
-                                <div class="collapsible-body">
-                                    <p><span>{{$r->freitext}}</span></p>
-                                </div>
-                            </li>
-                            @endforeach
-                        </ul>
-                    </div>
+                              @foreach($reviews as $r)
+                              <li>
+                                  <div class="collapsible-header" class="truncate"><i class="material-icons">announcement</i>{{$r->freitext}}</div>
+                                  <div class="collapsible-body">
+                                      <p><span>{{$r->freitext}}</span></p>
+                                  </div>
+                              </li>
+                              @endforeach
+                          </ul>
+                      </div>
+                    @endif
 
                 </div>
 
