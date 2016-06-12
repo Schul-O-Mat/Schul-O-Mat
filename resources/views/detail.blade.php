@@ -146,6 +146,7 @@
                             </thead>
 
                             <tbody>
+                              @if(isset($keywords))
                                 @foreach($keywords as $k=>list($pos, $neg))
                                 <tr>
                                     <td>
@@ -157,6 +158,7 @@
                                     </td>
                                 </tr>
                                 @endforeach
+                              @endif
                             </tbody>
                         </table>
                     </div>
