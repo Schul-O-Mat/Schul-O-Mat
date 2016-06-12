@@ -54,13 +54,13 @@
                 <div class="row center-align">
                     <a href="/" class="btn-flat">Zurück</a>
                     <button id="submitbutton" type="submit" class="btn waves-effect waves-light blue" href="/schulen" onclick="Materialize.toast('Data successfully saved!', 4000)">
-                        Absenden <i class="material-icons right">send</i>
+                        Absenden<i class="material-icons right">send</i>
                     </button>
                 </div>
             </form>
         </div>
     </main>
-    <footer>
+    <footer class="center-align">
         <p>
             Made at Jugendhackt by some awesome people
         </p>
