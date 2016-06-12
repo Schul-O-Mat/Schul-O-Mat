@@ -15,6 +15,7 @@
 </head>
 
 <body>
+  <marquee>
     <nav>
         <div class="nav-wrapper blue">
 
@@ -43,7 +44,7 @@
     </nav>
     <header class="center-align">
         <h1>Schul-O-Mat</h1>
-        <h2>Finde die Schule, die zu <span class="blue-text"><marquee>dir</marquee> </span><a href="/schulen"class="black-text">passt</a>!</h2>
+        <h2>Finde die Schule, die zu <span class="blue-text">dir </span><a href="/schulen"class="black-text">passt</a>!</h2>
     </header>
     <main class="container">
         <div class="row">
@@ -77,6 +78,7 @@
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript " src="https://code.jquery.com/jquery-2.1.1.min.js "></script>
     <script type="text/javascript " src="/js/bin/materialize.js "></script>
+  </marquee>
 </body>
 
 </html>
