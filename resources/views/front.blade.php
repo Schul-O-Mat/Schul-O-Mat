@@ -56,8 +56,13 @@
             <div class="col s12">
                 <p class="flow-text">Möchtest du etwas beitragen?</p>
                 <div class="row center-align">
+                    @if(Auth::guest())
                     <a href="/login" class="btn large blue">Log dich ein</a>
                     <a href="/register" class="btn large blue">Registriere dich beim Schul-O-Maten</a>
+                    @else
+
+                        <a class="btn large blue">Du bist eingeloggt</a>
+                    @endif
                 </div>
             </div>
         </div>
