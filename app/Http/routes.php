@@ -70,7 +70,7 @@ Route::get('/schule/{id}', function ($schule) {
 
     $redaktionell = DB::table('redaktion')->select('text')->where('schulID', '=', $schulID)->first()->text;
     endif;
-  return view('detail', compact("schule", "hochwert", "rechtswert", "durchschnitt", "keywords", "reviews", "redaktionell"));
+  return view('detail', compact("schule", "hochwert", "rechtswert", "durchschnitt", "keywords", "reviews", "redaktionell", "schulID"));
 });
 
 Route::get('/schule/{id}/karte', function ($schule) {
