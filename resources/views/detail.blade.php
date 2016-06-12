@@ -81,7 +81,7 @@
                 <!-- Anfang FRAGEBOGEN-->
 
                 <!--Ende Durchschnittsbewertung "Sternchen"-->
-
+                @if(isset($durchschnitt))
                 <div id="quests" class="col s12 ">
                     <div class="collection">
                         <div class="collection-item">
@@ -134,6 +134,7 @@
                             </div>
                         </div>
                     </div>
+                  @endif
                     <div class="row">
                         <h4 class="center-align">Dies Bewerten die Schüler Besonders:</h4>
                         <table class="highlight centered">
@@ -212,11 +213,13 @@
 
 
     </main>
-    <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-        <a href="/schule/{{$schule->schulnr}}/eintragen" class="btn-floating btn-large blue tooltipped" data-position="left" data-delay="50" data-tooltip="Trag was ein">
-            <i class="large material-icons">mode_edit</i>
-        </a>
-    </div>
+    @if(!Auth::guest())
+      <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+          <a href="/schule/{{$schule->schulnr}}/eintragen" class="btn-floating btn-large blue tooltipped" data-position="left" data-delay="50" data-tooltip="Trag was ein">
+              <i class="large material-icons">mode_edit</i>
+          </a>
+      </div>
+    @endif
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript " src="https://code.jquery.com/jquery-2.1.1.min.js "></script>
     <script type="text/javascript " src="/js/bin/materialize.js "></script>
