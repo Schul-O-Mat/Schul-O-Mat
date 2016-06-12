@@ -108,7 +108,7 @@ Route::post("/schule/{id}/eintragen", function(Request $request, $id) {
     }
     foreach ($negativ as $keyword)
     {
-        DB::table('key_bew')->insert(['bewertungID' => $bewertungID, 'keywordID' => $keyword, 'positiv' => '1']);
+        DB::table('key_bew')->insert(['bewertungID' => $bewertungID, 'keywordID' => $keyword, 'positiv' => '0']);
     }
 
     return redirect("/schule/".$schulID);
