@@ -43,14 +43,13 @@ Route::get('/schule/{id}', function ($schule) {
     $bewertungda = false;
     if(!Auth::guest())
       if(isset(Auth::user()->bewertung))
-        $bewertungda = DB::table('bewertungen')->select(DB::raw('COUNT(*) as cnt'))->where('userID', '=', '2')->first()->cnt > 0;
+        $bewertungda = DB::table('bewertungen')->select(DB::raw('COUNT(*) as cnt'))->where('userID', '=', Auth::user()->id)->first()->cnt > 0;
     $schulID = $schule;
     $schule = App\schulen::find($schule);
     $hochwert = $schule->adresse->lat; //hochwert
     $rechtswert = $schule->adresse->lon; //rechtswert
-    $schueler = $schule->schueler;
-    if($schueler->count() != 0)
-      if($schueler[0]->bewertung()->count() != 0):
+    $schueler = $schule->schueler
+    if(DB::table('bewertungen')->select(DB::raw('COUNT(*) as cnt'))->first()->cnt > 0):
 
     $durchschnitt = array();
     $durchschnitt[0] = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->select(DB::raw('AVG(bewertung1) as b1'))->where('users.schulID', '=', $schulID)->first()->b1;
