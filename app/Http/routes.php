@@ -40,6 +40,9 @@ Route::get("/schule", function() {
 });
 
 Route::get('/schule/{id}', function ($schule) {
+    $bewertungda = false;
+    if(!Auth::guest())
+      $bewertungda = Auth::user()->bewertung->count == 1;
     $schulID = $schule;
     $schule = App\schulen::find($schule);
     $hochwert = $schule->adresse->lat; //hochwert
@@ -70,7 +73,7 @@ Route::get('/schule/{id}', function ($schule) {
 
     $redaktionell = DB::table('redaktion')->select('text')->where('schulID', '=', $schulID)->first()->text;
     endif;
-  return view('detail', compact("schule", "hochwert", "rechtswert", "durchschnitt", "keywords", "reviews", "redaktionell"));
+  return view('detail', compact("schule", "hochwert", "rechtswert", "durchschnitt", "keywords", "reviews", "redaktionell", "schulID", "bewertungda"));
 });
 
 Route::get('/schule/{id}/karte', function ($schule) {
@@ -86,6 +89,7 @@ Route::get("/schule/{id}/eintragen", function($id) {
 });
 
 Route::post("/schule/{id}/eintragen", function(Request $request, $id) {
+    $schulID = Auth::user()->schulID;
     $userID = Auth::user()->id;
     $question1 = Request::get("schoolgeneral");
     $question2 = Request::get("mensa");
@@ -97,7 +101,7 @@ Route::post("/schule/{id}/eintragen", function(Request $request, $id) {
     $positiv = Request::get("positive");
     $negativ = Request::get("negative");
     $freitext = Request::get("freitext");
-    $bewertungID = DB::table('bewertungen')->insertGetID(['userID' => $userID, 'bewertung1' => $question1, 'bewertung2' => $question2, 'bewertung3' => $question3, 'bewertung4' => $question4, 'bewertung5' => $question5, 'bewertung6' => $question6, 'bewertung7' => $question7,'freitext' => 'aiiuadi']);
+    $bewertungID = DB::table('bewertungen')->insertGetID(['userID' => $userID, 'bewertung1' => $question1, 'bewertung2' => $question2, 'bewertung3' => $question3, 'bewertung4' => $question4, 'bewertung5' => $question5, 'bewertung6' => $question6, 'bewertung7' => $question7,'freitext' => $freitext]);
     foreach ($positiv as $keyword)
     {
         DB::table('key_bew')->insert(['bewertungID' => $bewertungID, 'keywordID' => $keyword, 'positiv' => '1']);
@@ -106,7 +110,8 @@ Route::post("/schule/{id}/eintragen", function(Request $request, $id) {
     {
         DB::table('key_bew')->insert(['bewertungID' => $bewertungID, 'keywordID' => $keyword, 'positiv' => '1']);
     }
-    return $request::all();
+
+    return redirect("/schule/".$schulID);
 });
 
 Route::auth();

@@ -89,7 +89,7 @@ html {
 
 .header-search-wrapper {
     width: 100%;
-    margin: 10px auto 0px 240px;
+    margin: 10px auto 0px 300px;
     width: calc(100% - 600px);
     height: 40px;
     display: inline-block;
@@ -140,10 +140,13 @@ footer {
 }
 
 #fundiertesfeedback {
-    width: 80%;
-    margin: 0 auto;
+    /*    width: 80%;*/
+    /*    margin: 0 auto;*/
 }
 
 .schulomaticon {
-    height: 80%
+    height: 64px;
+}
+#whatissomat {
+    padding: 10px;
 }
