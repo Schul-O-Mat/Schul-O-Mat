@@ -22,22 +22,22 @@ class schulen extends Model
         return $this->hasOne('App\schulbezeichnung', "id", "fkbezeichnungen");
     }
 
-    public function rechtsform()
+    public function getRechtsform()
     {
         return $this->hasOne('App\key_rechtsform', "id", "rechtsform");
     }
 
-    public function traeger()
+    public function getTraeger()
     {
         return $this->hasOne('App\key_traeger', "Traegernummer", "traegernr");
     }
 
-    public function schulform()
+    public function getSchulform()
     {
         return $this->hasOne('App\key_schulformschluessel', "id", "schulform");
     }
 
-    public function schulbetriebsschluessel()
+    public function getSchulbetriebsschluessel()
     {
         return $this->hasOne('App\key_schulbetriebsschluessel', "id", "schulbetriebsschluessel");
     }

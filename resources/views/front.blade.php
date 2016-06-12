@@ -41,7 +41,7 @@
         </div>
     </nav>
     <header class="center-align">
-        <h1>Schul'O'Mat</h1>
+        <h1>Schul-O-Mat</h1>
         <h2>Finde die Schule, die zu <span class="blue-text">dir </span><a href="/schulen"class="black-text">passt</a>!</h2>
     </header>
     <main class="container">
@@ -57,11 +57,9 @@
                 <p class="flow-text">Möchtest du etwas beitragen?</p>
                 <div class="row center-align">
                     @if(Auth::guest())
-                        <a href="/login" class="btn large blue">Log dich ein</a>
-                        <a href="/register" class="btn large blue">Registriere dich beim Schul-O-Maten</a>
-                    @else
-                        <a class="btn large blue">Du bist eingeloggt als {{Auth::user()->name}}!</a>
-                    @endif
+                    <a href="/login" class="btn large blue">Log dich ein</a>
+                    <a href="/register" class="btn large blue">Registriere dich beim Schul-O-Maten</a> @else
+                    <a class="btn large blue">Du bist eingeloggt als {{Auth::user()->name}}!</a> @endif
                 </div>
             </div>
         </div>

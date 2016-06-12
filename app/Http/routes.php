@@ -84,7 +84,7 @@ Route::get("/schule/{id}/eintragen", function($id) {
   return view("fragebogen", compact("id"));
 });
 
-Route::post("/schule/{id}/eintragen)", function(Request $request, $id) {
+Route::post("/schule/{id}/eintragen", function(Request $request, $id) {
     $question1 = Request::get("schoolgeneral");
     $question2 = Request::get("mensa");
     $question3 = Request::get("ag");
@@ -92,7 +92,7 @@ Route::post("/schule/{id}/eintragen)", function(Request $request, $id) {
     $question5 = Request::get("toilet");
     $question6 = Request::get("length");
     $question7 = Request::get("time");
-    return "baum";
+    return $request::all();
 });
 
 Route::auth();
