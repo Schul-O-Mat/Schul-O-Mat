@@ -30,7 +30,6 @@
                 <!-- Search Url: /schulen/search/{key} -->
                 <i class="material-icons active">search</i>
                 <input name="searchword" class="header-search-input z-depth-2" placeholder="Suche" type="text" onChange="this.form.submit();">
-
             </form>
             <ul class="right">
                 <li><a href="" class="dropdown-button" data-activates='dropdown'><i class="material-icons" >more_vert</i></a></li>
