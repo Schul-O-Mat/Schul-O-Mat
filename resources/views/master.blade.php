@@ -32,7 +32,7 @@
 
             </form>
             <ul class="right">
-                <li><a href=""><i class="material-icons dropdown-button" data-activates='dropdown'>more_vert</i></a></li>
+                <li><a href="" class="dropdown-button" data-activates='dropdown'><i class="material-icons" >more_vert</i></a></li>
             </ul>
             <ul id='dropdown' class='dropdown-content text-blue'>
                 @if(Auth::guest())

@@ -20,7 +20,7 @@
             <a href="#!" style="margin-left: auto !important;" class="brand-logo">Schul'O'Mat</a>
             <ul class="right hide-on-med-and-down">
                 <!--                <li><a href=""><i class="material-icons">search</i></a></li>-->
-                <li><a href=""><i class="material-icons dropdown-button" data-activates='dropdown'>more_vert</i></a></li>
+                <li><a href="" class="dropdown-button" data-activates='dropdown'><i class="material-icons" >more_vert</i></a></li>
             </ul>
             <form action="/schulen/search" class="form header-search-wrapper hide-on-med-and-down" method="get">
                 <!-- Search Url: /schulen/search/{key} -->
