@@ -141,7 +141,7 @@
                     @endif @if(isset($keywords))
 
                     <div class="row">
-                        <h4 class="center-align">Dies Bewerten die Schüler Besonders:</h4>
+                        <h4 class="center-align">Dies bewerten die Schüler besonders:</h4>
                         <table class="highlight centered">
                             <thead>
                                 <tr>
