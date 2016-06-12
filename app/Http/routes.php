@@ -84,7 +84,7 @@ Route::get("/schule/{id}/eintragen", function($id) {
   if(Auth::guest())
     return redirect("/");
   $keywords = App\keywords::all();
-  return view("fragebogen", compact("id", "ke"));
+  return view("fragebogen", compact("id", "keywords"));
 });
 
 Route::post("/schule/{id}/eintragen", function(Request $request, $id) {
