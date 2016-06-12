@@ -201,10 +201,10 @@
                                     <p>{{$schule->adresse->strasse}}</p>
                                     <p>{{$schule->adresse->plz}} {{$schule->adresse->ort}}</p>
                                     <br>
-                                    <p>Homepage: <a href="{{$schule->kontakt->homepage}}">{{$schule->kontakt->homepage}}</a>
-                                        <p>Email: <a href="mailto:{{ $schule->kontakt->mail }}">{{ $schule->kontakt->mail }}</a></p>
-                                        <p>Telefon: <a href="tel:{{ $schule->kontakt->telefonnr }}">{{ $schule->kontakt->telefonnr }}</a></p>
-                                        <p>Telefax: <a href="tel:{{ $schule->kontakt->faxnr }}">{{ $schule->kontakt->faxnr }}</a></p>
+                                    @if($schule->kontakt->homepage!="")<p>Homepage: <a href="{{$schule->kontakt->homepage}}">{{$schule->kontakt->homepage}}</a>@endif
+                                    <p>Email: <a href="mailto:{{ $schule->kontakt->mail }}">{{ $schule->kontakt->mail }}</a></p>
+                                    @if($schule->kontakt->telefonnr!="/")<p>Telefon: <a href="tel:{{ $schule->kontakt->telefonnr }}">{{ $schule->kontakt->telefonnr }}</a></p>@endif
+                                    @if($schule->kontakt->faxnr)<p>Telefax: <a href="tel:{{ $schule->kontakt->faxnr }}">{{ $schule->kontakt->faxnr }}</a></p>@endif
 
                                 </div>
                                 <div class="card-action ">
