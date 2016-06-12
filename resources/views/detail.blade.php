@@ -64,153 +64,151 @@
 
             <!--Anfang REDAKTIONELL-->
 
-
-            <div id="redaktionel" class="col s12">
-                <div class="card">
-                    <div class="card-content">
-                        <span class="card-title">Redaktionelle Inhalte</span>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore earum at laudantium quae, laboriosam, quaerat consequuntur doloremque atque unde eaque deleniti fuga beatae delectus eligendi nobis nisi veritatis similique facere?</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="" class="btn">Unbelivable</a>
-                    </div>
-                </div>
-            </div>
-
-            <!--Ende REDAKTIONELL-->
-
-
-            <!-- Anfang FRAGEBOGEN-->
-
-            <!--Ende Durchschnittsbewertung "Sternchen"-->
-
-            <div id="quests" class="col s12 ">
-                <div class="collection">
-                    <div class="collection-item">
-                        <p>Wie findest du deine Schule im Allgemeinen?<span class="right">{{round($durchschnitt[0], 1)}}/10</span></p>
-                        <div class="progress">
-                            <div class="determinate" style="width: {{$durchschnitt[0]*10}}%"></div>
-
-                        </div>
-                    </div>
-                    <div class="collection-item">
-                        <p>Wie findest du die Schulmensa?<span class="right">{{round($durchschnitt[1], 1)}}/10</span></p>
-                        <div class="progress">
-                            <div class="determinate" style="width: {{$durchschnitt[1]*10}}%"></div>
-
-                        </div>
-                    </div>
-                    <div class="collection-item">
-                        <p>Wie findest du die AGs?<span class="right">{{round($durchschnitt[2], 1)}}/10</span></p>
-                        <div class="progress">
-                            <div class="determinate" style="width: {{$durchschnitt[2]*10}}%"></div>
-
-                        </div>
-                    </div>
-                    <div class="collection-item">
-                        <p>Wie findest du die Austattung der Schule?<span class="right">{{round($durchschnitt[3], 1)}}/10</span></p>
-                        <div class="progress">
-                            <div class="determinate" style="width: {{$durchschnitt[3]*10}}%"></div>
-
-                        </div>
-                    </div>
-                    <div class="collection-item">
-                        <p>Wie findest du die Toiletten an deiner Schule?<span class="right">{{round($durchschnitt[4], 1)}}/10</span></p>
-                        <div class="progress">
-                            <div class="determinate" style="width: {{$durchschnitt[4]*10}}%"></div>
-
-                        </div>
-                    </div>
-                    <div class="collection-item">
-                        <p>Wie findest du die Länge der Schulstunden?<span class="right">{{round($durchschnitt[5], 1)}}/10</span></p>
-                        <div class="progress">
-                            <div class="determinate" style="width: {{$durchschnitt[5]*10}}%"></div>
-
-                        </div>
-                    </div>
-                    <div class="collection-item">
-                        <p>Wie findest du die Zeit des Schulbeginns?<span class="right">{{round($durchschnitt[6], 1)}}/10</span></p>
-                        <div class="progress">
-                            <div class="determinate" style="width: {{$durchschnitt[6]*10}}%"></div>
-
-                        </div>
-                    </div>
-                </div>
+            <div class="container">
                 <div class="row">
-                    <h4 class="center-align">Dies Bewerten die Schüler Besonders:</h4>
-                    <table class="highlight centered">
-                        <thead>
-                            <tr>
-                                <th data-field="id">Pro</th>
-                                <th data-field="name">Fact</th>
-                                <th data-field="price">Con</th>
-                            </tr>
-                        </thead>
 
-                        <tbody>
-                            @foreach($keywords as $k=>list($pos, $neg))
-                            <tr>
-                                <td>
-                                    <div class="chip green">{{$pos}}</div>
-                                </td>
-                                <td>{{$k}}</td>
-                                <td>
-                                    <div class="chip red">{{$neg}}</div>
-                                </td>
-                            </tr>
+                    <div id="redaktionel" class="col s12">
+
+                        <h4 class="card-title">Redaktionelle Inhalte</h4>
+                        <p class="flow-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore earum at laudantium quae, laboriosam, quaerat consequuntur doloremque atque unde eaque deleniti fuga beatae delectus eligendi nobis nisi veritatis similique facere?</p>
+
+                    </div>
+                </div>
+
+                <!--Ende REDAKTIONELL-->
+
+
+                <!-- Anfang FRAGEBOGEN-->
+
+                <!--Ende Durchschnittsbewertung "Sternchen"-->
+
+                <div id="quests" class="col s12 ">
+                    <div class="collection">
+                        <div class="collection-item">
+                            <p>Wie findest du deine Schule im Allgemeinen?<span class="right">{{round($durchschnitt[0], 1)}}/10</span></p>
+                            <div class="progress">
+                                <div class="determinate" style="width: {{$durchschnitt[0]*10}}%"></div>
+
+                            </div>
+                        </div>
+                        <div class="collection-item">
+                            <p>Wie findest du die Schulmensa?<span class="right">{{round($durchschnitt[1], 1)}}/10</span></p>
+                            <div class="progress">
+                                <div class="determinate" style="width: {{$durchschnitt[1]*10}}%"></div>
+
+                            </div>
+                        </div>
+                        <div class="collection-item">
+                            <p>Wie findest du die AGs?<span class="right">{{round($durchschnitt[2], 1)}}/10</span></p>
+                            <div class="progress">
+                                <div class="determinate" style="width: {{$durchschnitt[2]*10}}%"></div>
+
+                            </div>
+                        </div>
+                        <div class="collection-item">
+                            <p>Wie findest du die Austattung der Schule?<span class="right">{{round($durchschnitt[3], 1)}}/10</span></p>
+                            <div class="progress">
+                                <div class="determinate" style="width: {{$durchschnitt[3]*10}}%"></div>
+
+                            </div>
+                        </div>
+                        <div class="collection-item">
+                            <p>Wie findest du die Toiletten an deiner Schule?<span class="right">{{round($durchschnitt[4], 1)}}/10</span></p>
+                            <div class="progress">
+                                <div class="determinate" style="width: {{$durchschnitt[4]*10}}%"></div>
+
+                            </div>
+                        </div>
+                        <div class="collection-item">
+                            <p>Wie findest du die Länge der Schulstunden?<span class="right">{{round($durchschnitt[5], 1)}}/10</span></p>
+                            <div class="progress">
+                                <div class="determinate" style="width: {{$durchschnitt[5]*10}}%"></div>
+
+                            </div>
+                        </div>
+                        <div class="collection-item">
+                            <p>Wie findest du die Zeit des Schulbeginns?<span class="right">{{round($durchschnitt[6], 1)}}/10</span></p>
+                            <div class="progress">
+                                <div class="determinate" style="width: {{$durchschnitt[6]*10}}%"></div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <h4 class="center-align">Dies Bewerten die Schüler Besonders:</h4>
+                        <table class="highlight centered">
+                            <thead>
+                                <tr>
+                                    <th data-field="id">Pro</th>
+                                    <th data-field="name">Fact</th>
+                                    <th data-field="price">Con</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach($keywords as $k=>list($pos, $neg))
+                                <tr>
+                                    <td>
+                                        <div class="chip green">{{$pos}}</div>
+                                    </td>
+                                    <td>{{$k}}</td>
+                                    <td>
+                                        <div class="chip red">{{$neg}}</div>
+                                    </td>
+                                </tr>
+                                @endforeach
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div>
+                        <h4 class="center-align">Einzelberichte:</h4>
+
+                        <ul class="collapsible" data-collapsible="expandable">
+                            @foreach($reviews as $r)
+                            <li>
+                                <div class="collapsible-header" class="truncate"><i class="material-icons">announcement</i>{{$r->freitext}}</div>
+                                <div class="collapsible-body">
+                                    <p><span>{{$r->freitext}}</span></p>
+                                </div>
+                            </li>
                             @endforeach
-
-                        </tbody>
-                    </table>
-                </div>
-
-                <div>
-                    <h4 class="center-align">Einzelberichte:</h4>
-
-                    <ul class="collapsible" data-collapsible="expandable">
-                        @foreach($reviews as $r)
-                        <li>
-                            <div class="collapsible-header" class="truncate"><i class="material-icons">announcement</i>{{$r->freitext}}</div>
-                            <div class="collapsible-body">
-                                <p><span>{{$r->freitext}}</span></p>
-                            </div>
-                        </li>
-                        @endforeach
-                    </ul>
-                </div>
-
-            </div>
-
-            <!--Ende Freitext-->
-
-            <!-- Anfang FRAGEBOGEN-->
-
-
-            <div id="facts" class="col s12">
-                <div class="row">
-                    <div class="col s12 m6">
-                        <div class="card">
-                            <div class=" card-content">
-                                <span class="card-title ">Kontakt</span>
-                                <h6>{{$schule->bezeichnung->schulbez1}}</h6>
-                                <p>{{$schule->adresse->strasse}}</p>
-                                <p>{{$schule->adresse->plz}} {{$schule->adresse->ort}}</p>
-                                <br>
-                                <p>Email: <a href="mailto:{{ $schule->kontakt->mail }}">{{ $schule->kontakt->mail }}</a></p>
-                                <p>Telefon: <a href="tel:{{ $schule->kontakt->telefonnr }}">{{ $schule->kontakt->telefonnr }}</a></p>
-                                <p>Telefax: <a href="tel:{{ $schule->kontakt->faxnr }}">{{ $schule->kontakt->faxnr }}</a></p>
-
-                            </div>
-                            <div class="card-action ">
-                                <a href="/schule/{{$schule->schulnr}}/karte">Öffne mit Maps</a>
-                                <a href="# ">Irgendwas</a>
-                            </div>
-                        </div>
+                        </ul>
                     </div>
 
                 </div>
+
+                <!--Ende Freitext-->
+
+                <!-- Anfang FRAGEBOGEN-->
+
+
+                <div id="facts" class="col s12">
+                    <div class="row">
+                        <div class="col s12 m6">
+                            <div class="card">
+                                <div class=" card-content">
+                                    <span class="card-title ">Kontakt</span>
+                                    <h6>{{$schule->bezeichnung->schulbez1}}</h6>
+                                    <p>{{$schule->adresse->strasse}}</p>
+                                    <p>{{$schule->adresse->plz}} {{$schule->adresse->ort}}</p>
+                                    <br>
+                                    <p>Email: <a href="mailto:{{ $schule->kontakt->mail }}">{{ $schule->kontakt->mail }}</a></p>
+                                    <p>Telefon: <a href="tel:{{ $schule->kontakt->telefonnr }}">{{ $schule->kontakt->telefonnr }}</a></p>
+                                    <p>Telefax: <a href="tel:{{ $schule->kontakt->faxnr }}">{{ $schule->kontakt->faxnr }}</a></p>
+
+                                </div>
+                                <div class="card-action ">
+                                    <a href="/schule/{{$schule->schulnr}}/karte">Öffne mit Maps</a>
+                                    <a href="# ">Irgendwas</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
-        </div>
 
 
 
