@@ -7,6 +7,8 @@
     <script>
         var GKRight = parseInt({{$rechtswert}});
         var GKHeight = parseInt({{$hochwert}});
+        //Umrechnung
+        
     </script>
     <script src="/js/gk_to_latlong.js"></script>
     <script>
