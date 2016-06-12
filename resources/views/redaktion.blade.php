@@ -44,10 +44,13 @@
         <div class="row">
             <form action="/schule/{{$id}}/redaktion" method="post">
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">mode_edit</i>
-                    <textarea id="fundiertesfeedback" class="materialize-textarea" name="redaktionstext"></textarea>
-                    <label for="fundiertesfeedback">Hier das Feedback</label>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">mode_edit</i>
+                        <textarea id="fundiertesfeedback" class="materialize-textarea" name="redaktionstext"></textarea>
+                        <label for="fundiertesfeedback">Hier das Feedback</label>
+                    </div>
                 </div>
 
 
