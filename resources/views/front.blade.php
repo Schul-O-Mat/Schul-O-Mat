@@ -41,6 +41,7 @@
         </div>
     </nav>
     <header class="center-align">
+        <img src="./public/img/logo.png">
         <h1>Schul-O-Mat</h1>
         <h2>Finde die Schule, die zu <span class="blue-text">dir </span><a href="/schulen"class="black-text">passt</a>!</h2>
     </header>
