@@ -9,7 +9,7 @@
         //var GKHeight = parseInt({{$hochwert}});
         //Umrechnung
         //var newcoords = gk2geo(GKRight, GKHeight);
-        console.log(gk2geo(56982960, 25716820))
+        console.log(gk2geo(2571682,5698296));
 
 function gk2geo(rw, hw)
 {
