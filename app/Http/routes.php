@@ -45,7 +45,7 @@ Route::get('/schule/{id}', function ($schule) {
     $hochwert = $schule->adresse->lat; //hochwert
     $rechtswert = $schule->adresse->lon; //rechtswert
     $schueler = $schule->schueler;
-    if($schuler::count() != 0)
+    if($schueler::count() != 0)
       if($schueler[0]->bewertung()::count() != 0):
 
     $durchschnitt = array();
