@@ -64,6 +64,7 @@
                                     <p>@if($d->schulbez2!=""){{$d->schulbez2}}@endif
                                   <br> @if($d->schulbez3!=""){{$d->schulbez3}}@endif
                                   <br> @if($d->kurzbez!=""){{$d->kurzbez}}@endif
+                                    {{var_dump($d->kurzbez)}}
                               </p>
                     <a href="/schule/{{ $d->schulnr }}" class="secondary-content"><i class="blue-text material-icons">arrow_forward</i></a>
                 </li>
