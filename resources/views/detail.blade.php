@@ -211,7 +211,7 @@
                                 </div>
                                 <div class="card-action ">
                                     <a href="/schule/{{$schule->schulnr}}/karte">Öffne mit Maps</a>
-                                    <a href="# ">Irgendwas</a>
+                                    <a href="# ">Zur Website</a>
                                 </div>
                             </div>
                         </div>

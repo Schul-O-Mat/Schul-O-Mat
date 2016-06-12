@@ -40,18 +40,17 @@ Route::get("/schule", function() {
 });
 
 Route::get('/schule/{id}', function ($schule) {
-    // DB::table('bewertungen')->select(DB::raw('COUNT(*) as cnt'))->where('userID', '=', '2')->first()->cnt
+  // cooler kommi
     $bewertungda = false;
     if(!Auth::guest())
       if(isset(Auth::user()->bewertung))
-        $bewertungda = Auth::user()->bewertung->count == 4;
+        $bewertungda = DB::table('bewertungen')->select(DB::raw('COUNT(*) as cnt'))->where('userID', '=', Auth::user()->id)->first()->cnt > 0;
     $schulID = $schule;
     $schule = App\schulen::find($schule);
     $hochwert = $schule->adresse->lat; //hochwert
     $rechtswert = $schule->adresse->lon; //rechtswert
     $schueler = $schule->schueler;
-    if($schueler->count() != 0)
-      if($schueler[0]->bewertung()->count() != 0):
+    if(DB::table('bewertungen')->select(DB::raw('COUNT(*) as cnt'))->first()->cnt > 0):
 
     //Berechne Durchschnitt der Bewertungen pro Schule per SQL-Query
     $durchschnitt = array();
