@@ -36,11 +36,10 @@ Route::get('/schulen/{page}', function ($page) {
 });
 
 
-Route::get('/schule/{id}', function ($schule) {
-  $schulID = $schule;
-    $schule = App\schulen::find($schule);
-  $hochwert = $schule->adresse->lat; //hochwert
-  $rechtswert = $schule->adresse->lon; //rechtswert
+Route::get('/schule/{id}', function (App\schulen $schule) {
+    $schulID = $schule->schulnr;
+    $hochwert = $schule->adresse->lat; //hochwert
+    $rechtswert = $schule->adresse->lon; //rechtswert
     $schueler = $schule->schueler;
     $durchschnitt = array();
     $durchschnitt[0] = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->select(DB::raw('AVG(bewertung1) as b1'))->where('users.schulID', '=', $schulID)->first()->b1;
