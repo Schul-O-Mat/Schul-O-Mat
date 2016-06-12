@@ -45,6 +45,9 @@ Route::get('/schule/{id}', function ($schule) {
     $hochwert = $schule->adresse->lat; //hochwert
     $rechtswert = $schule->adresse->lon; //rechtswert
     $schueler = $schule->schueler;
+    if($schuler::count() != 0)
+      if($schueler[0]->bewertung()::count() != 0):
+
     $durchschnitt = array();
     $durchschnitt[0] = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->select(DB::raw('AVG(bewertung1) as b1'))->where('users.schulID', '=', $schulID)->first()->b1;
     $durchschnitt[1] = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->select(DB::raw('AVG(bewertung2) as b2'))->where('users.schulID', '=', $schulID)->first()->b2;
@@ -66,6 +69,7 @@ Route::get('/schule/{id}', function ($schule) {
     $reviews = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->select('freitext')->where('users.schulID', '=', $schulID)->get();
 
     $redaktionell = DB::table('redaktion')->select('text')->where('schulID', '=', $schulID)->first()->text;
+    endif;
   return view('detail', compact("schule", "hochwert", "rechtswert", "durchschnitt", "keywords", "reviews", "redaktionell"));
 });
 
