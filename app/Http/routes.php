@@ -48,7 +48,7 @@ Route::get('/schule/{id}', function ($schule) {
     $schule = App\schulen::find($schule);
     $hochwert = $schule->adresse->lat; //hochwert
     $rechtswert = $schule->adresse->lon; //rechtswert
-    $schueler = $schule->schueler
+    $schueler = $schule->schueler;
     if(DB::table('bewertungen')->select(DB::raw('COUNT(*) as cnt'))->first()->cnt > 0):
 
     $durchschnitt = array();
