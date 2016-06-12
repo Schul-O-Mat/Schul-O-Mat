@@ -15,7 +15,7 @@
 </head>
 
 <body>
-  <marquee>
+  <marquee scrollamount="64">
     <nav>
         <div class="nav-wrapper blue">
 
