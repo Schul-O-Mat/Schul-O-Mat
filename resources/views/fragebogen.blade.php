@@ -26,7 +26,7 @@
             <ul class="right hide-on-med-and-down">
 
                 <li><a href="/schulen/"><i class="material-icons">search</i></a></li>
-                <li><a href=""><i class="material-icons dropdown-button" data-activates='dropdown'>more_vert</i></a></li>
+                <li><a href="" class="dropdown-button" data-activates='dropdown'><i class="material-icons" >more_vert</i></a></li>
             </ul>
             <ul id='dropdown' class='dropdown-content text-blue'>
                 @if(Auth::guest())
@@ -55,47 +55,59 @@
             <p class="range-field col s6">
                 <input type="range" name="schoolgeneral" id="schoolgeneral" min="1" max="10" />
             </p>
+        </div>
+        <div class="row">
             <div class="col s6">
                 <label class="flow-text" for="mensa">Wie findet du die Mensa?</label>
             </div>
             <p class="range-field col s6">
                 <input type="range" name="mensa" id="mensa" min="1" max="10" />
             </p>
+        </div>
+        <div class="row">
             <div class="col s6">
                 <label class="flow-text" for="ag">Wie findet du das AG-Angebot an deiner Schule?</label>
             </div>
             <p class="range-field col s6">
                 <input type="range" name="ag" id="ag" min="1" max="10" />
             </p>
+        </div>
+        <div class="row">
             <div class="col s6">
                 <label class="flow-text" for="austattung">Wie findest du die Ausstattung an deiner Schule?</label>
             </div>
             <p class="range-field col s6">
                 <input type="range" name="austattung" id="ausstattung" min="1" max="10" />
             </p>
+        </div>
+        <div class="row">
             <div class="col s6">
                 <label class="flow-text" for="toilet">Wie findest du die Hygiene an deiner Schule?</label>
             </div>
             <p class="range-field col s6">
                 <input type="range" name="toilet" id="toilet" min="1" max="10" />
             </p>
+        </div>
+        <div class="row">
             <div class="col s6">
                 <label class="flow-text" for="length">Wie findest du die Länge der Schulstunden an deiner Schule?</label>
             </div>
             <p class="range-field col s6">
                 <input type="range" name="length" id="length" min="1" max="10" />
             </p>
+        </div>
+        <div class="row">
             <div class="col s6">
                 <label class="flow-text" for="time">Wie findest du die Zeiten des Schulbeginns?</label>
             </div>
             <p class="range-field col s6">
                 <input type="range" name="time" id="time" min="1" max="10" />
             </p>
-
         </div>
+
         <div class="row">
             <div class="input-field col s12 m6">
-                <select multiple>
+                <select multiple required>
                     <option value="" disabled selected>Auswählen</option>
                     <option value="1">Informatik Unterricht</option>
                     <option value="2">Toiletten</option>
@@ -112,7 +124,7 @@
                 <label>Positive Aspekte an deiner Schule</label>
             </div>
             <div class="input-field col s12 m6">
-                <select multiple>
+                <select multiple required>
                     <option value="" disabled selected>Auswählen</option>
                     <option value="1">Informatik Unterricht</option>
                     <option value="2">Toiletten</option>
@@ -149,7 +161,7 @@
 -->
             <button type="submit" class="btn waves-effect waves-light blue" href="/schulen" onclick="Materialize.toast('Data successfully saved!', 4000)">Absenden
                 <i class="material-icons right">send</i>
-            </a>
+                </a>
         </div>
     </form>
     <script>

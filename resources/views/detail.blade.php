@@ -81,7 +81,7 @@
                 <!-- Anfang FRAGEBOGEN-->
 
                 <!--Ende Durchschnittsbewertung "Sternchen"-->
-
+                @if(isset($durchschnitt))
                 <div id="quests" class="col s12 ">
                     <div class="collection">
                         <div class="collection-item">
@@ -134,6 +134,7 @@
                             </div>
                         </div>
                     </div>
+                  @endif
                     <div class="row">
                         <h4 class="center-align">Dies Bewerten die Schüler Besonders:</h4>
                         <table class="highlight centered">
@@ -146,6 +147,7 @@
                             </thead>
 
                             <tbody>
+                              @if(isset($keywords))
                                 @foreach($keywords as $k=>list($pos, $neg))
                                 <tr>
                                     <td>
@@ -157,7 +159,7 @@
                                     </td>
                                 </tr>
                                 @endforeach
-
+                              @endif
                             </tbody>
                         </table>
                     </div>
