@@ -17,12 +17,13 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
 </head>
 
 <body>
     <nav>
         <div class="nav-wrapper blue">
-            <a href="#!" class="brand-logo">Schul'O'Mat</a>
+            <a href="/" class="brand-logo">Schul'O'Mat</a>
             <ul class="right hide-on-med-and-down">
 
                 <li><a href="/schulen/"><i class="material-icons">search</i></a></li>
