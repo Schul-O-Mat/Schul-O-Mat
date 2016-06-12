@@ -138,6 +138,7 @@
                         </div>
                     </div>
                   @endif
+                  @if(isset($keywords))
                     <div class="row">
                         <h4 class="center-align">Dies Bewerten die Schüler Besonders:</h4>
                         <table class="highlight centered">
@@ -150,7 +151,7 @@
                             </thead>
 
                             <tbody>
-                                @if(isset($keywords)) @foreach($keywords as $k=>list($pos, $neg))
+                                @foreach($keywords as $k=>list($pos, $neg))
                                 <tr>
                                     <td>
                                         <div class="chip green">{{$pos}}</div>
@@ -160,10 +161,11 @@
                                         <div class="chip red">{{$neg}}</div>
                                     </td>
                                 </tr>
-                                @endforeach @endif
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
+                    @endif
                     @if(isset($reviews))
                       <div>
                           <h4 class="center-align">Einzelberichte:</h4>
