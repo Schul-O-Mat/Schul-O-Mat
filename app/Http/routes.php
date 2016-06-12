@@ -85,7 +85,7 @@ Route::get('/schule/{id}/redaktion', function($id) {
     return view("redaktion", compact("id"));
 });
 
-Route::post("schule/{id}/redaktion/writedata", function(Request $request, $id) {
+Route::post("schule/{id}/redaktion", function(Request $request, $id) {
     $toWrite = Request::get("redaktionstext");
     DB::table("redaktion")->insert([
         'schulID' => $id,
