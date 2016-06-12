@@ -81,7 +81,8 @@ Route::get('/schule/{id}/karte', function ($schule) {
 });
 
 Route::get("/schule/{id}/eintragen", function($id) {
-  return view("fragebogen", compact("id"));
+  $keywords = App\keywords::all();
+  return view("fragebogen", compact("id", "keywords"));
 });
 
 Route::post("/schule/{id}/eintragen", function(Request $request, $id) {
