@@ -38,7 +38,6 @@
     </nav>
 
     <header>
-
         <h3 class="center-align">Hier sollte ein unabhängiges Feedback stehen!</h3>
     </header>
     <main class="container">
@@ -54,9 +53,9 @@
 
                 <div class="row center-align">
                     <a href="/" class="btn-flat">Zurück</a>
-                    <button id="submitbutton" type="submit" class="btn waves-effect waves-light blue" href="/schulen" onclick="Materialize.toast('Data successfully saved!', 4000)">Absenden</button>
-                    <i class="material-icons right">send</i>
-                    </a>
+                    <button id="submitbutton" type="submit" class="btn waves-effect waves-light blue" href="/schulen" onclick="Materialize.toast('Data successfully saved!', 4000)">
+                        Absenden <i class="material-icons right">send</i>
+                    </button>
                 </div>
             </form>
         </div>
