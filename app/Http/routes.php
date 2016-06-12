@@ -37,10 +37,10 @@ Route::get('/schulen/{page}', function ($page) {
 
 
 Route::get('/schule/{id}', function ($schule) {
-  $schulID = $schule;
+    $schulID = $schule;
     $schule = App\schulen::find($schule);
-  $hochwert = $schule->adresse->lat; //hochwert
-  $rechtswert = $schule->adresse->lon; //rechtswert
+    $hochwert = $schule->adresse->lat; //hochwert
+    $rechtswert = $schule->adresse->lon; //rechtswert
     $schueler = $schule->schueler;
     $durchschnitt = array();
     $durchschnitt[0] = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->select(DB::raw('AVG(bewertung1) as b1'))->where('users.schulID', '=', $schulID)->first()->b1;
@@ -98,11 +98,12 @@ Route::get('/schule/{id}/redaktion', function($id) {
     return view("redaktion", compact("id"));
 });
 
-Route::post("schule/{id}/redaktion/writedata", function(Request $request, $id) {
+Route::post("schule/{id}/redaktion", function(Request $request, $id) {
     $toWrite = Request::get("redaktionstext");
     DB::table("redaktion")->insert([
         'schulID' => $id,
         'text' => $toWrite
     ]);
+    return $request;
     return view("redaktion", compact("id"));
 });

@@ -130,7 +130,7 @@
 
         </div>
         <div class="row">
-            <form class="col s12">
+            <div class="col s12">
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">mode_edit</i>
@@ -138,7 +138,7 @@
                         <label for="icon_prefix2">Gib deinen Senf dazu!</label>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
         <div class="row center-align">
             <a href="/" class="btn-flat">Zurück</a>
@@ -147,11 +147,10 @@
                 <i class="material-icons right">send</i>
             </button>
 -->
-            <a class="btn waves-effect waves-light blue" href="/schulen" onclick="Materialize.toast('Data successfully saved!', 4000)">Absenden
+            <button type="submit" class="btn waves-effect waves-light blue" href="/schulen" onclick="Materialize.toast('Data successfully saved!', 4000)">Absenden
                 <i class="material-icons right">send</i>
             </a>
         </div>
-
     </form>
     <script>
         $(document).ready(function () {
