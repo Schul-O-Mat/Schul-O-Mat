@@ -24,8 +24,7 @@
 
     <nav>
         <div class="nav-wrapper blue">
-            <img src="/img/logo.png" class="schulomaticon">
-            <a href="/" class="brand-logo">Schul-O-Mat</a>
+            <a href="/" style="" class="brand-logo"> <img src="img/logo.png" class="schulomaticon"></a>
             <form action="/schulen/search" class="form header-search-wrapper hide-on-med-and-down" method="get">
                 <!-- Search Url: /schulen/search/{key} -->
                 <i class="material-icons active">search</i>

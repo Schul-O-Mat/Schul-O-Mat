@@ -23,7 +23,7 @@
 <body>
     <nav>
         <div class="nav-wrapper blue">
-            <a href="/" class="brand-logo">Schul-O-Mat</a>
+            <a href="/" style="" class="brand-logo"> <img src="img/logo.png" class="schulomaticon"></a>
             <ul class="right hide-on-med-and-down">
 
                 <li><a href="/schulen/"><i class="material-icons">search</i></a></li>
@@ -112,7 +112,7 @@
                 <select multiple name="positive[]" required>
                     <option value="" disabled selected>Auswählen</option>
                     @foreach ($keywords as $k)
-                      <option value="{{$k->id}}">{{$k->bezeichnung}}</option>
+                    <option value="{{$k->id}}">{{$k->bezeichnung}}</option>
                     @endforeach
                 </select>
                 <label>Positive Aspekte an deiner Schule</label>
@@ -121,7 +121,7 @@
                 <select name="negative[]" multiple required>
                     <option value="" disabled selected>Auswählen</option>
                     @foreach ($keywords as $k)
-                      <option value="{{$k->id}}">{{$k->bezeichnung}}</option>
+                    <option value="{{$k->id}}">{{$k->bezeichnung}}</option>
                     @endforeach
                 </select>
                 <label>Negative Aspekte an deiner Schule</label>
