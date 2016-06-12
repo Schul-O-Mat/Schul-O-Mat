@@ -17,7 +17,7 @@
 
 <body>
     <header class="center-align">
-        <h1>Schul'O'Mat</h1>
+        <h1>Schul-O-Mat</h1>
         <h3 class="green-text">#Register</h3>
     </header>
     <main class="row">
