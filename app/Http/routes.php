@@ -40,6 +40,7 @@ Route::get("/schule", function() {
 });
 
 Route::get('/schule/{id}', function ($schule) {
+    // DB::table('bewertungen')->select(DB::raw('COUNT(*) as cnt'))->where('userID', '=', '2')->first()->cnt
     $bewertungda = false;
     if(!Auth::guest())
       $bewertungda = Auth::user()->bewertung->count == 1;
