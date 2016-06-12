@@ -107,7 +107,10 @@ function gk2geo(rw, hw)
 // Geographischer Breite bp und Länge lp als Funktion von Rechts- und Hochwert
    bp = bf + (180/pi) * (b2*dy2 + b4*dy4 + b6*dy6);
    lp = lh + (180/pi) * (l1*dy  + l3*dy3 + l5*dy5);
-
+   console.log(bp);
+   console.log(lp);
+   console.log(hw);
+   console.log(rw);
    if (lp < 5 || lp > 16 || bp < 46 || bp > 56)
    {
    alert("RW und/oder HW ungültig für das deutsche Gauss-Krüger-System");
