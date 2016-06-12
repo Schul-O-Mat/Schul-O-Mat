@@ -42,7 +42,7 @@ class schulen extends Model
         return $this->hasOne('App\key_schulbetriebsschluessel', "id", "schulbetriebsschluessel");
     }
 
-    public function getSchueler()
+    public function schueler()
     {
       return $this->hasMany("App\User", "schulID", "schulnr");
     }
