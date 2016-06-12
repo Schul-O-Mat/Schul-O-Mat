@@ -97,36 +97,33 @@
             <div class="input-field col s12 m6">
                 <select multiple>
                     <option value="" disabled selected>Auswählen</option>
-                    <option value="1">AG Angebot</option>
-                    <option value="2">Lehrer</option>
-                    <option value="3">Mensaessen</option>
-                    <option value="3">Mensaessen</option>
-                    <option value="3">Mensaessen</option>
-                    <option value="3">Mensaessen</option>
-                    <option value="3">Mensaessen</option>
-                    <option value="3">Mensaessen</option>
-                    <option value="3">Mensaessen</option>
-                    <option value="3">Mensaessen</option>
-                    <option value="3">Mensaessen</option>
-                    <option value="3">Mensaessen</option>
+                    <option value="1">Informatik Unterricht</option>
+                    <option value="2">Toiletten</option>
+                    <option value="3">Hockey AG</option>
+                    <option value="3">IT Ausstattung</option>
+                    <option value="3">Badminton AG</option>
+                    <option value="3">Projektwoche</option>
+                    <option value="3">Musikräume</option>
+                    <option value="3">Mathe Lehrer</option>
+                    <option value="3">Schulleitung</option>
+                    <option value="3">Fächerangebot</option>
+
                 </select>
                 <label>Positive Aspekte an deiner Schule</label>
             </div>
             <div class="input-field col s12 m6">
                 <select multiple>
                     <option value="" disabled selected>Auswählen</option>
-                    <option value="1">AG Angebot</option>
-                    <option value="2">Lehrer</option>
-                    <option value="3">Mensaessen</option>
-                    <option value="3">Mensaessen</option>
-                    <option value="3">Mensaessen</option>
-                    <option value="3">Mensaessen</option>
-                    <option value="3">Mensaessen</option>
-                    <option value="3">Mensaessen</option>
-                    <option value="3">Mensaessen</option>
-                    <option value="3">Mensaessen</option>
-                    <option value="3">Mensaessen</option>
-                    <option value="3">Mensaessen</option>
+                    <option value="1">Informatik Unterricht</option>
+                    <option value="2">Toiletten</option>
+                    <option value="3">Hockey AG</option>
+                    <option value="3">IT Ausstattung</option>
+                    <option value="3">Badminton AG</option>
+                    <option value="3">Projektwoche</option>
+                    <option value="3">Musikräume</option>
+                    <option value="3">Mathe Lehrer</option>
+                    <option value="3">Schulleitung</option>
+                    <option value="3">Fächerangebot</option>
                 </select>
                 <label>Negative Aspekte an deiner Schule</label>
             </div>
