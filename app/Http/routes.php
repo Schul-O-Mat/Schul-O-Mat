@@ -79,12 +79,11 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/schule/{id}/redaktion', function($schule) {
-    $id = $schule;
+Route::get('/schule/{id}/redaktion', function($id) {
     return view("redaktion", compact("id"));
 });
 
-Route::post("schule/{id}/redaktion/writedata", function($id, Request $request) {
+Route::post("schule/{id}/redaktion/writedata", function(Request $request, $id) {
     $toWrite = Request::get("redaktionstext");
     DB::table("redaktion")->insert([
         'schulID' => $id,
