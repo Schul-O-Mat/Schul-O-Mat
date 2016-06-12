@@ -70,7 +70,7 @@
                     <div id="redaktionel" class="col s12">
 
                         <h4 class="card-title">Redaktionelle Inhalte</h4>
-                        <p class="flow-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore earum at laudantium quae, laboriosam, quaerat consequuntur doloremque atque unde eaque deleniti fuga beatae delectus eligendi nobis nisi veritatis similique facere?</p>
+                        <p class="flow-text">{{$redaktionell}}</p>
 
                     </div>
                 </div>
