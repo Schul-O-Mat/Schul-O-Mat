@@ -40,6 +40,9 @@ Route::get("/schule", function() {
 });
 
 Route::get('/schule/{id}', function ($schule) {
+    $bewertungda = false;
+    if(!Auth::guest())
+      $bewertungda = Auth::user()->bewertung->count == 1;
     $schulID = $schule;
     $schule = App\schulen::find($schule);
     $hochwert = $schule->adresse->lat; //hochwert
@@ -108,7 +111,7 @@ Route::post("/schule/{id}/eintragen", function(Request $request, $id) {
         DB::table('key_bew')->insert(['bewertungID' => $bewertungID, 'keywordID' => $keyword, 'positiv' => '1']);
     }
 
-    return redirect("/schule/");
+    return redirect("/schule/".$schulID);
 });
 
 Route::auth();
