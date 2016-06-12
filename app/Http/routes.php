@@ -36,8 +36,9 @@ Route::get('/schulen/{page}', function ($page) {
 });
 
 
-Route::get('/schule/{id}', function (App\schulen $schule) {
-    $schulID = $schule->schulnr;
+Route::get('/schule/{id}', function ($schule) {
+    $schulID = $schule;
+    $schule = App\schulen::find($schule);
     $hochwert = $schule->adresse->lat; //hochwert
     $rechtswert = $schule->adresse->lon; //rechtswert
     $schueler = $schule->schueler;
@@ -65,7 +66,8 @@ Route::get('/schule/{id}', function (App\schulen $schule) {
   return view('detail', compact("schule", "hochwert", "rechtswert", "durchschnitt", "keywords", "reviews", "redaktionell"));
 });
 
-Route::get('/schule/{id}/karte', function (App\schulen $schule) {
+Route::get('/schule/{id}/karte', function ($schule) {
+  $schule = App\schulen::find($schule);
   $hochwert = $schule->adresse->lat; //hochwert
   $rechtswert = $schule->adresse->lon; //rechtswert
   return view('karten', compact("hochwert", "rechtswert"));
