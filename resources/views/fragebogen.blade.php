@@ -109,7 +109,7 @@
 
         <div class="row">
             <div class="input-field col s12 m6">
-                <select multiple required>
+                <select multiple name="positive" required>
                     <option value="" disabled selected>Auswählen</option>
                     <option value="1">Informatik Unterricht</option>
                     <option value="2">Toiletten</option>
@@ -126,7 +126,7 @@
                 <label>Positive Aspekte an deiner Schule</label>
             </div>
             <div class="input-field col s12 m6">
-                <select multiple required>
+                <select name="negative" multiple required>
                     <option value="" disabled selected>Auswählen</option>
                     <option value="1">Informatik Unterricht</option>
                     <option value="2">Toiletten</option>
