@@ -55,7 +55,7 @@
             <div class="col s12">
                 <p class="flow-text">Möchtest du etwas beitragen?</p>
                 <div class="row center-align">
-                    <a href="/login" class="btn large blue">Bewerte eine Schule</a>
+                    <a href="/login" class="btn large blue">Bewerte deine Schule</a>
                     <a href="/register" class="btn large blue">Registriere dich beim Schul-O-Maten</a>
                 </div>
             </div>
