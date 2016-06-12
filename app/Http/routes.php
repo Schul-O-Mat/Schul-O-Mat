@@ -70,7 +70,7 @@ Route::get('/schule/{id}', function ($schule) {
 
     $redaktionell = DB::table('redaktion')->select('text')->where('schulID', '=', $schulID)->first()->text;
     endif;
-  return view('detail', compact("schule", "hochwert", "rechtswert", "durchschnitt", "keywords", "reviews", "redaktionell", "schulID"));
+  return view('detail', compact("schule", "hochwert", "rechtswert", "durchschnitt", "keywords", "reviews", "redaktionell"));
 });
 
 Route::get('/schule/{id}/karte', function ($schule) {
@@ -81,22 +81,31 @@ Route::get('/schule/{id}/karte', function ($schule) {
 });
 
 Route::get("/schule/{id}/eintragen", function($id) {
-  if(Auth::guest())
-    return redirect("/");
   $keywords = App\keywords::all();
   return view("fragebogen", compact("id", "keywords"));
 });
 
 Route::post("/schule/{id}/eintragen", function(Request $request, $id) {
-  if(Auth::guest())
-    return redirect("/");
+    $userID = Auth::user()->id;
     $question1 = Request::get("schoolgeneral");
     $question2 = Request::get("mensa");
     $question3 = Request::get("ag");
-    $question4 = Request::get("ausstattung");
+    $question4 = Request::get("austattung");
     $question5 = Request::get("toilet");
     $question6 = Request::get("length");
     $question7 = Request::get("time");
+    $positiv = Request::get("positive");
+    $negativ = Request::get("negative");
+    $freitext = Request::get("freitext");
+    $bewertungID = DB::table('bewertungen')->insertGetID(['userID' => $userID, 'bewertung1' => $question1, 'bewertung2' => $question2, 'bewertung3' => $question3, 'bewertung4' => $question4, 'bewertung5' => $question5, 'bewertung6' => $question6, 'bewertung7' => $question7,'freitext' => $freitext]);
+    foreach ($positiv as $keyword)
+    {
+        DB::table('key_bew')->insert(['bewertungID' => $bewertungID, 'keywordID' => $keyword, 'positiv' => '1']);
+    }
+    foreach ($negativ as $keyword)
+    {
+        DB::table('key_bew')->insert(['bewertungID' => $bewertungID, 'keywordID' => $keyword, 'positiv' => '1']);
+    }
     return $request::all();
 });
 
