@@ -75,6 +75,19 @@ Route::get("/schule/{id}/eintragen", function() {
   return view("fragebogen");
 });
 
+Route::post("/schule/{id}/eintragen/writedata)", function(Request $request, $id) {
+    $question1 = Request::get("schoolgeneral");
+    $question2 = Request::get("mensa");
+    $question3 = Request::get("ag");
+    $question4 = Request::get("ausstattung");
+    $question5 = Request::get("toilet");
+    $question6 = Request::get("length");
+    $question7 = Request::get("time");
+    DB::table("bewertung")->insert([
+        ''
+    ]);
+})
+
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
