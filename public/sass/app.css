@@ -137,3 +137,8 @@ input.header-search-input:focus {
 footer {
     padding-top: 50px;
 }
+
+#fundiertesfeedback {
+    width: 80%;
+    margin: 0 auto;
+}
