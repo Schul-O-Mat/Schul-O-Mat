@@ -19,8 +19,7 @@
 <body>
     <nav>
         <div class="nav-wrapper blue">
-            <img src="/img/logo.png" class="schulomaticon">
-            <a href="/" class="brand-logo">Schul-O-Mat</a>
+            <a href="/" style="" class="brand-logo"> <img src="img/logo.png" class="schulomaticon"></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="/schulen/"><i class="material-icons">search</i></a></li>
                 <li><a href="" class="dropdown-button" data-activates='dropdown'><i class="material-icons" >more_vert</i></a></li>
@@ -222,15 +221,13 @@
 
 
     </main>
-    @if(!Auth::guest())
-      @if(Auth::user()->schulID == $schulID && !$bewertungda)
-        <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-            <a href="/schule/{{$schule->schulnr}}/eintragen" class="btn-floating btn-large blue tooltipped" data-position="left" data-delay="50" data-tooltip="Trag was ein">
-                <i class="large material-icons">mode_edit</i>
-            </a>
-        </div>
-      @endif
-    @endif
+    @if(!Auth::guest()) @if(Auth::user()->schulID == $schulID && !$bewertungda)
+    <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+        <a href="/schule/{{$schule->schulnr}}/eintragen" class="btn-floating btn-large blue tooltipped" data-position="left" data-delay="50" data-tooltip="Trag was ein">
+            <i class="large material-icons">mode_edit</i>
+        </a>
+    </div>
+    @endif @endif
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript " src="https://code.jquery.com/jquery-2.1.1.min.js "></script>
     <script type="text/javascript " src="/js/bin/materialize.js "></script>
