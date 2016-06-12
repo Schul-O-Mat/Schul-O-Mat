@@ -61,9 +61,9 @@
                               @endif
                               ">school</i>
                               <span class="title">{{$d->schulbez1}}</span>
-                                    <p>@if(strlen($d->schulbez2)!=0){{$d->schulbez2}}@endif
-                                  <br> @if(strlen($d->schulbez3)!=0){{$d->schulbez3}}@endif
-                                  <br> @if(strlen($d->kurzbez)!=0){{$d->kurzbez}}@endif
+                                    <p>{{$d->schulbez2}}
+                                  <br> {{$d->schulbez3}}
+                                  <br> {{$d->kurzbez}}
                               </p>
                     <a href="/schule/{{ $d->schulnr }}" class="secondary-content"><i class="blue-text material-icons">arrow_forward</i></a>
                 </li>
