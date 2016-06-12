@@ -19,7 +19,7 @@
 <body>
     <nav>
         <div class="nav-wrapper blue">
-            <a href="/" class="brand-logo">Schul'O'Mat</a>
+            <a href="/" class="brand-logo">Schul-O-Mat</a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="/schulen/"><i class="material-icons">search</i></a></li>
                 <li><a href="" class="dropdown-button" data-activates='dropdown'><i class="material-icons" >more_vert</i></a></li>
@@ -66,7 +66,7 @@
             <!--Anfang REDAKTIONELL-->
 
             <div class="container">
-              @if(isset($redaktionell))
+                @if(isset($redaktionell))
                 <div class="row">
 
                     <div id="redaktionel" class="col s12">
@@ -76,7 +76,7 @@
 
                     </div>
                 </div>
-              @endif
+                @endif
 
                 <!--Ende REDAKTIONELL-->
 
@@ -137,7 +137,7 @@
                             </div>
                         </div>
                     </div>
-                  @endif
+                    @endif
                     <div class="row">
                         <h4 class="center-align">Dies Bewerten die Schüler Besonders:</h4>
                         <table class="highlight centered">
@@ -165,21 +165,21 @@
                         </table>
                     </div>
                     @if(isset($reviews))
-                      <div>
-                          <h4 class="center-align">Einzelberichte:</h4>
+                    <div>
+                        <h4 class="center-align">Einzelberichte:</h4>
 
-                          <ul class="collapsible" data-collapsible="expandable">
+                        <ul class="collapsible" data-collapsible="expandable">
 
-                              @foreach($reviews as $r)
-                              <li>
-                                  <div class="collapsible-header" class="truncate"><i class="material-icons">announcement</i>{{$r->freitext}}</div>
-                                  <div class="collapsible-body">
-                                      <p><span>{{$r->freitext}}</span></p>
-                                  </div>
-                              </li>
-                              @endforeach
-                          </ul>
-                      </div>
+                            @foreach($reviews as $r)
+                            <li>
+                                <div class="collapsible-header" class="truncate"><i class="material-icons">announcement</i>{{$r->freitext}}</div>
+                                <div class="collapsible-body">
+                                    <p><span>{{$r->freitext}}</span></p>
+                                </div>
+                            </li>
+                            @endforeach
+                        </ul>
+                    </div>
                     @endif
 
                 </div>
@@ -219,11 +219,11 @@
 
     </main>
     @if(!Auth::guest())
-      <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-          <a href="/schule/{{$schule->schulnr}}/eintragen" class="btn-floating btn-large blue tooltipped" data-position="left" data-delay="50" data-tooltip="Trag was ein">
-              <i class="large material-icons">mode_edit</i>
-          </a>
-      </div>
+    <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+        <a href="/schule/{{$schule->schulnr}}/eintragen" class="btn-floating btn-large blue tooltipped" data-position="left" data-delay="50" data-tooltip="Trag was ein">
+            <i class="large material-icons">mode_edit</i>
+        </a>
+    </div>
     @endif
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript " src="https://code.jquery.com/jquery-2.1.1.min.js "></script>
