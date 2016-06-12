@@ -61,7 +61,9 @@ Route::get('/schule/{id}', function ($schule) {
     }
 
     $reviews = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->select('freitext')->where('users.schulID', '=', $schulID)->get();
-  return view('detail', compact("schule", "hochwert", "rechtswert", "durchschnitt", "keywords", "reviews"));
+
+    $redaktionell = DB::table('redaktion')->select('text')->where('schulID', '=', $schulID)->first()->text;
+  return view('detail', compact("schule", "hochwert", "rechtswert", "durchschnitt", "keywords", "reviews", "redaktionell"));
 });
 
 Route::get('/schule/{id}/karte', function ($schule) {
