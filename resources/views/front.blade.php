@@ -17,6 +17,7 @@
 <body>
     <nav>
         <div class="nav-wrapper blue">
+             <img src="img/logo.png">
             <a href="/" style="margin-left: auto !important;" class="brand-logo">Schul'O'Mat</a>
             <ul class="right hide-on-med-and-down">
                 <!--                <li><a href=""><i class="material-icons">search</i></a></li>-->
@@ -41,7 +42,6 @@
         </div>
     </nav>
     <header class="center-align">
-        <img src="./public/img/logo.png">
         <h1>Schul-O-Mat</h1>
         <h2>Finde die Schule, die zu <span class="blue-text">dir </span><a href="/schulen"class="black-text">passt</a>!</h2>
     </header>

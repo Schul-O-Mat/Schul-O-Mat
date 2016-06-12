@@ -48,7 +48,7 @@
         <h3 class="center-align">Bewerte deine Schule</h3>
     </header>
     <form action="/schule/{{$id}}/eintragen" method="post">
-      <input type="hidden" name="_token" value="{{csrf_token()}}">
+        <input type="hidden" name="_token" value="{{csrf_token()}}">
         <div class="row">
 
             <div class="col s6">
@@ -111,33 +111,18 @@
             <div class="input-field col s12 m6">
                 <select multiple name="positive[]" required>
                     <option value="" disabled selected>Auswählen</option>
-                    <option value="1">Informatik Unterricht</option>
-                    <option value="2">Toiletten</option>
-                    <option value="3">Hockey AG</option>
-                    <option value="3">IT Ausstattung</option>
-                    <option value="3">Badminton AG</option>
-                    <option value="3">Projektwoche</option>
-                    <option value="3">Musikräume</option>
-                    <option value="3">Mathe Lehrer</option>
-                    <option value="3">Schulleitung</option>
-                    <option value="3">Fächerangebot</option>
-
+                    @foreach ($keywords as $k)
+                      <option value="{{$k->id}}">{{$k->bezeichnung}}</option>
+                    @endforeach
                 </select>
                 <label>Positive Aspekte an deiner Schule</label>
             </div>
             <div class="input-field col s12 m6">
                 <select name="negative[]" multiple required>
                     <option value="" disabled selected>Auswählen</option>
-                    <option value="1">Informatik Unterricht</option>
-                    <option value="2">Toiletten</option>
-                    <option value="3">Hockey AG</option>
-                    <option value="3">IT Ausstattung</option>
-                    <option value="3">Badminton AG</option>
-                    <option value="3">Projektwoche</option>
-                    <option value="3">Musikräume</option>
-                    <option value="3">Mathe Lehrer</option>
-                    <option value="3">Schulleitung</option>
-                    <option value="3">Fächerangebot</option>
+                    @foreach ($keywords as $k)
+                      <option value="{{$k->id}}">{{$k->bezeichnung}}</option>
+                    @endforeach
                 </select>
                 <label>Negative Aspekte an deiner Schule</label>
             </div>
@@ -163,7 +148,7 @@
 -->
             <button type="submit" class="btn waves-effect waves-light blue" href="/schulen" onclick="Materialize.toast('Data successfully saved!', 4000)">Absenden
                 <i class="material-icons right">send</i>
-                </a>
+            </button>
         </div>
     </form>
     <script>
