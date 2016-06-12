@@ -5,12 +5,12 @@
     <title>Document</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <script>
-        var GKRight = parseInt({{$rechtswert}});
-        var GKHeight = parseInt({{$hochwert}});
+        //var GKRight = parseInt({{$rechtswert}});
+        //var GKHeight = parseInt({{$hochwert}});
         //Umrechnung
-        var newcoords = gk2geo(GKRight, GKHeight);
-        console.log(gk2geo(51, 6))
-        
+        //var newcoords = gk2geo(GKRight, GKHeight);
+        console.log(gk2geo(25716820, 56982960))
+
 
 function gk2geo(rw, hw)
 {
@@ -117,7 +117,6 @@ function gk2geo(rw, hw)
    return [bp, lp];;
 }
     </script>
-    <script src="/js/gk_to_latlong.js"></script>
     <script>
         CalcStart_onclick()
     </script>
