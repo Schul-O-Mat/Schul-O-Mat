@@ -80,8 +80,8 @@ Route::get('/schule/{id}/karte', function ($schule) {
   return view('karten', compact("hochwert", "rechtswert"));
 });
 
-Route::get("/schule/{id}/eintragen", function() {
-  return view("fragebogen");
+Route::get("/schule/{id}/eintragen", function($id) {
+  return view("fragebogen", compact("id"));
 });
 
 Route::post("/schule/{id}/eintragen)", function(Request $request, $id) {

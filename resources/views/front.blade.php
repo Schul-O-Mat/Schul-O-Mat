@@ -59,8 +59,7 @@
                     @if(Auth::guest())
                     <a href="/login" class="btn large blue">Log dich ein</a>
                     <a href="/register" class="btn large blue">Registriere dich beim Schul-O-Maten</a> @else
-
-                    <a class="btn large blue">Du bist eingeloggt</a> @endif
+                    <a class="btn large blue">Du bist eingeloggt als {{Auth::user()->name}}!</a> @endif
                 </div>
             </div>
         </div>
