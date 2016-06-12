@@ -14,11 +14,7 @@ function GetFloatFromString(SingleValue) {
 function CalcStart_onclick() {
 
 //Falls nicht alle GK-Werte eingegeben wurden -> Meldung, Verlassen
-    if (!((GKRight > 1000000) && (GKHeight > 1000000)))
-    {
-        window.alert("Es wurde kein gültiger Gauß-Krüger-Code eingegeben. Bitte überprüfen Sie Ihre Eingaben!");
-        return;
-    }
+    
     var bII, bf, co, g2, g1, t, fa, dl, min, sek, rho, e2 = 0.0067192188, c = 6398786.849;
     rho = 180 / Math.PI;
 
