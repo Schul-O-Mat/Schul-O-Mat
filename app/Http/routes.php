@@ -42,7 +42,8 @@ Route::get("/schule", function() {
 Route::get('/schule/{id}', function ($schule) {
     $bewertungda = false;
     if(!Auth::guest())
-      $bewertungda = Auth::user()->bewertung->count == 1;
+      if(isset(Auth::user()->bewertung))
+        $bewertungda = Auth::user()->bewertung->count == 1;
     $schulID = $schule;
     $schule = App\schulen::find($schule);
     $hochwert = $schule->adresse->lat; //hochwert
