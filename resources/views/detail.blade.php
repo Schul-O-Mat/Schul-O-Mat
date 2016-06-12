@@ -65,6 +65,7 @@
             <!--Anfang REDAKTIONELL-->
 
             <div class="container">
+              @if(isset($redaktionell))
                 <div class="row">
 
                     <div id="redaktionel" class="col s12">
@@ -74,6 +75,7 @@
 
                     </div>
                 </div>
+              @endif
 
                 <!--Ende REDAKTIONELL-->
 
