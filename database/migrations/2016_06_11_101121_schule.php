@@ -19,9 +19,9 @@ class Schule extends Migration
             $table->integer("fkadresse");
             $table->integer("fkbezeichnungen");
             $table->integer("rechtsform");
-            $table->text("traegernr");
+            $table->integer("traegernr");
             $table->text("gemeindeschluessel");
-            $table->text("schulbetriebsschluessel");
+            $table->integer("schulbetriebsschluessel");
             $table->date("datum"); //Gruendungsdatum
             $table->smallInteger("schuelerzahl");
             $table->smallInteger("lehrerZahl");
