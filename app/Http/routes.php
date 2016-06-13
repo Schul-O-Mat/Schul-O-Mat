@@ -50,7 +50,9 @@ Route::get('/schule/{id}', function ($schule) {
     $hochwert = $schule->adresse->lat; //hochwert
     $rechtswert = $schule->adresse->lon; //rechtswert
     $schueler = $schule->schueler;
-    if(DB::table('bewertungen')->select(DB::raw('COUNT(*) as cnt'))->first()->cnt > 0):
+
+    $cnt = DB::table("bewertungen")->join("users", "users.id", "=", "bewertungen.userID")->select(DB::raw("select(*) as cnt"))->where("users.schulID","=",$schulID)->first()->cnt;
+    if($cnt > 0):
 
     //Berechne Durchschnitt der Bewertungen pro Schule per SQL-Query
     $durchschnitt = array();
