@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <script src=""
     <script>
         //var GKRight = parseInt({{$rechtswert}});
         //var GKHeight = parseInt({{$hochwert}});
         //Umrechnung
         //var newcoords = gk2geo(GKRight, GKHeight);
-        console.log(gk2geo(2571682,5698296));
+
+        mapCoord = gk2geo({{$rechtswert/10}},{{$hochwert/10}});
 
 function gk2geo(rw, hw)
 {
@@ -33,7 +35,7 @@ function gk2geo(rw, hw)
    {
    lp = "";
    bp = "";
-   return "Err";
+   return;
    }
    rw = parseFloat(rw);
    hw = parseFloat(hw);
@@ -119,14 +121,8 @@ function gk2geo(rw, hw)
    return [bp, lp];;
 }
     </script>
-    <script>
-        CalcStart_onclick()
-    </script>
 </head>
 <body>
-<form name="CalcForm">
-    <input type="text" id="GeoDezRight" size="20" tabindex="6" style="text-align: center"><br>
-    <input type="text" id="GeoDezHeight" size="20" tabindex="7" style="text-align: center"><br>
-</form>
+
 </body>
 </html>
