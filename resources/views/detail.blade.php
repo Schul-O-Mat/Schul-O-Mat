@@ -76,6 +76,8 @@
 
                     </div>
                 </div>
+              @else
+                  <p>Es wurde noch nichts im redaktionellen Teil eingetragen. Vielleicht möchtest du ja einige Schüler an deiner Schule dazu motivieren.</p>
                 @endif
 
                 <!--Ende REDAKTIONELL-->
@@ -139,7 +141,6 @@
                     </div>
                     @else
 
-                      <p>Es wurden noch keine Bewertungen für diese Schule eingetragen. Vielleicht möchtest du ja einige Schüler an deiner Schule dazu motivieren.</p>
 
                     @endif @if(isset($keywords))
 
