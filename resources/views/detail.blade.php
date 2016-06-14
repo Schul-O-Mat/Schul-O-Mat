@@ -223,9 +223,7 @@
                     </div>
                 </div>
             </div>
-
-
-
+        </div>
     </main>
     @if(!Auth::guest())
       @if(Auth::user()->schulID == $schulID && !$bewertungda)
