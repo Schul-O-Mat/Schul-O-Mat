@@ -4,15 +4,9 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <script src=""
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
     <script>
-        //var GKRight = parseInt({{$rechtswert}});
-        //var GKHeight = parseInt({{$hochwert}});
-        //Umrechnung
-        //var newcoords = gk2geo(GKRight, GKHeight);
-
-        mapCoord = gk2geo({{$rechtswert/10}},{{$hochwert/10}});
-
 function gk2geo(rw, hw)
 {
 /* Copyright (c) 2006, HELMUT H. HEIMEIER
@@ -120,6 +114,21 @@ function gk2geo(rw, hw)
    }
    return [bp, lp];;
 }
+var GKRight = parseInt({{$rechtswert}});
+GKRight = GKRight/10
+var GKHeight = parseInt({{$hochwert}});
+GKHeight = GKHeight/10
+//Umrechnung
+var newcoords = gk2geo(GKRight, GKHeight);
+var map = L.map('map').setView(newcoords, 13);
+
+L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+L.marker(newcoords).addTo(map)
+        .bindPopup({{$schule}}});
+        .openPopup();
     </script>
 </head>
 <body>
