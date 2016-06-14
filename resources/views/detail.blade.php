@@ -179,7 +179,7 @@
                         <ul class="collapsible" data-collapsible="expandable">
 
                             @foreach($reviews as $r)
-                                @if ($r->freitext =! "")
+                                @if (!$r->freitext == "")
                                 <li>
                                 <div class="collapsible-header" class="">
                                     <i class="material-icons">announcement</i><p class="truncate">{{$r->freitext}}</p>
