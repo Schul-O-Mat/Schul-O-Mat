@@ -66,20 +66,16 @@
             <!--Anfang REDAKTIONELL-->
 
             <div class="container">
-                @if(isset($redaktionell))
                 <div class="row">
-
                     <div id="redaktionel" class="col s12">
-
-                        <h4 class="card-title">Redaktionelle Inhalte</h4>
-                        <p class="flow-text">{{$redaktionell}}</p>
-
+                        @if(isset($redaktionell))
+                            <h4 class="card-title">Redaktionelle Inhalte</h4>
+                            <p class="flow-text">{{$redaktionell}}</p>
+                        @else
+                            <p>Es wurde noch nichts im redaktionellen Teil eingetragen. Vielleicht möchtest du ja einige Schüler an deiner Schule dazu motivieren.</p>
+                        @endif
                     </div>
                 </div>
-              @else
-                  <p>Es wurde noch nichts im redaktionellen Teil eingetragen. Vielleicht möchtest du ja einige Schüler an deiner Schule dazu motivieren.</p>
-                @endif
-
                 <!--Ende REDAKTIONELL-->
 
 
