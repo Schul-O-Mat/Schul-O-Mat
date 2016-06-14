@@ -98,7 +98,7 @@
           </div>
       </div>
       <div class="row center-align">
-          <a href="/" class="btn-flat">Zurück</a>
+          <a href="/schule/{{$id}}" class="btn-flat">Zurück</a>
           <!--
           <button class="btn waves-effect waves-light blue" type="submit" name="action">Absenden
               <i class="material-icons right">send</i>
