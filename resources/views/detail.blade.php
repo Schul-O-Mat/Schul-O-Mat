@@ -82,8 +82,8 @@
                 <!-- Anfang FRAGEBOGEN-->
 
                 <!--Ende Durchschnittsbewertung "Sternchen"-->
-                @if(isset($durchschnitt))
                 <div id="quests" class="col s12 ">
+                    @if(isset($durchschnitt))
                     <div class="collection">
                         <div class="collection-item">
                             <p>Wie findest du deine Schule im Allgemeinen?<span class="right">{{round($durchschnitt[0], 1)}}/10</span></p>
@@ -134,11 +134,11 @@
 
                             </div>
                         </div>
+                        @else
+                            <p>Es wurden noch keine Bewertungen für diese Schule eingetragen. Vielleicht möchtest du ja einige Schüler an deiner Schule dazu motivieren.</p>
+                        @endif
                     </div>
-                    @else
-
-
-                    @endif @if(isset($keywords))
+                        @if(isset($keywords))
 
                     <div class="row">
                         <h4 class="center-align">Dies bewerten die Schüler besonders:</h4>
