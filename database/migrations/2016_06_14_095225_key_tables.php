@@ -14,17 +14,20 @@ class KeyTables extends Migration
     {
       if (!Schema::hasTable('key_rechtsform'))
         Schema::create("key_rechtsform", function (Blueprint $table){
-          $table->increments("id");
+          $table->integer("id");
+          $table->primary("id");
           $table->string("rechtsform");
         });
       if (!Schema::hasTable('key_schulbetriebsschluessel'))
         Schema::create("key_schulbetriebsschluessel", function (Blueprint $table){
-          $table->increments("id");
+          $table->integer("id");
+          $table->primary("id");
           $table->string("Schulbetrieb");
         });
       if (!Schema::hasTable('key_schulformschluessel'))
         Schema::create("key_schulformschluessel", function (Blueprint $table){
-          $table->increments("id");
+          $table->integer("id");
+          $table->primary("id");
           $table->string("Schulform");
         });
       if (!Schema::hasTable('key_traeger'))
