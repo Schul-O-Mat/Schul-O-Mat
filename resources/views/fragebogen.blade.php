@@ -109,12 +109,13 @@
 
         <div class="row">
             <div class="input-field col s12 m6">
-                <select multiple name="positive[]" required>
-                    <option value="" disabled selected>Auswählen</option>
-                    @foreach ($keywords as $k)
-                    <option value="{{$k->id}}">{{$k->bezeichnung}}</option>
-                    @endforeach
-                </select>
+                <textarea id="positive" class="materialize-textarea"></textarea>
+                @foreach ($keywords as $k)
+                    <div data-bezeichnung="{{$k->bezeichnung}}" data-id="{{$k->id}}" class="chip">
+                        {{$k->bezeichnung}}
+                        <i class="material-icons">close</i>
+                    </div>
+                @endforeach
                 <label>Positive Aspekte an deiner Schule</label>
             </div>
             <div class="input-field col s12 m6">
