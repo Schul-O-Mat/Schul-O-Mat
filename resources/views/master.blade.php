@@ -181,15 +181,14 @@
                     @elseif ($d->schulform == 20) blue
                     @elseif ($d->schulform == 4) #aa00ff
                     @elseif ($d->schulform == 10) #d50000
-                    @elseif ($d->schulform == 15) #ffff00 
+                    @elseif ($d->schulform == 15) #ffff00
                     @else #9e9e9e
                               @endif
                               ">school</i>
                     <span class="title">{{$d->bezeichnung->schulbez1}}</span>
-                          <p>@if($d->bezeichnung->schulbez2!=""){{$d->bezeichnung->schulbez2}}@endif
-                        <br> @if($d->bezeichnung->schulbez3!=""){{$d->bezeichnung->schulbez3}}@endif
-                        <br> @if($d->bezeichnung->kurzbez!=""){{$d->bezeichnung->kurzbez}}@endif
-                    </p>
+                          <p> @if($d->bezeichnung->schulbez2!=""){{$d->bezeichnung->schulbez2}}@endif </p>
+                          <p> @if($d->bezeichnung->schulbez3!=""){{$d->bezeichnung->schulbez3}}@endif </p>
+                          <p> @if($d->bezeichnung->kurzbez!=""){{$d->bezeichnung->kurzbez}}@endif     </p>
                     <a href="/schule/{{ $d->schulnr }}" class="secondary-content"><i class="blue-text material-icons">arrow_forward</i></a>
                 </li>
                 @endforeach
