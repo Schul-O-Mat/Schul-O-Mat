@@ -1,50 +1,13 @@
-<!DOCTYPE html>
-<html>
+@extends("layouts.app")
 
-<head>
-    <!--Import Google Icon Font-->
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+@section("header")
+  <h3>{{$schule->bezeichnung->schulbez1}}</h3>
+  <h3>{{$schule->bezeichnung->schulbez2}}</h3>
+  <h3>{{$schule->bezeichnung->schulbez3}}</h3>
+  <h4>{{$schule->bezeichnung->kurzbez}}</h4>
+@endsection
 
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v1.0.0-rc.1/leaflet.css" />
-    <link rel="stylesheet" href="/sass/app.css">
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="utf8">
-    <title>Schul-O-Mat | Details</title>
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-</head>
-
-<body>
-    <nav>
-        <div class="nav-wrapper blue">
-            <a href="/" style="" class="brand-logo"> <img src="/img/logo.png" class="schulomaticon"></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="/schulen/"><i class="material-icons">search</i></a></li>
-                <li><a href="" class="dropdown-button" data-activates='dropdown'><i class="material-icons" >more_vert</i></a></li>
-            </ul>
-            <ul id='dropdown' class='dropdown-content text-blue'>
-                @if(Auth::guest())
-                <li><a href="/login">Login</a></li>
-                <li><a href="/register">Register</a></li>
-                @else
-                <li><a href="#">Willkommen {{Auth::user()->name}}!</a></li>
-                <li><a href="/logout">Logout</a></li>
-                @endif
-            </ul>
-            <ul class="left hide-on-med-and-down">
-                <li><a href="/schulen"><i class="material-icons">arrow_back</i></a></li>
-            </ul>
-
-        </div>
-    </nav>
-    <header class="center-align">
-        <h3>{{$schule->bezeichnung->schulbez1}}</h3>
-        <h3>{{$schule->bezeichnung->schulbez2}}</h3>
-        <h3>{{$schule->bezeichnung->schulbez3}}</h3>
-        <h4>{{$schule->bezeichnung->kurzbez}}</h4>
-    </header>
+@section("main")
     <main>
         <div class="row">
             <div class="col s12">
@@ -234,47 +197,19 @@
     </div>
       @endif
     @endif
-    <!--Import jQuery before materialize.js-->
-    <script type="text/javascript " src="https://code.jquery.com/jquery-2.1.1.min.js "></script>
-    <script type="text/javascript " src="/js/bin/materialize.js "></script>
-    <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet/v1.0.0-rc.1/leaflet.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('ul.tabs').tabs();
-            $('.tooltipped').tooltip({
-                delay: 50
-            });
-            $('.collapsible').collapsible({
-                accordion: false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
-            });
-        });
-    </script>
-    <!--
-    <script type="text/javascript">
-    var convertedValues = gk2geo({
-        {
-            $hochwert
-        }
-    }, {
-        {
-            $rechtswert
-        }
-    });
+@endsection
 
-    function addMarker(lat, lng, description) {
-        L.marker([lat, lng]).addTo(map)
-            .bindPopup(description)
-            .openPopup();
-    };
-
-    function openMap(lat, lng) {
-        var map = L.map('map').setView([lat, lng], 13);
-        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(map);
-    };
-    openMap(convertedValues[0], convertedValues[1]);
-    addMarker(convertedValues[0], convertedValues[1], "Die Schule!")
-</script>
--->
-</body>
-
-</html>
+@section("js")
+  <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet/v1.0.0-rc.1/leaflet.js"></script>
+  <script>
+      $(document).ready(function () {
+          $('ul.tabs').tabs();
+          $('.tooltipped').tooltip({
+              delay: 50
+          });
+          $('.collapsible').collapsible({
+              accordion: false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+          });
+      });
+  </script>
+@endsection
