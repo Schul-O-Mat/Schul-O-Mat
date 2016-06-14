@@ -1,250 +1,108 @@
-function GetFloatFromString(SingleValue) {
-    if (isNaN(SingleValue) == 0)
-    {
-        return(parseFloat(SingleValue));
-    }
-    else
-    {
-        var StrSplitted;
-        StrSplitted = SingleValue.split(",");
-        return(parseFloat(StrSplitted[0] + "." + StrSplitted[1]));
-    }
-}
-
-function CalcStart_onclick() {
-
-//Falls nicht alle GK-Werte eingegeben wurden -> Meldung, Verlassen
-    
-    var bII, bf, co, g2, g1, t, fa, dl, min, sek, rho, e2 = 0.0067192188, c = 6398786.849;
-    rho = 180 / Math.PI;
-
-    bII = (GKHeight / 10000855.7646) * (GKHeight / 10000855.7646);
-
-    bf = 325632.08677 * (GKHeight / 10000855.7646) * ((((((0.00000562025 * bII + 0.00022976983) * bII - 0.00113566119) * bII + 0.00424914906) * bII - 0.00831729565) * bII + 1));
-
-    bf /= 3600 * rho;
-
-    co = Math.cos(bf);
-
-    g2 = e2 * (co * co);
-
-    g1 = c / Math.sqrt(1 + g2);
-
-    t = Math.tan(bf);
-
-    fa = (GKRight - Math.floor(GKRight / 1000000) * 1000000 - 500000) / g1;
-
-    document.getElementbyId("GeoDezRight").value = ((bf - fa * fa * t * (1 + g2) / 2 + fa * fa * fa * fa * t * (5 + 3 * t * t + 6 * g2 - 6 * g2 * t * t) / 24) * rho);
-
-    dl = fa - fa * fa * fa * (1 + 2 * t * t + g2) / 6 + fa * fa * fa * fa * fa * (1 + 28 * t * t + 24 * t * t * t * t) / 120;
-
-    document.CalcForm.GeoDezHeight_TXT.value = dl * rho / co + Math.floor(document.getElementbyId("GeoDezRight").value / 1000000) * 3;
-
-    if (document.CalcForm.GeoSystemEll.value == "WGS84")
-    {
-        var CartesianXMeters, CartesianYMeters, CartesianZMeters, n, aBessel = 6377397.155, eeBessel = 0.0066743722296294277832, CartOutputXMeters, CartOutputYMeters, CartOutputZMeters, ScaleFactor = 0.00000982, RotXRad = -7.16069806998785E-06, RotYRad = 3.56822869296619E-07, RotZRad = 7.06858347057704E-06, ShiftXMeters = 591.28, ShiftYMeters = 81.35, ShiftZMeters = 396.39, aWGS84 = 6378137, eeWGS84 = 0.0066943799;
-        var Latitude, LatitudeIt;
-
-        document.getElementbyId("GeoDezRight").value = (parseFloat(document.getElementbyId("GeoDezRight").value) / 180) * Math.PI;
-        document.CalcForm.GeoDezHeight_TXT.value = (parseFloat(document.CalcForm.GeoDezHeight_TXT.value) / 180) * Math.PI;
-
-        n = eeBessel * Math.sin(parseFloat(document.getElementbyId("GeoDezRight").value)) * Math.sin(parseFloat(document.getElementbyId("GeoDezRight").value));
-        n = 1 - n;
-        n = Math.sqrt(n)
-        n = aBessel / n
-        //window.alert(n);
-        CartesianXMeters = n * Math.cos(parseFloat(document.getElementbyId("GeoDezRight").value)) * Math.cos(parseFloat(document.CalcForm.GeoDezHeight_TXT.value));
-        CartesianYMeters = n * Math.cos(parseFloat(document.getElementbyId("GeoDezRight").value)) * Math.sin(parseFloat(document.CalcForm.GeoDezHeight_TXT.value));
-        CartesianZMeters = n * (1 - eeBessel) * Math.sin(parseFloat(document.getElementbyId("GeoDezRight").value));
-        //window.alert(CartesianXMeters);
-        //window.alert(CartesianYMeters);
-        //window.alert(CartesianZMeters);
-
-        CartOutputXMeters = (1 + ScaleFactor) * CartesianXMeters + RotZRad * CartesianYMeters - RotYRad * CartesianZMeters + ShiftXMeters;
-        CartOutputYMeters = -RotZRad * CartesianXMeters + (1 + ScaleFactor) * CartesianYMeters + RotXRad * CartesianZMeters + ShiftYMeters;
-        CartOutputZMeters = RotYRad * CartesianXMeters - RotXRad * CartesianYMeters + (1 + ScaleFactor) * CartesianZMeters + ShiftZMeters;
-        //window.alert("Transformed:");
-        //window.alert(CartOutputXMeters);
-        //window.alert(CartOutputYMeters);
-        //window.alert(CartOutputZMeters);
-
-        document.CalcForm.GeoDezHeight_TXT.value = Math.atan((CartOutputYMeters / CartOutputXMeters));
-
-        Latitude = (CartOutputXMeters * CartOutputXMeters) + (CartOutputYMeters * CartOutputYMeters);
-        Latitude = Math.sqrt(Latitude);
-        Latitude = CartOutputZMeters / Latitude;
-        //window.alert("First");
-        Latitude =  Math.atan(Latitude);
-        //window.alert(Latitude);
-        LatitudeIt = 99999999;
-        do
-        {
-            LatitudeIt = Latitude;
-
-            n = 1 - eeWGS84 * Math.sin(Latitude) * Math.sin(Latitude);
-            n = Math.sqrt(n);
-            n = aWGS84 / n;
-            Latitude = CartOutputXMeters * CartOutputXMeters + CartOutputYMeters * CartOutputYMeters;
-            Latitude = Math.sqrt(Latitude);
-            Latitude = (CartOutputZMeters + eeWGS84 * n * Math.sin(LatitudeIt)) / Latitude;
-            //window.alert("Atan-Test");
-            //window.alert(Latitude);
-            Latitude = Math.atan(Latitude);
-            //window.alert(Latitude);
-        }
-        while (Math.abs(Latitude - LatitudeIt) >= 0.000000000000001);
-
-        document.getElementbyId("GeoDezRight").value = (Latitude / Math.PI) * 180;
-        document.CalcForm.GeoDezHeight_TXT.value = (parseFloat(document.CalcForm.GeoDezHeight_TXT.value) / Math.PI) * 180;
-    }
-
-    if (document.CalcForm.GeoSystemEll.value == "GRS80")
-    {
-        var CartesianXMeters, CartesianYMeters, CartesianZMeters, n, aBessel = 6377397.155, eeBessel = 0.0066743722296294277832, CartOutputXMeters, CartOutputYMeters, CartOutputZMeters, ScaleFactor = 0.00000982, RotXRad = -7.16069806998785E-06, RotYRad = 3.56822869296619E-07, RotZRad = 7.06858347057704E-06, ShiftXMeters = 591.28, ShiftYMeters = 81.35, ShiftZMeters = 396.39, aGRS80 = 6378137, eeGRS80 = 0.00669438002290;
-        var Latitude, LatitudeIt;
-
-        document.getElementbyId("GeoDezRight").value = (parseFloat(document.getElementbyId("GeoDezRight").value) / 180) * Math.PI;
-        document.CalcForm.GeoDezHeight_TXT.value = (parseFloat(document.CalcForm.GeoDezHeight_TXT.value) / 180) * Math.PI;
-
-        n = eeBessel * Math.sin(parseFloat(document.getElementbyId("GeoDezRight").value)) * Math.sin(parseFloat(document.getElementbyId("GeoDezRight").value));
-        n = 1 - n;
-        n = Math.sqrt(n)
-        n = aBessel / n
-        //window.alert(n);
-        CartesianXMeters = n * Math.cos(parseFloat(document.getElementbyId("GeoDezRight").value)) * Math.cos(parseFloat(document.CalcForm.GeoDezHeight_TXT.value));
-        CartesianYMeters = n * Math.cos(parseFloat(document.getElementbyId("GeoDezRight").value)) * Math.sin(parseFloat(document.CalcForm.GeoDezHeight_TXT.value));
-        CartesianZMeters = n * (1 - eeBessel) * Math.sin(parseFloat(document.getElementbyId("GeoDezRight").value));
-        //window.alert(CartesianXMeters);
-        //window.alert(CartesianYMeters);
-        //window.alert(CartesianZMeters);
-
-        CartOutputXMeters = (1 + ScaleFactor) * CartesianXMeters + RotZRad * CartesianYMeters - RotYRad * CartesianZMeters + ShiftXMeters;
-        CartOutputYMeters = -RotZRad * CartesianXMeters + (1 + ScaleFactor) * CartesianYMeters + RotXRad * CartesianZMeters + ShiftYMeters;
-        CartOutputZMeters = RotYRad * CartesianXMeters - RotXRad * CartesianYMeters + (1 + ScaleFactor) * CartesianZMeters + ShiftZMeters;
-        //window.alert("Transformed:");
-        //window.alert(CartOutputXMeters);
-        //window.alert(CartOutputYMeters);
-        //window.alert(CartOutputZMeters);
-
-        document.CalcForm.GeoDezHeight_TXT.value = Math.atan((CartOutputYMeters / CartOutputXMeters));
-
-        Latitude = (CartOutputXMeters * CartOutputXMeters) + (CartOutputYMeters * CartOutputYMeters);
-        Latitude = Math.sqrt(Latitude);
-        Latitude = CartOutputZMeters / Latitude;
-        //window.alert("First");
-        Latitude =  Math.atan(Latitude);
-        //window.alert(Latitude);
-        LatitudeIt = 99999999;
-        do
-        {
-            LatitudeIt = Latitude;
-
-            n = 1 - eeGRS80 * Math.sin(Latitude) * Math.sin(Latitude);
-            n = Math.sqrt(n);
-            n = aGRS80 / n;
-            Latitude = CartOutputXMeters * CartOutputXMeters + CartOutputYMeters * CartOutputYMeters;
-            Latitude = Math.sqrt(Latitude);
-            Latitude = (CartOutputZMeters + eeGRS80 * n * Math.sin(LatitudeIt)) / Latitude;
-            //window.alert("Atan-Test");
-            //window.alert(Latitude);
-            Latitude = Math.atan(Latitude);
-            //window.alert(Latitude);
-        }
-        while (Math.abs(Latitude - LatitudeIt) >= 0.000000000000001);
-
-        document.getElementbyId("GeoDezRight").value = (Latitude / Math.PI) * 180;
-        document.CalcForm.GeoDezHeight_TXT.value = (parseFloat(document.CalcForm.GeoDezHeight_TXT.value) / Math.PI) * 180;
-    }
-    document.CalcForm.GeoDezRightStr_TXT.value = GetGeoStringFromGeoDez(parseFloat(document.getElementbyId("GeoDezRight").value));
-    document.CalcForm.GeoDezHeightStr_TXT.value = GetGeoStringFromGeoDez(parseFloat(document.CalcForm.GeoDezHeight_TXT.value));
-}
-
-function GetGeoStringFromGeoDez(GeoDez) {
-    var SecondsAbs, ShortedSecondsRest;
-    SecondsAbs = (GeoDez - Math.floor(GeoDez) - Math.floor((GeoDez - Math.floor(GeoDez)) * 60) / 60) * 60 * 60;
-    ShortedSecondsRest = SecondsAbs - Math.floor(SecondsAbs)
-    SecondsAbs = Math.floor(SecondsAbs)
-    ShortedSecondsRest = Math.floor(ShortedSecondsRest * 100) // -> Zwei Stellen
-    return(Math.floor(GeoDez) + "°" + Math.floor((GeoDez - Math.floor(GeoDez)) * 60) + "'" + SecondsAbs + "." + ShortedSecondsRest + '"');
-}
-
-function MapQuestShow_onclick() {
-    document.CalcForm.GeoSystemEll.value = "WGS84";
-    CalcStart_onclick();
-    var URLtarget;
-    if ((parseInt(document.getElementbyId("GeoDezRight").value) > 1000000) && (parseInt(document.getElementbyId("GeoDezHight").value) > 1000000))
-    {
-        URLtarget = "http://www.mapquest.com/maps/map.adp?latlongtype=decimal&latitude=" + GetFloatFromString(document.getElementbyId("GeoDezRight").value) + "&longitude=" + GetFloatFromString(document.CalcForm.GeoDezHeight_TXT.value) + "&zoom=8&size=big&style=RARE";
-        if (msieversion() >= 3)
-        {
-            document.CalcForm.MapQuestShow.value = "(Wird geladen ...)";
-            document.title = "Lade MapQuest-Karte...";
-            window.url = URLtarget;
-            window.navigate(URLtarget);
-        }
-        else
-        {
-            window.open(URLtarget);
-        }
-    }
-}
-
-function msieversion()
-// Return Microsoft Internet Explorer (major) version number, or 0 for others.
-// This function works by finding the "MSIE " string and extracting the version number
-// following the space, up to the decimal point for the minor version, which is ignored.
+// USAGE:
+// gk2geo(rechtswert, hochwert, callback(lat, long))
+//
+function gk2geo(rw, hw, callback)
 {
-    var ua = window.navigator.userAgent
-    var msie = ua.indexOf ( "MSIE " )
-    if (msie >= 0)        // is Microsoft Internet Explorer; return version number
-    {
-        return parseInt(ua.substring(msie + 5, ua.indexOf (".", msie)));
-    }
-    else
-    {
-        return(0);    // is other browser
-    }
-}
+/* Copyright (c) 2006, HELMUT H. HEIMEIER
+   Permission is hereby granted, free of charge, to any person obtaining a
+   copy of this software and associated documentation files (the "Software"),
+   to deal in the Software without restriction, including without limitation
+   the rights to use, copy, modify, merge, publish, distribute, sublicense,
+   and/or sell copies of the Software, and to permit persons to whom the
+   Software is furnished to do so, subject to the following conditions:
+   The above copyright notice and this permission notice shall be included
+   in all copies or substantial portions of the Software.*/
 
-function GKall_TXT_onchange() {
-    var GKall;
-    GKall = document.CalcForm.GKall_TXT.value;
+/* Die Funktion wandelt GK Koordinaten in geographische Koordinaten
+   um. Rechtswert rw und Hochwert hw müssen gegeben sein.
+   Berechnet werden geographische Länge lp und Breite bp
+   im Potsdam Datum.*/
 
-    if (GKall.length > 6)
-    {
-        document.getElementbyId("GeoDezRight").value = GKall.slice(0, 6) + "0";
-        document.getElementbyId("GeoDezHight").value = GKall.slice(6) + "0";
-        document.CalcForm.GKRef_TXT.value = GKall.slice(0, 1) + ". - " + GKall.slice(0, 1) * 3 + "°"
-        if (GKall.length == 12)
-        {
-            document.CalcForm.CalcStart.focus();
-        }
-    }
-    else
-    {
-        if (GKall.length > 0)
-        {
-            document.getElementbyId("GeoDezRight").value = GKall + "0";
-            document.getElementbyId("GeoDezHight").value = "0";
-            document.CalcForm.GKRef_TXT.value = GKall.slice(0, 1) + ". - " + GKall.slice(0, 1) * 3 + "°"
-        }
-    }
-}
+// Rechtswert rw und Hochwert hw im Potsdam Datum
+   if (rw == "" || hw == "")
+   {
+   lp = "";
+   bp = "";
+   return;
+   }
+   rw = parseFloat(rw);
+   hw = parseFloat(hw);
 
-function GeoSystemEll_onchange() {
-    if (document.CalcForm.GeoDezHeight_TXT.value == "" || document.getElementbyId("GeoDezRight").value == "")
-    {
-        return;
-    }
-    CalcStart_onclick();
-}
+//  Potsdam Datum
+// Große Halbachse a und Abplattung f
+   a = 6377397.155;
+   f = 3.34277321e-3;
+   pi = Math.PI;
 
-function GKRight_TXT_onchange() {
-    var GKRight;
-    GKRight = document.getElementbyId("GeoDezRight").value;
+// Polkrümmungshalbmesser c
+   c = a/(1-f);
 
-    if (GKRight.length >= 1)
-    {
-        document.CalcForm.GKRef_TXT.value = GKRight.slice(0, 1) + ". - " + GKRight.slice(0, 1) * 3 + "°"
-    }
+// Quadrat der zweiten numerischen Exzentrizität
+   ex2 = (2*f-f*f)/((1-f)*(1-f));
+   ex4 = ex2*ex2;
+   ex6 = ex4*ex2;
+   ex8 = ex4*ex4;
+
+// Koeffizienten zur Berechnung der geographischen Breite aus gegebener
+// Meridianbogenlänge
+   e0 = c*(pi/180)*(1 - 3*ex2/4 + 45*ex4/64 - 175*ex6/256 + 11025*ex8/16384);
+   f2 =   (180/pi)*(    3*ex2/8 - 3*ex4/16  + 213*ex6/2048 -  255*ex8/4096);
+   f4 =              (180/pi)*(  21*ex4/256 -  21*ex6/256  +  533*ex8/8192);
+   f6 =                           (180/pi)*(  151*ex6/6144 -  453*ex8/12288);
+
+// Geographische Breite bf zur Meridianbogenlänge gf = hw
+   sigma = hw/e0;
+   sigmr = sigma*pi/180;
+   bf = sigma + f2*Math.sin(2*sigmr) + f4*Math.sin(4*sigmr)
+      + f6*Math.sin(6*sigmr);
+
+// Breite bf in Radianten
+   br = bf * pi/180;
+   tan1 = Math.tan(br);
+   tan2 = tan1*tan1;
+   tan4 = tan2*tan2;
+
+   cos1 = Math.cos(br);
+   cos2 = cos1*cos1;
+
+   etasq = ex2*cos2;
+
+// Querkrümmungshalbmesser nd
+   nd = c/Math.sqrt(1 + etasq);
+   nd2 = nd*nd;
+   nd4 = nd2*nd2;
+   nd6 = nd4*nd2;
+   nd3 = nd2*nd;
+   nd5 = nd4*nd;
+
+//  Längendifferenz dl zum Bezugsmeridian lh
+   kz = parseInt(rw/1e6);
+   lh = kz*3
+   dy = rw-(kz*1e6+500000);
+   dy2 = dy*dy;
+   dy4 = dy2*dy2;
+   dy3 = dy2*dy;
+   dy5 = dy4*dy;
+   dy6 = dy3*dy3;
+
+   b2 = - tan1*(1+etasq)/(2*nd2);
+   b4 =   tan1*(5+3*tan2+6*etasq*(1-tan2))/(24*nd4);
+   b6 = - tan1*(61+90*tan2+45*tan4)/(720*nd6);
+
+   l1 =   1/(nd*cos1);
+   l3 = - (1+2*tan2+etasq)/(6*nd3*cos1);
+   l5 =   (5+28*tan2+24*tan4)/(120*nd5*cos1);
+
+// Geographischer Breite bp und Länge lp als Funktion von Rechts- und Hochwert
+   bp = bf + (180/pi) * (b2*dy2 + b4*dy4 + b6*dy6);
+   lp = lh + (180/pi) * (l1*dy  + l3*dy3 + l5*dy5);
+
+   if (lp < 5 || lp > 16 || bp < 46 || bp > 56)
+   {
+   alert("RW und/oder HW ungültig für das deutsche Gauss-Krüger-System");
+   lp = "";
+   bp = "";
+   }
+   callback(bp, lp);
+   return;
 }

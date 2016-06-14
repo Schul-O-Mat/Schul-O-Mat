@@ -1,5 +1,10 @@
 @extends("layouts.app")
 
+@section("css")
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+  <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+@endsection
+
 @section("header")
   <h3>{{$schule->bezeichnung->schulbez1}}</h3>
   <h3>{{$schule->bezeichnung->schulbez2}}</h3>
@@ -182,7 +187,13 @@
                                 </div>
                             </div>
                         </div>
-
+                        <div class="col s12 m6">
+                            <div class="card">
+                              <div class="card-content">
+                                <div id="map" style="height:250px; width:auto;"></div>
+                              </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -201,15 +212,27 @@
 
 @section("js")
   <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet/v1.0.0-rc.1/leaflet.js"></script>
+  <script src="/js/gk_to_latlong.js"></script>
   <script>
-      $(document).ready(function () {
-          $('ul.tabs').tabs();
-          $('.tooltipped').tooltip({
-              delay: 50
-          });
-          $('.collapsible').collapsible({
-              accordion: false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
-          });
-      });
+    var map = null;
+    $(document).ready(function () {
+        $('ul.tabs').tabs();
+        $('.tooltipped').tooltip({
+            delay: 50
+        });
+        $('.collapsible').collapsible({
+            accordion: false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+        });
+        var hochwert = {{$hochwert/10}};
+        var rechtswert = {{$rechtswert/10}};
+        gk2geo(rechtswert, hochwert, function(lat, long){
+          map = L.map('map').setView(L.latLng(lat, long), 15);
+
+          L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+              attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+          }).addTo(map);
+          L.marker(L.latLng(lat, long)).addTo(map);
+        });
+    });
   </script>
 @endsection

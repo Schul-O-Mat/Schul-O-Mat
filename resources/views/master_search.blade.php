@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@extends("main")
+@section("main")
   <div class="row">
     <div class="col s12">
       <ul class="collection">
