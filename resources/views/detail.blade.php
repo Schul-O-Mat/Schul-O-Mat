@@ -181,10 +181,6 @@
                                     @if($schule->kontakt->faxnr!="/")<p>Telefax: <a href="tel:{{ $schule->kontakt->faxnr }}">{{ $schule->kontakt->faxnr }}</a></p>@endif
 
                                 </div>
-                                <div class="card-action ">
-                                    <a href="/schule/{{$schule->schulnr}}/karte">Öffne mit Maps</a>
-                                    @if($schule->kontakt->homepage!="")<a href="{{$schule->kontakt->homepage}}">Zur Website</a>@endif
-                                </div>
                             </div>
                         </div>
                         <div class="col s12 m6">
