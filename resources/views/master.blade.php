@@ -196,17 +196,17 @@
             </ul>
         </div>
     </div>
-    <ul class="pagination">
-        @if ($zurueck)
+  </div>
+  <ul class="pagination">
+      @if ($zurueck)
         <li class="waves-effect"><a href="/schulen/{{$page-1}}"><i class="material-icons">chevron_left</i></a></li>
-        @else
+      @else
         <li class="waves-effect disabled"><a href="#"><i class="material-icons">chevron_left</i></a></li>
-        @endif @if ($weiter)
+      @endif @if ($weiter)
         <li class="chevron_right waves-effect"><a href="/schulen/{{$page+1}}"><i class="material-icons">chevron_right</i></a></li>
-        @else
+      @else
         <li class="chevron_right waves-effect disabled"><a href="#"><i class="material-icons">chevron_right</i></a></li>
-        @endif
-    </ul>
+      @endif
+  </ul>
 </body>
-
 </html>
