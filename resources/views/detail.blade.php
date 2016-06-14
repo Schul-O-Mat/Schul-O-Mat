@@ -215,7 +215,7 @@
                                 </div>
                                 <div class="card-action ">
                                     <a href="/schule/{{$schule->schulnr}}/karte">Öffne mit Maps</a>
-                                    <a href="# ">Zur Website</a>
+                                    @if($schule->kontakt->homepage!="")<a href="{{$schule->kontakt->homepage}}">Zur Website</a>@endif
                                 </div>
                             </div>
                         </div>
