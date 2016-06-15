@@ -24,8 +24,8 @@ class schulenseeder extends Seeder
             [ "plz" => $test[6],
               "ort" => $test[7],
               "strasse" => $test[8],
-              "lat" => $test[19],
-              "lon" => $test[18]]
+              "rw" => $test[18],
+              "hw" => $test[19]]
           );
           $id_schulbezeichnung = DB::getPdo()->lastInsertId();
           DB::table("schulbezeichnung")->insert(

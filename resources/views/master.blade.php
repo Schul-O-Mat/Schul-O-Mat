@@ -1,4 +1,4 @@
-@extends("layouts.app")
++@extends("layouts.app")
 @section("main")
     <ul class="collapsible" data-collapsible="expandable">
         <li>
