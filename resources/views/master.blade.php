@@ -10,87 +10,45 @@
                     <label for="privateschule">Private Schule</label>
                 </p>
                 <p>
-                    <input name="schulart" type="radio" id="oefentlicheschule" />
+                    <input selected name="schulart" type="radio" id="oefentlicheschule" />
                     <label for="oefentlicheschule">&Ouml;ffentliche Schule</label>
                 </p>
                 <!-- Dropdown Trigger -->
-                <a class='dropdown-button btn' href='#' data-activates='dropdown'>Drop Me!</a>
+                <a class='blue dropdown-button btn' href='#' data-activates='dropdownsbz'>Schulbetriebszustand</a>
+                <select name="schulbetriebzustand" id="drobdownsbz[]" multiple>
+                    <option disabled selected>Was f&uuml;r ein Betriebszustand hat deine Schule</option>
+                    <option value="1">ID 1</option>
+                    <option value="2">ID 2</option>
+                    <option value="3">ID 3</option>
+                    <option value="4">ID 4</option>
+                    <option value="5">ID 5</option>
+                    <option value="6">ID 6</option>
+                    <option value="9">ID 9</option>
+                </select>
 
-                <!-- Dropdown Structure -->
-                <ul id='dropdown' class='dropdown-content'>
-                    <li><a href="#!">ID 1</a></li>
-                    <li><a href="#!">ID 2</a></li>
-                    <li><a href="#!">ID 3</a></li>
-                    <li><a href="#!">ID 4</a></li>
-                    <li><a href="#!">ID 5</a></li>
-                    <li><a href="#!">ID 6</a></li>
-                    <li><a href="#!">ID 9</a></li>
-                </ul>
-                <p>
-                    <input type="checkbox" name="1" id="grundschule" />
-                    <label for="grundschule">Grundschule</label>
-                </p>
-                <p>
-                    <input type="checkbox" name="2" id="hauptschule" />
-                    <label for="hauptschule">Hauptschule</label>
-                </p>
-                <p>
-                    <input type="checkbox" name="3" id="volksschule" />
-                    <label for="volksschule">Volksschule</label>
-                </p>
-                <p>
-                    <input type="checkbox" name="4" id="foerderschule" />
-                    <label for="grundschule">F&ouml;rderschule</label>
-                </p>
-                <p>
-                    <input type="checkbox" name="5" id="realschule" />
-                    <label for="realschule">Realschule</label>
-                </p>
-                <p>
-                    <input type="checkbox" name="6" id="sekundarschule" />
-                    <label for="sekundarschule">Sekundarschule</label>
-                </p>
-                <p>
-                    <input type="checkbox" name="7" id="gesamtschule" />
-                    <label for="gesamtschule">Gesamtschule</label>
-                </p>
-                <p>
-                    <input type="checkbox" name="8" id="gemeinschaftsschule" />
-                    <label for="gemeinschaftsschule">Gemeinschaftsschule</label>
-                </p>
-                <p>
-                    <input type="checkbox" name="9" id="waldorfschule" />
-                    <label for="waldorfschule">Waldorfschule</label>
-                </p>
-                <p>
-                    <input type="checkbox" name="10" id="hiberniaschule" />
-                    <label for="hiberniaschule">Hiberniaschule</label>
-                </p>
-                <p>
-                    <input type="checkbox" name="11" id="gymnasium" />
-                    <label for="gymnasium">Gymnasium</label>
-                </p>
-                <p>
-                    <input type="checkbox" name="12" id="weiterbildungskolleg" />
-                    <label for="weiterbildungskolleg">Weiterbildungskolleg</label>
-                </p>
-                <p>
-                    <input type="checkbox" name="13" id="berufskolleg" />
-                    <label for="berufskolleg">Berufskolleg</label>
-                </p>
-                <p>
-                    <input type="checkbox" name="14" id="krankenschule" />
-                    <label for="weiterbildungskolleg">Schule f&uuml;r Kranke</label>
-                </p>
-                <p>
-                    <input type="checkbox" name="15" id="foerderschuleimbereichderrealschule" />
-                    <label for="foerderschuleimbereichderrealschule">F&ouml;rderschule im Bereich der Realschule</label>
-                </p>
-                <p>
-                    <input type="checkbox" name="16" id="foerderschuleimbereichdesberufkollegs" />
-                    <label for="foerderschuleimbereichdesberufkollegs">F&ouml;rderschule im Bereich des Berufskolleg</label>
-                </p>
-                <select name="ort">
+                <a href="" data-activates="dropdownschulart" class="blue dropdown-button btn">Schulform</a>
+                <select name="schulart[]" id="dropdownschulart" multiple>
+                    <option value="" disabled selected>Was f&uuml;r eine Form hat deine Schule</option>
+                    <option value="grundschule">Grundschule</option>
+                    <option value="hauptschule">Hauptschule</option>
+                    <option value="volksschule">Volksschule</option>
+                    <option value="foerderschule">F&ouml;rderschule</option>
+                    <option value="realschule">Realschule</option>
+                    <option value="sekundarschule">Sekundarschule</option>
+                    <option value="gesamtschule">Gesamtschule</option>
+                    <option value="gemeinschaftsschule">Gemeinschaftschule</option>
+                    <option value="waldorfschule">Waldorfschule</option>
+                    <option value="hiberniaschule">Hiberniaschule</option>
+                    <option value="gymnasium">Gymnasium</option>
+                    <option value="weiterbildungskolleg">Weiterbildungskolleg</option>
+                    <option value="berufskolleg">Berufskolleg</option>
+                    <option value="schulefuerkranke">Schule f&uuml;r Kranke</option>
+                    <option value="foerderschulerealschule">F&ouml;rderschule im Bereich der Realschule</option>
+                    <option value="foederschulegymnasium">F&ouml;rderschule im Bereich des Gymnasiums</option>
+                    <option value="foerderschuleberufkolleg">F&ouml;rderschule im Bereich des Berufkollegs</option>
+                </select>
+                <a href="" data-activates="dropdownort" class="blue dropdown-button btn">Ort</a>
+                <select name="ort" id="dropdownort">
                     <option value="" disabled selected>W&auml;hle deine Stadt aus</option>
                     <option value="1">Bonn</option>
                     <option value="2">Duisburg</option>
