@@ -18,7 +18,7 @@
                           <br> {{$d->schulbez3}}
                           <br> {{$d->kurzbez}}
                       </p>
-            <a href="/schule/{{ $d->schulnr }}" class="secondary-content"><i class="blue-text material-icons">arrow_forward</i></a>
+            <a href="{{ action("SchulDetailController@detail", ["id" => $d->schulnr]) }}" class="secondary-content"><i class="blue-text material-icons">arrow_forward</i></a>
           </li>
         @endforeach
       </ul>

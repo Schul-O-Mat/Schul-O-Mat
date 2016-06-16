@@ -11,9 +11,32 @@
 |
 */
 
-Route::get('/', function () {
-    return view('front');
-});
+/*
+ * AUTH
+ */
+
+ // Authentication routes...
+Route::get('/login', 'Auth\AuthController@getLogin');
+Route::post('/login', 'Auth\AuthController@postLogin');
+Route::get('/logout', 'Auth\AuthController@getLogout');
+
+// Registration routes...
+Route::get('/register', 'Auth\AuthController@getRegister');
+Route::post('/register', 'Auth\AuthController@postRegister');
+
+// Password reset link request routes...
+Route::get('password/email', 'Auth\PasswordController@getEmail');
+Route::post('password/email', 'Auth\PasswordController@postEmail');
+
+// Password reset routes...
+Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
+Route::post('password/reset', 'Auth\PasswordController@postReset');
+
+/*
+ * END AUTH
+ */
+
+Route::get('/', "IndexController@index");
 
 Route::get('/schulen', "SchulMasterController@redirect");
 Route::get('/schule', "SchulMasterController@redirect");
@@ -22,6 +45,8 @@ Route::get('/schulen/search', 'SearchController@searchGet'); //die reihenfolge i
 //Route::get('/schulen/search/{key}', 'SearchController@search'); //die reihenfolge ist wichtig #schulomat in slack
 
 Route::get('/schulen/{page}', "SchulMasterController@pagination");
+Route::post('/schulen/{page}', "SchulMasterController@paginationFilter");
+
 
 Route::get('/schule/{id}', "SchulDetailController@detail");
 
@@ -30,10 +55,6 @@ Route::get('/schule/{id}/karte', "SchulDetailController@karte");
 Route::get("/schule/{id}/eintragen", "SchulDetailController@fragebogen");
 
 Route::post("/schule/{id}/eintragen", "SchulDetailController@eintragen");
-
-Route::auth();
-
-Route::get('/home', 'HomeController@index');
 
 Route::get('/schule/{id}/redaktion', "SchulDetailController@redaktion");
 

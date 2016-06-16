@@ -53,7 +53,7 @@ class SchulDetailController extends Controller {
       $reviews = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->select('freitext')->where('users.schulID', '=', $schulID)->get();
 
       //Hole den redaktionellen Inhalt
-      $redaktionell = DB::table('redaktion')->select('text')->where('schulID', '=', $schulID)->first()->text;
+      //$redaktionell = DB::table('redaktion')->select('text')->where('schulID', '=', $schulID)->first()->text;
       endif;
     return view('detail', compact("schule", "hochwert", "rechtswert", "durchschnitt", "keywords", "reviews", "redaktionell", "schulID", "bewertungda"));
     }

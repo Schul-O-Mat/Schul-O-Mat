@@ -26,4 +26,18 @@ class SchulMasterController extends Controller {
       return view('master', compact("data", "zurueck", "weiter", "page", "schulform", "schulzustand"));
   }
 
+  function paginationFilter( Request $request, $page ){
+    $calc = $page*25;
+    $cnt = schulen::count();
+    $weiter = true;
+    $zurueck = ($page==0)? false : true;
+    if($calc+25>$cnt)
+      $weiter = false;
+    $data = schulen::take(25)->skip($calc)->get();
+    $schulform = DB::table("key_schulformschluessel")->get();
+    $schulzustand = DB::table("key_schulbetriebsschluessel")->get();
+    //return array($weiter, $zurueck);
+    return view('master', compact("data", "zurueck", "weiter", "page", "schulform", "schulzustand"));
+  }
+
 }

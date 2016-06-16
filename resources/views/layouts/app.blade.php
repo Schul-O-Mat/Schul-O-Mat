@@ -20,12 +20,12 @@
     <nav>
         <div class="nav-wrapper blue">
 
-            <a href="/" style="margin-left: auto !important;" class="brand-logo"> <img src="/img/logo.png" class="schulomaticon"></a>
+            <a href="{{ action("IndexController@index") }}" style="margin-left: auto !important;" class="brand-logo"> <img src="/img/logo.png" class="schulomaticon"></a>
             <ul class="right hide-on-med-and-down">
                 <!--                <li><a href=""><i class="material-icons">search</i></a></li>-->
-                <li><a href="" class="dropdown-button" data-activates='dropdown'><i class="material-icons" >more_vert</i></a></li>
+                <li><a href="#" class="dropdown-button" data-activates='dropdown'><i class="material-icons" >more_vert</i></a></li>
             </ul>
-            <form action="/schulen/search" class="form header-search-wrapper hide-on-med-and-down" method="get">
+            <form action="{{ action("SearchController@searchGet") }}" class="form header-search-wrapper hide-on-med-and-down" method="get">
                 <!-- Search Url: /schulen/search/{key} -->
                 <i class="material-icons active">search</i>
                 <input name="searchword" class="header-search-input z-depth-2" placeholder="Suche" type="text" onChange="this.form.submit();">
@@ -33,11 +33,11 @@
             </form>
             <ul id='dropdown' class='dropdown-content text-blue' style=" right: 0 !important;left: auto !important;width: 300px;">
                 @if(Auth::guest())
-                <li><a href="/login">Login</a></li>
-                <li><a href="/register">Register</a></li>
+                <li><a href="{{ action("Auth\AuthController@getLogin") }}">Login</a></li>
+                <li><a href="{{ action("Auth\AuthController@getRegister") }}">Register</a></li>
                 @else
                 <li><a href="#">Willkommen {{Auth::user()->name}}!</a></li>
-                <li><a href="/logout">Logout</a></li>
+                <li><a href="{{ action("Auth\AuthController@getLogout") }}">Logout</a></li>
                 @endif
             </ul>
 
