@@ -4,44 +4,22 @@
         <li>
             <div class="collapsible-header"><i class="material-icons">filter_list</i>Filtern</div>
             <div class="collapsible-body">
-                <label class="flow-text">Schulart:</label>
-                <p>
-                    <input name="schulart" type="radio" id="privateschule" />
-                    <label for="privateschule">Private Schule</label>
-                </p>
-                <p>
-                    <input selected name="schulart" type="radio" id="oefentlicheschule" />
-                    <label for="oefentlicheschule">&Ouml;ffentliche Schule</label>
-                </p>
+                <select name="schulart[]" multiple>
+                    <option disabled selected>Schulart?</option>
+                    <option value="1">&Ouml;ffentliche Schule</option>
+                    <option value="2">Private Schule</option>
+                </select>
                 <select name="schulbetriebzustand[]" multiple>
                     <option disabled selected>Was f&uuml;r ein Betriebszustand hat deine Schule</option>
-                    <option value="1">ID 1</option>
-                    <option value="2">ID 2</option>
-                    <option value="3">ID 3</option>
-                    <option value="4">ID 4</option>
-                    <option value="5">ID 5</option>
-                    <option value="6">ID 6</option>
-                    <option value="9">ID 9</option>
+                    @foreach($schulzustand as $d)
+                      <option value="{{$d->id}}">{{$d->Schulbetrieb}}</option>
+                    @endforeach
                 </select>
-                <select name="schulart[]" multiple>
+                <select name="schulform" multiple>
                     <option value="" disabled selected>Was f&uuml;r eine Form hat deine Schule</option>
-                    <option value="grundschule">Grundschule</option>
-                    <option value="hauptschule">Hauptschule</option>
-                    <option value="volksschule">Volksschule</option>
-                    <option value="foerderschule">F&ouml;rderschule</option>
-                    <option value="realschule">Realschule</option>
-                    <option value="sekundarschule">Sekundarschule</option>
-                    <option value="gesamtschule">Gesamtschule</option>
-                    <option value="gemeinschaftsschule">Gemeinschaftschule</option>
-                    <option value="waldorfschule">Waldorfschule</option>
-                    <option value="hiberniaschule">Hiberniaschule</option>
-                    <option value="gymnasium">Gymnasium</option>
-                    <option value="weiterbildungskolleg">Weiterbildungskolleg</option>
-                    <option value="berufskolleg">Berufskolleg</option>
-                    <option value="schulefuerkranke">Schule f&uuml;r Kranke</option>
-                    <option value="foerderschulerealschule">F&ouml;rderschule im Bereich der Realschule</option>
-                    <option value="foederschulegymnasium">F&ouml;rderschule im Bereich des Gymnasiums</option>
-                    <option value="foerderschuleberufkolleg">F&ouml;rderschule im Bereich des Berufkollegs</option>
+                    @foreach($schulform as $s)
+                      <option value="{{$s->id}}">{{$s->Schulform}}</option>
+                    @endforeach
                 </select>
                 <select name="ort">
                     <option value="" disabled selected>W&auml;hle deine Stadt aus</option>
@@ -111,4 +89,3 @@
         });
     </script>
 @endsection
-
