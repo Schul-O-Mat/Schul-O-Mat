@@ -6,7 +6,8 @@
             <i class="material-icons">filter_list</i>Filtern
           </div>
           <div class="collapsible-body">
-            <form method="post" action="{{action("SchulMasterController@paginationFilter", ["page" => $page])}}" role="form" class="form-horizontal ">
+            <form method="post" action="{{action("SchulMasterController@paginationFilter", ["page" => $page])}}" role="form" class="form-horizontal">
+              {{ csrf_field() }}
               <select name="schulart[]" multiple>
                   <option disabled selected>Schulart?</option>
                   <option value="1">&Ouml;ffentliche Schule</option>
