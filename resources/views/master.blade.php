@@ -1,4 +1,4 @@
-+@extends("layouts.app")
+@extends("layouts.app")
 @section("main")
     <ul class="collapsible" data-collapsible="expandable">
         <li>
@@ -13,9 +13,6 @@
                     <input selected name="schulart" type="radio" id="oefentlicheschule" />
                     <label for="oefentlicheschule">&Ouml;ffentliche Schule</label>
                 </p>
-                <!-- Dropdown Trigger -->
-                <a class='blue dropdown-button btn' href='#' data-activates='dropdownsbz'>Schulbetriebszustand</a>
-                <ul id="drobdownsbz">
                 <select name="schulbetriebzustand[]" multiple>
                     <option disabled selected>Was f&uuml;r ein Betriebszustand hat deine Schule</option>
                     <option value="1">ID 1</option>
@@ -26,10 +23,6 @@
                     <option value="6">ID 6</option>
                     <option value="9">ID 9</option>
                 </select>
-                </ul>
-
-                <a href="" data-activates="dropdownschulart" class="blue dropdown-button btn">Schulform</a>
-                <ul id="dropdownschulart">
                 <select name="schulart[]" multiple>
                     <option value="" disabled selected>Was f&uuml;r eine Form hat deine Schule</option>
                     <option value="grundschule">Grundschule</option>
@@ -50,16 +43,12 @@
                     <option value="foederschulegymnasium">F&ouml;rderschule im Bereich des Gymnasiums</option>
                     <option value="foerderschuleberufkolleg">F&ouml;rderschule im Bereich des Berufkollegs</option>
                 </select>
-                </ul>
-                <a href="" data-activates="dropdownort" class="blue dropdown-button btn">Ort</a>
-                <ul id="dropdownort">
                 <select name="ort">
                     <option value="" disabled selected>W&auml;hle deine Stadt aus</option>
                     <option value="1">Bonn</option>
                     <option value="2">Duisburg</option>
                     <option value="3">Dortmund</option>
                 </select>
-                </ul>
                 <label>W&auml;hle den Ort aus</label>
                 <button class="blue btn waves-effect waves-light" type="submit" name="action">Filtern
                     <i class="material-icons right">filter_list</i>
@@ -116,4 +105,10 @@
         <li class="chevron_right waves-effect disabled"><a href="#"><i class="material-icons">chevron_right</i></a></li>
       @endif
   </ul>
+    <script>
+        $(document).ready(function () {
+            $('select').material_select();
+        });
+    </script>
 @endsection
+
