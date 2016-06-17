@@ -45,7 +45,7 @@ Route::get('/schulen/search', 'SearchController@searchGet'); //die reihenfolge i
 //Route::get('/schulen/search/{key}', 'SearchController@search'); //die reihenfolge ist wichtig #schulomat in slack
 
 Route::get('/schulen/{page}', "SchulMasterController@pagination");
-Route::post('/schulen/{page}', "SchulMasterController@paginationFilter");
+Route::post('/filter', "SchulMasterController@paginationFilter");
 
 
 Route::get('/schule/{id}', "SchulDetailController@detail");

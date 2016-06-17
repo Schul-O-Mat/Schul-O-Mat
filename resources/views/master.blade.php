@@ -6,7 +6,7 @@
             <i class="material-icons">filter_list</i>Filtern
           </div>
           <div class="collapsible-body">
-            <form method="post" action="{{action("SchulMasterController@paginationFilter", ["page" => $page])}}" role="form" class="form-horizontal">
+            <form method="post" action="{{action("SchulMasterController@paginationFilter")}}" role="form" class="form-horizontal">
               {{ csrf_field() }}
               <select name="schulart[]" multiple>
                   <option disabled selected>Schulart?</option>
@@ -19,7 +19,7 @@
                     <option value="{{$d->id}}">{{$d->Schulbetrieb}}</option>
                   @endforeach
               </select>
-              <select name="schulform" multiple>
+              <select name="schulform[]" multiple>
                   <option value="" disabled selected>Was f&uuml;r eine Form hat deine Schule</option>
                   @foreach($schulform as $s)
                     <option value="{{$s->id}}">{{$s->Schulform}}</option>
@@ -27,9 +27,9 @@
               </select>
               <select name="ort">
                   <option value="" disabled selected>W&auml;hle deine Stadt aus</option>
-                  <option value="1">Bonn</option>
-                  <option value="2">Duisburg</option>
-                  <option value="3">Dortmund</option>
+                  @foreach($staedte as $s)
+                    <option value="{{$s->ort}}">{{$s->ort}}</option>
+                  @endforeach
               </select>
               <label>W&auml;hle den Ort aus</label>
               <button class="blue btn waves-effect waves-light" type="submit" name="action">Filtern
