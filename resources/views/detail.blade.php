@@ -99,7 +99,6 @@
                             <p>Wie findest du die Zeit des Schulbeginns?<span class="right">{{round($durchschnitt[6], 1)}}/10</span></p>
                             <div class="progress">
                                 <div class="determinate" style="width: {{$durchschnitt[6]*10}}%"></div>
-
                             </div>
                         </div>
                         @else
@@ -159,7 +158,6 @@
                     @endif
 
                 </div>
-
                 <!--Ende Freitext-->
 
                 <!-- Anfang FRAGEBOGEN-->
