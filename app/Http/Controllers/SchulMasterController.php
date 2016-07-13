@@ -32,7 +32,6 @@ class SchulMasterController extends Controller
 
     function paginationFilter(Request $request)
     {
-        DB::enableQueryLog();
         $data = DB::table('schulen')
             ->select("*")
             ->join('schulbezeichnung', 'schulbezeichnung.id', '=', 'schulen.fkbezeichnungen')
@@ -43,15 +42,11 @@ class SchulMasterController extends Controller
         if ($request->has("ort"))
             $data->where("schuladresse.ort", "=", $request->request->all()["ort"]);
         if ($request->has("schulart"))
-            foreach ($request->request->all()["schulart"] as $d)
-                $data->where("schulen.schulform", "=", $d);
+            $data->whereIn("schulen.rechtsform", $request->request->all()["schulart"]);
         if ($request->has("schulform"))
-            foreach ($request->request->all()["schulform"] as $d)
-                $data->where("schulen.schulform", "=", $d);
+            $data->whereIn("schulen.schulform", $request->request->all()["schulform"]);
         $data->where("schulen.schulbetriebsschluessel", "=", 1);
         $data = $data->get();
-        //dd($request);
-        dd(DB::getQueryLog());
         return view("master_search", compact("data"));
     }
 
