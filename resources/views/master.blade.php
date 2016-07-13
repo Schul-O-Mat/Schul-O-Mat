@@ -13,12 +13,6 @@
                   <option value="1">&Ouml;ffentliche Schule</option>
                   <option value="2">Private Schule</option>
               </select>
-              <select name="schulbetriebzustand[]" multiple>
-                  <option disabled selected>Was f&uuml;r ein Betriebszustand hat deine Schule</option>
-                  @foreach($schulzustand as $d)
-                    <option value="{{$d->id}}">{{$d->Schulbetrieb}}</option>
-                  @endforeach
-              </select>
               <select name="schulform[]" multiple>
                   <option value="" disabled selected>Was f&uuml;r eine Form hat deine Schule</option>
                   @foreach($schulform as $s)
