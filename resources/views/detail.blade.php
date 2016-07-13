@@ -133,9 +133,8 @@
                             </tbody>
                         </table>
                     </div>
-                    @else
-                      <p>Es wurden noch keine Bewertungen für diese Schule eingetragen. Vielleicht möchtest du ja einige Schüler an deiner Schule dazu motivieren.</p>
-                    @endif @if(isset($reviews))
+                    @endif
+                    @if(isset($reviews))
                     <div>
                         <h4 class="center-align">Einzelberichte:</h4>
 
