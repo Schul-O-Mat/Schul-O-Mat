@@ -70,8 +70,11 @@ class SchulDetailController extends Controller {
   }
 
   function fragebogen($id){
-    $keywords = keywords::all();
-    return view("fragebogen", compact("id", "keywords"));
+      if(Auth::guest())
+          return redirect("/");
+
+      $keywords = keywords::all();
+      return view("fragebogen", compact("id", "keywords"));
   }
 
   function eintragen(Request $request, $id){
