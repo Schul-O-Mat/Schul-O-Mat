@@ -51,6 +51,13 @@
 
                 <!--Ende Durchschnittsbewertung "Sternchen"-->
                 <div id="quests" class="col s12 ">
+                    @if(Auth::guest())@else
+                    <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+                        <a href="eintragen/" class="btn-floating btn-large blue">
+                            <i class="large material-icons">mode_edit</i>
+                        </a>
+                        @endif
+                    </div>
                     @if(isset($durchschnitt))
                     <div class="collection">
                         <div class="collection-item">
