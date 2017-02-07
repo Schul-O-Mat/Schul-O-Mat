@@ -156,3 +156,11 @@ footer {
 #whatissomat {
     padding: 10px;
 }
+#school_filter {
+    width: 90%; !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+#school_filter_form > button {
+    margin-bottom: 15px;
+}

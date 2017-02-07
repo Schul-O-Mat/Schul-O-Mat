@@ -1,12 +1,12 @@
 @extends("layouts.app")
 @section("main")
-    <ul class="collapsible" data-collapsible="expandable">
+    <ul class="collapsible" data-collapsible="expandable" id="school_filter_ul">
         <li>
           <div class="collapsible-header">
             <i class="material-icons">filter_list</i>Filtern
           </div>
-          <div class="collapsible-body">
-            <form method="post" action="{{action("SchulMasterController@paginationFilter")}}" role="form" class="form-horizontal">
+          <div class="center collapsible-body" id="school_filter">
+            <form id="school_filter_form" method="post" action="{{action("SchulMasterController@paginationFilter")}}" role="form" class="form-horizontal">
               {{ csrf_field() }}
               <select name="schulart[]" multiple>
                   <option disabled selected>Schulart?</option>
