@@ -5,7 +5,7 @@
 @endsection
 
 @section("main")
-  <form action="{{ action("SchulDetailController@eintragen", ["id" => $id]) }}" method="post">
+  <form class="container" action="{{ action("SchulDetailController@eintragen", ["id" => $id]) }}" method="post">
       <input type="hidden" name="_token" value="{{csrf_token()}}">
       <div class="row">
 
