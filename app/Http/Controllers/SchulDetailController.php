@@ -21,8 +21,8 @@ class SchulDetailController extends Controller {
           $bewertungda = DB::table('bewertungen')->select(DB::raw('COUNT(*) as cnt'))->where('userID', '=', Auth::user()->id)->first()->cnt > 0;
       $schulID = $schule;
       $schule = schulen::findOrFail($schule);
-      $hochwert = $schule->adresse->hw; //hochwert
-      $rechtswert = $schule->adresse->rw; //rechtswert
+      $hochwert = $schule->adresse->lat; //hochwert
+      $rechtswert = $schule->adresse->lon; //rechtswert
       $schueler = $schule->schueler;
 
       $cnt = DB::table("bewertungen")->join("users", "users.id", "=", "bewertungen.userID")->select(DB::raw("count(*) as cnt"))->where("users.schulID","=",$schulID)->first()->cnt;
