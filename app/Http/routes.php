@@ -46,6 +46,9 @@ Route::get('/schulen/search', 'SearchController@searchGet'); //die reihenfolge i
 
 Route::get('/schulen/{page}', "SchulMasterController@pagination");
 Route::post('/filter', "SchulMasterController@paginationFilter");
+Route::get("/schule/newkeyword", "SchulMasterController@newKeyword");
+Route::post('/schule/newkeyword', "SchulMasterController@newKeywordEintragen");
+
 
 
 Route::get('/schule/{id}', "SchulDetailController@detail");

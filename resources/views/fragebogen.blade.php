@@ -65,7 +65,7 @@
           </p>
       </div>
 
-      <div class="row">
+      <div class="row" style="margin-bottom: 0">
           <div class="input-field col s12 m6">
               <select multiple name="positive[]" required>
                   <option value="" disabled selected>Auswählen</option>
@@ -84,6 +84,9 @@
               </select>
               <label>Negative Aspekte an deiner Schule</label>
           </div>
+      </div>
+      <div class="row center">
+          <a href="/schule/newkeyword">Aspekt hinzuf&uuml;gen</a>
       </div>
       <div class="row">
           <div class="col s12">

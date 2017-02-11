@@ -6,6 +6,7 @@ use App\schulen;
 use App\Http\Controllers\Controller;
 use DB;
 use Illuminate\Http\Request;
+use Auth;
 
 class SchulMasterController extends Controller
 {
@@ -50,4 +51,20 @@ class SchulMasterController extends Controller
         return view("master_search", compact("data"));
     }
 
+    function newKeyword() {
+        if(Auth::guest())
+            return redirect("/");
+
+        return view("newkeyword");
+    }
+
+    function newKeywordEintragen(Request $request){
+//        $userID = Auth::user()->id;
+        //Hole Eingaben von allen Eingabefeldern
+        $bezeichnung = $request->get("bezeichnung");
+            //Füge positive Keywords ein
+            DB::table('keywords')->insert(['bezeichnung' => $bezeichnung]);
+
+        return redirect("/schule/");
+    }
 }
