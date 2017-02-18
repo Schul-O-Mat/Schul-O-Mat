@@ -50,7 +50,7 @@
       </div>
       <div class="row">
           <div class="col s6">
-              <label class="flow-text" for="length">Wie findest du die Länge der Schulstunden an deiner Schule?</label>
+              <label class="flow-text" for="length">Wie findest du die Technik an deiner Schule?</label>
           </div>
           <p class="range-field col s6">
               <input type="range" name="length" id="length" min="1" max="10" />
@@ -58,7 +58,7 @@
       </div>
       <div class="row">
           <div class="col s6">
-              <label class="flow-text" for="time">Wie findest du die Zeiten des Schulbeginns?</label>
+              <label class="flow-text" for="time">Wie kompakt ist der Stundenplan in der Oberstufe?</label>
           </div>
           <p class="range-field col s6">
               <input type="range" name="time" id="time" min="1" max="10" />
