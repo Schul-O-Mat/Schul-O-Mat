@@ -33,8 +33,7 @@
             </form>
             <ul id='dropdown' class='dropdown-content text-blue' style=" right: 0 !important;left: auto !important;width: 300px;">
                 @if(Auth::guest())
-                <li><a href="{{ action("Auth\AuthController@getLogin") }}">Login</a></li>
-                <li><a href="{{ action("Auth\AuthController@getRegister") }}">Register</a></li>
+                <li><a href="{{ action("Auth\AuthController@getLogin") }}">Anmelden</a></li>
                 @else
                 <li><a href="#">Willkommen {{Auth::user()->name}}!</a></li>
                 <li><a href="{{ action("Auth\AuthController@getLogout") }}">Logout</a></li>
