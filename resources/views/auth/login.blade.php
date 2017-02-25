@@ -90,7 +90,7 @@
                         <div class="row">
                             <div class="input-field">
                                 <div class="input-field col s12 m6{{ $errors->has('password') ? ' has-error' : '' }}">
-                                    <label for="signup-picked">Passwort</label>
+                                    <label for="signup-password">Passwort</label>
                                     <input type="password" id="signup-password" name="password" class="validate" required>
                                     @if ($errors->has('password'))
                                         <span class="help-block">
