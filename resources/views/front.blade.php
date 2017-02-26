@@ -6,13 +6,13 @@
 @endsection
 
 @section("main")
-  <main class="container">
+  <main id="front-main-container" class="container">
       <div class="row">
           <div class="col s12">
               <p class="flow-text">Möchtest du etwas über eine Schule erfahren?</p>
-              <div class="row center-align">
-                  <a href="{{ action("SchulMasterController@redirect") }}" class="btn large blue">Schau dir alle Schulen an</a>
-                  <a href="{{ action("SchulMasterController@redirect") }}" class="btn large blue">Suche gezielt nach einer Schule</a>
+              <div id="front-main-btn-schools" class="row center-align">
+                  <a id="front-main-btn-allschools" href="{{ action("SchulMasterController@redirect") }}" class="btn large blue">Schau dir alle Schulen an</a>
+                  <a id="front-main-btn-searchschool" href="{{ action("SchulMasterController@redirect") }}" class="btn large blue">Suche gezielt nach einer Schule</a>
               </div>
           </div>
           <div class="col s12">
