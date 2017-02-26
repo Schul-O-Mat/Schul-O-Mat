@@ -110,8 +110,8 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col s7">
-                                <button type="submit" name="btn-signup" class="btn blue right waves-effect waves-light">Registrieren</button>
+                            <div class="center">
+                                <button type="submit" name="btn-signup" class="btn blue waves-effect waves-light">Registrieren</button>
                             </div>
                         </div>
                     </form>
