@@ -69,6 +69,7 @@ class Schule extends Migration
         Schema::create('keywords', function (Blueprint $table) {
             $table->increments('id');
             $table->text("bezeichnung");
+            $table->boolean("changeable")->default(false);
             $table->timestamps();
         });
         Schema::create('key_bew', function (Blueprint $table) {

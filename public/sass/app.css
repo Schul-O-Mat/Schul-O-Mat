@@ -166,3 +166,6 @@ footer {
         margin-bottom: 15px;
     }
 }
+.dropdown-content li>a, .dropdown-content li>span {
+    color: #2196F3;
+}
