@@ -1,2 +1,147 @@
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-
+@import "variables";
+header {
+  > h1 {
+    font-weight: 100;
+  }
+  > h2 {
+    font-weight: 100;
+  }
+  > h3 {
+    font-weight: 100;
+  }
+}
+html {
+  max-width: 100vw;
+}
+.searchbar-wrapper {
+  margin: 10px auto 0 240px;
+  width: calc(100% - 600px);
+  height: 40px;
+  display: inline-block;
+  position: relative;
+}
+.searchbar {
+  display: block;
+  padding: 8px 8px 8px 72px;
+  width: 100%;
+  background: $white_30;
+  height: 24px;
+  transition: all 200ms ease;
+  border: none;
+  font-size: 16px;
+  appearance: textfield;
+  font-weight: 400;
+  outline: none;
+  border-radius: 3px;
+  &:focus {
+    border-bottom: none !important;
+    box-shadow: none !important;
+    color: $selected;
+    background: $white;
+  }
+}
+.searchbar-icon {
+  position: absolute;
+  font-size: 24px;
+  top: 6px;
+  left: 24px;
+  line-height: 32px !important;
+  transition: color 200ms ease;
+}
+.ratingbar {
+  position: relative;
+  background-color: $red;
+  text-align: center;
+  width: 10%;
+  height: 5px;
+}
+#map {
+  margin: 0 auto;
+  width: 50%;
+  height: 100px;
+}
+.brand-logo {
+  margin-left: 50px;
+}
+.chevron_right {
+  float: right;
+}
+#dropdown {
+  right: 0 !important;
+  left: auto !important;
+  width: 300px;
+}
+.header-search-wrapper {
+  margin: 10px auto 0 300px;
+  width: calc(100% - 600px);
+  height: 40px;
+  display: inline-block;
+  position: relative;
+  i {
+    position: absolute;
+    font-size: 24px;
+    top: 6px;
+    left: 24px;
+    line-height: 32px !important;
+    transition: color 200ms ease;
+  }
+}
+footer {
+  padding-top: 50px;
+  color: $selected;
+}
+#fundiertesfeedback {
+}
+.schulomaticon {
+  height: 64px;
+}
+@media(max-width: 600px) {
+  .schulomaticon {
+    height: 56px;
+  }
+}
+#whatissomat {
+  padding: 10px;
+}
+#school_filter {
+  width: 90% !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media all and(max-device-width: 400px) {
+  #front-main-btn-allschools {
+    margin-bottom: 15px;
+  }
+}
+input.header-search-input {
+  display: block;
+  padding: 8px 8px 8px 72px;
+  width: 100%;
+  background: $white_30;
+  height: 24px;
+  transition: all 200ms ease;
+  border: none;
+  font-size: 16px;
+  appearance: textfield;
+  font-weight: 400;
+  outline: none;
+  border-radius: 3px;
+  &:hover {
+    background: $white_50;
+  }
+  &:focus {
+    background: $white;
+    color: $black;
+  }
+}
+#school_filter_form > button {
+  margin-bottom: 15px;
+}
+.dropdown-content li {
+  > a {
+    color: $blue;
+  }
+  > span {
+    color: $blue;
+  }
+}
