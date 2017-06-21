@@ -21,8 +21,8 @@ class SchulDetailController extends Controller {
           $bewertungda = DB::table('bewertungen')->select(DB::raw('COUNT(*) as cnt'))->where('userID', '=', Auth::user()->id)->first()->cnt > 0;
       $schulID = $schule;
       $schule = schulen::findOrFail($schule);
-      $hochwert = $schule->adresse->lat; //hochwert
-      $rechtswert = $schule->adresse->lon; //rechtswert
+      $hochwert = $schule->adresse->hw; //hochwert
+      $adresse = $schule->adresse->strasse . " " . $schule->adresse->plz . " " . $schule->adresse->ort;
       $schueler = $schule->schueler;
 
       $cnt = DB::table("bewertungen")->join("users", "users.id", "=", "bewertungen.userID")->select(DB::raw("count(*) as cnt"))->where("users.schulID","=",$schulID)->first()->cnt;
@@ -55,7 +55,7 @@ class SchulDetailController extends Controller {
       //Hole den redaktionellen Inhalt
       //$redaktionell = DB::table('redaktion')->select('text')->where('schulID', '=', $schulID)->first()->text;
       endif;
-    return view('detail', compact("schule", "hochwert", "rechtswert", "durchschnitt", "keywords", "reviews", "redaktionell", "schulID", "bewertungda"));
+    return view('detail', compact("schule", "hochwert", "rechtswert", "durchschnitt", "keywords", "reviews", "redaktionell", "schulID", "bewertungda", "adresse"));
     }
     catch(ModelNotFoundException $e){
         return redirect("/");

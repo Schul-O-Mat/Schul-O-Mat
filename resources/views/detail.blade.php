@@ -144,7 +144,7 @@
                                 @if (!$r->freitext == "")
                                 <li>
                                 <div class="collapsible-header" class="">
-                                    <i class="material-icons">announcement</i><p class="truncate">Zurzeit sind leider keine</p>
+                                    <i class="material-icons">announcement</i><p class="truncate">{{$r->freitext}}</p>
                                 </div>
                                 <div class="collapsible-body">
                                     <p><span>{{$r->freitext}}</span></p>
@@ -216,7 +216,6 @@
 
 @section("js")
   <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet/v1.0.0-rc.1/leaflet.js"></script>
-  <script src="/js/gk_to_latlong.js"></script>
   <script>
     var map = null;
     $(document).ready(function () {
@@ -227,16 +226,15 @@
         $('.collapsible').collapsible({
             accordion: false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
         });
-        var hochwert = {{$hochwert/10}};
-        var rechtswert = {{$rechtswert/10}};
-        gk2geo(rechtswert, hochwert, function(lat, long){
-          map = L.map('map').setView(L.latLng(lat, long), 15);
-
-          L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-              attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-          }).addTo(map);
-          L.marker(L.latLng(lat, long)).addTo(map);
-        });
+        var adresse = "{{$adresse}}";
+        $.get("https://nominatim.openstreetmap.org/search?q=" + adresse + "&format=json").done(function (data) {
+            console.log(data[0].lat)
+            map = L.map('map').setView(L.latLng(data[0].lat, data[0].lon), 15);
+            L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+            L.marker(L.latLng(data[0].lat, data[0].lon)).addTo(map);
+        })
     });
   </script>
 @endsection
