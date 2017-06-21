@@ -106,7 +106,6 @@
                         @endif
                     </div>
                         @if(isset($keywords))
-
                     <div class="row">
                         <h4 class="center-align">Dies bewerten die Schüler besonders:</h4>
                         <table class="highlight centered">
@@ -134,24 +133,36 @@
                         </table>
                     </div>
                     @endif
+
                     @if(isset($reviews))
                     <div>
                         <h4 class="center-align">Einzelberichte:</h4>
 
                         <ul class="collapsible" data-collapsible="expandable">
-
+                            {{$x = false}}
                             @foreach($reviews as $r)
                                 @if (!$r->freitext == "")
                                 <li>
                                 <div class="collapsible-header" class="">
-                                    <i class="material-icons">announcement</i><p class="truncate">{{$r->freitext}}</p>
+                                    <i class="material-icons">announcement</i><p class="truncate">Zurzeit sind leider keine</p>
                                 </div>
                                 <div class="collapsible-body">
                                     <p><span>{{$r->freitext}}</span></p>
                                 </div>
                                 </li>
+                                    {{$x = true}}
                                 @endif
                             @endforeach
+                            @if (!$x)
+                                <li>
+                                    <div class="collapsible-header active">
+                                        <i class="material-icons">announcement</i><p class="truncate">Bisher wurden keine Einzelberichte geschrieben</p>
+                                    </div>
+                                    <div class="collapsible-body">
+                                        <p><span>Bisher wurden keine Einzelberichte geschrieben. Vielleicht möchtest du ja einige Schüler an deiner Schule dazu motivieren.</span></p>
+                                    </div>
+                                </li>
+                            @endif
                         </ul>
                     </div>
                     @endif
@@ -193,7 +204,7 @@
         </div>
     </main>
     @if(!Auth::guest())
-      @if(Auth::user()->schulID == $schulID && !$bewertungda)
+      @if(Auth::user()->schulID == $schulID)
         <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
             <a href="{{ action("SchulDetailController@fragebogen", ["id" => $schule->schulnr]) }}" class="btn-floating btn-large blue tooltipped" data-position="left" data-delay="50" data-tooltip="Trag was ein">
                 <i class="large material-icons">mode_edit</i>
