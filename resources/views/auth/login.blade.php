@@ -78,7 +78,7 @@
                                 </div>
                                 <div class="input-field col s12 m6{{ $errors->has('email') ? ' has-error' : '' }}">
                                     <label for="signup-email">E-Mail Adresse</label>
-                                    <input type="text" id="signup-email" name="email" class="validate" required value="{{ old('email') }}">
+                                    <input type="email" id="signup-email" name="email" class="validate" required value="{{ old('email') }}">
                                     @if ($errors->has('email'))
                                         <span class="help-block">
                                             <strong>{{ $errors->first('email') }}</strong>
@@ -104,6 +104,28 @@
                                     @if ($errors->has('password_confirmation'))
                                         <span class="help-block">
                                             <strong>{{ $errors->first('password_confirmation') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field">
+                                <div class="input-field col s12 m6{{ $errors->has('vorname') ? ' has-error' : '' }}">
+                                    <label for="signup-vorname">Vorname</label>
+                                    <input type="text" id="signup-vorname" name="vorname" class="validate" required>
+                                    @if ($errors->has('vorname'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('vorname') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                                <div class="input-field col s12 m6{{ $errors->has('nachname') ? ' has-error' : '' }}">
+                                    <label for="signup-nachname">Nachname</label>
+                                    <input type="text" id="signup-nachname" name="nachname" class="validate">
+                                    @if ($errors->has('nachname'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('nachname') }}</strong>
                                         </span>
                                     @endif
                                 </div>

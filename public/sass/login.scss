@@ -19,10 +19,9 @@ body {
   label {
     color: $grey;
   }
-  input[type=text] {
+  input[type=text], input[type=email], input[type=password] {
     &:focus {
       border-bottom: 1px solid $blue;
-      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
       box-shadow: 0 1px 0 0 $blue;
       + label {
         color: $black;
@@ -30,32 +29,10 @@ body {
     }
     &.valid {
       border-bottom: 1px solid $blue;
-      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
       box-shadow: 0 1px 0 0 $blue;
     }
     &.invalid {
       border-bottom: 1px solid $red;
-      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-      box-shadow: 0 1px 0 0 $red;
-    }
-  }
-  input[type=password] {
-    &:focus {
-      border-bottom: 1px solid $blue;
-      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-      box-shadow: 0 1px 0 0 $blue;
-      + label {
-        color: $black;
-      }
-    }
-    &.valid {
-      border-bottom: 1px solid $blue;
-      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-      box-shadow: 0 1px 0 0 $blue;
-    }
-    &.invalid {
-      border-bottom: 1px solid $red;
-      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
       box-shadow: 0 1px 0 0 $red;
     }
   }
