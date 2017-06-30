@@ -70,7 +70,7 @@ class SchulDetailController extends Controller {
   }
 
   function fragebogen($id){
-      if(Auth::guest())
+	  if(Auth::guest() or Auth::user()->type != "student" or Auth::user()->schulID != $id)
           return redirect("/");
 
       $keywords = keywords::all();

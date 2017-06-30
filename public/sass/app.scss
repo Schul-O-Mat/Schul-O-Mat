@@ -145,3 +145,15 @@ input.header-search-input {
     color: $blue;
   }
 }
+.input-field {
+  textarea:focus {
+    border-bottom: 1px solid $blue !important;
+    box-shadow: 0 1px 0 0 $blue !important;
+  }
+  textarea:focus + label {
+    color: $blue !important;
+  }
+  .prefix.active {
+    color: $blue !important;
+  }
+}

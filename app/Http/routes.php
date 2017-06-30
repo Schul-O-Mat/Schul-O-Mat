@@ -62,3 +62,6 @@ Route::post("/schule/{id}/eintragen", "SchulDetailController@eintragen");
 Route::get('/schule/{id}/redaktion', "SchulDetailController@redaktion");
 
 Route::post("/schule/{id}/redaktion", "SchulDetailController@redaktionEintragen");
+
+// Schulverwaltung
+Route::get('/schule/{id}/verwaltung', "SchulVerwaltungController@index");

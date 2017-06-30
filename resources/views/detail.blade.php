@@ -142,17 +142,20 @@
                             @foreach($reviews as $r)
                                 @if (!$r->freitext == "")
                                 <li>
-                                <div class="collapsible-header" class="">
-                                    <i class="material-icons">announcement</i><p class="truncate">{{$r->freitext}}</p>
+                                <div class="collapsible-header">
+                                    {{--TODO: Link auf neue Seite "reporting"--}}
+                                    <i class="material-icons">announcement</i><p class="truncate">{{$r->freitext}}
+                                        @if(!Auth::guest() and Auth::user()->type == "school" and Auth::user()->schulID == $schulID)
+                                            <a href="{{ action("SchulVerwaltungController@index", ["id" => $schulID]) }}" class="red-text"><i class="material-icons right">report</i></a></p>
+                                        @endif
                                 </div>
                                 <div class="collapsible-body">
                                     <p><span>{{$r->freitext}}</span></p>
                                 </div>
                                 </li>
-                                    {{$x = true}}
                                 @endif
                             @endforeach
-                            @if (!$x)
+                            @if ($x)
                                 <li>
                                     <div class="collapsible-header active">
                                         <i class="material-icons">announcement</i><p class="truncate">Bisher wurden keine Einzelberichte geschrieben</p>
@@ -203,12 +206,19 @@
         </div>
     </main>
     @if(!Auth::guest())
-      @if(Auth::user()->schulID == $schulID)
+      @if(Auth::user()->schulID == $schulID and Auth::user()->type == "student")
         <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
             <a href="{{ action("SchulDetailController@fragebogen", ["id" => $schule->schulnr]) }}" class="btn-floating btn-large blue tooltipped" data-position="left" data-delay="50" data-tooltip="Trag was ein">
                 <i class="large material-icons">mode_edit</i>
             </a>
         </div>
+      @endif
+      @if(Auth::user()->schulID == $schulID and Auth::user()->type == "school")
+          <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+              <a href="{{ action("SchulVerwaltungController@index", ["id" => $schule->schulnr]) }}" class="btn-floating btn-large blue tooltipped" data-position="left" data-delay="50" data-tooltip="Schulverwaltung">
+                  <i class="large material-icons">settings</i>
+              </a>
+          </div>
       @endif
     @endif
 @endsection
