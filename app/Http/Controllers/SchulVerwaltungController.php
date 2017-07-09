@@ -19,4 +19,12 @@ class SchulVerwaltungController extends Controller
 			return redirect("/");
 		return view("verwaltung/index", compact("id", "schule", "bezeichnung", "keywords"));
 	}
+	function daten($id){
+		$schule = schulen::findOrFail($id);
+		$bezeichnung = schulbezeichnung::findOrFail($schule->fkbezeichnungen)->kurzbez;
+		if(Auth::guest() or Auth::user()->type != "school" or Auth::user()->schulID != $id)
+			return redirect("/");
+		return view("verwaltung/daten", compact("id", "schule", "bezeichnung"));
+
+	}
 }

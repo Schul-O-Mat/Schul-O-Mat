@@ -28,20 +28,20 @@
             </button>
         </div>
     </form>
+    <div class="row center">
+        <a class="black-text" href="{{ action("SchulVerwaltungController@index", ["id" => $id]) }}"><h4 class="thin">Schulcode neu generieren</h4></a>
+    </div>
+    <div class="row center">
+        <a class="black-text" href="{{ action("SchulVerwaltungController@daten", ["id" => $id]) }}"><h4 class="thin">Schuldaten &auml;ndern</h4></a>
+    </div>
     {{--TODO: Richtige Adresse Eintragen--}}
     <form class="container" action="{{ action("SchulDetailController@eintragen", ["id" => $id]) }}" method="post">
         <input type="hidden" name="_token" value="{{csrf_token()}}">
-        <div class="row center">
-            <a class="black-text" href="{{ action("SchulVerwaltungController@index", ["id" => $id]) }}"><h4 class="thin">Schulcode neu generieren</h4></a>
-        </div>
-        <div class="row center">
-            <a class="black-text" href="{{ action("SchulVerwaltungController@index", ["id" => $id]) }}"><h4 class="thin">Schuldaten &auml;ndern</h4></a>
-        </div>
         <div class="row">
             <div class="row">
                 <div class="input-field col s12">
-                    <textarea id="textarea1" class="materialize-textarea"></textarea>
-                    <label for="textarea1">Textarea</label>
+                    <textarea id="redaktionstext" class="materialize-textarea"></textarea>
+                    <label for="readaktionstext">Redaktionstext</label>
                 </div>
             </div>
         </div>
