@@ -235,9 +235,8 @@
         $('.collapsible').collapsible({
             accordion: false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
         });
-        var adresse = "{{$adresse}}";
-        $.get("https://nominatim.openstreetmap.org/search?q=" + adresse + "&format=json").done(function (data) {
-            console.log(data[0].lat)
+
+        $.get("https://nominatim.openstreetmap.org/search?q=<?php echo $adresse ?>&format=json").done(function (data) {
             map = L.map('map').setView(L.latLng(data[0].lat, data[0].lon), 15);
             L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
                 attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
