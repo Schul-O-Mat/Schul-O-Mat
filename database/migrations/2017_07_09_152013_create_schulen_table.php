@@ -27,6 +27,8 @@ class CreateSchulenTable extends Migration
 	        $table->string('mail');
 	        $table->string('telefon');
 	        $table->string('fax');
+	        $table->string('schulcode');
+	        $table->date('schulcode_expire');
         });
     }
 
