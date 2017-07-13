@@ -1,5 +1,4 @@
-[![Stories in Ready](https://badge.waffle.io/Schul-O-Mat/Schul-O-Mat.png?label=ready&title=Ready)](https://waffle.io/Schul-O-Mat/Schul-O-Mat)
-#Schul-O-Mat
+# Schul-O-Mat
 
 Man kennt das Problem: Man ist auf einem Tag der offenen Tür, um sich eine Meinung über eine Schule zu bilden. Aber da die Schule sich natürlich nur von der besten Seite präsentiert, ist man am Ende nicht wirklich schlauer geworden, da man nur ein einseitiges Bild hat.
 
