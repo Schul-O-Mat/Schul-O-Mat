@@ -130,8 +130,9 @@ input.header-search-input {
     background: $white_50;
   }
   &:focus {
-    background: $white;
-    color: $black;
+    background: $white_50;
+    transition: box-shadow .25s;
+    box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19) !important;
   }
 }
 #school_filter_form > button {

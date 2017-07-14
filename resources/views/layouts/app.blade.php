@@ -28,7 +28,7 @@
             <form action="{{ action("SearchController@searchGet") }}" class="form header-search-wrapper hide-on-med-and-down" method="get">
                 <!-- Search Url: /schulen/search/{key} -->
                 <i class="material-icons active">search</i>
-                <input name="searchword" class="header-search-input z-depth-2" pattern="[A-Za-z]{3,}" title="Du musst mindestens 3 Zeichen eingeben" placeholder="Suche" type="text">
+                <input name="searchword" class="header-search-input hoverable" pattern="[A-Za-z]{3,}" title="Du musst mindestens 3 Zeichen eingeben" placeholder="Suche" type="text">
 
             </form>
             <ul id='dropdown' class='dropdown-content text-blue' style=" right: 0 !important;left: auto !important;width: 300px;">
