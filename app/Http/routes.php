@@ -63,6 +63,11 @@ Route::get('/schule/{id}/redaktion', "SchulDetailController@redaktion");
 
 Route::post("/schule/{id}/redaktion", "SchulDetailController@redaktionEintragen");
 
+
+// Neue Schule eintragen
+Route::get('/backend/neueschule', "BackendController@neueSchule");
+
 // Schulverwaltung
 Route::get('/schule/{id}/verwaltung', "SchulVerwaltungController@index");
+// Schuldaten ändern
 Route::get('/schule/{id}/verwaltung/daten', "SchulVerwaltungController@daten");
