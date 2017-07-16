@@ -2,6 +2,17 @@
 @section("main")
   <div class="row">
     <div class="col s12">
+      <ul class="pagination">
+        @if ($zurueck)
+          <li class="waves-effect"><a href="{{ action("SearchController@searchGet", ["page" => $page-1, "searchword" => $userSearch]) }}"><i class="material-icons">chevron_left</i></a></li>
+        @else
+          <li class="waves-effect disabled"><a><i class="material-icons">chevron_left</i></a></li>
+        @endif @if ($weiter)
+          <li class="chevron_right waves-effect"><a href="{{ action("SearchController@searchGet", ["page" => $page+1, "searchword" => $userSearch]) }}"><i class="material-icons">chevron_right</i></a></li>
+        @else
+          <li class="chevron_right waves-effect disabled"><a><i class="material-icons">chevron_right</i></a></li>
+        @endif
+      </ul>
       <ul class="collection">
         @foreach ($data as $d)
           <li class="collection-item avatar">
@@ -22,6 +33,17 @@
           </li>
         @endforeach
       </ul>
+        <ul class="pagination">
+            @if ($zurueck)
+                <li class="waves-effect"><a href="{{ action("SearchController@searchGet", ["page" => $page-1, "searchword" => $userSearch]) }}"><i class="material-icons">chevron_left</i></a></li>
+            @else
+                <li class="waves-effect disabled"><a href="#"><i class="material-icons">chevron_left</i></a></li>
+            @endif @if ($weiter)
+                <li class="chevron_right waves-effect"><a href="{{ action("SearchController@searchGet", ["page" => $page+1, "searchword" => $userSearch]) }}"><i class="material-icons">chevron_right</i></a></li>
+            @else
+                <li class="chevron_right waves-effect disabled"><a href="#"><i class="material-icons">chevron_right</i></a></li>
+            @endif
+        </ul>
     </div>
   </div>
 @endsection
