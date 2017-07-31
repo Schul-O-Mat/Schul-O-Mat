@@ -33,6 +33,8 @@ class SchulMasterController extends Controller
 
     function paginationFilter(Request $request)
     {
+    	$page = $request->get('page');
+	    $calc = $page * 25;
         $data = DB::table('schulen')
             ->select("*")
             ->join('schulbezeichnung', 'schulbezeichnung.id', '=', 'schulen.fkbezeichnungen')
@@ -40,15 +42,23 @@ class SchulMasterController extends Controller
             ->join('key_schulbetriebsschluessel', 'key_schulbetriebsschluessel.id', '=', 'schulen.schulbetriebsschluessel')
             ->join('key_rechtsform', 'key_rechtsform.id', '=', 'schulen.rechtsform')
             ->join('key_schulformschluessel', 'key_schulformschluessel.id', '=', 'schulen.schulform');
+	    $ort = $request->get("ort");
+	    $schulart = $request->get("schulart");
+	    $schulform = $request->get("schulform");
         if ($request->has("ort"))
-            $data->where("schuladresse.ort", "=", $request->request->all()["ort"]);
+            $data->where("schuladresse.ort", "=", $ort);
         if ($request->has("schulart"))
-            $data->whereIn("schulen.rechtsform", $request->request->all()["schulart"]);
+            $data->whereIn("schulen.rechtsform", $schulart);
         if ($request->has("schulform"))
-            $data->whereIn("schulen.schulform", $request->request->all()["schulform"]);
+            $data->whereIn("schulen.schulform", $schulform);
         $data->where("schulen.schulbetriebsschluessel", "=", 1);
-        $data = $data->get();
-        return view("master_search", compact("data"));
+	    $cnt = $data->count();
+        $data = $data->take(25)->skip($calc)->get();
+	    $weiter = true;
+	    $zurueck = ($page == 0) ? false : true;
+	    if ($calc + 25 > $cnt)
+		    $weiter = false;
+        return view("master_filter", compact("data", "zurueck", "weiter", "page", "ort", "schulart", "schulform"));
     }
 
     function newKeyword() {
