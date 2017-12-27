@@ -11,11 +11,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(schulbetriebsschluessel::class);
         $this->call(schulenseeder::class);
-        $this->call(schulformen::class);
-	    $this->call(schulkeywords::class);
-        $this->call(schulrechtsform::class);
-        $this->call(schultraeger::class);
+	    $this->call(schulkeywordsSeeder::class);
+	    $this->call(fragenSeeder::class);
     }
 }

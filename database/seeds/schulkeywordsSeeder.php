@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class schulkeywords extends Seeder
+class schulkeywordsSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -29,7 +29,7 @@ class schulkeywords extends Seeder
 			"bezeichnung" => "Projektwoche"
 		]);
 		DB::table("keywords")->insert([
-			"bezeichnung" => "Leherer"
+			"bezeichnung" => "Lehrer"
 		]);
 		DB::table("keywords")->insert([
 			"bezeichnung" => "Schulleitung"

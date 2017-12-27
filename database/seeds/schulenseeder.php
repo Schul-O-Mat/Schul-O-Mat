@@ -11,6 +11,7 @@ class schulenseeder extends Seeder
      */
     public function run()
     {
+
       DB::table("schuldetails")->truncate();
       DB::table("schulen")->truncate();
       $schuldaten = explode("\n", file_get_contents("https://www.schulministerium.nrw.de/BiPo/OpenData/Schuldaten/schuldaten.csv"));
@@ -25,7 +26,7 @@ class schulenseeder extends Seeder
               "strasse" => $parsedData[8],
               "homepage" => $parsedData[14],
               "mail" => $parsedData[13],
-              "telnr" => $parsedData[9]."/".$pgarsedData[10],
+              "telnr" => $parsedData[9]."/".$parsedData[10],
               "faxnr" => $parsedData[11]."/".$parsedData[12]
 	        ]
           );
