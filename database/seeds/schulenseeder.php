@@ -30,9 +30,9 @@ class schulenseeder extends Seeder
               "faxnr" => $parsedData[11]."/".$parsedData[12]
 	        ]
           );
-          //TODO: Insert BundeslandID from bundeslandSeeder
           DB::table("schulen")->insert(
             [
+              "bundeslandID" => 5,
               "schuldetailID" => $id_schuldetails,
               "schulformId" => $parsedData[1],
               "bezeichnung" => $parsedData[2] + $parsedData[3] + $parsedData[4],
