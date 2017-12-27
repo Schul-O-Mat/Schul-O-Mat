@@ -13,57 +13,34 @@ class Schule extends Migration
     public function up()
     {
         Schema::create('schulen', function (Blueprint $table) {
-            $table->increments('schulnr');
-            $table->integer("schulform");
-            $table->integer("fkkontakt");
-            $table->integer("fkadresse");
-            $table->integer("fkbezeichnungen");
-            $table->integer("rechtsform");
-            $table->integer("traegernr");
-            $table->text("gemeindeschluessel");
-            $table->integer("schulbetriebsschluessel");
-            $table->date("datum"); //Gruendungsdatum
-            $table->smallInteger("schuelerzahl");
-            $table->smallInteger("lehrerZahl");
+            $table->increments('id');
+            $table->integer("bundeslandID");
+            $table->integer("schulformID");
+            $table->integer("bezeichnung");
+            $table->string("bezeichnung_kurz");
+            $table->string("schulcode");
+            $table->timestamp("schulcode_expire");
             $table->timestamps();
         });
 
-        Schema::create('schulkontakt', function (Blueprint $table) {
+        Schema::create('schuldetails', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('schulID');
+            $table->text("strasse");
+            $table->integer("plz");
+            $table->text("ort");
             $table->text("homepage");
             $table->text("mail");
-            $table->text("telefonnr");
+            $table->text("telnr");
             $table->text("faxnr");
-            $table->timestamps();
-        });
-        Schema::create('schulbezeichnung', function (Blueprint $table) {
-            $table->increments('id');
-            $table->text("schulbez1");
-            $table->text("schulbez2");
-            $table->text("schulbez3");
-            $table->text("kurzbez");
-            $table->timestamps();
-        });
-        Schema::create('schuladresse', function (Blueprint $table) {
-            $table->increments('id');
-            $table->text("plz");
-            $table->text("ort");
-            $table->text("strasse");
-            $table->integer("rw");
-            $table->integer("hw");
+            $table->text("aktivierte_fragen");
             $table->timestamps();
         });
         Schema::create('bewertungen', function (Blueprint $table) {
             $table->increments('id');
             $table->integer("userID");
-            $table->tinyInteger("bewertung1");
-            $table->tinyInteger("bewertung2");
-            $table->tinyInteger("bewertung3");
-            $table->tinyInteger("bewertung4");
-            $table->tinyInteger("bewertung5");
-            $table->tinyInteger("bewertung6");
-            $table->tinyInteger("bewertung7");
-            $table->text("freitext");
+            $table->integer("frageID");
+            $table->text("bewertung");
             $table->timestamps();
         });
         Schema::create('keywords', function (Blueprint $table) {
@@ -73,11 +50,32 @@ class Schule extends Migration
             $table->timestamps();
         });
         Schema::create('key_bew', function (Blueprint $table) {
-            $table->integer("bewertungID");
+            $table->increments("id");
+            $table->integer("userID");
             $table->integer("keywordID");
             $table->boolean("positiv");
             $table->timestamps();
-            $table->index(["bewertungID", "keywordID"]);
+        });
+        Schema::create('bundeslaender', function (Blueprint $table) {
+            $table->increments("id");
+            $table->text("name");
+            $table->timestamps();
+        });
+        Schema::create('schulformen', function (Blueprint $table) {
+            $table->increments("id");
+            $table->text("name");
+            $table->timestamps();
+        });
+        Schema::create('fragen', function (Blueprint $table) {
+            $table->increments("id");
+            $table->text("name");
+            $table->timestamps();
+        });
+        Schema::create('bundeslaender', function (Blueprint $table) {
+            $table->increments("id");
+            $table->integer("schulID");
+            $table->text("text");
+            $table->timestamps();
         });
     }
 
