@@ -14,6 +14,7 @@ class Schule extends Migration
     {
         Schema::create('schulen', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer("schuldetailID");
             $table->integer("bundeslandID");
             $table->integer("schulformID");
             $table->integer("bezeichnung");
@@ -24,8 +25,7 @@ class Schule extends Migration
         });
 
         Schema::create('schuldetails', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('schulID');
+            $table->increments("id");
             $table->text("strasse");
             $table->integer("plz");
             $table->text("ort");

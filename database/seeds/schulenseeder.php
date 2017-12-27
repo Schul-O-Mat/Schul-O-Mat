@@ -11,17 +11,14 @@ class schulenseeder extends Seeder
      */
     public function run()
     {
-      DB::table("schuladresse")->truncate();
-      DB::table("schulbezeichnung")->truncate();
-      DB::table("schulkontakt")->truncate();
-      DB::table("schulen")->truncate();
+      DB::table("schuldetails")->truncate();
       $schuldaten = explode("\n", file_get_contents("https://www.schulministerium.nrw.de/BiPo/OpenData/Schuldaten/schuldaten.csv"));
       foreach($schuldaten as $k => $v){
         $v = str_replace('"', "", $v);
         if($k>1&&$k<count($schuldaten)-1){
           $test = explode(";",$v);
 
-          DB::table("schuladresse")->insert(
+          DB::table("schuldetails")->insert(
             [ "plz" => $test[6],
               "ort" => $test[7],
               "strasse" => $test[8],
