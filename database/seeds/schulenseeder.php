@@ -19,7 +19,6 @@ class schulenseeder extends Seeder
         $v = str_replace('"', "", $v);
         if($k>1&&$k<count($schuldaten)-1){
           $parsedData = explode(";",$v);
-	      $id_schuldetails = DB::getPdo()->lastInsertId();
           DB::table("schuldetails")->insert(
             [ "plz" => $parsedData[6],
               "ort" => $parsedData[7],
@@ -30,12 +29,13 @@ class schulenseeder extends Seeder
               "faxnr" => $parsedData[11]."/".$parsedData[12]
 	        ]
           );
+          $id_schuldetails = DB::getPdo()->lastInsertId();
           DB::table("schulen")->insert(
             [
               "bundeslandID" => 5,
               "schuldetailID" => $id_schuldetails,
               "schulformId" => $parsedData[1],
-              "bezeichnung" => $parsedData[2] + $parsedData[3] + $parsedData[4],
+              "bezeichnung" => $parsedData[2] ." ". $parsedData[3] ." ". $parsedData[4],
               "bezeichnung_kurz" => $parsedData[5]
             ]
           );

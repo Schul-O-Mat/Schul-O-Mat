@@ -17,9 +17,9 @@ class Schule extends Migration
             $table->integer("schuldetailID");
             $table->integer("bundeslandID");
             $table->integer("schulformID");
-            $table->integer("bezeichnung");
-            $table->string("bezeichnung_kurz");
-            $table->string("schulcode");
+            $table->text("bezeichnung");
+            $table->text("bezeichnung_kurz");
+            $table->text("schulcode");
             $table->timestamp("schulcode_expire");
             $table->timestamps();
         });

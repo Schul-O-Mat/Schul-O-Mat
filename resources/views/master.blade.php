@@ -8,17 +8,12 @@
           <div class="center collapsible-body" id="school_filter">
             <form id="school_filter_form" method="get" action="{{action("SchulMasterController@paginationFilter")}}" class="form-horizontal">
               <input type="hidden" name="page" value="0">
-              <select name="schulart[]" multiple>
-                  <option disabled selected>Schulart?</option>
-                  <option value="1">&Ouml;ffentliche Schule</option>
-                  <option value="2">Private Schule</option>
-              </select>
-              <select name="schulform[]" multiple>
-                  <option value="" disabled selected>Was f&uuml;r eine Form hat deine Schule</option>
-                  @foreach($schulform as $s)
-                    <option value="{{$s->id}}">{{$s->Schulform}}</option>
-                  @endforeach
-              </select>
+              {{--<select name="schulform[]" multiple>--}}
+                  {{--<option value="" disabled selected>Was f&uuml;r eine Form hat deine Schule</option>--}}
+                  {{--@foreach($schulform as $s)--}}
+                    {{--<option value="{{$s->id}}">{{$s->Schulform}}</option>--}}
+                  {{--@endforeach--}}
+              {{--</select>--}}
               <select name="ort">
                   <option value="" disabled selected>W&auml;hle deine Stadt aus</option>
                   @foreach($staedte as $s)
@@ -52,18 +47,17 @@
                 <li class="collection-item avatar">
 
                     <i class="material-icons circle
-                              @if ($d->schulform == 2) light-green
-                    @elseif ($d->schulform == 20) blue
-                    @elseif ($d->schulform == 4) #aa00ff
-                    @elseif ($d->schulform == 10) #d50000
-                    @elseif ($d->schulform == 15) #ffff00
+                              @if ($d->schulformID == 2) light-green
+                    @elseif ($d->schulformID == 20) blue
+                    @elseif ($d->schulformID == 4) #aa00ff
+                    @elseif ($d->schulformID == 10) #d50000
+                    @elseif ($d->schulformID == 15) #ffff00
                     @else #9e9e9e
                               @endif
                               ">school</i>
-                    <span class="title">{{$d->bezeichnung->schulbez1}}</span>
-                          <p> @if($d->bezeichnung->schulbez2!=""){{$d->bezeichnung->schulbez2}}@endif </p>
-                          <p> @if($d->bezeichnung->schulbez3!=""){{$d->bezeichnung->schulbez3}}@endif </p>
-                          <p> @if($d->bezeichnung->kurzbez!=""){{$d->bezeichnung->kurzbez}}@endif     </p>
+                    <span class="title">{{$d->bezeichnung}}</span>
+                    <p> @if($d->bezeichnung_kurz != ""){{$d->bezeichnung_kurz}}@endif     </p>
+                    <p> @if($d->details->strasse != "" and $d->details->ort != ""){{$d->details->strasse ." ". $d->details->ort}}@endif     </p>
                     <a href="{{ action("SchulDetailController@detail", ["id" => $d->schulnr]) }}" class="secondary-content"><i class="blue-text material-icons">arrow_forward</i></a>
                 </li>
                 @endforeach
