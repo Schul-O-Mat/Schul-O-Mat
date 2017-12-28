@@ -71,7 +71,7 @@ class Schule extends Migration
             $table->text("name");
             $table->timestamps();
         });
-        Schema::create('bundeslaender', function (Blueprint $table) {
+        Schema::create('redaktion', function (Blueprint $table) {
             $table->increments("id");
             $table->integer("schulID");
             $table->text("text");
@@ -87,11 +87,13 @@ class Schule extends Migration
     public function down()
     {
         Schema::drop('schulen');
-        Schema::drop('schulkontakt');
-        Schema::drop('schulbezeichnung');
-        Schema::drop('schuladresse');
+	    Schema::drop('schuldetails');
+	    Schema::drop('fragen');
+	    Schema::drop('schulformen');
         Schema::drop('bewertungen');
         Schema::drop('keywords');
         Schema::drop('key_bew');
+	    Schema::drop('bundeslaender');
+	    Schema::drop('redaktion');
     }
 }

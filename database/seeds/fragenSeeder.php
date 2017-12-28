@@ -19,8 +19,7 @@ class fragenSeeder extends Seeder
 		    "name" => "Wie ist die Hygiene?"
 	    ]);
 	    DB::table("fragen")->insert([
-		    "name" => "Wie ist die Mensa?",
-		    "changeable" => true
+		    "name" => "Wie ist die Mensa?"
 	    ]);
 	    DB::table("fragen")->insert([
 		    "name" => "Wie ist die IT-Ausstattung?"
