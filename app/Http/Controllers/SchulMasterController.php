@@ -24,7 +24,7 @@ class SchulMasterController extends Controller
         $zurueck = ($page == 0) ? false : true;
         if ($calc + 25 > $cnt)
             $weiter = false;
-        $data = schulen::take(25)->skip($calc)->get();
+        $data = schulen::take(25)->skip($calc)->with("details")->get();
 //        $schulform = DB::table("key_schulformschluessel")->get();
         $staedte = DB::table("schuldetails")->select("ort")->groupBy("ort")->get();
         return view('master', compact("data", "zurueck", "weiter", "page", "staedte"));
@@ -34,12 +34,16 @@ class SchulMasterController extends Controller
     {
     	$page = $request->get('page');
 	    $calc = $page * 25;
-        $data = DB::table('schulen')
+        /*$data = DB::table('schulen')
             ->select("*")
             ->join('schuldetails', 'schuldetails.id', '=', 'schulen.schuldetailID');
 	    $ort = $request->get("ort");
 	    if ($request->has("ort"))
-		    $data->where("schuldetails.ort", "=", $ort);
+		    $data->where("details.ort", "=", $ort);*/
+		$ort = $request->get("ort");
+		$data = schulen::whereHas("details", function($query) use($ort) {
+		    $query->where('ort', '=', $ort);
+		});
 	    $cnt = $data->count();
         $data = $data->take(25)->skip($calc)->get();
 	    $weiter = true;
