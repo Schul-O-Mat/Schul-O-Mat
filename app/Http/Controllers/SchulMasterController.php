@@ -27,7 +27,7 @@ class SchulMasterController extends Controller
         $data = schulen::take(25)->skip($calc)->get();
 //        $schulform = DB::table("key_schulformschluessel")->get();
         $staedte = DB::table("schuldetails")->select("ort")->groupBy("ort")->get();
-        return view('master', compact("data", "zurueck", "weiter", "page", "schulform", "schulzustand", "staedte"));
+        return view('master', compact("data", "zurueck", "weiter", "page", "staedte"));
     }
 
     function paginationFilter(Request $request)
@@ -36,28 +36,18 @@ class SchulMasterController extends Controller
 	    $calc = $page * 25;
         $data = DB::table('schulen')
             ->select("*")
-            ->join('schulbezeichnung', 'schulbezeichnung.id', '=', 'schulen.fkbezeichnungen')
-            ->join('schuladresse', 'schuladresse.id', '=', 'schulen.fkadresse')
-            ->join('key_schulbetriebsschluessel', 'key_schulbetriebsschluessel.id', '=', 'schulen.schulbetriebsschluessel')
-            ->join('key_rechtsform', 'key_rechtsform.id', '=', 'schulen.rechtsform')
-            ->join('key_schulformschluessel', 'key_schulformschluessel.id', '=', 'schulen.schulform');
+            ->join('schuldetails', 'schuldetails.id', '=', 'schulen.schuldetailID');
 	    $ort = $request->get("ort");
-	    $schulart = $request->get("schulart");
-	    $schulform = $request->get("schulform");
-        if ($request->has("ort"))
-            $data->where("schuladresse.ort", "=", $ort);
-        if ($request->has("schulart"))
-            $data->whereIn("schulen.rechtsform", $schulart);
-        if ($request->has("schulform"))
-            $data->whereIn("schulen.schulform", $schulform);
-        $data->where("schulen.schulbetriebsschluessel", "=", 1);
+	    if ($request->has("ort"))
+		    $data->where("schuldetails.ort", "=", $ort);
 	    $cnt = $data->count();
         $data = $data->take(25)->skip($calc)->get();
+        print($data[0]);
 	    $weiter = true;
 	    $zurueck = ($page == 0) ? false : true;
 	    if ($calc + 25 > $cnt)
 		    $weiter = false;
-        return view("master_filter", compact("data", "zurueck", "weiter", "page", "ort", "schulart", "schulform"));
+        return view("master_filter", compact("data", "zurueck", "weiter", "page", "ort"));
     }
 
     function newKeyword() {
