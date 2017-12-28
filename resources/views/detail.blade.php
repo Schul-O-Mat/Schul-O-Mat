@@ -5,10 +5,8 @@
 @endsection
 
 @section("header")
-  <h3>{{$schule->bezeichnung->schulbez1}}</h3>
-  <h3>{{$schule->bezeichnung->schulbez2}}</h3>
-  <h3>{{$schule->bezeichnung->schulbez3}}</h3>
-  <h4>{{$schule->bezeichnung->kurzbez}}</h4>
+  <h3>{{$schule->bezeichnung}}</h3>
+  <h4>{{$schule->bezeichnung_kurz}}</h4>
 @endsection
 
 @section("main")
@@ -181,14 +179,14 @@
                             <div class="card">
                                 <div class=" card-content">
                                     <span class="card-title ">Kontakt</span>
-                                    <h6>{{$schule->bezeichnung->schulbez1}}</h6>
-                                    <p>{{$schule->adresse->strasse}}</p>
-                                    <p>{{$schule->adresse->plz}} {{$schule->adresse->ort}}</p>
+                                    <h6>{{$schule->bezeichnung}}</h6>
+                                    <p>{{$schule->details->strasse}}</p>
+                                    <p>{{$schule->details->plz}} {{$schule->details->ort}}</p>
                                     <br>
-                                    @if($schule->kontakt->homepage!="")<p>Homepage: <a href="{{$schule->kontakt->homepage}}">{{$schule->kontakt->homepage}}</a>@endif
-                                    <p>Email: <a href="mailto:{{ $schule->kontakt->mail }}">{{ $schule->kontakt->mail }}</a></p>
-                                    @if($schule->kontakt->telefonnr!="/")<p>Telefon: <a href="tel:{{ $schule->kontakt->telefonnr }}">{{ $schule->kontakt->telefonnr }}</a></p>@endif
-                                    @if($schule->kontakt->faxnr!="/")<p>Telefax: <a href="tel:{{ $schule->kontakt->faxnr }}">{{ $schule->kontakt->faxnr }}</a></p>@endif
+                                    @if($schule->details->homepage!="")<p>Homepage: <a href="{{$schule->details->homepage}}">{{$schule->details->homepage}}</a>@endif
+                                    <p>Email: <a href="mailto:{{ $schule->details->mail }}">{{ $schule->details->mail }}</a></p>
+                                    @if($schule->details->telnr!="/")<p>Telefon: <a href="tel:{{ $schule->details->telnr }}">{{ $schule->details->telnr }}</a></p>@endif
+                                    @if($schule->details->faxnr!="/")<p>Telefax: <a href="tel:{{ $schule->details->faxnr }}">{{ $schule->details->faxnr }}</a></p>@endif
 
                                 </div>
                             </div>

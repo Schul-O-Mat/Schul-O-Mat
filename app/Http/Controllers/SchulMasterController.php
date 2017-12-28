@@ -47,6 +47,7 @@ class SchulMasterController extends Controller
 	    $zurueck = ($page == 0) ? false : true;
 	    if ($calc + 25 > $cnt)
 		    $weiter = false;
+	    // TODO: SUBMIT Schuldetails
         return view("master_filter", compact("data", "zurueck", "weiter", "page", "ort"));
     }
 

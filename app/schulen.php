@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class schulen extends Model
 {
     protected $table = "schulen";
-    protected $primaryKey = "schulnr";
+    protected $primaryKey = "id";
 
     public function details()
     {
