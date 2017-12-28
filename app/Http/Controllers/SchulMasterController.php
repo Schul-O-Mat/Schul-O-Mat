@@ -42,7 +42,6 @@ class SchulMasterController extends Controller
 		    $data->where("schuldetails.ort", "=", $ort);
 	    $cnt = $data->count();
         $data = $data->take(25)->skip($calc)->get();
-        print($data[0]);
 	    $weiter = true;
 	    $zurueck = ($page == 0) ? false : true;
 	    if ($calc + 25 > $cnt)

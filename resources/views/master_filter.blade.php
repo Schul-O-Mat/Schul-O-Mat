@@ -25,7 +25,7 @@
             @else #9e9e9e @endif">
               school</i>
               <span class="title">{{$d->bezeichnung}}</span>
-              <p> @if($d->bezeichnung_kurz != ""){{$d->details}}@endif     </p>
+              <p> @if($d->bezeichnung_kurz != ""){{$d->bezeichnung_kurz}}@endif     </p>
 {{--              <p> @if($d->details->strasse != "" and $d->details->ort != ""){{$d->details->strasse ." ". $d->details->ort}}@endif     </p>--}}
             <a href="{{ action("SchulDetailController@detail", ["id" => $d->id]) }}" class="secondary-content"><i class="blue-text material-icons">arrow_forward</i></a>
           </li>
