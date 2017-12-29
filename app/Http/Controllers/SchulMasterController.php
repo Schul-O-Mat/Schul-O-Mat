@@ -34,12 +34,6 @@ class SchulMasterController extends Controller
     {
     	$page = $request->get('page');
 	    $calc = $page * 25;
-        /*$data = DB::table('schulen')
-            ->select("*")
-            ->join('schuldetails', 'schuldetails.id', '=', 'schulen.schuldetailID');
-	    $ort = $request->get("ort");
-	    if ($request->has("ort"))
-		    $data->where("details.ort", "=", $ort);*/
 		$ort = $request->get("ort");
 		$data = schulen::whereHas("details", function($query) use($ort) {
 		    $query->where('ort', '=', $ort);

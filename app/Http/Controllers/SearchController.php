@@ -7,23 +7,6 @@ use App\Http\Controllers\Controller;
 use DB;
 use Request;
 class SearchController extends Controller {
-
-    public function search($key) {
-
-        // Sets the parameters from the get request to the variables.
-        $userSearch = $key;
-
-        // Perform the query using Query Builder
-        $data = DB::table('schulen')
-            ->select("*")
-            ->join('schulbezeichnung', 'schulbezeichnung.id', '=', 'schulen.fkbezeichnungen')
-            ->where('kurzbez', 'LIKE', "%$userSearch%")
-            ->get();
-        return view('master', compact("data", "zurueck", "weiter", "page"));
-        //return $result; //Wenn ihr ein result returned, macht laravel das automatisch zu JSON.
-        // BTW JOINT DEM SLACKCHANNEL #schulomat
-    }
-
     public function searchGet(Request $request) {
 
         // Sets the parameters from the get request to the variables.
