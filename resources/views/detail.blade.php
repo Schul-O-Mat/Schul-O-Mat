@@ -14,13 +14,13 @@
         <div class="row">
             <div class="col s12">
                 <ul class="tabs">
-                    <li class="tab col s3">
+                    <li class="tab col s4">
                         <a href="#facts" class="active">Facts</a>
                     </li>
-                    <li class="tab col s3">
+                    <li class="tab col s4">
                         <a href="#quests">Fragebogen</a>
                     </li>
-                    <li class="tab col s3">
+                    <li class="tab col s4">
                         <a href="#redaktionel">Redaktionell</a>
                     </li>
 
