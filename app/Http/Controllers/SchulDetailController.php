@@ -72,7 +72,15 @@ class SchulDetailController extends Controller {
           return redirect("/");
 
       $keywords = keywords::all();
-      return view("fragebogen", compact("id", "keywords"));
+
+
+      $schule = schulen::findOrFail($id)->with("details")->get();
+      $keywordIDs = $schule->details->aktivierte_fragen;
+      $keywordList = [];
+      foreach ($keywordIDs as $kID) {
+            $keywordList[$kID] = keywords::find($kID)->get()->bezeichnung;
+      }
+      return view("fragebogen", compact("id", "fragen", "keywords"));
   }
 
   function eintragen(Request $request, $id){

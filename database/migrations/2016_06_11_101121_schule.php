@@ -34,6 +34,7 @@ class Schule extends Migration
             $table->text("telnr");
             $table->text("faxnr");
             $table->text("aktivierte_fragen");
+            $table->text("deaktivierte_keywords"); 
             $table->timestamps();
         });
         Schema::create('bewertungen', function (Blueprint $table) {
