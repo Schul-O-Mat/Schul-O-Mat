@@ -12,9 +12,10 @@
         <div class="row">
             <div class="input-field col s12">
                 <select name="bundesland">
-                    <option value="" disabled>Bundesland ausw&auml;hlen</option>
-                    {{--TODO: Bundesländer aus DB--}}
-                    <option value="ID">BUNDESLAND</option>
+                    <option value="" disabled selected>Bundesland ausw&auml;hlen</option>
+                    @foreach($bundeslaender as $bl)
+                        <option value="{{$bl->id}}">{{$bl->name}}</option>
+                    @endforeach
                 </select>
                 <label>Bundesland</label>
             </div>
@@ -23,72 +24,64 @@
             <div class="input-field col s12">
                 <select name="schulform">
                     <option value="" disabled>Schulform ausw&auml;hlen</option>
-                    {{--TODO: Schulformen aus DB--}}
-                    <option value="Schulform">SCHULFORM</option>
+                    @foreach($schulformen as $sf)
+                        <option value="{{$sf->id}}">{{$sf->name}}</option>
+                    @endforeach
                 </select>
                 <label>Schulform</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                {{--TODO: Bezeichnung aus DB --}}
-                <input id="bezeichnung" type="text" class="validate">
+                <input id="bezeichnung" type="text" class="validate" value="{{$schule->bezeichnung}}">
                 <label for="bezeichnung">Bezeichnung</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                {{--TODO: Kurzbezeichnung aus DB --}}
-                <input id="kurzbezeichnung" type="text" class="validate">
+                <input id="kurzbezeichnung" type="text" class="validate" value="{{$schule->bezeichnung_kurz}}">
                 <label for=kurzbezeichnung">Kurzbezeichnung</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                {{--TODO: Straße aus DB --}}
-                <input id="strasse" type="text" class="validate">
+                <input id="strasse" type="text" class="validate" value="{{$schule->details->strasse}}">
                 <label for="strasse">Stra&szlig;e</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                {{--TODO: Ort aus DB --}}
-                <input id="ort" type="text" class="validate">
+                <input id="ort" type="text" class="validate" value="{{$schule->details->ort}}">
                 <label for="ort">Ort</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                {{--TODO: PLZ aus DB --}}
-                <input id="plz" type="text" class="validate">
+                <input id="plz" type="text" class="validate" value="{{$schule->details->plz}}">
                 <label for="plz">Postleitzahl</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                {{--TODO: Homepage aus DB --}}
-                <input id="homepage" type="text" class="validate">
+                <input id="homepage" type="text" class="validate" value="{{$schule->details->homepage}}">
                 <label for="homepage">Homepage</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                {{--TODO: Mail aus DB --}}
-                <input id="mail" type="text" class="validate">
+                <input id="mail" type="text" class="validate" value="{{$schule->details->mail}}">
                 <label for="mail">E-Mail</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                {{--TODO: Telefon aus DB --}}
-                <input id="telefon" type="text" class="validate">
+                <input id="telefon" type="text" class="validate" value="{{$schule->details->telnr}}">
                 <label for="telefon">Telefon</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                {{--TODO: Fax aus DB --}}
-                <input id="fax" type="text" class="validate">
+                <input id="fax" type="text" class="validate" value="{{$schule->details->faxnr}}">
                 <label for="fax">Fax</label>
             </div>
         </div>
