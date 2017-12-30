@@ -30,7 +30,7 @@ class SchulDetailController extends Controller {
 
                 //Berechne Durchschnitt der Bewertungen pro Schule per SQL-Query
                 $durchschnitt = array();
-                $durchschnitt[0] = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->select(DB::raw('AVG(bewertung1) as b1'))->where('users.schulID', '=', $schulID)->first()->b1;
+                $durchschnitt[0] = DB::table('key_bew')->join('users', 'key_bew.userID', '=', 'users.id')->select(DB::raw('AVG(     ) as b1'))->where('users.schulID', '=', $schulID)->first()->b1;
                 $durchschnitt[1] = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->select(DB::raw('AVG(bewertung2) as b2'))->where('users.schulID', '=', $schulID)->first()->b2;
                 $durchschnitt[2] = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->select(DB::raw('AVG(bewertung3) as b3'))->where('users.schulID', '=', $schulID)->first()->b3;
                 $durchschnitt[3] = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->select(DB::raw('AVG(bewertung4) as b4'))->where('users.schulID', '=', $schulID)->first()->b4;
@@ -50,7 +50,7 @@ class SchulDetailController extends Controller {
                 }
 
                 //Hole alle Einzelbewertungen
-                $reviews = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->select('freitext')->where('users.schulID', '=', $schulID)->get();
+                $reviews = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->select('bewertung')->where('users.schulID', '=', $schulID)->get();
 
                 //Hole den redaktionellen Inhalt
                 //$redaktionell = DB::table('redaktion')->select('text')->where('schulID', '=', $schulID)->first()->text;
@@ -132,6 +132,7 @@ class SchulDetailController extends Controller {
         //Füge positive und negative Keywords ein
         foreach ($positiv as $keyword)
         {
+        	print($keyword);
             //Füge positive Keywords ein
             DB::table('key_bew')->insert(['userID' => $userID, 'keywordID' => $keyword, 'positiv' => '1']);
         }
@@ -141,7 +142,7 @@ class SchulDetailController extends Controller {
             DB::table('key_bew')->insert(['userID' => $userID, 'keywordID' => $keyword, 'positiv' => '0']);
         }
 
-        return redirect("/schule/".$schulID);
+//        return redirect("/schule/".$schulID);
     }
 
     function redaktion($id){
