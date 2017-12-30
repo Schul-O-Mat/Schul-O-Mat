@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use App\bewertungen;
 use App\fragen;
+use App\key_bew;
 use App\User;
 use App\schulen;
 use App\keywords;
@@ -14,48 +15,75 @@ use Request;
 
 class SchulDetailController extends Controller {
 
-    function detail($schule){
-        // cooler kommi
-        try{
+    function detail($schulID){
+        try {
             $bewertungda = false;
-            if(!Auth::guest())
-                if(isset(Auth::user()->bewertung))
-                    $bewertungda = DB::table('bewertungen')->select(DB::raw('COUNT(*) as cnt'))->where('userID', '=', Auth::user()->id)->first()->cnt > 0;
-            $schulID = $schule;
-            $schule = schulen::findOrFail($schule);
+            if (!Auth::guest()) {
+                $bewertungen_count = bewertungen::where('userID', '=', Auth::user()->id)->count();
+                $keywords_count = key_bew::where('userID', '=', Auth::user()->id)->count();
+                if ($bewertungen_count + $keywords_count > 0) {
+                    $bewertungda = true;
+                }
+            }
+
+            $schule = schulen::findOrFail($schulID);
             $adresse = $schule->details->strasse . " " . $schule->details->plz . " " . $schule->details->ort;
 
-            $cnt = DB::table("bewertungen")->join("users", "users.id", "=", "bewertungen.userID")->select(DB::raw("count(*) as cnt"))->where("users.schulID","=",$schulID)->first()->cnt;
-            if($cnt > 0):
+            $cnt = bewertungen::whereHas('user', function ($query) use ($schulID) {
+                $query->where('schulID', '=', $schulID);
+            })->count();
 
-                //Berechne Durchschnitt der Bewertungen pro Schule per SQL-Query
-                $durchschnitt = array();
-                $durchschnitt[0] = DB::table('key_bew')->join('users', 'key_bew.userID', '=', 'users.id')->select(DB::raw('AVG(     ) as b1'))->where('users.schulID', '=', $schulID)->first()->b1;
-                $durchschnitt[1] = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->select(DB::raw('AVG(bewertung2) as b2'))->where('users.schulID', '=', $schulID)->first()->b2;
-                $durchschnitt[2] = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->select(DB::raw('AVG(bewertung3) as b3'))->where('users.schulID', '=', $schulID)->first()->b3;
-                $durchschnitt[3] = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->select(DB::raw('AVG(bewertung4) as b4'))->where('users.schulID', '=', $schulID)->first()->b4;
-                $durchschnitt[4] = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->select(DB::raw('AVG(bewertung5) as b5'))->where('users.schulID', '=', $schulID)->first()->b5;
-                $durchschnitt[5] = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->select(DB::raw('AVG(bewertung6) as b6'))->where('users.schulID', '=', $schulID)->first()->b6;
-                $durchschnitt[6] = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->select(DB::raw('AVG(bewertung7) as b7'))->where('users.schulID', '=', $schulID)->first()->b7;
+            if ($cnt > 0){
 
-                //Ermittle alle Keywords die mit der Schule zusammenhängen
-                $posi = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->join('key_bew', 'bewertungen.id', '=', 'key_bew.bewertungID')->join('keywords', 'key_bew.keywordID', '=', 'keywords.id')->select('keywords.bezeichnung')->where('users.schulID', '=', $schulID)->get();
-                $keywords = array();
-                foreach ($posi as $p)
-                {
-                    //Berechne Anzahl der Vorkommnisse positiv und negativ
-                    $countpos = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->join('key_bew', 'bewertungen.id', '=', 'key_bew.bewertungID')->join('keywords', 'key_bew.keywordID', '=', 'keywords.id')->select(DB::raw('COUNT(key_bew.keywordID) as pos'))->where('users.schulID', '=', $schulID)->where('keywords.bezeichnung', '=', $p->bezeichnung)->where('key_bew.positiv', '=', '1')->first()->pos;
-                    $countneg = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->join('key_bew', 'bewertungen.id', '=', 'key_bew.bewertungID')->join('keywords', 'key_bew.keywordID', '=', 'keywords.id')->select(DB::raw('COUNT(key_bew.keywordID) as neg'))->where('users.schulID', '=', $schulID)->where('keywords.bezeichnung', '=', $p->bezeichnung)->where('key_bew.positiv', '=', '0')->first()->neg;
-                    $keywords[$p->bezeichnung] = [$countpos, $countneg];
+                //Hole aktivierte Fragen
+                $frageIDs = unserialize($schule->details->aktivierte_fragen);
+                if (!$frageIDs) {
+                    $fragenList = [];
+                }
+                else {
+                    $fragenList = fragen::whereIn('id', $frageIDs)->get();
                 }
 
-                //Hole alle Einzelbewertungen
-                $reviews = DB::table('bewertungen')->join('users', 'bewertungen.userID', '=', 'users.id')->select('bewertung')->where('users.schulID', '=', $schulID)->get();
+                //Berechne die Durchschnitte
+                $data = [];
+                foreach ($fragenList as $frage) {
+                    $data[] = ["frage" => $frage, "durchschnitt" => bewertungen::where('frageID', '=', $frage->id)->whereHas('user', function ($query) use ($schulID) {
+                        $query->where('schulID', '=', $schulID);
+                    })->avg('bewertung')];
+                }
 
-                //Hole den redaktionellen Inhalt
-                //$redaktionell = DB::table('redaktion')->select('text')->where('schulID', '=', $schulID)->first()->text;
-            endif;
-            return view('detail', compact("schule", "hochwert", "rechtswert", "durchschnitt", "keywords", "reviews", "redaktionell", "schulID", "bewertungda", "adresse"));
+                //Ermittle alle Keywords, die der Schule zugeordnet wurden
+                $keywordIDs = key_bew::whereHas('user', function ($query) use ($schulID) {
+                    $query->where('schulID', '=', $schulID);
+                })->with('keyword')->get()->unique('keywordID');
+
+
+                //Ermittle für jedes Keyword die Anzahl der Vorkommnisse (negativ und positiv)
+                $keywords = [];
+                foreach ($keywordIDs as $keyword) {
+                    $countpos = key_bew::whereHas('user', function ($query) use ($schulID) {
+                        $query->where('schulID', '=', $schulID);
+                    })->where('keywordID', '=', $keyword->keywordID)->where('positiv', '=', 1)->count();
+                    //return $countpos;
+
+                    $countneg = key_bew::whereHas('user', function ($query) use ($schulID) {
+                        $query->where('schulID', '=', $schulID);
+                    })->where('keywordID', '=', $keyword->keywordID)->where('positiv', '=', 0)->count();
+
+                    $keywords[$keyword->keyword->bezeichnung] = [$countpos, $countneg];
+                }
+
+                //Hole alle Freitextbewertungen
+                $freitext = bewertungen::where('frageID', '=', 0)->whereHas('user', function ($query) use ($schulID) {
+                    $query->where('schulID', '=', $schulID);
+                })->get();
+            }
+            else {
+                $data = [];
+                $keywords = [];
+                $freitext = [];
+            }
+            return view('detail', compact("schule", "data", "keywords", "freitext", "bewertungda", "adresse"));
         }
         catch(ModelNotFoundException $e){
             return redirect("/");
@@ -133,7 +161,7 @@ class SchulDetailController extends Controller {
         //Füge positive und negative Keywords ein
         foreach ($positiv as $keyword)
         {
-        	print($keyword);
+            print($keyword);
             //Füge positive Keywords ein
             DB::table('key_bew')->insert(['userID' => $userID, 'keywordID' => $keyword, 'positiv' => '1']);
         }

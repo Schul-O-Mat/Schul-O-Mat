@@ -1,12 +1,12 @@
 @extends("layouts.app")
 
 @section("css")
-  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
 @endsection
 
 @section("header")
-  <h3>{{$schule->bezeichnung}}</h3>
-  <h4>{{$schule->bezeichnung_kurz}}</h4>
+    <h3>{{$schule->bezeichnung}}</h3>
+    <h4>{{$schule->bezeichnung_kurz}}</h4>
 @endsection
 
 @section("main")
@@ -48,124 +48,87 @@
 
                 <!--Ende Durchschnittsbewertung "Sternchen"-->
                 <div id="quests" class="col s12 ">
-                    @if(isset($durchschnitt))
-                    <div class="collection">
-                        <div class="collection-item">
-                            <p>Wie findest du deine Schule im Allgemeinen?<span class="right">{{round($durchschnitt[0], 1)}}/10</span></p>
-                            <div class="progress">
-                                <div class="determinate" style="width: {{$durchschnitt[0]*10}}%"></div>
+                    @if(count($data) > 0)
+                        <div class="collection">
+                            @foreach($data as $item)
+                                <div class="collection-item">
+                                    <p>{{$item["frage"]["name"]}}<span class="right">{{round($item["durchschnitt"], 1)}}/10</span></p>
+                                    <div class="progress">
+                                        <div class="determinate" style="width: {{$item["durchschnitt"]*10}}%"></div>
 
-                            </div>
-                        </div>
-                        <div class="collection-item">
-                            <p>Wie findest du die Schulmensa?<span class="right">{{round($durchschnitt[1], 1)}}/10</span></p>
-                            <div class="progress">
-                                <div class="determinate" style="width: {{$durchschnitt[1]*10}}%"></div>
-
-                            </div>
-                        </div>
-                        <div class="collection-item">
-                            <p>Wie findest du die AGs?<span class="right">{{round($durchschnitt[2], 1)}}/10</span></p>
-                            <div class="progress">
-                                <div class="determinate" style="width: {{$durchschnitt[2]*10}}%"></div>
-
-                            </div>
-                        </div>
-                        <div class="collection-item">
-                            <p>Wie findest du die Austattung der Schule?<span class="right">{{round($durchschnitt[3], 1)}}/10</span></p>
-                            <div class="progress">
-                                <div class="determinate" style="width: {{$durchschnitt[3]*10}}%"></div>
-
-                            </div>
-                        </div>
-                        <div class="collection-item">
-                            <p>Wie findest du die Toiletten an deiner Schule?<span class="right">{{round($durchschnitt[4], 1)}}/10</span></p>
-                            <div class="progress">
-                                <div class="determinate" style="width: {{$durchschnitt[4]*10}}%"></div>
-
-                            </div>
-                        </div>
-                        <div class="collection-item">
-                            <p>Wie findest du die Länge der Schulstunden?<span class="right">{{round($durchschnitt[5], 1)}}/10</span></p>
-                            <div class="progress">
-                                <div class="determinate" style="width: {{$durchschnitt[5]*10}}%"></div>
-
-                            </div>
-                        </div>
-                        <div class="collection-item">
-                            <p>Wie findest du die Zeit des Schulbeginns?<span class="right">{{round($durchschnitt[6], 1)}}/10</span></p>
-                            <div class="progress">
-                                <div class="determinate" style="width: {{$durchschnitt[6]*10}}%"></div>
-                            </div>
-                        </div>
-                        @else
-                            <p>Es wurden noch keine Bewertungen für diese Schule eingetragen. Vielleicht möchtest du ja einige Schüler an deiner Schule dazu motivieren.</p>
-                        @endif
-                    </div>
-                        @if(isset($keywords))
-                    <div class="row">
-                        <h4 class="center-align">Dies bewerten die Schüler besonders:</h4>
-                        <table class="highlight centered">
-                            <thead>
-                                <tr>
-                                    <th data-field="id">Pro</th>
-                                    <th data-field="name">Fact</th>
-                                    <th data-field="price">Con</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                @foreach($keywords as $k=>list($pos, $neg))
-                                <tr>
-                                    <td>
-                                        <div class="chip green">{{$pos}}</div>
-                                    </td>
-                                    <td>{{$k}}</td>
-                                    <td>
-                                        <div class="chip red">{{$neg}}</div>
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                    @endif
-
-                    @if(isset($reviews))
-                    <div>
-                        <h4 class="center-align">Einzelberichte:</h4>
-
-                        <ul class="collapsible" data-collapsible="expandable">
-                            {{$x = false}}
-                            @foreach($reviews as $r)
-                                @if (!$r->freitext == "")
-                                <li>
-                                <div class="collapsible-header">
-                                    {{--TODO: Link auf neue Seite "reporting"--}}
-                                    <i class="material-icons">announcement</i><p class="truncate">{{$r->freitext}}
-                                        @if(!Auth::guest() and Auth::user()->type == "school" and Auth::user()->schulID == $schulID)
-                                            <a href="{{ action("SchulVerwaltungController@index", ["id" => $schulID]) }}" class="red-text"><i class="material-icons right">report</i></a></p>
-                                        @endif
+                                    </div>
                                 </div>
-                                <div class="collapsible-body">
-                                    <p><span>{{$r->freitext}}</span></p>
-                                </div>
-                                </li>
-                                @endif
                             @endforeach
-                            @if ($x)
-                                <li>
-                                    <div class="collapsible-header active">
-                                        <i class="material-icons">announcement</i><p class="truncate">Bisher wurden keine Einzelberichte geschrieben</p>
-                                    </div>
-                                    <div class="collapsible-body">
-                                        <p><span>Bisher wurden keine Einzelberichte geschrieben. Vielleicht möchtest du ja einige Schüler an deiner Schule dazu motivieren.</span></p>
-                                    </div>
-                                </li>
-                            @endif
-                        </ul>
-                    </div>
+                        </div>
+                        @if(isset($keywords))
+                            <div class="row">
+                                <h4 class="center-align">Dies bewerten die Schüler besonders:</h4>
+                                <table class="highlight centered">
+                                    <thead>
+                                    <tr>
+                                        <th data-field="id">Pro</th>
+                                        <th data-field="name">Fact</th>
+                                        <th data-field="price">Con</th>
+                                    </tr>
+                                    </thead>
+
+                                    <tbody>
+                                    @foreach($keywords as $k=>list($pos, $neg))
+                                        <tr>
+                                            <td>
+                                                <div class="chip green">{{$pos}}</div>
+                                            </td>
+                                            <td>{{$k}}</td>
+                                            <td>
+                                                <div class="chip red">{{$neg}}</div>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        @endif
+
+
+                        <div>
+                            <h4 class="center-align">Einzelberichte:</h4>
+
+                            <ul class="collapsible" data-collapsible="expandable">
+                                @if(count($freitext) > 0)
+                                    @foreach($freitext as $r)
+                                        @if ($r->bewertung != "")
+                                            <li>
+                                                <div class="collapsible-header">
+                                                    {{--TODO: Link auf neue Seite "reporting"--}}
+                                                    <i class="material-icons">announcement</i><p class="truncate">{{$r->bewertung}}
+                                                        @if(!Auth::guest() and Auth::user()->type == "school" and Auth::user()->schulID == $schule->id)
+                                                            <a href="{{ action("SchulVerwaltungController@index", ["id" => $schule->id]) }}" class="red-text"><i class="material-icons right">report</i></a></p>
+                                                    @endif
+                                                </div>
+                                                <div class="collapsible-body">
+                                                    <p><span>{{$r->bewertung}}</span></p>
+                                                </div>
+                                            </li>
+                                        @endif
+                                    @endforeach
+                                @else
+                                    <li>
+                                        <div class="collapsible-header active">
+                                            <i class="material-icons">announcement</i><p class="truncate">Bisher wurden keine Einzelberichte geschrieben</p>
+                                        </div>
+                                        <div class="collapsible-body">
+                                            <p><span>Bisher wurden keine Einzelberichte geschrieben. Vielleicht möchtest du ja einige Schüler an deiner Schule dazu motivieren.</span></p>
+                                        </div>
+                                    </li>
+                                @endif
+                            </ul>
+                        </div>
+                    @else
+                        <p>Es wurden noch keine Bewertungen für diese Schule eingetragen. Vielleicht möchtest du ja einige Schüler an deiner Schule dazu motivieren.</p>
                     @endif
+
+
+
 
                 </div>
                 <!--Ende Freitext-->
@@ -193,9 +156,9 @@
                         </div>
                         <div class="col s12 m6">
                             <div class="card">
-                              <div class="card-content">
-                                <div id="map" style="height:250px; width:auto;"></div>
-                              </div>
+                                <div class="card-content">
+                                    <div id="map" style="height:250px; width:auto;"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -204,43 +167,43 @@
         </div>
     </main>
     @if(!Auth::guest())
-      @if(Auth::user()->schulID == $schulID and Auth::user()->type == "student")
-        <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-            <a href="{{ action("SchulDetailController@fragebogen", ["id" => $schule->id]) }}" class="btn-floating btn-large blue tooltipped" data-position="left" data-delay="50" data-tooltip="Trag was ein">
-                <i class="large material-icons">mode_edit</i>
-            </a>
-        </div>
-      @endif
-      @if(Auth::user()->schulID == $schulID and Auth::user()->type == "school")
-          <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-              <a href="{{ action("SchulVerwaltungController@index", ["id" => $schule->id]) }}" class="btn-floating btn-large blue tooltipped" data-position="left" data-delay="50" data-tooltip="Schulverwaltung">
-                  <i class="large material-icons">settings</i>
-              </a>
-          </div>
-      @endif
+        @if(Auth::user()->schulID == $schule->id and Auth::user()->type == "student" and !$bewertungda)
+            <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+                <a href="{{ action("SchulDetailController@fragebogen", ["id" => $schule->id]) }}" class="btn-floating btn-large blue tooltipped" data-position="left" data-delay="50" data-tooltip="Trag was ein">
+                    <i class="large material-icons">mode_edit</i>
+                </a>
+            </div>
+        @endif
+        @if(Auth::user()->schulID == $schule->id and Auth::user()->type == "school")
+            <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+                <a href="{{ action("SchulVerwaltungController@index", ["id" => $schule->id]) }}" class="btn-floating btn-large blue tooltipped" data-position="left" data-delay="50" data-tooltip="Schulverwaltung">
+                    <i class="large material-icons">settings</i>
+                </a>
+            </div>
+        @endif
     @endif
 @endsection
 
 @section("js")
-  <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet/v1.0.0-rc.1/leaflet.js"></script>
-  <script>
-    var map = null;
-    $(document).ready(function () {
-        $('ul.tabs').tabs();
-        $('.tooltipped').tooltip({
-            delay: 50
-        });
-        $('.collapsible').collapsible({
-            accordion: false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
-        });
+    <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet/v1.0.0-rc.1/leaflet.js"></script>
+    <script>
+        var map = null;
+        $(document).ready(function () {
+            $('ul.tabs').tabs();
+            $('.tooltipped').tooltip({
+                delay: 50
+            });
+            $('.collapsible').collapsible({
+                accordion: false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+            });
 
-        $.get("https://nominatim.openstreetmap.org/search?q=<?php echo $adresse ?>&format=json").done(function (data) {
-            map = L.map('map').setView(L.latLng(data[0].lat, data[0].lon), 15);
-            L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(map);
-            L.marker(L.latLng(data[0].lat, data[0].lon)).addTo(map);
-        })
-    });
-  </script>
+            $.get("https://nominatim.openstreetmap.org/search?q=<?php echo $adresse ?>&format=json").done(function (data) {
+                map = L.map('map').setView(L.latLng(data[0].lat, data[0].lon), 15);
+                L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(map);
+                L.marker(L.latLng(data[0].lat, data[0].lon)).addTo(map);
+            })
+        });
+    </script>
 @endsection

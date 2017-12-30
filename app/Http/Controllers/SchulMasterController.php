@@ -25,7 +25,6 @@ class SchulMasterController extends Controller
         if ($calc + 25 > $cnt)
             $weiter = false;
         $data = schulen::take(25)->skip($calc)->with("details")->get();
-//        $schulform = DB::table("key_schulformschluessel")->get();
         $staedte = DB::table("schuldetails")->select("ort")->groupBy("ort")->get();
         return view('master', compact("data", "zurueck", "weiter", "page", "staedte"));
     }
