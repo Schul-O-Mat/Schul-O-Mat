@@ -119,6 +119,7 @@ class SchulDetailController extends Controller {
             $bewertung->userID = $userID;
             $bewertung->frageID = $frage->id;
             $bewertung->bewertung = Request::get($frage->id);
+            $bewertung->save();
         }
 
         //Hole die restlichen Felder
@@ -142,7 +143,7 @@ class SchulDetailController extends Controller {
             DB::table('key_bew')->insert(['userID' => $userID, 'keywordID' => $keyword, 'positiv' => '0']);
         }
 
-//        return redirect("/schule/".$schulID);
+        return redirect("/schule/" . $schulID);
     }
 
     function redaktion($id){
