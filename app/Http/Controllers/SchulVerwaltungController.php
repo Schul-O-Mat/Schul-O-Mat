@@ -37,4 +37,31 @@ class SchulVerwaltungController extends Controller
 		return view("verwaltung/daten", compact("id", "schule", "bezeichnung", "bundeslaender", "schulformen"));
 
 	}
+
+	function datenAendern(Request $request, $id) {
+
+	    if (Auth::user()->schulID == $id && Auth::user()->type == "school") {
+
+	        $schule = schulen::findOrFail($id);
+
+	        $schule->bundeslandID = $request->input('bundesland');
+            $schule->schulformID = $request->input('schulform');
+            $schule->bezeichnung = $request->input('bezeichnung');
+            $schule->bezeichnung_kurz = $request->input('kurzbezeichnung');
+            $schule->save();
+
+            $details = $schule->details()->first();
+            $details->strasse = $request->input('strasse');
+            $details->ort = $request->input('ort');
+            $details->plz = $request->input('plz');
+            $details->homepage = $request->input('homepage');
+            $details->mail = $request->input('mail');
+            $details->telnr = $request->input('telnr');
+            $details->faxnr = $request->input('faxnr');
+            $details->save();
+
+        }
+
+        return redirect("/schule/$id/verwaltung/");
+    }
 }
