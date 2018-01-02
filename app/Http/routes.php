@@ -71,4 +71,6 @@ Route::post('/schule/{id}/verwaltung/daten', "SchulVerwaltungController@datenAen
 
 // Userverwaltung
 Route::get('/user', "UserVerwaltungController@index");
+Route::get('/user/password', "UserVerwaltungController@password");
 Route::post('/user/changedata', "UserVerwaltungController@changeData");
+Route::post('/user/changepassword', "UserVerwaltungController@changePassword");

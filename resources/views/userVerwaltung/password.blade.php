@@ -2,27 +2,20 @@
 
 @section("header")
     <h3 class="center-align">Dein Account - {{ Auth::user()->name }}</h3>
+    <h4 class="center-align thin">Password &auml;ndern</h4>
 @endsection
 
 @section("main")
-    <form class="container" action="{{ action("UserVerwaltungController@changeData") }}" id="changedata-form" method="post">
+    <form class="container" action="{{ action("UserVerwaltungController@changePassword") }}" id="changedata-form" method="post">
         <input type="hidden" name="_token" value="{{csrf_token()}}">
         <div class="row">
             <div class="input-field col s12">
-                <input id="vorname" name="vorname" type="text" class="validate" placeholder="{{ $currentUser->vorname }}">
-                <label for="vorname">Vorname</label>
+                <input id="new-password" name="new-password" type="password" autocomplete="new-password" class="validate">
+                <label for="new-password">Neues Passwort</label>
             </div>
             <div class="input-field col s12">
-                <input id="nachname" name="nachname" type="text" class="validate" placeholder="{{ $currentUser->nachname }}">
-                <label for="nachname">Nachname</label>
-            </div>
-            <div class="input-field col s12">
-                <input id="username" name="username" type="text" class="validate" placeholder="{{ $currentUser->name }}">
-                <label for="username">Username</label>
-            </div>
-            <div class="input-field col s12">
-                <input id="email" name="email" type="email" class="validate" placeholder="{{ $currentUser->email }}">
-                <label for="email">E-Mail</label>
+                <input id="new-password-confirmation" name="new-password-confirmation" type="password" autocomplete="new-password" class="validate">
+                <label for="new-password-confirmation">Neues Passwort (wiederholung)</label>
             </div>
             <input type="hidden" name="current-password" id="form-current-password">
         </div>
@@ -32,20 +25,17 @@
             </button>
         </div>
         <div class="row center">
-            <a href="{{ action("UserVerwaltungController@password") }}" class="btn-flat">Passwort &auml;ndern</a>
-        </div>
-        <div class="row center">
-            <a href="{{ action("IndexController@index") }}" class="btn-flat">Zurück</a>
+            <a href="{{ action("UserVerwaltungController@index") }}" class="btn-flat">Zur&uuml;ck</a>
         </div>
     </form>
     <div id="modal-passwordagree" class="modal bottom-sheet">
         <div class="modal-content container">
             <h4 class="center-align thin">Bestätigung</h4>
-            <b>Bitte bestätige die &Auml;nderungen mit deinem Passwort</b>
+            <b>Bitte bestätige die &Auml;nderungen mit deinem aktuellen Passwort</b>
             <br>
             <div class="input-field col s12">
                 <input id="modal_passwordagree-password" type="password" autocomplete="current-password" class="validate">
-                <label for="modal-passwordagree">Passwort</label>
+                <label for="modal-passwordagree">Aktuelles Passwort</label>
             </div>
         </div>
         <div class="modal-footer center-align">
