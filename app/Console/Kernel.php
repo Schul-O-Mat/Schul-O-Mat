@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Jobs\CreateSchulcode;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -24,7 +25,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+        //Nachfolgender Command führt den Job täglich aus.
+        //funktionier leider aber erst ab Laravel 5.5, muss also bis zum Update draußen bleiben
+        //$schedule->job(new CreateSchulcode)->daily();
     }
 }

@@ -29,7 +29,7 @@
         </div>
     </form>
     <div class="row center">
-        <a class="black-text" href="{{ action("SchulVerwaltungController@index", ["id" => $id]) }}"><h4 class="thin">Schulcode neu generieren</h4></a>
+        <a class="black-text" href="{{ action("SchulVerwaltungController@recreateSchulcode", ["id" => $id]) }}"><h4 class="thin">Schulcode neu generieren</h4></a>
     </div>
     <div class="row center">
         <a class="black-text" href="{{ action("SchulVerwaltungController@daten", ["id" => $id]) }}"><h4 class="thin">Schuldaten &auml;ndern</h4></a>

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\bundeslaender;
+use App\Jobs\CheckSchulcode;
+use App\Jobs\CreateSchulcode;
 use App\keywords;
 use App\schulen;
 use App\schulbezeichnung;
@@ -63,5 +65,10 @@ class SchulVerwaltungController extends Controller
         }
 
         return redirect("/schule/$id/verwaltung/");
+    }
+
+    function recreateSchulcode($id) {
+	    dispatch(new CheckSchulcode());
+	    return redirect("/schule/$id/verwaltung");
     }
 }

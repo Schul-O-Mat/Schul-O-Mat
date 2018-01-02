@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'from' => ['address' => "noreply@schulomat.net", 'name' => "No-Reply@schulomat"],
+    'from' => ['address' => "no-reply@schulomat.net", 'name' => "Schul-O-Mat"],
 
     /*
     |--------------------------------------------------------------------------
