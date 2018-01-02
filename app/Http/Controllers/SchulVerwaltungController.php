@@ -21,7 +21,7 @@ class SchulVerwaltungController extends Controller
 		$keywords = keywords::all();
 		if(Auth::guest() or Auth::user()->type != "school" or Auth::user()->schulID != $id)
 			return redirect("/");
-		return view("verwaltung/index", compact("id", "schule", "bezeichnung", "keywords"));
+		return view("schulVerwaltung/index", compact("id", "schule", "bezeichnung", "keywords"));
 	}
 	function daten($id){
         if(Auth::guest() or Auth::user()->type != "school" or Auth::user()->schulID != $id)
@@ -36,7 +36,7 @@ class SchulVerwaltungController extends Controller
         //Schulformen holen
         $schulformen = schulformen::all();
 
-		return view("verwaltung/daten", compact("id", "schule", "bezeichnung", "bundeslaender", "schulformen"));
+		return view("schulVerwaltung/daten", compact("id", "schule", "bezeichnung", "bundeslaender", "schulformen"));
 
 	}
 
