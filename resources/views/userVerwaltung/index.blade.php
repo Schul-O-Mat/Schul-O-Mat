@@ -11,19 +11,19 @@
         <input type="hidden" name="_token" value="{{csrf_token()}}">
         <div class="row">
             <div class="input-field col s12">
-                <input id="vorname" name="vorname" type="text" class="validate">
+                <input id="vorname" name="vorname" type="text" class="validate" placeholder="{{ $currentUser->vorname }}">
                 <label for="vorname">Vorname</label>
             </div>
             <div class="input-field col s12">
-                <input id="nachname" name="nachname" type="text" class="validate">
+                <input id="nachname" name="nachname" type="text" class="validate" placeholder="{{ $currentUser->nachname }}">
                 <label for="nachname">Nachname</label>
             </div>
             <div class="input-field col s12">
-                <input id="username" name="username" type="text" class="validate">
+                <input id="username" name="username" type="text" class="validate" placeholder="{{ $currentUser->name }}">
                 <label for="username">Username</label>
             </div>
             <div class="input-field col s12">
-                <input id="email" name="email" type="email" class="validate">
+                <input id="email" name="email" type="email" class="validate" placeholder="{{ $currentUser->email }}">
                 <label for="email">E-Mail</label>
             </div>
             <div class="input-field col s12">

@@ -11,7 +11,8 @@ class UserVerwaltungController extends Controller
 {
     public function index() {
     	if(!Auth::guest() and Auth::user()->type == "student") {
-		    return view("userVerwaltung.index");
+    		$currentUser = Auth::user();
+		    return view("userVerwaltung.index", compact("currentUser"));
 	    } else {
     	    return redirect('');
 	    }
