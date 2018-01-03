@@ -4,11 +4,11 @@
     <div class="col s12">
         <ul class="pagination">
             @if ($zurueck)
-                <li class="waves-effect"><a href="{{ action("SchulMasterController@pagination", ["page" => $page-1]) }}"><i class="material-icons">chevron_left</i></a></li>
+                <li class="waves-effect"><a href="{{ action("SchulMasterController@paginationFilter", ["page" => $page-1, "ort" => $ort]) }}"><i class="material-icons">chevron_left</i></a></li>
             @else
                 <li class="disabled"><a><i class="material-icons">chevron_left</i></a></li>
             @endif @if ($weiter)
-                <li class="chevron_right waves-effect"><a href="{{ action("SchulMasterController@pagination", ["page" => $page+1]) }}"><i class="material-icons">chevron_right</i></a></li>
+                <li class="chevron_right waves-effect"><a href="{{ action("SchulMasterController@paginationFilter", ["page" => $page+1, "ort" => $ort]) }}"><i class="material-icons">chevron_right</i></a></li>
             @else
                 <li class="chevron_right disabled"><a><i class="material-icons">chevron_right</i></a></li>
             @endif
@@ -33,11 +33,11 @@
       </ul>
         <ul class="pagination">
             @if ($zurueck)
-                <li class="waves-effect"><a href="{{ action("SchulMasterController@pagination", ["page" => $page-1]) }}"><i class="material-icons">chevron_left</i></a></li>
+                <li class="waves-effect"><a href="{{ action("SchulMasterController@paginationFilter", ["page" => $page-1, "ort" => $ort]) }}"><i class="material-icons">chevron_left</i></a></li>
             @else
                 <li class="disabled"><a><i class="material-icons">chevron_left</i></a></li>
             @endif @if ($weiter)
-                <li class="chevron_right waves-effect"><a href="{{ action("SchulMasterController@pagination", ["page" => $page+1]) }}"><i class="material-icons">chevron_right</i></a></li>
+                <li class="chevron_right waves-effect"><a href="{{ action("SchulMasterController@paginationFilter", ["page" => $page+1, "ort" => $ort]) }}"><i class="material-icons">chevron_right</i></a></li>
             @else
                 <li class="chevron_right disabled"><a><i class="material-icons">chevron_right</i></a></li>
             @endif
