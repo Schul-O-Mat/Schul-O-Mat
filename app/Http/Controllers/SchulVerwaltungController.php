@@ -68,7 +68,7 @@ class SchulVerwaltungController extends Controller
     }
 
     function recreateSchulcode($id) {
-	    dispatch(new CheckSchulcode());
+	    dispatch(new CreateSchulcode($id));
 	    return redirect("/schule/$id/verwaltung");
     }
 }

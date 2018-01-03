@@ -47,11 +47,11 @@
                 <li class="collection-item avatar">
 
                     <i class="material-icons circle
-                              @if ($d->schulformID == 2) light-green
-                    @elseif ($d->schulformID == 20) blue
-                    @elseif ($d->schulformID == 4) #aa00ff
-                    @elseif ($d->schulformID == 10) #d50000
-                    @elseif ($d->schulformID == 15) #ffff00
+                              @if ($d->schulformID == 1) light-green
+                    @elseif ($d->schulformID == 7) blue
+                    @elseif ($d->schulformID == 2) #aa00ff
+                    @elseif ($d->schulformID == 4) #d50000
+                    @elseif ($d->schulformID == 5) #ffff00
                     @else #9e9e9e
                               @endif
                               ">school</i>
