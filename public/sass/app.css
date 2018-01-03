@@ -63,7 +63,8 @@ html {
 #dropdown {
   right: 0 !important;
   left: auto !important;
-  width: 300px; }
+  top: 65px !important;
+  min-width: 10vw; }
 
 .header-search-wrapper {
   margin: 10px auto 0 300px;
@@ -128,10 +129,10 @@ input.header-search-input {
 .dropdown-content li > span {
   color: #2196f3; }
 
-.input-field textarea:focus, .input-field input[type=text]:focus, .input-field input[type=email]:focus {
+.input-field textarea:focus, .input-field input[type=text]:focus, .input-field input[type=email]:focus, .input-field input[type=password]:focus {
   border-bottom: 1px solid #2196f3 !important;
   box-shadow: 0 1px 0 0 #2196f3 !important; }
-.input-field textarea:focus + label, .input-field input[type=text]:focus + label, .input-field input[type=email] + label {
+.input-field textarea:focus + label, .input-field input[type=text]:focus + label, .input-field input[type=email]:focus + label, .input-field input[type=password]:focus + label {
   color: #2196f3 !important; }
 .input-field .prefix.active {
   color: #2196f3 !important; }

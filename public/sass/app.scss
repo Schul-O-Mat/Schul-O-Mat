@@ -69,7 +69,8 @@ html {
 #dropdown {
   right: 0 !important;
   left: auto !important;
-  width: 300px;
+  top: 65px !important;
+  min-width: 10vw;
 }
 .header-search-wrapper {
   margin: 10px auto 0 300px;
@@ -147,11 +148,11 @@ input.header-search-input {
   }
 }
 .input-field {
-  textarea:focus, input[type=text]:focus, input[type=email]:focus {
+  textarea:focus, input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
     border-bottom: 1px solid $blue !important;
     box-shadow: 0 1px 0 0 $blue !important;
   }
-  textarea:focus + label, input[type=text]:focus + label, input[type=email] + label {
+  textarea:focus + label, input[type=text]:focus + label, input[type=email]:focus + label, input[type=password]:focus + label {
     color: $blue !important;
   }
   .prefix.active {
