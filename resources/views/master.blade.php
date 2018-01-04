@@ -52,8 +52,8 @@
                     @if ($d->schulformID == 1) light-green
                     @elseif ($d->schulformID == 7) blue
                     @elseif ($d->schulformID == 2) indigo
-                    @elseif ($d->schulformID == 4) red darken-4
-                    @elseif ($d->schulformID == 5)  teal
+                    @elseif ($d->schulformID == 4) pink darken-4
+                    @elseif ($d->schulformID == 5) teal
                     @else grey
                     @endif">school</i>
                     <span class="title">{{$d->bezeichnung}}</span>
