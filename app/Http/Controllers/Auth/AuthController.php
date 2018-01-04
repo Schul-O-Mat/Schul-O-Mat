@@ -44,7 +44,7 @@ class AuthController extends Controller
     {
         $this->middleware('guest', ['except' => ['logout', 'getLogout']]);
     }
-    public function getLogin()
+    public function getRegister()
     {
 	    $staedteraw = DB::table("schuldetails")->select("ort")->groupBy("ort")->get();
 	    $staedte = new \stdClass();
@@ -53,7 +53,7 @@ class AuthController extends Controller
 	    	$staedte->$ort = "";
 	    }
 	    $staedte = json_encode($staedte);
-    	return view("auth.login", compact("staedte"));
+    	return view("auth.register", compact("staedte"));
     }
     public function schulenSearchOrt(Request $request) {
 	    $ort = $request->get("ort");

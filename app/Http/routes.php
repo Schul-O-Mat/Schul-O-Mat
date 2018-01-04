@@ -22,7 +22,7 @@ Route::get('/logout', 'Auth\AuthController@getLogout');
 Route::get('/api/schulenSearchOrt', 'Auth\AuthController@schulenSearchOrt');
 
 // Registration routes...
-//Route::get('/register', 'Auth\AuthController@getRegister');
+Route::get('/register', 'Auth\AuthController@getRegister');
 Route::post('/register', 'Auth\AuthController@postRegister');
 
 // Password reset link request routes...

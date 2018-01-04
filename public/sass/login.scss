@@ -40,6 +40,11 @@ body {
     color: $black;
   }
 }
+.has-error > input {
+  border-bottom: 1px solid $red !important;
+  box-shadow: 0 1px 0 0 $red !important;
+}
+
 .switch {
   margin-top: 7px;
   label {
@@ -68,14 +73,15 @@ body {
   h4 {
     font-weight: 200;
   }
+  .signup-toggle {
+    margin-top: 220px;
+  }
 }
 .policy {
   visibility: hidden;
   font-size: 13px;
 }
-.signupForm {
-  display: none;
-}
+
 .signup {
   margin-top: 25px;
   h4 {
