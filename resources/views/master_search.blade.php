@@ -22,10 +22,11 @@
             <i class="material-icons circle
             @if ($d->schulformID == 1) light-green
             @elseif ($d->schulformID == 7) blue
-            @elseif ($d->schulformID == 2) #aa00ff
-            @elseif ($d->schulformID == 4) #d50000
-            @elseif ($d->schulformID == 5) #ffff00
-            @else #9e9e9e @endif">
+            @elseif ($d->schulformID == 2) indigo
+            @elseif ($d->schulformID == 4) red darken-4
+            @elseif ($d->schulformID == 5)  teal
+            @else grey
+            @endif">
               school</i>
               <span class="title">{{$d->bezeichnung}}</span>
               <p> @if($d->bezeichnung_kurz != ""){{$d->bezeichnung_kurz}}@endif     </p>
