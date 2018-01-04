@@ -60,6 +60,10 @@
     <script>
         $(document).ready(function () {
             $('select').material_select();
+            var currentURL = new URL(window.location.href)
+            if(currentURL.searchParams.get('action') === 'schulcode') {
+                Materialize.toast('Der Schulcode wurde geändert!', 5000)
+            }
         });
     </script>
 @endsection
