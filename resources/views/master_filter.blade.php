@@ -3,6 +3,9 @@
   <div class="row">
     <div class="col s12">
         <ul class="pagination">
+            <div class="center-align">
+                <p>Seite {{ $page+1 }} von {{ $cnt+1 }}</p>
+            </div>
             @if ($zurueck)
                 <li class="waves-effect"><a href="{{ action("SchulMasterController@paginationFilter", ["page" => $page-1, "ort" => $ort]) }}"><i class="material-icons">chevron_left</i></a></li>
             @else
@@ -41,6 +44,9 @@
             @else
                 <li class="chevron_right disabled"><a><i class="material-icons">chevron_right</i></a></li>
             @endif
+                <div class="center-align">
+                    <p>Seite {{ $page+1 }} von {{ $cnt+1 }}</p>
+                </div>
         </ul>
     </div>
   </div>

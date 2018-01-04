@@ -30,6 +30,9 @@
     </ul>
     <hr />
     <ul class="pagination">
+        <div class="center-align">
+            <p>Seite {{ $page+1 }} von {{ $cnt+1 }}</p>
+        </div>
         @if ($zurueck)
             <li class="waves-effect"><a href="{{ action("SchulMasterController@pagination", ["page" => $page-1]) }}"><i class="material-icons">chevron_left</i></a></li>
         @else
@@ -70,11 +73,15 @@
       <li class="waves-effect"><a href="{{ action("SchulMasterController@pagination", ["page" => $page-1]) }}"><i class="material-icons">chevron_left</i></a></li>
     @else
       <li class="disabled"><a><i class="material-icons">chevron_left</i></a></li>
-    @endif @if ($weiter)
+    @endif
+    @if ($weiter)
       <li class="chevron_right waves-effect"><a href="{{ action("SchulMasterController@pagination", ["page" => $page+1]) }}"><i class="material-icons">chevron_right</i></a></li>
     @else
       <li class="chevron_right disabled"><a><i class="material-icons">chevron_right</i></a></li>
     @endif
+        <div class="center-align">
+            <p>Seite {{ $page+1 }} von {{ $cnt+1 }}</p>
+        </div>
   </ul>
     <script>
         $(document).ready(function () {

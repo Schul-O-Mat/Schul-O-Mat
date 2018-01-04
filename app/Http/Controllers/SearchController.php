@@ -40,7 +40,7 @@ class SearchController extends Controller {
         $data = $result->take(25)->skip($calc)->get();
 	    if ($calc + 25 > $cnt)
 		    $weiter = false;
-        return view('master_search', compact("data", "zurueck", "weiter", "page", "userSearch"));
+        return view('master_search', compact("data", "zurueck", "weiter", "page", "userSearch", "cnt"));
     }
 
     public function index () {
