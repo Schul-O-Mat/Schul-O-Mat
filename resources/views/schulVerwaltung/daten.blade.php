@@ -75,6 +75,13 @@
         </div>
         <div class="row">
             <div class="input-field col s12">
+                {{--TODO: Value für schulcodemail hinzufügen--}}
+                <input name="schulcode-mail" type="text" id="schulcode-mail" class="validate">
+                <label for="schulcode-mail">E-Mail f&uuml;r Schulcode</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
                 <input name="telnr" type="text" class="validate" value="{{$schule->details->telnr}}">
                 <label for="telnr">Telefon</label>
             </div>

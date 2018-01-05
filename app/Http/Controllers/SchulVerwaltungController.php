@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\bundeslaender;
+use App\fragen;
 use App\Jobs\CheckSchulcode;
 use App\Jobs\CreateSchulcode;
 use App\keywords;
@@ -19,9 +20,11 @@ class SchulVerwaltungController extends Controller
 		$schule = schulen::findOrFail($id);
 		$bezeichnung = $schule->bezeichnung_kurz;
 		$keywords = keywords::all();
+		$schulcode = $schule->schulcode;
+		$fragen = fragen::all();
 		if(Auth::guest() or Auth::user()->type != "school" or Auth::user()->schulID != $id)
 			return redirect("/");
-		return view("schulVerwaltung/index", compact("id", "schule", "bezeichnung", "keywords"));
+		return view("schulVerwaltung/index", compact("id", "schule", "bezeichnung", "keywords", "schulcode", "fragen"));
 	}
 	function daten($id){
         if(Auth::guest() or Auth::user()->type != "school" or Auth::user()->schulID != $id)
