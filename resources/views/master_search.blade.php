@@ -4,7 +4,7 @@
     <div class="col s12">
         <ul class="pagination">
             <div class="center-align">
-                <p>Seite {{ $page+1 }} von {{ $cnt+1 }}</p>
+                <p>Seite {{ $page+1 }} von {{ ceil($cnt/25) }}</p>
             </div>
             @if ($zurueck)
                 <li class="waves-effect"><a href="{{ action("SearchController@searchGet", ["page" => $page-1, "searchword" => $userSearch]) }}"><i class="material-icons">chevron_left</i></a></li>
