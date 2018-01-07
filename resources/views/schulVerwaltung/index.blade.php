@@ -36,7 +36,7 @@
                 <select multiple>
                     <option value="" disabled selected>Fragen ausw&auml;hlen</option>
                     @foreach ($fragen as $frage)
-                        <option value="{{ $frage->id }}">{{ $frage->bezeichnung }}</option>
+                        <option value="{{ $frage->id }}">{{ $frage->name }}</option>
                     @endforeach
                 </select>
                 <label>Fragen ausw&auml;hlen, die deaktiviert werden sollen</label>
