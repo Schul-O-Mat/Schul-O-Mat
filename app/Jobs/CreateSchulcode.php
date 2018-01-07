@@ -40,8 +40,9 @@ class CreateSchulcode extends Job implements ShouldQueue
         $schule->schulcode = str_random(8);
         $schule->schulcode_expire = Carbon::now()->addMonths(2);
         $schule->save();
-        Mail::queue('mail.schulcode', ['schule' => $schule], function ($m) use ($schule) {
-            $m->to($schule->details()->first()->mail, 'Schule')->subject('Neuer Schulcode für schulomat.jeriox.eu');
+        Mail::queue(['mail.schulcode', 'mail.schulcode_text'], ['schule' => $schule], function ($m) use ($schule) {
+	        $m->to($schule->details->mail);
+	        $m->subject('Neuer Schulcode für Schul-O-Mat');
         });
     }
 }
