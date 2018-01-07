@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\bewertungen;
 use App\bundeslaender;
 use App\fragen;
 use App\Jobs\CheckSchulcode;
@@ -10,6 +11,7 @@ use App\keywords;
 use App\schulen;
 use App\schulbezeichnung;
 use App\schulformen;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
@@ -68,6 +70,16 @@ class SchulVerwaltungController extends Controller
         }
 
         return redirect("/schule/$id/verwaltung/");
+    }
+
+    function einzelberichtMelden($id, $berichtId) {
+		if (Auth::user()->type == 'school' && Auth::user()->schulID == $id && Auth::user()->schulID === User::findOrFail(bewertungen::findOrFail($berichtId)->userID)->schulID) {
+			$schule = schulen::findOrFail($id);
+			$bericht = bewertungen::findOrFail($berichtId);
+			return view("schulVerwaltung.einzelbericht_melden", compact("id", "berichtId", "schule", "bericht"));
+		} else {
+			return redirect("/schule/$id");
+		}
     }
 
     function recreateSchulcode($id) {

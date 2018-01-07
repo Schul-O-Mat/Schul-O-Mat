@@ -102,7 +102,7 @@
                                                     {{--TODO: Link auf neue Seite "reporting"--}}
                                                     <i class="material-icons">announcement</i><p class="truncate">{{$r->bewertung}}
                                                         @if(!Auth::guest() and Auth::user()->type == "school" and Auth::user()->schulID == $schule->id)
-                                                            <a href="{{ action("SchulVerwaltungController@index", ["id" => $schule->id]) }}" class="red-text"><i class="material-icons right">report</i></a></p>
+                                                            <a class="tooltipped red-text right" data-position="left" data-delay="50" data-tooltip="Einzelbericht melden" href="{{ action("SchulVerwaltungController@einzelberichtMelden", ["id" => $schule->id, "berichtId" => $r->id]) }}"><i class="material-icons">report</i></a></p>
                                                     @endif
                                                 </div>
                                                 <div class="collapsible-body">

@@ -1,8 +1,9 @@
 @extends("layouts.app")
 
 @section("header")
-    <h3 class="center-align">Schulverwaltung</h3>
+    <h3 class="center-align">Schulverwaltung </h3>
     <h4 class="center-align thin">{{ $bezeichnung }}</h4>
+    <h5 class="center-align">Schuldaten &auml;ndern</h5>
 @endsection
 
 @section("main")
