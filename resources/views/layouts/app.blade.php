@@ -33,7 +33,7 @@
               class="form header-search-wrapper hide-on-med-and-down" method="get">
             {{--Search Url: /schulen/search/{key}--}}
             <i class="material-icons active">search</i>
-            <input name="searchword" class="header-search-input hoverable" pattern="[A-Za-z]{3,}"
+            <input name="searchword" class="header-search-input hoverable" pattern="[A-Za-z ]{3,}"
                    title="Du musst mindestens 3 Buchstaben eingeben" placeholder="Suche" type="text">
             <input type="hidden" name="page" value="0">
 
