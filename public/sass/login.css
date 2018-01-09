@@ -28,6 +28,10 @@ body {
 .input-field .prefix.active {
   color: #000; }
 
+.has-error > input {
+  border-bottom: 1px solid #f44336 !important;
+  box-shadow: 0 1px 0 0 #f44336 !important; }
+
 .switch {
   margin-top: 7px; }
   .switch label .lever {
@@ -48,13 +52,12 @@ body {
   border-right: 1px solid #e0e0e0; }
   .login h4 {
     font-weight: 200; }
+  .login .signup-toggle {
+    margin-top: 220px; }
 
 .policy {
   visibility: hidden;
   font-size: 13px; }
-
-.signupForm {
-  display: none; }
 
 .signup {
   margin-top: 25px; }

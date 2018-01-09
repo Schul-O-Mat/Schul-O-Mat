@@ -19,9 +19,10 @@
 Route::get('/login', 'Auth\AuthController@getLogin');
 Route::post('/login', 'Auth\AuthController@postLogin');
 Route::get('/logout', 'Auth\AuthController@getLogout');
+Route::get('/api/schulenSearchOrt', 'Auth\AuthController@schulenSearchOrt');
 
 // Registration routes...
-//Route::get('/register', 'Auth\AuthController@getRegister');
+Route::get('/register', 'Auth\AuthController@getRegister');
 Route::post('/register', 'Auth\AuthController@postRegister');
 
 // Password reset link request routes...
@@ -68,6 +69,7 @@ Route::get('/schule/{id}/verwaltung', "SchulVerwaltungController@index");
 Route::get('/schule/{id}/verwaltung/schulcode', "SchulVerwaltungController@recreateSchulcode");
 Route::get('/schule/{id}/verwaltung/daten', "SchulVerwaltungController@daten");
 Route::post('/schule/{id}/verwaltung/daten', "SchulVerwaltungController@datenAendern");
+Route::get('/schule/{id}/verwaltung/einzelberichtmelden/{berichtId}', "SchulVerwaltungController@einzelberichtMelden");
 
 // Userverwaltung
 Route::get('/user', "UserVerwaltungController@index");

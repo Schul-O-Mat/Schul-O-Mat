@@ -140,4 +140,7 @@ input.header-search-input {
 #footerGithubLink {
   color: #2196f3; }
 
+.tabs {
+  overflow-x: hidden; }
+
 /*# sourceMappingURL=app.css.map */

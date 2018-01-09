@@ -1,8 +1,9 @@
 @extends("layouts.app")
 
 @section("header")
-    <h3 class="center-align">Schulverwaltung</h3>
+    <h3 class="center-align">Schulverwaltung </h3>
     <h4 class="center-align thin">{{ $bezeichnung }}</h4>
+    <h5 class="center-align">Schuldaten &auml;ndern</h5>
 @endsection
 
 @section("main")
@@ -71,6 +72,13 @@
             <div class="input-field col s12">
                 <input name="mail" type="text" class="validate" value="{{$schule->details->mail}}">
                 <label for="mail">E-Mail</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                {{--TODO: Value für schulcodemail hinzufügen--}}
+                <input name="schulcode-mail" type="text" id="schulcode-mail" class="validate">
+                <label for="schulcode-mail">E-Mail f&uuml;r Schulcode</label>
             </div>
         </div>
         <div class="row">

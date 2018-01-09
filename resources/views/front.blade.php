@@ -19,7 +19,8 @@
               <p class="flow-text">Möchtest du etwas beitragen?</p>
               <div class="row center-align">
                   @if(Auth::guest())
-                  <a href="{{ action("Auth\AuthController@getLogin") }}" class="btn large blue">Anmelden</a>
+                      <a href="{{ action("Auth\AuthController@getLogin") }}" class="btn large blue">Einloggen</a>
+                      <a href="{{ action("Auth\AuthController@getRegister") }}" class="btn large blue">Registrieren</a>
                   @else
                   <a class="btn large blue">Du bist eingeloggt als {{Auth::user()->name}}!</a> @endif
               </div>

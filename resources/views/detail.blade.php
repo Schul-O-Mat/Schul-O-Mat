@@ -1,7 +1,7 @@
 @extends("layouts.app")
 
 @section("css")
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.css" integrity="sha256-LcmP8hlMTofQrGU6W2q3tUnDnDZ1QVraxfMkP060ekM=" crossorigin="anonymous" />
 @endsection
 
 @section("header")
@@ -102,7 +102,7 @@
                                                     {{--TODO: Link auf neue Seite "reporting"--}}
                                                     <i class="material-icons">announcement</i><p class="truncate">{{$r->bewertung}}
                                                         @if(!Auth::guest() and Auth::user()->type == "school" and Auth::user()->schulID == $schule->id)
-                                                            <a href="{{ action("SchulVerwaltungController@index", ["id" => $schule->id]) }}" class="red-text"><i class="material-icons right">report</i></a></p>
+                                                            <a class="tooltipped red-text right" data-position="left" data-delay="50" data-tooltip="Einzelbericht melden" href="{{ action("SchulVerwaltungController@einzelberichtMelden", ["id" => $schule->id, "berichtId" => $r->id]) }}"><i class="material-icons">report</i></a></p>
                                                     @endif
                                                 </div>
                                                 <div class="collapsible-body">
@@ -185,7 +185,7 @@
 @endsection
 
 @section("js")
-    <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet/v1.0.0-rc.1/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.js" integrity="sha256-kdEnCVOWosn3TNsGslxB8ffuKdrZoGQdIdPwh7W1CsE=" crossorigin="anonymous"></script>
     <script>
         var map = null;
         $(document).ready(function () {

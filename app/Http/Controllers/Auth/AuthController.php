@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\schulen;
 use App\User;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\DB;
+use PhpParser\Node\Expr\Cast\Object_;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -39,8 +44,33 @@ class AuthController extends Controller
     {
         $this->middleware('guest', ['except' => ['logout', 'getLogout']]);
     }
+    public function getRegister()
+    {
+	    $staedteraw = DB::table("schuldetails")->select("ort")->groupBy("ort")->get();
+	    $staedte = new \stdClass();
+	    foreach ($staedteraw as $s) {
+	    	$ort = $s->ort;
+	    	$staedte->$ort = "";
+	    }
+	    $staedte = json_encode($staedte);
+    	return view("auth.register", compact("staedte"));
+    }
+    public function schulenSearchOrt(Request $request) {
+	    $ort = $request->get("ort");
+	    $data = schulen::whereHas("details", function($query) use($ort) {
+		    $query->where('ort', '=', $ort);
+	    })->get();
+	    $schulen = new \stdClass();
+	    foreach($data as $schule)
+	    {
+		    $bezeichnung           = $schule->bezeichnung . " (ID:" . $schule->id . ")";
+		    $schulen->$bezeichnung = "";
 
-    /**
+	    }
+	    return response()->json($schulen);
+    }
+
+	/**
      * Get a validator for an incoming registration request.
      *
      * @param  array  $data
@@ -53,7 +83,7 @@ class AuthController extends Controller
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
 	        'vorname' => 'required|max:255',
-            'nachname' => 'max:255',
+            'nachname' => 'max:255'
         ]);
     }
 

@@ -26,7 +26,7 @@ class SchulMasterController extends Controller
             $weiter = false;
         $data = schulen::take(25)->skip($calc)->with("details")->get();
         $staedte = DB::table("schuldetails")->select("ort")->groupBy("ort")->get();
-        return view('master', compact("data", "zurueck", "weiter", "page", "staedte"));
+        return view('master', compact("data", "zurueck", "weiter", "page", "staedte", "cnt"));
     }
 
     function paginationFilter(Request $request)
@@ -43,7 +43,7 @@ class SchulMasterController extends Controller
 	    $zurueck = ($page == 0) ? false : true;
 	    if ($calc + 25 > $cnt)
 		    $weiter = false;
-        return view("master_filter", compact("data", "zurueck", "weiter", "page", "ort"));
+        return view("master_filter", compact("data", "zurueck", "weiter", "page", "ort", "cnt"));
     }
 
     function newKeyword() {
