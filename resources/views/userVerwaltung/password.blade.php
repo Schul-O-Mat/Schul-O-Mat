@@ -12,10 +12,20 @@
             <div class="input-field col s12">
                 <input id="new-password" name="new-password" type="password" autocomplete="new-password" class="validate">
                 <label for="new-password">Neues Passwort</label>
+                @if($errors->has('new-password'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('new-password') }}</strong>
+                    </span>
+                @endif
             </div>
             <div class="input-field col s12">
-                <input id="new-password-confirmation" name="new-password-confirmation" type="password" autocomplete="new-password" class="validate">
-                <label for="new-password-confirmation">Neues Passwort (wiederholung)</label>
+                <input id="new-password_confirmation" name="new-password_confirmation" type="password" autocomplete="new-password" class="validate">
+                <label for="new-password_confirmation">Neues Passwort (Wiederholung)</label>
+                @if($errors->has('current-password'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('current-password') }}</strong>
+                    </span>
+                @endif
             </div>
             <input type="hidden" name="current-password" id="form-current-password">
         </div>

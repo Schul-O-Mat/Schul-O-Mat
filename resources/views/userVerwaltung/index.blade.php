@@ -8,21 +8,46 @@
     <form class="container" action="{{ action("UserVerwaltungController@changeData") }}" id="changedata-form" method="post">
         <input type="hidden" name="_token" value="{{csrf_token()}}">
         <div class="row">
-            <div class="input-field col s12">
+            <div class="input-field col s12 {{$errors->has('vorname') ? 'has-error' : ''}}">
                 <input id="vorname" name="vorname" type="text" class="validate" placeholder="{{ $currentUser->vorname }}">
                 <label for="vorname">Vorname</label>
+                @if($errors->has('vorname'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('vorname') }}</strong>
+                    </span>
+                @endif
             </div>
-            <div class="input-field col s12">
+            <div class="input-field col s12 {{$errors->has('nachname') ? 'has-error' : ''}}">
                 <input id="nachname" name="nachname" type="text" class="validate" placeholder="{{ $currentUser->nachname }}">
                 <label for="nachname">Nachname</label>
+                @if($errors->has('nachname'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('nachname') }}</strong>
+                    </span>
+                @endif
             </div>
-            <div class="input-field col s12">
+            <div class="input-field col s12 {{$errors->has('username') ? 'has-error' : ''}}">
                 <input id="username" name="username" type="text" class="validate" placeholder="{{ $currentUser->name }}">
                 <label for="username">Username</label>
+                @if($errors->has('username'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('username') }}</strong>
+                    </span>
+                @endif
             </div>
-            <div class="input-field col s12">
+            <div class="input-field col s12 {{$errors->has('email') ? 'has-error' : ''}}">
                 <input id="email" name="email" type="email" class="validate" placeholder="{{ $currentUser->email }}">
                 <label for="email">E-Mail</label>
+                @if($errors->has('email'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('email') }}</strong>
+                    </span>
+                @endif
+                @if($errors->has('current-password'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('current-password') }}</strong>
+                    </span>
+                @endif
             </div>
             <input type="hidden" name="current-password" id="form-current-password">
         </div>
