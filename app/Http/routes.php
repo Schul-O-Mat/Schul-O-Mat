@@ -76,6 +76,7 @@ Route::get('/user/password', "UserVerwaltungController@password");
 Route::get('/user/schule', "UserVerwaltungController@schule");
 Route::post('/user', "UserVerwaltungController@changeData");
 Route::post('/user/password', "UserVerwaltungController@changePassword");
+Route::post('/user/schule', "UserVerwaltungController@changeSchule");
 
 // API
 Route::get('/api/schulenSearchOrt', 'ApiController@schulenSearchOrt');

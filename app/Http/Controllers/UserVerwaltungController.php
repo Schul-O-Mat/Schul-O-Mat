@@ -86,7 +86,7 @@ class UserVerwaltungController extends Controller
 			return redirect('');
 		}
 	}
-	public function changeSchool(Request $request) {
+	public function changeSchule(Request $request) {
 		return redirect('/user/school');
 	}
 	public function changePassword(Request $request) {

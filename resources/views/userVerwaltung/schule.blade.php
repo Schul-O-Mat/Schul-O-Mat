@@ -59,7 +59,6 @@
     <script>
         var staedte = JSON.parse("{{$staedte}}".replace(/&quot;/g, '"'));
         $(function () {
-            console.log($('#ort'))
             $('#ort').autocomplete({
                 data: staedte,
                 onAutocomplete: function (val) {
