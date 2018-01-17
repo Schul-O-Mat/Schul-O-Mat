@@ -55,20 +55,6 @@ class AuthController extends Controller
 	    $staedte = json_encode($staedte);
     	return view("auth.register", compact("staedte"));
     }
-    public function schulenSearchOrt(Request $request) {
-	    $ort = $request->get("ort");
-	    $data = schulen::whereHas("details", function($query) use($ort) {
-		    $query->where('ort', '=', $ort);
-	    })->get();
-	    $schulen = new \stdClass();
-	    foreach($data as $schule)
-	    {
-		    $bezeichnung           = $schule->bezeichnung . " (ID:" . $schule->id . ")";
-		    $schulen->$bezeichnung = "";
-
-	    }
-	    return response()->json($schulen);
-    }
 
 	/**
      * Get a validator for an incoming registration request.

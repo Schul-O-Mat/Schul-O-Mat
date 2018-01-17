@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\MessageBag;
 use Illuminate\Support\ViewErrorBag;
@@ -69,6 +70,24 @@ class UserVerwaltungController extends Controller
 		} else {
 			return redirect('');
 		}
+	}
+	public function schule() {
+		if(!Auth::guest() and Auth::user()->type == "student") {
+			$currentUser = Auth::user();
+			$staedteraw = DB::table("schuldetails")->select("ort")->groupBy("ort")->get();
+			$staedte = new \stdClass();
+			foreach ($staedteraw as $s) {
+				$ort = $s->ort;
+				$staedte->$ort = "";
+			}
+			$staedte = json_encode($staedte);
+			return view("userVerwaltung.schule", compact("currentUser", "staedte"));
+		} else {
+			return redirect('');
+		}
+	}
+	public function changeSchool(Request $request) {
+		return redirect('/user/school');
 	}
 	public function changePassword(Request $request) {
 		if(!Auth::guest() and Auth::user()->type == "student") {

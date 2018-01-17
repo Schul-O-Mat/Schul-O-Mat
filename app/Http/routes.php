@@ -19,7 +19,6 @@
 Route::get('/login', 'Auth\AuthController@getLogin');
 Route::post('/login', 'Auth\AuthController@postLogin');
 Route::get('/logout', 'Auth\AuthController@getLogout');
-Route::get('/api/schulenSearchOrt', 'Auth\AuthController@schulenSearchOrt');
 
 // Registration routes...
 Route::get('/register', 'Auth\AuthController@getRegister');
@@ -74,5 +73,9 @@ Route::get('/schule/{id}/verwaltung/einzelberichtmelden/{berichtId}', "SchulVerw
 // Userverwaltung
 Route::get('/user', "UserVerwaltungController@index");
 Route::get('/user/password', "UserVerwaltungController@password");
+Route::get('/user/schule', "UserVerwaltungController@schule");
 Route::post('/user', "UserVerwaltungController@changeData");
 Route::post('/user/password', "UserVerwaltungController@changePassword");
+
+// API
+Route::get('/api/schulenSearchOrt', 'ApiController@schulenSearchOrt');

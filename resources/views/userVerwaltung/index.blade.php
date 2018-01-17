@@ -60,6 +60,9 @@
             <a href="{{ action("UserVerwaltungController@password") }}" class="btn-flat">Passwort &auml;ndern</a>
         </div>
         <div class="row center">
+            <a href="{{ action("UserVerwaltungController@schule") }}" class="btn-flat">Schule ändern</a>
+        </div>
+        <div class="row center">
             <a href="{{ action("IndexController@index") }}" class="btn-flat">Zurück</a>
         </div>
     </form>
